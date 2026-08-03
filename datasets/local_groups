@@ -1,0 +1,5552 @@
+group:SteamCollege
+description[[English relational dataset based on public metadata returned by the Steam Store API.
+Game catalog facts were retrieved on 2026-08-02 for the US store. Prices are snapshots and may change.
+User accounts, libraries, purchases, and reviews are synthetic educational records and are not Steam user data.]]
+
+UserAccount = {
+  user_id, username, country, registration_date
+  1, 'pixel_fox', 'Argentina', 2010-01-01
+  2, 'query_knight', 'Germany', 2011-06-12
+  3, 'byte_runner', 'South Korea', 2012-11-23
+  4, 'data_witch', 'Australia', 2013-04-07
+  5, 'join_master', 'Japan', 2014-09-18
+  6, 'tuple_cat', 'Spain', 2015-02-02
+  7, 'schema_sage', 'Brazil', 2016-07-13
+  8, 'index_hero', 'Mexico', 2017-12-24
+  9, 'null_hunter', 'Sweden', 2018-05-08
+  10, 'atomic_player', 'Canada', 2019-10-19
+  11, 'cache_wizard', 'Netherlands', 2020-03-03
+  12, 'key_keeper', 'United Kingdom', 2021-08-14
+  13, 'table_tiger', 'Chile', 2022-01-25
+  14, 'logic_luna', 'New Zealand', 2023-06-09
+  15, 'vector_viking', 'United States', 2024-11-20
+  16, 'recursive_owl', 'Finland', 2010-04-04
+  17, 'select_star', 'Norway', 2011-09-15
+  18, 'foreign_key', 'Uruguay', 2012-02-26
+  19, 'acid_gamer', 'France', 2013-07-10
+  20, 'page_split', 'Poland', 2014-12-21
+  21, 'hash_nomad', 'Argentina', 2015-05-05
+  22, 'cursor_crow', 'Germany', 2016-10-16
+  23, 'query_queen', 'South Korea', 2017-03-27
+  24, 'buffer_bard', 'Australia', 2018-08-11
+  25, 'lock_picker', 'Japan', 2019-01-22
+  26, 'commit_club', 'Spain', 2020-06-06
+  27, 'rollback_rogue', 'Brazil', 2021-11-17
+  28, 'serial_fox', 'Mexico', 2022-04-01
+  29, 'phantom_read', 'Sweden', 2023-09-12
+  30, 'deadlock_dragon', 'Canada', 2024-02-23
+  31, 'pixel_fox_2', 'Netherlands', 2010-07-07
+  32, 'query_knight_2', 'United Kingdom', 2011-12-18
+  33, 'byte_runner_2', 'Chile', 2012-05-02
+  34, 'data_witch_2', 'New Zealand', 2013-10-13
+  35, 'join_master_2', 'United States', 2014-03-24
+  36, 'tuple_cat_2', 'Finland', 2015-08-08
+  37, 'schema_sage_2', 'Norway', 2016-01-19
+  38, 'index_hero_2', 'Uruguay', 2017-06-03
+  39, 'null_hunter_2', 'France', 2018-11-14
+  40, 'atomic_player_2', 'Poland', 2019-04-25
+  41, 'cache_wizard_2', 'Argentina', 2020-09-09
+  42, 'key_keeper_2', 'Germany', 2021-02-20
+  43, 'table_tiger_2', 'South Korea', 2022-07-04
+  44, 'logic_luna_2', 'Australia', 2023-12-15
+  45, 'vector_viking_2', 'Japan', 2024-05-26
+  46, 'recursive_owl_2', 'Spain', 2010-10-10
+  47, 'select_star_2', 'Brazil', 2011-03-21
+  48, 'foreign_key_2', 'Mexico', 2012-08-05
+  49, 'acid_gamer_2', 'Sweden', 2013-01-16
+  50, 'page_split_2', 'Canada', 2014-06-27
+  51, 'hash_nomad_2', 'Netherlands', 2015-11-11
+  52, 'cursor_crow_2', 'United Kingdom', 2016-04-22
+  53, 'query_queen_2', 'Chile', 2017-09-06
+  54, 'buffer_bard_2', 'New Zealand', 2018-02-17
+  55, 'lock_picker_2', 'United States', 2019-07-01
+  56, 'commit_club_2', 'Finland', 2020-12-12
+  57, 'rollback_rogue_2', 'Norway', 2021-05-23
+  58, 'serial_fox_2', 'Uruguay', 2022-10-07
+  59, 'phantom_read_2', 'France', 2023-03-18
+  60, 'deadlock_dragon_2', 'Poland', 2024-08-02
+  61, 'pixel_fox_3', 'Argentina', 2010-01-13
+  62, 'query_knight_3', 'Germany', 2011-06-24
+  63, 'byte_runner_3', 'South Korea', 2012-11-08
+  64, 'data_witch_3', 'Australia', 2013-04-19
+  65, 'join_master_3', 'Japan', 2014-09-03
+  66, 'tuple_cat_3', 'Spain', 2015-02-14
+  67, 'schema_sage_3', 'Brazil', 2016-07-25
+  68, 'index_hero_3', 'Mexico', 2017-12-09
+  69, 'null_hunter_3', 'Sweden', 2018-05-20
+  70, 'atomic_player_3', 'Canada', 2019-10-04
+  71, 'cache_wizard_3', 'Netherlands', 2020-03-15
+  72, 'key_keeper_3', 'United Kingdom', 2021-08-26
+  73, 'table_tiger_3', 'Chile', 2022-01-10
+  74, 'logic_luna_3', 'New Zealand', 2023-06-21
+  75, 'vector_viking_3', 'United States', 2024-11-05
+  76, 'recursive_owl_3', 'Finland', 2010-04-16
+  77, 'select_star_3', 'Norway', 2011-09-27
+  78, 'foreign_key_3', 'Uruguay', 2012-02-11
+  79, 'acid_gamer_3', 'France', 2013-07-22
+  80, 'page_split_3', 'Poland', 2014-12-06
+  81, 'hash_nomad_3', 'Argentina', 2015-05-17
+  82, 'cursor_crow_3', 'Germany', 2016-10-01
+  83, 'query_queen_3', 'South Korea', 2017-03-12
+  84, 'buffer_bard_3', 'Australia', 2018-08-23
+  85, 'lock_picker_3', 'Japan', 2019-01-07
+  86, 'commit_club_3', 'Spain', 2020-06-18
+  87, 'rollback_rogue_3', 'Brazil', 2021-11-02
+  88, 'serial_fox_3', 'Mexico', 2022-04-13
+  89, 'phantom_read_3', 'Sweden', 2023-09-24
+  90, 'deadlock_dragon_3', 'Canada', 2024-02-08
+  91, 'pixel_fox_4', 'Netherlands', 2010-07-19
+  92, 'query_knight_4', 'United Kingdom', 2011-12-03
+  93, 'byte_runner_4', 'Chile', 2012-05-14
+  94, 'data_witch_4', 'New Zealand', 2013-10-25
+  95, 'join_master_4', 'United States', 2014-03-09
+  96, 'tuple_cat_4', 'Finland', 2015-08-20
+  97, 'schema_sage_4', 'Norway', 2016-01-04
+  98, 'index_hero_4', 'Uruguay', 2017-06-15
+  99, 'null_hunter_4', 'France', 2018-11-26
+  100, 'atomic_player_4', 'Poland', 2019-04-10
+  101, 'cache_wizard_4', 'Argentina', 2020-09-21
+  102, 'key_keeper_4', 'Germany', 2021-02-05
+  103, 'table_tiger_4', 'South Korea', 2022-07-16
+  104, 'logic_luna_4', 'Australia', 2023-12-27
+  105, 'vector_viking_4', 'Japan', 2024-05-11
+  106, 'recursive_owl_4', 'Spain', 2010-10-22
+  107, 'select_star_4', 'Brazil', 2011-03-06
+  108, 'foreign_key_4', 'Mexico', 2012-08-17
+  109, 'acid_gamer_4', 'Sweden', 2013-01-01
+  110, 'page_split_4', 'Canada', 2014-06-12
+  111, 'hash_nomad_4', 'Netherlands', 2015-11-23
+  112, 'cursor_crow_4', 'United Kingdom', 2016-04-07
+  113, 'query_queen_4', 'Chile', 2017-09-18
+  114, 'buffer_bard_4', 'New Zealand', 2018-02-02
+  115, 'lock_picker_4', 'United States', 2019-07-13
+  116, 'commit_club_4', 'Finland', 2020-12-24
+  117, 'rollback_rogue_4', 'Norway', 2021-05-08
+  118, 'serial_fox_4', 'Uruguay', 2022-10-19
+  119, 'phantom_read_4', 'France', 2023-03-03
+  120, 'deadlock_dragon_4', 'Poland', 2024-08-14
+}
+
+Developer = {
+  developer_id, name
+  1, 'Eggys Games'
+  2, '24 Entertainment'
+  3, '8_bit_blockhead'
+  4, 'Abdulrahman Asiri'
+  5, 'Activision Shanghai'
+  6, 'AlmyriganHero'
+  7, 'Arrowhead Game Studios'
+  8, 'Aspyr (Linux)'
+  9, 'Aspyr (Mac)'
+  10, 'Battlefield Studios'
+  11, 'BeamNG'
+  12, 'Beenox'
+  13, 'Behaviour Interactive Inc.'
+  14, 'Bellring Games'
+  15, 'Bethesda Game Studios'
+  16, 'Blender Games'
+  17, 'Blizzard Entertainment Inc.'
+  18, 'Blue Mammoth Games'
+  19, 'Bohemia Interactive'
+  20, 'Boom 18'
+  21, 'Bungie'
+  22, 'CAPCOM Co. Ltd.'
+  23, 'CD PROJEKT RED'
+  24, 'CREATIVE ASSEMBLY'
+  25, 'CaptureAge'
+  26, 'CayPlay'
+  27, 'CenterPoint Gaming'
+  28, 'ConcernedApe'
+  29, 'Creamhouse'
+  30, 'Crytek'
+  31, 'Cygames Inc.'
+  32, 'DICE'
+  33, 'Demonware'
+  34, 'Digital Extremes'
+  35, 'EA Canada'
+  36, 'EA Romania'
+  37, 'Edmund McMillen'
+  38, 'Efecto Studios'
+  39, 'Embark Studios'
+  40, 'Endnight Games Ltd'
+  41, 'Ensemble Studios'
+  42, 'Erard Cane'
+  43, 'Everstone Studio'
+  44, 'Evil Raptor'
+  45, 'FFire Studio'
+  46, 'Facepunch Studios'
+  47, 'Feral Interactive'
+  48, 'Firaxis Games'
+  49, 'Forgotten Empires'
+  50, 'FromSoftware Inc.'
+  51, 'Funcom'
+  52, 'Funflower Studio'
+  53, 'GDeavid'
+  54, 'GHXYK2'
+  55, 'GIANTS Software'
+  56, 'Gaijin Entertainment'
+  57, 'Ghost Ship Games'
+  58, 'Grinding Gear Games'
+  59, 'Grove Street Games'
+  60, 'Hello Games'
+  61, 'Hidden Path Entertainment'
+  62, 'High Moon Studios'
+  63, 'Hopoo Games'
+  64, 'Idle game'
+  65, 'Infinity Ward'
+  66, 'Inflexion Games'
+  67, 'Innersloth'
+  68, 'Insomniac Games'
+  69, 'Instinct Games'
+  70, 'Iron Forge Games'
+  71, 'Iron Gate AB'
+  72, 'Irox Games'
+  73, 'KONAMI'
+  74, 'KURO GAMES'
+  75, 'Kinetic Games'
+  76, 'Klei Entertainment'
+  77, 'Kraken Express'
+  78, 'Kunos Simulazioni'
+  79, 'Larian Studios'
+  80, 'Leppsoft'
+  81, 'Levi Weaver'
+  82, 'Limbic Entertainment'
+  83, 'Literzz'
+  84, 'LocalThunk'
+  85, 'Luca Dreiling'
+  86, 'Ludeon Studios'
+  87, 'Maxis'
+  88, 'Mediatonic'
+  89, 'Mega Crit'
+  90, 'Mike Klubnika'
+  91, 'MindSurge Network & Games'
+  92, 'Morefun Studios'
+  93, 'Nerdook Productions'
+  94, 'NetEase Games'
+  95, 'New Page Interactive'
+  96, 'Nicalis Inc.'
+  97, 'Ninja Kiwi'
+  98, 'Nixxes Software'
+  99, 'OBS Project'
+  100, 'OH Games Studio'
+  101, 'Odd Dreams Digital'
+  102, 'PUBG Corporation'
+  103, 'Paradox Development Studio'
+  104, 'Paradox Tinto'
+  105, 'Pearl Abyss'
+  106, 'Playbooster'
+  107, 'Playdead'
+  108, 'Playground Games'
+  109, 'Pocketpair'
+  110, 'ProjectMoon'
+  111, 'Psyonix LLC'
+  112, 'Rare Ltd'
+  113, 'Raven Software'
+  114, 'Re-Logic'
+  115, 'Red Sasori'
+  116, 'Respawn'
+  117, 'Respawn Entertainment'
+  118, 'RobTop Games'
+  119, 'RocketWerkz'
+  120, 'Rockstar Games'
+  121, 'Rockstar North'
+  122, 'SCS Software'
+  123, 'Sequal'
+  124, 'Singularity Studio'
+  125, 'Skybox Labs'
+  126, 'Sledgehammer Games'
+  127, 'Smartly Dressed Games'
+  128, 'Sports Interactive'
+  129, 'Square Enix'
+  130, 'Statespace'
+  131, 'Studio Wildcard'
+  132, 'Stunlock Studios'
+  133, 'Supergiant Games'
+  134, 'TEAM GWYF'
+  135, 'TVGS'
+  136, 'TaleWorlds Entertainment'
+  137, 'Tantalus Media'
+  138, 'Tao Games Studio'
+  139, 'Team Cherry'
+  140, 'Team Jade'
+  141, 'Team PEAK'
+  142, 'The Fun Pimps'
+  143, 'The Indie Stone'
+  144, 'Tom'
+  145, 'Treyarch'
+  146, 'Ubisoft Montreal'
+  147, 'Ukammi'
+  148, 'Unfrozen'
+  149, 'Unknown Worlds Entertainment'
+  150, 'VOID Interactive'
+  151, 'VRChat Inc.'
+  152, 'Valve'
+  153, 'Virtual Basement LLC'
+  154, 'Visual Concepts'
+  155, 'Wainstop James'
+  156, 'Wallpaper Engine Team'
+  157, 'Wicked Witch'
+  158, 'Wolf Studios'
+  159, 'Worlds Edge'
+  160, 'XD'
+  161, 'Y Press Games'
+  162, 'Yamu Studios'
+  163, 'ZHANG CHUNNING'
+  164, 'chendian game'
+  165, 'ernest.dev'
+  166, 'mana'
+  167, 'reiti.net'
+  168, 'semiwork'
+}
+
+Publisher = {
+  publisher_id, name
+  1, 'Eggys Games'
+  2, '2K'
+  3, '505 Games'
+  4, '8_bit_blockhead'
+  5, 'Abdulrahman Asiri'
+  6, 'Activision'
+  7, 'Activision (Excluding Japan and Asia)'
+  8, 'Aggro Crab'
+  9, 'AlmyriganHero'
+  10, 'Aspyr (Linux)'
+  11, 'Aspyr (Mac)'
+  12, 'Bandai Namco Entertainment'
+  13, 'BeamNG'
+  14, 'Behaviour Interactive Inc.'
+  15, 'Bethesda Softworks'
+  16, 'Blender Games'
+  17, 'Blizzard Entertainment Inc.'
+  18, 'Bohemia Interactive'
+  19, 'Boom 18'
+  20, 'Bungie'
+  21, 'CAPCOM Co. Ltd.'
+  22, 'CD PROJEKT RED'
+  23, 'CayPlay'
+  24, 'CenterPoint Gaming'
+  25, 'Coffee Stain Publishing'
+  26, 'ConcernedApe'
+  27, 'Creamhouse'
+  28, 'Crytek'
+  29, 'Cygames Inc.'
+  30, 'Digital Extremes'
+  31, 'Electronic Arts'
+  32, 'Elegoose Games'
+  33, 'Embark Studios'
+  34, 'Endnight Games Ltd'
+  35, 'Erard Cane'
+  36, 'Evil Landfall?'
+  37, 'FFire Studio'
+  38, 'Facepunch Studios'
+  39, 'Feral Interactive'
+  40, 'Fireshine Games'
+  41, 'FromSoftware Inc.'
+  42, 'FromSoftware Inc. (Japan)'
+  43, 'Funcom'
+  44, 'GIANTS Software'
+  45, 'Gaijin Network Ltd'
+  46, 'Gearbox Publishing'
+  47, 'Grinding Gear Games'
+  48, 'Hello Games'
+  49, 'Hooded Horse'
+  50, 'Idle game'
+  51, 'Innersloth'
+  52, 'Iron Forge Games'
+  53, 'Irox Games'
+  54, 'KONAMI'
+  55, 'KRAFTON Inc.'
+  56, 'KURO GAMES'
+  57, 'Kinetic Games'
+  58, 'Klei Entertainment'
+  59, 'Kraken Express'
+  60, 'Larian Studios'
+  61, 'Leppsoft'
+  62, 'Levi Weaver'
+  63, 'Literzz'
+  64, 'Luca Dreiling'
+  65, 'Ludeon Studios'
+  66, 'Mega Crit'
+  67, 'Morefun Studios'
+  68, 'Nerdook Productions'
+  69, 'NetEase Games'
+  70, 'NetEase Games'
+  71, 'New Page Interactive'
+  72, 'Newnight'
+  73, 'Nicalis Inc.'
+  74, 'Ninja Kiwi'
+  75, 'OBS Project'
+  76, 'OH Games Studio'
+  77, 'Oro Interactive'
+  78, 'Paradox Interactive'
+  79, 'Pearl Abyss'
+  80, 'Plastic Frog'
+  81, 'PlayStation Publishing LLC'
+  82, 'Playbooster'
+  83, 'Playdead'
+  84, 'Playstack'
+  85, 'Pocketpair'
+  86, 'Pocketpair Publishing (Japan)'
+  87, 'ProjectMoon'
+  88, 'Psyonix LLC'
+  89, 'Re-Logic'
+  90, 'Red Sasori'
+  91, 'RobTop Games'
+  92, 'RocketWerkz'
+  93, 'Rockstar Games'
+  94, 'SCS Software'
+  95, 'SEGA'
+  96, 'Secret Mode'
+  97, 'Sequal'
+  98, 'Singularity Studio'
+  99, 'Skystone Games'
+  100, 'Smartly Dressed Games'
+  101, 'Snail Games USA'
+  102, 'Square Enix'
+  103, 'Statespace'
+  104, 'Studio Wildcard'
+  105, 'Stunlock Studios'
+  106, 'Supergiant Games'
+  107, 'TENSTACK'
+  108, 'TVGS'
+  109, 'TaleWorlds Entertainment'
+  110, 'Tao Games Studio'
+  111, 'Team Cherry'
+  112, 'The Fun Pimps Entertainment LLC'
+  113, 'The Indie Stone'
+  114, 'TiMi Studio Group'
+  115, 'Tired Tiger Productions'
+  116, 'Tom'
+  117, 'Ubisoft'
+  118, 'Ukammi'
+  119, 'Unknown'
+  120, 'Unknown Worlds Entertainment'
+  121, 'VOID Interactive'
+  122, 'VRChat Inc.'
+  123, 'Valve'
+  124, 'Wallpaper Engine Team'
+  125, 'Wolf Studios'
+  126, 'XD'
+  127, 'Xbox Game Studios'
+  128, 'Y Press Games'
+  129, 'Yamu Studios'
+  130, 'ZHANG CHUNNING'
+  131, 'chendian game'
+  132, 'ernest.dev'
+  133, 'mana'
+  134, 'reiti.net'
+  135, 'semiwork'
+  136, '方块游戏 (Asia)'
+}
+
+Genre = {
+  genre_id, name, classification_type
+  1, '#category_contrast_controls', 'Feature'
+  2, '#category_playable_at_your_own_pace', 'Feature'
+  3, 'Adjustable Difficulty', 'Feature'
+  4, 'Adjustable Text Size', 'Feature'
+  5, 'Camera Comfort', 'Feature'
+  6, 'Captions available', 'Feature'
+  7, 'Chat Speech-to-text', 'Feature'
+  8, 'Chat Text-to-speech', 'Feature'
+  9, 'Co-op', 'Feature'
+  10, 'Color Alternatives', 'Feature'
+  11, 'Commentary available', 'Feature'
+  12, 'Cross-Platform Multiplayer', 'Feature'
+  13, 'Custom Volume Controls', 'Feature'
+  14, 'DualSense Controller Support', 'Feature'
+  15, 'DualShock Controller Support', 'Feature'
+  16, 'Family Sharing', 'Feature'
+  17, 'Full controller support', 'Feature'
+  18, 'Gamepad Recommended', 'Feature'
+  19, 'HDR available', 'Feature'
+  20, 'In-App Purchases', 'Feature'
+  21, 'Includes Source SDK', 'Feature'
+  22, 'Includes level editor', 'Feature'
+  23, 'Keyboard Only Option', 'Feature'
+  24, 'LAN Co-op', 'Feature'
+  25, 'LAN PvP', 'Feature'
+  26, 'MMO', 'Feature'
+  27, 'Mouse Only Option', 'Feature'
+  28, 'Multi-player', 'Feature'
+  29, 'Narrated Game Menus', 'Feature'
+  30, 'Online Co-op', 'Feature'
+  31, 'Online PvP', 'Feature'
+  32, 'Partial Controller Support', 'Feature'
+  33, 'Playable without Timed Input', 'Feature'
+  34, 'PvP', 'Feature'
+  35, 'Remote Play Together', 'Feature'
+  36, 'Remote Play on Phone', 'Feature'
+  37, 'Remote Play on TV', 'Feature'
+  38, 'Remote Play on Tablet', 'Feature'
+  39, 'Save Anytime', 'Feature'
+  40, 'Shared/Split Screen', 'Feature'
+  41, 'Shared/Split Screen Co-op', 'Feature'
+  42, 'Shared/Split Screen PvP', 'Feature'
+  43, 'Single-player', 'Feature'
+  44, 'Stats', 'Feature'
+  45, 'Steam Achievements', 'Feature'
+  46, 'Steam Cloud', 'Feature'
+  47, 'Steam Input API Support', 'Feature'
+  48, 'Steam Leaderboards', 'Feature'
+  49, 'Steam Timeline', 'Feature'
+  50, 'Steam Trading Cards', 'Feature'
+  51, 'Steam Turn Notifications', 'Feature'
+  52, 'Steam Workshop', 'Feature'
+  53, 'SteamVR Collectibles', 'Feature'
+  54, 'Stereo Sound', 'Feature'
+  55, 'Subtitle Options', 'Feature'
+  56, 'Surround Sound', 'Feature'
+  57, 'Touch Only Option', 'Feature'
+  58, 'Tracked Controller Support', 'Feature'
+  59, 'VR Only', 'Feature'
+  60, 'VR Support', 'Feature'
+  61, 'VR Supported', 'Feature'
+  62, 'Valve Anti-Cheat enabled', 'Feature'
+  63, 'Action', 'Genre'
+  64, 'Adventure', 'Genre'
+  65, 'Animation & Modeling', 'Genre'
+  66, 'Audio Production', 'Genre'
+  67, 'Casual', 'Genre'
+  68, 'Design & Illustration', 'Genre'
+  69, 'Early Access', 'Genre'
+  70, 'Free To Play', 'Genre'
+  71, 'Indie', 'Genre'
+  72, 'Massively Multiplayer', 'Genre'
+  73, 'Photo Editing', 'Genre'
+  74, 'RPG', 'Genre'
+  75, 'Racing', 'Genre'
+  76, 'Simulation', 'Genre'
+  77, 'Software Training', 'Genre'
+  78, 'Sports', 'Genre'
+  79, 'Strategy', 'Genre'
+  80, 'Utilities', 'Genre'
+  81, 'Video Production', 'Genre'
+}
+
+Game = {
+  app_id, title, release_date, price_usd, developer_id, publisher_id, windows, mac, linux, free_to_play
+  10, 'Counter-Strike', 2000-11-01, 9.99, 152, 123, 'Yes', 'Yes', 'Yes', 'No'
+  220, 'Half-Life 2', 2004-11-16, 9.99, 152, 123, 'Yes', 'No', 'Yes', 'No'
+  400, 'Portal', 2007-10-10, 9.99, 152, 123, 'Yes', 'No', 'Yes', 'No'
+  440, 'Team Fortress 2', 2007-10-10, 0.00, 152, 123, 'Yes', 'No', 'Yes', 'Yes'
+  550, 'Left 4 Dead 2', 2009-11-16, 9.99, 152, 123, 'Yes', 'No', 'Yes', 'No'
+  570, 'Dota 2', 2013-07-09, 0.00, 152, 123, 'Yes', 'Yes', 'Yes', 'Yes'
+  620, 'Portal 2', 2011-04-18, 9.99, 152, 123, 'Yes', 'No', 'Yes', 'No'
+  730, 'Counter-Strike 2', 2012-08-21, 0.00, 152, 123, 'Yes', 'No', 'Yes', 'Yes'
+  4000, 'Garrys Mod', 2006-11-29, 4.99, 46, 123, 'Yes', 'Yes', 'Yes', 'No'
+  39210, 'FINAL FANTASY XIV Online', 2014-02-18, 19.99, 129, 102, 'Yes', 'No', 'No', 'No'
+  105600, 'Terraria', 2011-05-16, 9.99, 114, 89, 'Yes', 'Yes', 'Yes', 'No'
+  108600, 'Project Zomboid', 2013-11-08, 24.99, 143, 113, 'Yes', 'Yes', 'Yes', 'No'
+  221100, 'DayZ', 2018-12-13, 49.99, 19, 18, 'Yes', 'No', 'No', 'No'
+  221380, 'Age of Empires II (Retired)', 2013-04-09, 19.99, 125, 127, 'Yes', 'No', 'No', 'No'
+  227300, 'Euro Truck Simulator 2', 2012-10-12, 19.99, 122, 94, 'Yes', 'Yes', 'Yes', 'No'
+  230410, 'Warframe', 2013-03-25, 0.00, 34, 30, 'Yes', 'No', 'No', 'Yes'
+  236390, 'War Thunder', 2013-08-15, 0.00, 56, 45, 'Yes', 'Yes', 'Yes', 'Yes'
+  236850, 'Europa Universalis IV', 2013-08-13, 49.99, 103, 78, 'Yes', 'Yes', 'Yes', 'No'
+  242760, 'The Forest', 2018-04-30, 19.99, 40, 34, 'Yes', 'No', 'No', 'No'
+  244210, 'Assetto Corsa', 2014-12-19, 19.99, 78, 3, 'Yes', 'No', 'No', 'No'
+  250900, 'The Binding of Isaac: Rebirth', 2014-11-04, 14.99, 96, 73, 'Yes', 'Yes', 'Yes', 'No'
+  251570, '7 Days to Die', 2024-07-25, 44.99, 142, 112, 'Yes', 'Yes', 'Yes', 'No'
+  252490, 'Rust', 2018-02-08, 19.99, 46, 38, 'Yes', 'Yes', 'No', 'No'
+  252950, 'Rocket League®', 2015-07-06, 0.00, 111, 88, 'Yes', 'No', 'No', 'No'
+  261550, 'Mount & Blade II: Bannerlord', 2022-10-25, 49.99, 136, 109, 'Yes', 'No', 'No', 'No'
+  264710, 'Subnautica', 2018-01-23, 29.99, 149, 120, 'Yes', 'Yes', 'No', 'No'
+  271590, 'Grand Theft Auto V Legacy', 2015-04-13, 0.00, 121, 93, 'Yes', 'No', 'No', 'No'
+  275850, 'No Mans Sky', 2016-08-12, 59.99, 60, 48, 'Yes', 'Yes', 'No', 'No'
+  284160, 'BeamNG.drive', 2015-05-29, 24.99, 11, 13, 'Yes', 'No', 'No', 'No'
+  289070, 'Sid Meier’s Civilization® VI', 2016-10-20, 5.99, 48, 2, 'Yes', 'Yes', 'Yes', 'No'
+  291550, 'Brawlhalla', 2017-10-17, 0.00, 18, 117, 'Yes', 'Yes', 'No', 'Yes'
+  292030, 'The Witcher 3: Wild Hunt', 2015-05-18, 7.99, 23, 22, 'Yes', 'No', 'No', 'No'
+  294100, 'RimWorld', 2018-10-17, 34.99, 86, 65, 'Yes', 'Yes', 'Yes', 'No'
+  304430, 'INSIDE', 2016-07-07, 2.49, 107, 83, 'Yes', 'No', 'No', 'No'
+  304930, 'Unturned', 2017-07-07, 0.00, 127, 100, 'Yes', 'Yes', 'Yes', 'Yes'
+  322170, 'Geometry Dash', 2014-12-22, 4.99, 118, 91, 'Yes', 'Yes', 'No', 'No'
+  322330, 'Dont Starve Together', 2016-04-21, 14.99, 76, 58, 'Yes', 'Yes', 'Yes', 'No'
+  346110, 'ARK: Survival Evolved', 2017-08-27, 14.99, 131, 104, 'Yes', 'Yes', 'No', 'No'
+  359550, 'Tom Clancys Rainbow Six Siege', 2015-12-01, 0.00, 146, 117, 'Yes', 'No', 'No', 'Yes'
+  367520, 'Hollow Knight', 2017-02-24, 14.99, 139, 111, 'Yes', 'Yes', 'Yes', 'No'
+  374320, 'DARK SOULS™ III', 2016-04-11, 59.99, 50, 41, 'Yes', 'No', 'No', 'No'
+  377160, 'Fallout 4', 2015-11-09, 7.99, 15, 15, 'Yes', 'No', 'No', 'No'
+  381210, 'Dead by Daylight', 2016-06-14, 19.99, 13, 14, 'Yes', 'No', 'No', 'No'
+  394360, 'Hearts of Iron IV', 2016-06-06, 49.99, 103, 78, 'Yes', 'Yes', 'Yes', 'No'
+  413150, 'Stardew Valley', 2016-02-26, 14.99, 28, 26, 'Yes', 'Yes', 'Yes', 'No'
+  431960, 'Wallpaper Engine', 2018-11-16, 4.99, 156, 124, 'Yes', 'No', 'No', 'No'
+  435150, 'Divinity: Original Sin 2 - Definitive Edition', 2017-09-14, 44.99, 79, 60, 'Yes', 'Yes', 'No', 'No'
+  438100, 'VRChat', 2017-02-01, 0.00, 151, 122, 'Yes', 'No', 'No', 'Yes'
+  440900, 'Conan Exiles Enhanced', 2018-05-08, 39.99, 51, 43, 'Yes', 'No', 'No', 'No'
+  489830, 'The Elder Scrolls V: Skyrim Special Edition', 2016-10-27, 9.99, 15, 15, 'Yes', 'No', 'No', 'No'
+  548430, 'Deep Rock Galactic', 2020-05-13, 8.99, 57, 25, 'Yes', 'No', 'No', 'No'
+  553850, 'HELLDIVERS™ 2', 2024-02-08, 39.99, 7, 81, 'Yes', 'No', 'No', 'No'
+  578080, 'PUBG: BATTLEGROUNDS', 2017-12-21, 0.00, 102, 55, 'Yes', 'No', 'No', 'Yes'
+  582010, 'Monster Hunter: World', 2018-08-08, 7.79, 22, 21, 'Yes', 'No', 'No', 'No'
+  594650, 'Hunt: Showdown 1896', 2019-08-27, 11.99, 30, 28, 'Yes', 'No', 'No', 'No'
+  629520, 'Soundpad', 2017-09-30, 4.99, 80, 61, 'Yes', 'No', 'No', 'No'
+  632360, 'Risk of Rain 2', 2020-08-11, 24.99, 63, 46, 'Yes', 'No', 'No', 'No'
+  646570, 'Slay the Spire', 2019-01-23, 6.24, 89, 66, 'Yes', 'Yes', 'Yes', 'No'
+  714010, 'Aimlabs', 2023-06-16, 0.00, 130, 103, 'Yes', 'No', 'No', 'Yes'
+  739630, 'Phasmophobia', 2020-09-18, 19.99, 75, 57, 'Yes', 'No', 'No', 'No'
+  813780, 'Age of Empires II: Definitive Edition', 2019-11-14, 34.99, 159, 127, 'Yes', 'Yes', 'No', 'No'
+  814380, 'Sekiro™: Shadows Die Twice - GOTY Edition', 2019-03-21, 59.99, 50, 7, 'Yes', 'No', 'No', 'No'
+  892970, 'Valheim', 2021-02-02, 29.99, 71, 25, 'Yes', 'Yes', 'Yes', 'No'
+  945360, 'Among Us', 2018-11-16, 4.99, 67, 51, 'Yes', 'No', 'No', 'No'
+  960090, 'Bloons TD 6', 2018-12-17, 13.99, 97, 74, 'Yes', 'Yes', 'No', 'No'
+  1085660, 'Destiny 2', 2019-10-01, 0.00, 21, 20, 'Yes', 'No', 'No', 'Yes'
+  1086940, 'Baldurs Gate 3', 2023-08-03, 41.99, 79, 60, 'Yes', 'Yes', 'No', 'No'
+  1091500, 'Cyberpunk 2077', 2020-12-09, 17.99, 23, 22, 'Yes', 'Yes', 'No', 'No'
+  1097150, 'Fall Guys', 2020-08-03, 0.00, 88, 119, 'Yes', 'No', 'No', 'No'
+  1142710, 'Total War: WARHAMMER III', 2022-02-16, 59.99, 24, 95, 'Yes', 'Yes', 'Yes', 'No'
+  1144200, 'Ready or Not', 2023-12-13, 49.99, 150, 121, 'Yes', 'No', 'No', 'No'
+  1145360, 'Hades', 2020-09-17, 24.99, 133, 106, 'Yes', 'Yes', 'No', 'No'
+  1149460, 'ICARUS', 2021-12-03, 34.99, 119, 92, 'Yes', 'No', 'No', 'No'
+  1158310, 'Crusader Kings III', 2020-09-01, 49.99, 103, 78, 'Yes', 'Yes', 'Yes', 'No'
+  1172380, 'STAR WARS Jedi: Fallen Order™', 2019-11-14, 7.99, 117, 31, 'Yes', 'No', 'No', 'No'
+  1172470, 'Apex Legends™', 2020-11-04, 0.00, 116, 31, 'Yes', 'No', 'No', 'Yes'
+  1172620, 'Sea of Thieves: 2026 Edition', 2020-06-03, 39.99, 112, 127, 'Yes', 'No', 'No', 'No'
+  1174180, 'Red Dead Redemption 2', 2019-12-05, 59.99, 120, 93, 'Yes', 'No', 'No', 'No'
+  1203220, 'NARAKA: BLADEPOINT', 2021-08-11, 0.00, 2, 70, 'Yes', 'No', 'No', 'Yes'
+  1222670, 'The Sims™ 4', 2020-06-18, 0.00, 87, 31, 'Yes', 'No', 'No', 'Yes'
+  1238810, 'Battlefield™ V', 2020-10-22, 4.99, 32, 31, 'Yes', 'No', 'No', 'No'
+  1238840, 'Battlefield™ 1', 2020-06-11, 3.99, 32, 31, 'Yes', 'No', 'No', 'No'
+  1238860, 'Battlefield 4™', 2020-06-11, 3.99, 32, 31, 'Yes', 'No', 'No', 'No'
+  1245620, 'ELDEN RING', 2022-02-24, 59.99, 50, 41, 'Yes', 'No', 'No', 'No'
+  1326470, 'Sons Of The Forest', 2024-02-22, 29.99, 40, 72, 'Yes', 'No', 'No', 'No'
+  1364780, 'Street Fighter™ 6', 2023-06-01, 19.99, 22, 21, 'Yes', 'No', 'No', 'No'
+  1366800, 'Crosshair X', 2020-08-17, 9.99, 27, 24, 'Yes', 'No', 'No', 'No'
+  1368140, 'Corsair Cove', 2026-07-31, 29.99, 82, 49, 'Yes', 'No', 'No', 'No'
+  1422450, 'Deadlock', 2099-12-31, 0.00, 152, 123, 'Yes', 'No', 'No', 'No'
+  1449850, 'Yu-Gi-Oh! Master Duel', 2022-01-18, 0.00, 73, 54, 'Yes', 'No', 'No', 'Yes'
+  1517290, 'Battlefield™ 2042', 2021-11-19, 5.99, 32, 31, 'Yes', 'No', 'No', 'No'
+  1551360, 'Forza Horizon 5', 2021-11-08, 59.99, 108, 127, 'Yes', 'No', 'No', 'No'
+  1604030, 'V Rising', 2024-05-08, 34.99, 132, 105, 'Yes', 'No', 'No', 'No'
+  1623730, 'Palworld', 2026-07-09, 29.99, 109, 85, 'Yes', 'No', 'No', 'No'
+  1665460, 'eFootball™', 2021-09-29, 0.00, 73, 54, 'Yes', 'No', 'No', 'Yes'
+  1774580, 'STAR WARS Jedi: Survivor™', 2023-04-27, 10.49, 116, 31, 'Yes', 'No', 'No', 'No'
+  1808500, 'ARC Raiders', 2025-10-30, 39.99, 39, 33, 'Yes', 'No', 'No', 'No'
+  1811260, 'EA SPORTS™ FIFA 23', 2022-09-30, 0.00, 35, 31, 'Yes', 'No', 'No', 'No'
+  1817070, 'Marvel’s Spider-Man Remastered', 2022-08-12, 23.99, 68, 81, 'Yes', 'No', 'No', 'No'
+  1817190, 'Marvel’s Spider-Man: Miles Morales', 2022-11-18, 19.99, 68, 81, 'Yes', 'No', 'No', 'No'
+  1905180, 'OBS Studio', 2022-03-21, 0.00, 99, 75, 'Yes', 'Yes', 'No', 'Yes'
+  1938090, 'Call of Duty®', 2022-10-27, 0.00, 145, 6, 'Yes', 'No', 'No', 'No'
+  1948540, 'Exipelago', 2026-08-02, 24.99, 167, 134, 'Yes', 'No', 'No', 'No'
+  1973530, 'Limbus Company', 2023-02-26, 0.00, 110, 87, 'Yes', 'No', 'No', 'Yes'
+  2073620, 'Arena Breakout: Infinite', 2025-09-15, 0.00, 92, 67, 'Yes', 'No', 'No', 'Yes'
+  2073850, 'THE FINALS', 2023-12-07, 0.00, 39, 33, 'Yes', 'No', 'No', 'Yes'
+  2195250, 'EA SPORTS FC™ 24', 2023-09-28, 0.00, 35, 31, 'Yes', 'No', 'No', 'No'
+  2300320, 'Farming Simulator 25', 2024-11-12, 29.99, 55, 44, 'Yes', 'Yes', 'No', 'No'
+  2344520, 'Diablo® IV', 2023-10-17, 49.99, 17, 17, 'Yes', 'No', 'No', 'No'
+  2357570, 'Overwatch®', 2023-08-10, 0.00, 17, 17, 'Yes', 'No', 'No', 'Yes'
+  2379780, 'Balatro', 2024-02-20, 11.99, 84, 84, 'Yes', 'Yes', 'No', 'No'
+  2399830, 'ARK: Survival Ascended', 2023-10-25, 44.99, 131, 104, 'Yes', 'No', 'No', 'No'
+  2507950, 'Delta Force', 2024-12-04, 0.00, 140, 114, 'Yes', 'No', 'No', 'Yes'
+  2622380, 'ELDEN RING NIGHTREIGN', 2025-05-29, 39.99, 50, 41, 'Yes', 'No', 'No', 'No'
+  2651280, 'Marvels Spider-Man 2', 2025-01-30, 40.19, 68, 81, 'Yes', 'No', 'No', 'No'
+  2669320, 'EA SPORTS FC™ 25', 2024-09-26, 0.00, 35, 31, 'Yes', 'No', 'No', 'No'
+  2694490, 'Path of Exile 2', 2024-12-06, 29.99, 58, 47, 'Yes', 'No', 'No', 'No'
+  2767030, 'Marvel Rivals', 2024-12-05, 0.00, 94, 69, 'Yes', 'No', 'No', 'Yes'
+  2807960, 'Battlefield™ 6', 2025-10-10, 34.99, 10, 31, 'Yes', 'No', 'No', 'No'
+  2868840, 'Slay the Spire 2', 2026-03-05, 24.99, 89, 66, 'Yes', 'Yes', 'Yes', 'No'
+  2957350, 'Cyberpunk Inquisitor', 2026-08-02, 0.00, 93, 68, 'Yes', 'No', 'No', 'No'
+  3039180, 'DeepDig: Together', 2026-08-02, 4.99, 158, 125, 'Yes', 'No', 'Yes', 'No'
+  3041230, 'Windrose', 2026-04-14, 29.99, 77, 59, 'Yes', 'No', 'No', 'No'
+  3105440, 'Heroes of Might and Magic: Olden Era', 2026-04-30, 29.99, 148, 49, 'Yes', 'No', 'No', 'No'
+  3124540, 'Far Far West', 2026-04-28, 19.99, 44, 40, 'Yes', 'No', 'No', 'No'
+  3164500, 'Schedule I', 2025-03-24, 13.99, 135, 108, 'Yes', 'No', 'No', 'No'
+  3224770, 'Umamusume: Pretty Derby', 2025-06-24, 0.00, 31, 29, 'Yes', 'No', 'No', 'Yes'
+  3240220, 'Grand Theft Auto V Enhanced', 2025-03-04, 29.99, 121, 93, 'Yes', 'No', 'No', 'No'
+  3241660, 'R.E.P.O.', 2025-02-26, 6.49, 168, 135, 'Yes', 'No', 'No', 'No'
+  3282300, 'Mistfall Hunter', 2026-07-29, 22.49, 14, 99, 'Yes', 'No', 'No', 'No'
+  3293260, 'Waterpark Simulator', 2026-07-31, 10.39, 26, 23, 'Yes', 'No', 'No', 'No'
+  3321460, 'Crimson Desert', 2026-03-19, 69.99, 105, 79, 'Yes', 'Yes', 'No', 'No'
+  3405690, 'EA SPORTS FC™ 26', 2025-09-25, 69.99, 35, 31, 'Yes', 'No', 'No', 'No'
+  3419430, 'Bongo Cat', 2025-03-05, 0.00, 72, 53, 'Yes', 'Yes', 'No', 'Yes'
+  3472040, 'NBA 2K26', 2025-09-04, 19.99, 154, 2, 'Yes', 'No', 'No', 'No'
+  3513350, 'Wuthering Waves', 2025-04-28, 0.00, 74, 56, 'Yes', 'No', 'No', 'Yes'
+  3526710, 'Everything is Crab: The Animal Evolution Roguelite', 2026-05-08, 7.99, 101, 96, 'Yes', 'No', 'No', 'No'
+  3527290, 'PEAK', 2025-06-16, 7.99, 141, 8, 'Yes', 'No', 'No', 'No'
+  3551340, 'Football Manager 26', 2025-11-04, 59.99, 128, 95, 'Yes', 'Yes', 'No', 'No'
+  3564740, 'Where Winds Meet', 2025-11-14, 0.00, 43, 69, 'Yes', 'No', 'No', 'Yes'
+  3670260, 'Frebbventure Alliance', 2026-08-01, 13.99, 6, 9, 'Yes', 'No', 'No', 'No'
+  3764200, 'Resident Evil Requiem', 2026-02-26, 55.99, 22, 21, 'Yes', 'No', 'No', 'No'
+  3853250, 'Monster Ops 21', 2026-08-01, 4.99, 161, 128, 'Yes', 'Yes', 'Yes', 'No'
+  3892270, 'Gamble With Your Friends', 2026-05-01, 7.99, 134, 107, 'Yes', 'No', 'No', 'No'
+  4025700, 'Heartopia', 2026-01-16, 0.00, 160, 126, 'Yes', 'No', 'No', 'Yes'
+  4108000, 'Machine Party', 2026-07-30, 6.79, 90, 77, 'Yes', 'No', 'Yes', 'No'
+  4128580, 'BidKing', 2026-04-15, 2.99, 91, 32, 'Yes', 'No', 'No', 'No'
+  4166740, 'Ore & Odds', 2026-08-01, 4.79, 52, 80, 'Yes', 'No', 'No', 'No'
+  4179360, 'Apostle Paul and Money', 2026-08-01, 0.00, 85, 64, 'Yes', 'No', 'No', 'Yes'
+  4314050, 'Soul Scroll', 2026-08-02, 0.00, 83, 63, 'Yes', 'No', 'No', 'Yes'
+  4440080, 'It Comes At Night', 2026-08-02, 4.89, 4, 5, 'Yes', 'No', 'No', 'No'
+  4443810, 'Neon Bullet', 2026-08-02, 1.19, 70, 52, 'Yes', 'No', 'No', 'No'
+  4483260, 'ACE Ninja Path', 2026-08-02, 0.00, 42, 35, 'Yes', 'No', 'No', 'Yes'
+  4575750, 'The Iron and the Oath', 2026-08-02, 6.29, 45, 37, 'Yes', 'No', 'No', 'No'
+  4621410, 'ScreenSaver Idle', 2026-08-01, 3.14, 166, 133, 'Yes', 'Yes', 'No', 'No'
+  4694660, 'TRAUMAHACK', 2026-08-01, 5.99, 81, 62, 'Yes', 'No', 'No', 'No'
+  4733330, '28天半衰期', 2026-08-01, 3.99, 124, 98, 'Yes', 'No', 'No', 'No'
+  4784930, 'Princess Waifu', 2026-08-02, 2.06, 20, 19, 'Yes', 'No', 'No', 'No'
+  4790300, 'Morphing Blocks', 2026-08-01, 0.69, 138, 110, 'Yes', 'No', 'No', 'No'
+  4816200, 'Endless Defense', 2026-08-02, 5.19, 162, 129, 'Yes', 'No', 'No', 'No'
+  4818650, 'CRYING SCREAMING 3: JEREMYS ENEMIES', 2026-08-02, 3.34, 155, 115, 'Yes', 'No', 'No', 'No'
+  4828620, 'Invincible Magnet Warrior', 2026-08-02, 0.59, 164, 131, 'Yes', 'No', 'No', 'No'
+  4828740, 'Cover Story', 2026-08-01, 4.19, 29, 27, 'Yes', 'Yes', 'Yes', 'No'
+  4833240, 'Age of New Worlds', 2026-08-02, 2.79, 165, 132, 'Yes', 'Yes', 'Yes', 'No'
+  4886540, 'Rookspell', 2026-08-02, 6.79, 3, 4, 'Yes', 'Yes', 'Yes', 'No'
+  4915370, 'The Referee Committee', 2026-08-02, 6.29, 95, 71, 'Yes', 'No', 'No', 'No'
+  4916300, '我是校长', 2026-08-02, 14.99, 64, 50, 'Yes', 'No', 'No', 'No'
+  4927750, 'Guardian Heart', 2026-08-02, 2.39, 123, 97, 'Yes', 'No', 'No', 'No'
+  4946490, 'Clickstellar', 2026-08-02, 4.49, 144, 116, 'Yes', 'Yes', 'Yes', 'No'
+  4946580, 'Retro Flight Simulator 2026', 2026-08-02, 8.49, 100, 76, 'Yes', 'No', 'No', 'No'
+  4953010, 'Sea of Electronica', 2026-08-02, 0.00, 106, 82, 'Yes', 'No', 'No', 'No'
+  4954070, 'Elven Desire Ladyboys', 2026-08-02, 3.99, 115, 90, 'Yes', 'No', 'No', 'No'
+  4959500, 'Mnema: The Fallen Remembered', 2026-08-02, 7.99, 147, 118, 'Yes', 'No', 'No', 'No'
+  4967270, 'Dopamine Eggs', 2026-08-02, 0.00, 1, 1, 'Yes', 'No', 'No', 'No'
+  4967530, 'Columbus', 2026-08-02, 0.00, 163, 130, 'Yes', 'No', 'No', 'No'
+  4968440, 'BAFF D', 2026-08-02, 1.19, 16, 16, 'Yes', 'No', 'No', 'No'
+}
+
+GameGenre = {
+  app_id, genre_id
+  10, 63
+  10, 28
+  10, 34
+  10, 31
+  10, 42
+  10, 10
+  10, 13
+  10, 23
+  10, 54
+  10, 62
+  10, 16
+  220, 63
+  220, 43
+  220, 45
+  220, 17
+  220, 50
+  220, 6
+  220, 52
+  220, 5
+  220, 13
+  220, 3
+  220, 33
+  220, 15
+  220, 15
+  220, 14
+  220, 14
+  220, 39
+  220, 47
+  220, 54
+  220, 55
+  220, 56
+  220, 46
+  220, 21
+  220, 11
+  220, 36
+  220, 38
+  220, 35
+  220, 16
+  220, 49
+  400, 63
+  400, 43
+  400, 45
+  400, 17
+  400, 6
+  400, 5
+  400, 13
+  400, 15
+  400, 15
+  400, 14
+  400, 14
+  400, 39
+  400, 47
+  400, 54
+  400, 55
+  400, 56
+  400, 22
+  400, 21
+  400, 11
+  400, 36
+  400, 38
+  400, 16
+  440, 63
+  440, 70
+  440, 28
+  440, 12
+  440, 45
+  440, 50
+  440, 6
+  440, 52
+  440, 20
+  440, 5
+  440, 10
+  440, 13
+  440, 54
+  440, 56
+  440, 32
+  440, 62
+  440, 44
+  440, 22
+  440, 11
+  440, 36
+  440, 38
+  550, 63
+  550, 43
+  550, 28
+  550, 34
+  550, 31
+  550, 9
+  550, 30
+  550, 45
+  550, 17
+  550, 50
+  550, 6
+  550, 52
+  550, 5
+  550, 10
+  550, 13
+  550, 3
+  550, 33
+  550, 15
+  550, 15
+  550, 14
+  550, 14
+  550, 47
+  550, 54
+  550, 56
+  550, 46
+  550, 62
+  550, 44
+  550, 21
+  550, 11
+  550, 36
+  550, 38
+  550, 37
+  550, 35
+  550, 16
+  550, 49
+  570, 63
+  570, 79
+  570, 70
+  570, 28
+  570, 9
+  570, 50
+  570, 52
+  570, 53
+  570, 20
+  570, 5
+  570, 10
+  570, 13
+  570, 62
+  570, 49
+  620, 63
+  620, 64
+  620, 43
+  620, 28
+  620, 9
+  620, 30
+  620, 41
+  620, 40
+  620, 45
+  620, 17
+  620, 50
+  620, 6
+  620, 52
+  620, 52
+  620, 5
+  620, 13
+  620, 33
+  620, 15
+  620, 15
+  620, 14
+  620, 14
+  620, 39
+  620, 47
+  620, 54
+  620, 56
+  620, 46
+  620, 44
+  620, 22
+  620, 11
+  620, 36
+  620, 38
+  620, 37
+  620, 35
+  620, 16
+  730, 63
+  730, 70
+  730, 28
+  730, 12
+  730, 50
+  730, 52
+  730, 52
+  730, 20
+  730, 4
+  730, 5
+  730, 10
+  730, 13
+  730, 33
+  730, 54
+  730, 56
+  730, 62
+  730, 44
+  730, 36
+  730, 38
+  730, 37
+  730, 49
+  4000, 67
+  4000, 71
+  4000, 76
+  4000, 43
+  4000, 28
+  4000, 34
+  4000, 31
+  4000, 25
+  4000, 9
+  4000, 30
+  4000, 24
+  4000, 12
+  4000, 45
+  4000, 50
+  4000, 6
+  4000, 52
+  4000, 10
+  4000, 13
+  4000, 3
+  4000, 33
+  4000, 39
+  4000, 54
+  4000, 46
+  4000, 62
+  4000, 22
+  4000, 21
+  4000, 38
+  4000, 16
+  39210, 72
+  39210, 74
+  39210, 43
+  39210, 28
+  39210, 26
+  39210, 34
+  39210, 31
+  39210, 9
+  39210, 30
+  39210, 12
+  39210, 4
+  39210, 13
+  39210, 23
+  39210, 15
+  39210, 15
+  39210, 14
+  39210, 14
+  39210, 39
+  39210, 54
+  39210, 56
+  39210, 32
+  39210, 38
+  39210, 16
+  105600, 63
+  105600, 64
+  105600, 71
+  105600, 74
+  105600, 43
+  105600, 28
+  105600, 34
+  105600, 31
+  105600, 9
+  105600, 30
+  105600, 45
+  105600, 17
+  105600, 50
+  105600, 46
+  105600, 36
+  105600, 38
+  105600, 37
+  105600, 16
+  108600, 71
+  108600, 74
+  108600, 76
+  108600, 69
+  108600, 43
+  108600, 28
+  108600, 34
+  108600, 31
+  108600, 9
+  108600, 30
+  108600, 41
+  108600, 40
+  108600, 12
+  108600, 50
+  108600, 52
+  108600, 32
+  108600, 46
+  108600, 35
+  108600, 16
+  221100, 63
+  221100, 64
+  221100, 72
+  221100, 28
+  221100, 26
+  221100, 34
+  221100, 31
+  221100, 9
+  221100, 30
+  221100, 45
+  221100, 50
+  221100, 52
+  221100, 46
+  221100, 62
+  221380, 79
+  221380, 43
+  221380, 28
+  221380, 45
+  221380, 50
+  221380, 6
+  221380, 52
+  221380, 46
+  221380, 44
+  221380, 48
+  221380, 22
+  221380, 16
+  227300, 71
+  227300, 76
+  227300, 43
+  227300, 28
+  227300, 9
+  227300, 30
+  227300, 45
+  227300, 50
+  227300, 52
+  227300, 5
+  227300, 13
+  227300, 3
+  227300, 23
+  227300, 33
+  227300, 39
+  227300, 47
+  227300, 54
+  227300, 56
+  227300, 32
+  227300, 46
+  227300, 22
+  227300, 36
+  227300, 38
+  227300, 35
+  227300, 16
+  230410, 63
+  230410, 74
+  230410, 70
+  230410, 43
+  230410, 28
+  230410, 9
+  230410, 30
+  230410, 12
+  230410, 45
+  230410, 17
+  230410, 50
+  230410, 52
+  230410, 20
+  230410, 5
+  230410, 10
+  230410, 13
+  230410, 33
+  230410, 15
+  230410, 15
+  230410, 14
+  230410, 14
+  230410, 47
+  230410, 54
+  230410, 56
+  230410, 36
+  230410, 38
+  230410, 37
+  230410, 19
+  236390, 63
+  236390, 72
+  236390, 76
+  236390, 70
+  236390, 43
+  236390, 28
+  236390, 26
+  236390, 34
+  236390, 31
+  236390, 9
+  236390, 30
+  236390, 12
+  236390, 45
+  236390, 17
+  236390, 61
+  236390, 50
+  236390, 20
+  236390, 4
+  236390, 5
+  236390, 10
+  236390, 13
+  236390, 33
+  236390, 15
+  236390, 14
+  236390, 47
+  236390, 54
+  236390, 56
+  236390, 36
+  236390, 38
+  236850, 76
+  236850, 79
+  236850, 43
+  236850, 28
+  236850, 34
+  236850, 31
+  236850, 9
+  236850, 30
+  236850, 12
+  236850, 45
+  236850, 50
+  236850, 52
+  236850, 46
+  236850, 16
+  242760, 63
+  242760, 64
+  242760, 71
+  242760, 76
+  242760, 43
+  242760, 28
+  242760, 9
+  242760, 30
+  242760, 24
+  242760, 58
+  242760, 61
+  242760, 32
+  242760, 46
+  242760, 16
+  244210, 71
+  244210, 75
+  244210, 76
+  244210, 78
+  244210, 43
+  244210, 28
+  244210, 34
+  244210, 31
+  244210, 45
+  244210, 61
+  244210, 32
+  244210, 48
+  244210, 22
+  244210, 16
+  250900, 63
+  250900, 43
+  250900, 28
+  250900, 40
+  250900, 45
+  250900, 17
+  250900, 50
+  250900, 46
+  250900, 37
+  250900, 35
+  250900, 16
+  251570, 63
+  251570, 64
+  251570, 71
+  251570, 74
+  251570, 76
+  251570, 79
+  251570, 43
+  251570, 28
+  251570, 34
+  251570, 31
+  251570, 25
+  251570, 9
+  251570, 30
+  251570, 24
+  251570, 12
+  251570, 45
+  251570, 17
+  251570, 50
+  251570, 15
+  251570, 15
+  251570, 14
+  251570, 14
+  251570, 22
+  251570, 38
+  251570, 37
+  251570, 16
+  252490, 63
+  252490, 64
+  252490, 71
+  252490, 72
+  252490, 74
+  252490, 28
+  252490, 26
+  252490, 34
+  252490, 31
+  252490, 9
+  252490, 30
+  252490, 12
+  252490, 45
+  252490, 50
+  252490, 52
+  252490, 20
+  252490, 4
+  252490, 5
+  252490, 10
+  252490, 13
+  252490, 3
+  252490, 54
+  252490, 55
+  252490, 56
+  252490, 62
+  252490, 44
+  252490, 38
+  252950, 63
+  252950, 71
+  252950, 75
+  252950, 78
+  252950, 43
+  252950, 28
+  252950, 34
+  252950, 31
+  252950, 42
+  252950, 9
+  252950, 30
+  252950, 41
+  252950, 40
+  252950, 12
+  252950, 45
+  252950, 50
+  252950, 52
+  252950, 18
+  252950, 15
+  252950, 14
+  252950, 47
+  252950, 32
+  252950, 46
+  252950, 44
+  252950, 36
+  252950, 38
+  252950, 37
+  252950, 35
+  252950, 16
+  261550, 63
+  261550, 71
+  261550, 74
+  261550, 76
+  261550, 79
+  261550, 43
+  261550, 28
+  261550, 34
+  261550, 31
+  261550, 45
+  261550, 50
+  261550, 52
+  261550, 32
+  261550, 46
+  261550, 22
+  261550, 38
+  261550, 16
+  264710, 64
+  264710, 71
+  264710, 43
+  264710, 45
+  264710, 17
+  264710, 61
+  264710, 50
+  264710, 60
+  264710, 15
+  264710, 46
+  264710, 37
+  264710, 16
+  271590, 63
+  271590, 64
+  271590, 43
+  271590, 28
+  271590, 34
+  271590, 31
+  271590, 9
+  271590, 30
+  271590, 45
+  271590, 17
+  271590, 36
+  271590, 38
+  271590, 37
+  275850, 63
+  275850, 64
+  275850, 43
+  275850, 28
+  275850, 34
+  275850, 31
+  275850, 9
+  275850, 30
+  275850, 12
+  275850, 45
+  275850, 17
+  275850, 58
+  275850, 61
+  275850, 50
+  275850, 4
+  275850, 5
+  275850, 7
+  275850, 10
+  275850, 13
+  275850, 3
+  275850, 33
+  275850, 15
+  275850, 15
+  275850, 14
+  275850, 14
+  275850, 39
+  275850, 47
+  275850, 54
+  275850, 55
+  275850, 56
+  275850, 46
+  275850, 38
+  275850, 37
+  275850, 19
+  275850, 16
+  284160, 75
+  284160, 76
+  284160, 69
+  284160, 43
+  284160, 45
+  284160, 50
+  284160, 5
+  284160, 13
+  284160, 23
+  284160, 33
+  284160, 15
+  284160, 14
+  284160, 14
+  284160, 54
+  284160, 56
+  284160, 32
+  284160, 46
+  284160, 22
+  284160, 36
+  284160, 38
+  284160, 35
+  284160, 16
+  289070, 79
+  289070, 43
+  289070, 28
+  289070, 34
+  289070, 31
+  289070, 25
+  289070, 42
+  289070, 40
+  289070, 12
+  289070, 45
+  289070, 50
+  289070, 52
+  289070, 20
+  289070, 51
+  289070, 38
+  289070, 35
+  289070, 16
+  291550, 63
+  291550, 71
+  291550, 70
+  291550, 43
+  291550, 28
+  291550, 34
+  291550, 31
+  291550, 42
+  291550, 9
+  291550, 30
+  291550, 41
+  291550, 40
+  291550, 12
+  291550, 45
+  291550, 50
+  291550, 15
+  291550, 15
+  291550, 14
+  291550, 14
+  291550, 32
+  291550, 36
+  291550, 38
+  291550, 37
+  291550, 35
+  292030, 74
+  292030, 43
+  292030, 45
+  292030, 50
+  292030, 52
+  292030, 4
+  292030, 5
+  292030, 10
+  292030, 13
+  292030, 3
+  292030, 33
+  292030, 39
+  292030, 54
+  292030, 56
+  292030, 32
+  292030, 46
+  292030, 38
+  292030, 37
+  292030, 19
+  292030, 16
+  294100, 71
+  294100, 76
+  294100, 79
+  294100, 43
+  294100, 52
+  294100, 4
+  294100, 5
+  294100, 13
+  294100, 3
+  294100, 27
+  294100, 33
+  294100, 39
+  294100, 32
+  294100, 46
+  294100, 38
+  294100, 16
+  304430, 63
+  304430, 64
+  304430, 71
+  304430, 43
+  304430, 45
+  304430, 17
+  304430, 50
+  304430, 10
+  304430, 23
+  304430, 33
+  304430, 54
+  304430, 46
+  304430, 16
+  304930, 63
+  304930, 64
+  304930, 67
+  304930, 71
+  304930, 70
+  304930, 43
+  304930, 28
+  304930, 34
+  304930, 31
+  304930, 25
+  304930, 9
+  304930, 30
+  304930, 24
+  304930, 45
+  304930, 50
+  304930, 52
+  304930, 20
+  304930, 5
+  304930, 13
+  304930, 3
+  304930, 33
+  304930, 54
+  304930, 46
+  304930, 62
+  304930, 44
+  304930, 22
+  304930, 38
+  304930, 16
+  322170, 63
+  322170, 71
+  322170, 43
+  322170, 45
+  322170, 50
+  322170, 32
+  322170, 22
+  322170, 36
+  322170, 38
+  322170, 16
+  322330, 63
+  322330, 64
+  322330, 71
+  322330, 74
+  322330, 76
+  322330, 79
+  322330, 43
+  322330, 28
+  322330, 34
+  322330, 31
+  322330, 25
+  322330, 9
+  322330, 30
+  322330, 24
+  322330, 17
+  322330, 50
+  322330, 52
+  322330, 20
+  322330, 4
+  322330, 5
+  322330, 10
+  322330, 13
+  322330, 3
+  322330, 23
+  322330, 27
+  322330, 33
+  322330, 39
+  322330, 54
+  322330, 36
+  322330, 38
+  322330, 37
+  322330, 16
+  346110, 63
+  346110, 64
+  346110, 71
+  346110, 72
+  346110, 74
+  346110, 43
+  346110, 28
+  346110, 26
+  346110, 9
+  346110, 45
+  346110, 17
+  346110, 52
+  346110, 46
+  346110, 62
+  346110, 22
+  346110, 38
+  346110, 16
+  359550, 63
+  359550, 70
+  359550, 43
+  359550, 28
+  359550, 34
+  359550, 31
+  359550, 9
+  359550, 30
+  359550, 17
+  359550, 50
+  359550, 20
+  359550, 15
+  359550, 15
+  359550, 14
+  359550, 14
+  359550, 36
+  359550, 38
+  367520, 63
+  367520, 64
+  367520, 71
+  367520, 43
+  367520, 45
+  367520, 17
+  367520, 50
+  367520, 46
+  367520, 36
+  367520, 38
+  367520, 37
+  367520, 16
+  374320, 63
+  374320, 43
+  374320, 28
+  374320, 9
+  374320, 45
+  374320, 17
+  374320, 50
+  374320, 5
+  374320, 13
+  374320, 33
+  374320, 39
+  374320, 54
+  374320, 56
+  374320, 36
+  374320, 38
+  374320, 37
+  374320, 16
+  377160, 74
+  377160, 43
+  377160, 45
+  377160, 17
+  377160, 33
+  377160, 39
+  377160, 54
+  377160, 56
+  377160, 46
+  377160, 36
+  377160, 38
+  377160, 37
+  377160, 16
+  381210, 63
+  381210, 28
+  381210, 34
+  381210, 31
+  381210, 9
+  381210, 30
+  381210, 12
+  381210, 45
+  381210, 17
+  381210, 50
+  381210, 10
+  381210, 13
+  381210, 47
+  381210, 54
+  381210, 55
+  381210, 56
+  381210, 46
+  381210, 36
+  381210, 38
+  381210, 37
+  381210, 16
+  394360, 76
+  394360, 79
+  394360, 43
+  394360, 28
+  394360, 9
+  394360, 12
+  394360, 45
+  394360, 50
+  394360, 52
+  394360, 46
+  394360, 38
+  394360, 16
+  413150, 71
+  413150, 74
+  413150, 76
+  413150, 43
+  413150, 28
+  413150, 9
+  413150, 30
+  413150, 24
+  413150, 41
+  413150, 40
+  413150, 45
+  413150, 17
+  413150, 50
+  413150, 46
+  413150, 36
+  413150, 38
+  413150, 35
+  413150, 16
+  431960, 67
+  431960, 71
+  431960, 65
+  431960, 68
+  431960, 73
+  431960, 80
+  431960, 45
+  431960, 50
+  431960, 52
+  431960, 52
+  431960, 22
+  435150, 64
+  435150, 74
+  435150, 79
+  435150, 43
+  435150, 28
+  435150, 34
+  435150, 31
+  435150, 42
+  435150, 9
+  435150, 30
+  435150, 41
+  435150, 40
+  435150, 45
+  435150, 17
+  435150, 50
+  435150, 6
+  435150, 52
+  435150, 46
+  435150, 22
+  435150, 38
+  435150, 37
+  435150, 35
+  435150, 16
+  438100, 64
+  438100, 67
+  438100, 72
+  438100, 76
+  438100, 78
+  438100, 70
+  438100, 69
+  438100, 28
+  438100, 26
+  438100, 34
+  438100, 31
+  438100, 9
+  438100, 30
+  438100, 12
+  438100, 17
+  438100, 58
+  438100, 61
+  438100, 20
+  438100, 15
+  438100, 15
+  438100, 14
+  438100, 14
+  438100, 16
+  440900, 63
+  440900, 64
+  440900, 72
+  440900, 74
+  440900, 76
+  440900, 79
+  440900, 43
+  440900, 28
+  440900, 34
+  440900, 31
+  440900, 9
+  440900, 30
+  440900, 45
+  440900, 17
+  440900, 50
+  440900, 52
+  440900, 38
+  440900, 37
+  440900, 16
+  489830, 74
+  489830, 43
+  489830, 45
+  489830, 33
+  489830, 39
+  489830, 54
+  489830, 56
+  489830, 32
+  489830, 46
+  489830, 36
+  489830, 38
+  489830, 16
+  548430, 63
+  548430, 43
+  548430, 28
+  548430, 9
+  548430, 30
+  548430, 45
+  548430, 17
+  548430, 50
+  548430, 6
+  548430, 5
+  548430, 10
+  548430, 13
+  548430, 3
+  548430, 33
+  548430, 54
+  548430, 55
+  548430, 46
+  548430, 38
+  548430, 37
+  548430, 16
+  553850, 63
+  553850, 28
+  553850, 9
+  553850, 30
+  553850, 45
+  553850, 20
+  553850, 4
+  553850, 5
+  553850, 7
+  553850, 8
+  553850, 10
+  553850, 13
+  553850, 3
+  553850, 29
+  553850, 33
+  553850, 15
+  553850, 14
+  553850, 14
+  553850, 54
+  553850, 55
+  553850, 56
+  553850, 32
+  553850, 16
+  578080, 63
+  578080, 64
+  578080, 72
+  578080, 70
+  578080, 28
+  578080, 34
+  578080, 31
+  578080, 13
+  578080, 54
+  578080, 56
+  578080, 32
+  578080, 44
+  578080, 36
+  578080, 38
+  578080, 16
+  582010, 63
+  582010, 43
+  582010, 28
+  582010, 9
+  582010, 45
+  582010, 50
+  582010, 4
+  582010, 5
+  582010, 13
+  582010, 23
+  582010, 54
+  582010, 56
+  582010, 32
+  582010, 46
+  582010, 44
+  582010, 48
+  582010, 38
+  582010, 19
+  582010, 16
+  594650, 63
+  594650, 28
+  594650, 34
+  594650, 31
+  594650, 9
+  594650, 30
+  594650, 45
+  594650, 17
+  594650, 50
+  594650, 20
+  594650, 48
+  594650, 38
+  594650, 37
+  629520, 66
+  629520, 80
+  629520, 16
+  632360, 63
+  632360, 71
+  632360, 43
+  632360, 28
+  632360, 34
+  632360, 31
+  632360, 9
+  632360, 30
+  632360, 17
+  632360, 50
+  632360, 4
+  632360, 5
+  632360, 13
+  632360, 3
+  632360, 54
+  632360, 56
+  632360, 46
+  632360, 48
+  632360, 36
+  632360, 38
+  632360, 37
+  632360, 16
+  646570, 71
+  646570, 79
+  646570, 43
+  646570, 45
+  646570, 17
+  646570, 50
+  646570, 52
+  646570, 4
+  646570, 13
+  646570, 27
+  646570, 33
+  646570, 39
+  646570, 57
+  646570, 46
+  646570, 44
+  646570, 48
+  646570, 36
+  646570, 38
+  646570, 37
+  646570, 16
+  714010, 63
+  714010, 64
+  714010, 67
+  714010, 71
+  714010, 76
+  714010, 70
+  714010, 43
+  714010, 45
+  714010, 17
+  714010, 52
+  714010, 20
+  714010, 46
+  714010, 44
+  714010, 48
+  714010, 22
+  714010, 16
+  739630, 63
+  739630, 71
+  739630, 69
+  739630, 43
+  739630, 28
+  739630, 9
+  739630, 30
+  739630, 45
+  739630, 17
+  739630, 58
+  739630, 61
+  739630, 50
+  739630, 5
+  739630, 3
+  739630, 33
+  739630, 15
+  739630, 15
+  739630, 14
+  739630, 14
+  739630, 54
+  739630, 56
+  739630, 46
+  739630, 36
+  739630, 38
+  739630, 16
+  813780, 79
+  813780, 43
+  813780, 28
+  813780, 34
+  813780, 31
+  813780, 25
+  813780, 9
+  813780, 30
+  813780, 24
+  813780, 12
+  813780, 45
+  813780, 50
+  813780, 4
+  813780, 10
+  813780, 13
+  813780, 3
+  813780, 27
+  813780, 29
+  813780, 2
+  813780, 33
+  813780, 39
+  813780, 46
+  813780, 22
+  813780, 16
+  814380, 63
+  814380, 64
+  814380, 43
+  814380, 45
+  814380, 17
+  814380, 50
+  814380, 46
+  814380, 38
+  814380, 37
+  814380, 16
+  892970, 63
+  892970, 64
+  892970, 71
+  892970, 74
+  892970, 69
+  892970, 43
+  892970, 28
+  892970, 9
+  892970, 30
+  892970, 17
+  892970, 5
+  892970, 13
+  892970, 3
+  892970, 39
+  892970, 54
+  892970, 46
+  892970, 38
+  892970, 16
+  945360, 67
+  945360, 28
+  945360, 34
+  945360, 31
+  945360, 25
+  945360, 9
+  945360, 30
+  945360, 24
+  945360, 12
+  945360, 45
+  945360, 17
+  945360, 50
+  945360, 20
+  945360, 36
+  945360, 38
+  945360, 16
+  960090, 79
+  960090, 43
+  960090, 28
+  960090, 9
+  960090, 30
+  960090, 45
+  960090, 20
+  960090, 36
+  960090, 38
+  960090, 16
+  1085660, 63
+  1085660, 64
+  1085660, 70
+  1085660, 43
+  1085660, 28
+  1085660, 34
+  1085660, 31
+  1085660, 9
+  1085660, 30
+  1085660, 45
+  1085660, 20
+  1085660, 10
+  1085660, 13
+  1085660, 15
+  1085660, 14
+  1085660, 55
+  1085660, 32
+  1085660, 16
+  1086940, 64
+  1086940, 74
+  1086940, 79
+  1086940, 43
+  1086940, 28
+  1086940, 9
+  1086940, 30
+  1086940, 24
+  1086940, 12
+  1086940, 45
+  1086940, 17
+  1086940, 50
+  1086940, 4
+  1086940, 5
+  1086940, 10
+  1086940, 13
+  1086940, 3
+  1086940, 33
+  1086940, 15
+  1086940, 15
+  1086940, 14
+  1086940, 14
+  1086940, 39
+  1086940, 54
+  1086940, 55
+  1086940, 56
+  1086940, 46
+  1086940, 37
+  1086940, 35
+  1086940, 16
+  1091500, 74
+  1091500, 43
+  1091500, 45
+  1091500, 17
+  1091500, 50
+  1091500, 4
+  1091500, 5
+  1091500, 10
+  1091500, 13
+  1091500, 3
+  1091500, 33
+  1091500, 15
+  1091500, 14
+  1091500, 14
+  1091500, 39
+  1091500, 54
+  1091500, 55
+  1091500, 56
+  1091500, 46
+  1091500, 19
+  1091500, 16
+  1097150, 63
+  1097150, 67
+  1097150, 71
+  1097150, 72
+  1097150, 78
+  1097150, 28
+  1097150, 26
+  1097150, 34
+  1097150, 31
+  1097150, 9
+  1097150, 30
+  1097150, 45
+  1097150, 20
+  1097150, 32
+  1097150, 36
+  1097150, 38
+  1142710, 63
+  1142710, 79
+  1142710, 43
+  1142710, 28
+  1142710, 34
+  1142710, 31
+  1142710, 25
+  1142710, 9
+  1142710, 30
+  1142710, 24
+  1142710, 45
+  1142710, 50
+  1142710, 5
+  1142710, 10
+  1142710, 13
+  1142710, 3
+  1142710, 33
+  1142710, 39
+  1142710, 54
+  1142710, 56
+  1142710, 46
+  1142710, 16
+  1144200, 63
+  1144200, 64
+  1144200, 71
+  1144200, 43
+  1144200, 28
+  1144200, 9
+  1144200, 30
+  1144200, 45
+  1144200, 17
+  1144200, 15
+  1144200, 15
+  1144200, 14
+  1144200, 14
+  1144200, 46
+  1145360, 63
+  1145360, 71
+  1145360, 74
+  1145360, 43
+  1145360, 45
+  1145360, 17
+  1145360, 50
+  1145360, 6
+  1145360, 46
+  1145360, 36
+  1145360, 38
+  1145360, 37
+  1145360, 16
+  1149460, 63
+  1149460, 64
+  1149460, 76
+  1149460, 43
+  1149460, 28
+  1149460, 9
+  1149460, 30
+  1149460, 45
+  1149460, 50
+  1149460, 46
+  1149460, 16
+  1158310, 74
+  1158310, 76
+  1158310, 79
+  1158310, 43
+  1158310, 28
+  1158310, 34
+  1158310, 31
+  1158310, 45
+  1158310, 50
+  1158310, 52
+  1158310, 4
+  1158310, 5
+  1158310, 13
+  1158310, 3
+  1158310, 27
+  1158310, 2
+  1158310, 33
+  1158310, 39
+  1158310, 46
+  1158310, 38
+  1158310, 16
+  1172380, 63
+  1172380, 64
+  1172380, 43
+  1172380, 45
+  1172380, 17
+  1172380, 50
+  1172380, 3
+  1172380, 18
+  1172380, 15
+  1172380, 14
+  1172380, 54
+  1172380, 56
+  1172380, 38
+  1172380, 37
+  1172380, 19
+  1172470, 63
+  1172470, 64
+  1172470, 70
+  1172470, 28
+  1172470, 34
+  1172470, 31
+  1172470, 9
+  1172470, 30
+  1172470, 45
+  1172470, 17
+  1172470, 50
+  1172470, 20
+  1172470, 7
+  1172470, 33
+  1172470, 15
+  1172470, 14
+  1172470, 14
+  1172620, 63
+  1172620, 64
+  1172620, 28
+  1172620, 34
+  1172620, 31
+  1172620, 9
+  1172620, 30
+  1172620, 12
+  1172620, 45
+  1172620, 50
+  1172620, 20
+  1172620, 32
+  1172620, 36
+  1172620, 38
+  1172620, 16
+  1174180, 63
+  1174180, 64
+  1174180, 43
+  1174180, 28
+  1174180, 34
+  1174180, 31
+  1174180, 9
+  1174180, 30
+  1174180, 45
+  1174180, 20
+  1174180, 32
+  1174180, 36
+  1174180, 38
+  1203220, 63
+  1203220, 64
+  1203220, 72
+  1203220, 70
+  1203220, 28
+  1203220, 34
+  1203220, 31
+  1203220, 45
+  1203220, 50
+  1203220, 20
+  1203220, 32
+  1203220, 19
+  1222670, 64
+  1222670, 67
+  1222670, 76
+  1222670, 70
+  1222670, 43
+  1222670, 50
+  1222670, 20
+  1222670, 27
+  1222670, 33
+  1222670, 39
+  1222670, 54
+  1222670, 56
+  1222670, 38
+  1238810, 63
+  1238810, 43
+  1238810, 28
+  1238810, 34
+  1238810, 31
+  1238810, 45
+  1238810, 17
+  1238810, 50
+  1238810, 19
+  1238840, 63
+  1238840, 72
+  1238840, 43
+  1238840, 28
+  1238840, 34
+  1238840, 31
+  1238840, 45
+  1238840, 17
+  1238840, 50
+  1238840, 19
+  1238860, 63
+  1238860, 43
+  1238860, 28
+  1238860, 34
+  1238860, 31
+  1238860, 45
+  1238860, 17
+  1238860, 50
+  1238860, 19
+  1245620, 63
+  1245620, 74
+  1245620, 43
+  1245620, 28
+  1245620, 34
+  1245620, 31
+  1245620, 9
+  1245620, 30
+  1245620, 45
+  1245620, 17
+  1245620, 50
+  1245620, 5
+  1245620, 13
+  1245620, 33
+  1245620, 39
+  1245620, 54
+  1245620, 56
+  1245620, 46
+  1245620, 16
+  1326470, 63
+  1326470, 64
+  1326470, 71
+  1326470, 76
+  1326470, 43
+  1326470, 28
+  1326470, 9
+  1326470, 30
+  1326470, 45
+  1326470, 17
+  1326470, 15
+  1326470, 15
+  1326470, 14
+  1326470, 14
+  1326470, 46
+  1326470, 16
+  1364780, 63
+  1364780, 64
+  1364780, 43
+  1364780, 28
+  1364780, 34
+  1364780, 31
+  1364780, 42
+  1364780, 40
+  1364780, 12
+  1364780, 45
+  1364780, 50
+  1364780, 20
+  1364780, 5
+  1364780, 13
+  1364780, 3
+  1364780, 23
+  1364780, 39
+  1364780, 54
+  1364780, 56
+  1364780, 32
+  1364780, 46
+  1364780, 16
+  1366800, 63
+  1366800, 64
+  1366800, 71
+  1366800, 77
+  1366800, 80
+  1366800, 6
+  1366800, 52
+  1366800, 15
+  1366800, 15
+  1366800, 14
+  1366800, 14
+  1366800, 32
+  1366800, 46
+  1368140, 76
+  1368140, 79
+  1368140, 43
+  1368140, 45
+  1368140, 50
+  1368140, 4
+  1368140, 5
+  1368140, 10
+  1368140, 13
+  1368140, 3
+  1368140, 27
+  1368140, 2
+  1368140, 33
+  1368140, 39
+  1368140, 54
+  1368140, 55
+  1368140, 46
+  1368140, 16
+  1422450, 63
+  1422450, 28
+  1449850, 76
+  1449850, 79
+  1449850, 70
+  1449850, 43
+  1449850, 28
+  1449850, 34
+  1449850, 31
+  1449850, 12
+  1449850, 45
+  1449850, 50
+  1449850, 20
+  1449850, 16
+  1517290, 63
+  1517290, 64
+  1517290, 67
+  1517290, 28
+  1517290, 34
+  1517290, 31
+  1517290, 9
+  1517290, 30
+  1517290, 45
+  1517290, 17
+  1517290, 50
+  1517290, 20
+  1517290, 10
+  1517290, 13
+  1517290, 15
+  1517290, 15
+  1517290, 14
+  1517290, 14
+  1517290, 54
+  1517290, 56
+  1517290, 19
+  1551360, 63
+  1551360, 64
+  1551360, 75
+  1551360, 76
+  1551360, 78
+  1551360, 43
+  1551360, 28
+  1551360, 34
+  1551360, 31
+  1551360, 9
+  1551360, 30
+  1551360, 12
+  1551360, 45
+  1551360, 17
+  1551360, 50
+  1551360, 46
+  1551360, 19
+  1551360, 16
+  1604030, 63
+  1604030, 64
+  1604030, 72
+  1604030, 43
+  1604030, 28
+  1604030, 34
+  1604030, 31
+  1604030, 25
+  1604030, 9
+  1604030, 30
+  1604030, 24
+  1604030, 45
+  1604030, 5
+  1604030, 13
+  1604030, 3
+  1604030, 33
+  1604030, 15
+  1604030, 15
+  1604030, 14
+  1604030, 14
+  1604030, 39
+  1604030, 54
+  1604030, 55
+  1604030, 56
+  1604030, 32
+  1604030, 46
+  1604030, 16
+  1623730, 63
+  1623730, 64
+  1623730, 71
+  1623730, 74
+  1623730, 43
+  1623730, 28
+  1623730, 9
+  1623730, 30
+  1623730, 12
+  1623730, 45
+  1623730, 17
+  1623730, 50
+  1623730, 52
+  1623730, 15
+  1623730, 15
+  1623730, 14
+  1623730, 14
+  1623730, 46
+  1623730, 16
+  1665460, 76
+  1665460, 78
+  1665460, 70
+  1665460, 43
+  1665460, 28
+  1665460, 34
+  1665460, 31
+  1665460, 42
+  1665460, 9
+  1665460, 30
+  1665460, 41
+  1665460, 40
+  1665460, 12
+  1665460, 20
+  1665460, 18
+  1665460, 32
+  1665460, 16
+  1774580, 63
+  1774580, 64
+  1774580, 43
+  1774580, 45
+  1774580, 17
+  1774580, 6
+  1774580, 10
+  1774580, 13
+  1774580, 3
+  1774580, 18
+  1774580, 15
+  1774580, 14
+  1774580, 54
+  1774580, 19
+  1808500, 63
+  1808500, 28
+  1808500, 34
+  1808500, 31
+  1808500, 9
+  1808500, 30
+  1808500, 12
+  1808500, 45
+  1808500, 17
+  1808500, 20
+  1808500, 15
+  1808500, 15
+  1808500, 14
+  1808500, 14
+  1808500, 44
+  1808500, 16
+  1811260, 76
+  1811260, 78
+  1811260, 43
+  1811260, 28
+  1811260, 34
+  1811260, 31
+  1811260, 42
+  1811260, 9
+  1811260, 30
+  1811260, 41
+  1811260, 40
+  1811260, 12
+  1811260, 45
+  1811260, 17
+  1811260, 20
+  1817070, 63
+  1817070, 64
+  1817070, 67
+  1817070, 43
+  1817070, 45
+  1817070, 4
+  1817070, 5
+  1817070, 10
+  1817070, 13
+  1817070, 3
+  1817070, 33
+  1817070, 15
+  1817070, 15
+  1817070, 14
+  1817070, 14
+  1817070, 39
+  1817070, 47
+  1817070, 54
+  1817070, 55
+  1817070, 56
+  1817070, 32
+  1817070, 46
+  1817070, 37
+  1817070, 16
+  1817190, 63
+  1817190, 64
+  1817190, 43
+  1817190, 45
+  1817190, 4
+  1817190, 5
+  1817190, 10
+  1817190, 13
+  1817190, 3
+  1817190, 33
+  1817190, 15
+  1817190, 15
+  1817190, 14
+  1817190, 14
+  1817190, 39
+  1817190, 47
+  1817190, 54
+  1817190, 55
+  1817190, 56
+  1817190, 32
+  1817190, 46
+  1817190, 37
+  1817190, 16
+  1905180, 80
+  1905180, 81
+  1938090, 63
+  1938090, 43
+  1938090, 28
+  1938090, 34
+  1938090, 31
+  1938090, 9
+  1938090, 30
+  1938090, 12
+  1938090, 45
+  1938090, 6
+  1938090, 20
+  1938090, 4
+  1938090, 5
+  1938090, 10
+  1938090, 13
+  1938090, 33
+  1938090, 15
+  1938090, 15
+  1938090, 14
+  1938090, 14
+  1938090, 47
+  1938090, 54
+  1938090, 55
+  1938090, 56
+  1938090, 32
+  1938090, 19
+  1948540, 71
+  1948540, 76
+  1948540, 79
+  1948540, 43
+  1948540, 52
+  1948540, 16
+  1973530, 70
+  1973530, 43
+  1973530, 20
+  1973530, 16
+  2073620, 63
+  2073620, 64
+  2073620, 72
+  2073620, 74
+  2073620, 79
+  2073620, 70
+  2073620, 28
+  2073620, 26
+  2073620, 34
+  2073620, 31
+  2073620, 9
+  2073620, 30
+  2073620, 45
+  2073620, 50
+  2073620, 20
+  2073620, 16
+  2073850, 63
+  2073850, 70
+  2073850, 28
+  2073850, 34
+  2073850, 31
+  2073850, 9
+  2073850, 30
+  2073850, 12
+  2073850, 45
+  2073850, 17
+  2073850, 20
+  2073850, 15
+  2073850, 15
+  2073850, 14
+  2073850, 14
+  2073850, 16
+  2195250, 76
+  2195250, 78
+  2195250, 43
+  2195250, 28
+  2195250, 34
+  2195250, 31
+  2195250, 42
+  2195250, 9
+  2195250, 30
+  2195250, 41
+  2195250, 40
+  2195250, 12
+  2195250, 45
+  2195250, 17
+  2195250, 20
+  2195250, 3
+  2195250, 23
+  2195250, 14
+  2195250, 14
+  2195250, 54
+  2195250, 35
+  2195250, 19
+  2300320, 76
+  2300320, 43
+  2300320, 28
+  2300320, 9
+  2300320, 30
+  2300320, 45
+  2300320, 17
+  2300320, 50
+  2300320, 15
+  2300320, 14
+  2300320, 46
+  2300320, 16
+  2344520, 63
+  2344520, 64
+  2344520, 67
+  2344520, 72
+  2344520, 74
+  2344520, 43
+  2344520, 28
+  2344520, 34
+  2344520, 31
+  2344520, 9
+  2344520, 30
+  2344520, 12
+  2344520, 45
+  2344520, 17
+  2344520, 20
+  2344520, 4
+  2344520, 5
+  2344520, 10
+  2344520, 3
+  2344520, 23
+  2344520, 27
+  2344520, 29
+  2344520, 33
+  2344520, 15
+  2344520, 14
+  2344520, 14
+  2344520, 39
+  2344520, 54
+  2344520, 55
+  2357570, 63
+  2357570, 70
+  2357570, 28
+  2357570, 34
+  2357570, 31
+  2357570, 9
+  2357570, 30
+  2357570, 12
+  2357570, 45
+  2357570, 17
+  2357570, 20
+  2357570, 4
+  2357570, 5
+  2357570, 7
+  2357570, 8
+  2357570, 10
+  2357570, 13
+  2357570, 33
+  2357570, 15
+  2357570, 14
+  2357570, 14
+  2357570, 54
+  2357570, 55
+  2357570, 56
+  2379780, 67
+  2379780, 71
+  2379780, 79
+  2379780, 43
+  2379780, 45
+  2379780, 17
+  2379780, 50
+  2379780, 10
+  2379780, 13
+  2379780, 27
+  2379780, 33
+  2379780, 14
+  2379780, 14
+  2379780, 57
+  2379780, 46
+  2379780, 16
+  2399830, 63
+  2399830, 64
+  2399830, 71
+  2399830, 72
+  2399830, 74
+  2399830, 69
+  2399830, 43
+  2399830, 28
+  2399830, 26
+  2399830, 34
+  2399830, 31
+  2399830, 25
+  2399830, 9
+  2399830, 30
+  2399830, 24
+  2399830, 41
+  2399830, 40
+  2399830, 12
+  2399830, 45
+  2399830, 17
+  2399830, 22
+  2399830, 35
+  2399830, 16
+  2507950, 63
+  2507950, 64
+  2507950, 72
+  2507950, 70
+  2507950, 43
+  2507950, 28
+  2507950, 26
+  2507950, 34
+  2507950, 31
+  2507950, 9
+  2507950, 30
+  2507950, 12
+  2507950, 45
+  2507950, 17
+  2507950, 50
+  2507950, 20
+  2507950, 15
+  2507950, 14
+  2507950, 16
+  2622380, 63
+  2622380, 74
+  2622380, 43
+  2622380, 28
+  2622380, 9
+  2622380, 30
+  2622380, 45
+  2622380, 17
+  2622380, 5
+  2622380, 13
+  2622380, 18
+  2622380, 33
+  2622380, 15
+  2622380, 15
+  2622380, 14
+  2622380, 14
+  2622380, 47
+  2622380, 54
+  2622380, 56
+  2622380, 46
+  2622380, 16
+  2651280, 63
+  2651280, 64
+  2651280, 43
+  2651280, 45
+  2651280, 17
+  2651280, 4
+  2651280, 5
+  2651280, 10
+  2651280, 13
+  2651280, 3
+  2651280, 29
+  2651280, 33
+  2651280, 15
+  2651280, 15
+  2651280, 14
+  2651280, 14
+  2651280, 39
+  2651280, 47
+  2651280, 54
+  2651280, 55
+  2651280, 56
+  2651280, 46
+  2651280, 19
+  2651280, 16
+  2669320, 76
+  2669320, 78
+  2669320, 43
+  2669320, 28
+  2669320, 34
+  2669320, 31
+  2669320, 42
+  2669320, 9
+  2669320, 30
+  2669320, 41
+  2669320, 40
+  2669320, 12
+  2669320, 45
+  2669320, 17
+  2669320, 20
+  2669320, 3
+  2669320, 23
+  2669320, 14
+  2669320, 14
+  2669320, 54
+  2669320, 35
+  2669320, 19
+  2694490, 63
+  2694490, 64
+  2694490, 72
+  2694490, 74
+  2694490, 69
+  2694490, 43
+  2694490, 28
+  2694490, 26
+  2694490, 9
+  2694490, 30
+  2694490, 17
+  2694490, 15
+  2694490, 15
+  2694490, 14
+  2694490, 14
+  2694490, 19
+  2767030, 63
+  2767030, 70
+  2767030, 28
+  2767030, 34
+  2767030, 31
+  2767030, 9
+  2767030, 30
+  2767030, 12
+  2767030, 45
+  2767030, 17
+  2767030, 20
+  2767030, 15
+  2767030, 15
+  2767030, 14
+  2767030, 14
+  2767030, 16
+  2807960, 63
+  2807960, 43
+  2807960, 28
+  2807960, 34
+  2807960, 31
+  2807960, 12
+  2807960, 45
+  2807960, 17
+  2807960, 20
+  2807960, 5
+  2807960, 7
+  2807960, 8
+  2807960, 10
+  2807960, 13
+  2807960, 3
+  2807960, 23
+  2807960, 33
+  2807960, 15
+  2807960, 14
+  2807960, 14
+  2807960, 54
+  2807960, 55
+  2807960, 56
+  2807960, 46
+  2807960, 19
+  2868840, 71
+  2868840, 79
+  2868840, 69
+  2868840, 43
+  2868840, 28
+  2868840, 9
+  2868840, 30
+  2868840, 17
+  2868840, 13
+  2868840, 27
+  2868840, 2
+  2868840, 33
+  2868840, 14
+  2868840, 39
+  2868840, 47
+  2868840, 46
+  2868840, 44
+  2868840, 48
+  2868840, 16
+  2957350, 64
+  2957350, 71
+  2957350, 43
+  2957350, 45
+  2957350, 2
+  2957350, 33
+  2957350, 46
+  2957350, 48
+  2957350, 16
+  3039180, 63
+  3039180, 64
+  3039180, 67
+  3039180, 71
+  3039180, 43
+  3039180, 28
+  3039180, 9
+  3039180, 30
+  3039180, 45
+  3039180, 17
+  3039180, 46
+  3039180, 16
+  3041230, 63
+  3041230, 64
+  3041230, 74
+  3041230, 69
+  3041230, 43
+  3041230, 28
+  3041230, 9
+  3041230, 30
+  3041230, 17
+  3041230, 13
+  3041230, 3
+  3041230, 33
+  3041230, 54
+  3041230, 46
+  3041230, 16
+  3105440, 74
+  3105440, 79
+  3105440, 69
+  3105440, 43
+  3105440, 28
+  3105440, 34
+  3105440, 31
+  3105440, 42
+  3105440, 40
+  3105440, 45
+  3105440, 50
+  3105440, 10
+  3105440, 1
+  3105440, 13
+  3105440, 3
+  3105440, 27
+  3105440, 2
+  3105440, 33
+  3105440, 39
+  3105440, 56
+  3105440, 46
+  3105440, 35
+  3105440, 16
+  3124540, 63
+  3124540, 64
+  3124540, 71
+  3124540, 69
+  3124540, 43
+  3124540, 28
+  3124540, 9
+  3124540, 30
+  3124540, 5
+  3124540, 13
+  3124540, 3
+  3124540, 33
+  3124540, 54
+  3124540, 56
+  3124540, 32
+  3124540, 46
+  3124540, 16
+  3164500, 63
+  3164500, 71
+  3164500, 76
+  3164500, 79
+  3164500, 69
+  3164500, 43
+  3164500, 28
+  3164500, 9
+  3164500, 30
+  3164500, 45
+  3164500, 4
+  3164500, 5
+  3164500, 13
+  3164500, 33
+  3164500, 39
+  3164500, 54
+  3164500, 46
+  3164500, 16
+  3224770, 76
+  3224770, 78
+  3224770, 70
+  3224770, 43
+  3224770, 28
+  3224770, 34
+  3224770, 31
+  3224770, 45
+  3224770, 17
+  3224770, 20
+  3224770, 15
+  3224770, 15
+  3224770, 14
+  3224770, 14
+  3224770, 16
+  3240220, 63
+  3240220, 64
+  3240220, 75
+  3240220, 43
+  3240220, 28
+  3240220, 34
+  3240220, 31
+  3240220, 9
+  3240220, 30
+  3240220, 45
+  3240220, 20
+  3240220, 14
+  3240220, 14
+  3240220, 32
+  3240220, 36
+  3240220, 38
+  3241660, 63
+  3241660, 69
+  3241660, 43
+  3241660, 28
+  3241660, 9
+  3241660, 30
+  3241660, 5
+  3241660, 13
+  3241660, 33
+  3241660, 54
+  3241660, 46
+  3241660, 16
+  3282300, 63
+  3282300, 64
+  3282300, 28
+  3282300, 34
+  3282300, 31
+  3282300, 9
+  3282300, 30
+  3282300, 45
+  3282300, 20
+  3282300, 15
+  3282300, 15
+  3282300, 14
+  3282300, 14
+  3282300, 32
+  3282300, 19
+  3282300, 16
+  3293260, 67
+  3293260, 71
+  3293260, 76
+  3293260, 43
+  3293260, 28
+  3293260, 9
+  3293260, 30
+  3293260, 45
+  3293260, 17
+  3293260, 15
+  3293260, 15
+  3293260, 14
+  3293260, 14
+  3293260, 46
+  3293260, 16
+  3321460, 63
+  3321460, 64
+  3321460, 43
+  3321460, 45
+  3321460, 17
+  3321460, 13
+  3321460, 18
+  3321460, 14
+  3321460, 39
+  3321460, 54
+  3321460, 55
+  3321460, 56
+  3321460, 46
+  3321460, 19
+  3321460, 16
+  3405690, 76
+  3405690, 78
+  3405690, 43
+  3405690, 28
+  3405690, 34
+  3405690, 31
+  3405690, 42
+  3405690, 9
+  3405690, 30
+  3405690, 41
+  3405690, 40
+  3405690, 12
+  3405690, 45
+  3405690, 17
+  3405690, 20
+  3405690, 7
+  3405690, 3
+  3405690, 23
+  3405690, 15
+  3405690, 14
+  3405690, 14
+  3405690, 54
+  3405690, 55
+  3405690, 19
+  3419430, 67
+  3419430, 71
+  3419430, 72
+  3419430, 76
+  3419430, 70
+  3419430, 43
+  3419430, 28
+  3419430, 9
+  3419430, 30
+  3419430, 45
+  3419430, 15
+  3419430, 15
+  3419430, 14
+  3419430, 14
+  3419430, 32
+  3419430, 44
+  3419430, 16
+  3472040, 78
+  3472040, 43
+  3472040, 28
+  3472040, 34
+  3472040, 31
+  3472040, 42
+  3472040, 9
+  3472040, 30
+  3472040, 41
+  3472040, 40
+  3472040, 45
+  3472040, 20
+  3472040, 5
+  3472040, 13
+  3472040, 3
+  3472040, 18
+  3472040, 23
+  3472040, 15
+  3472040, 15
+  3472040, 14
+  3472040, 14
+  3472040, 54
+  3472040, 56
+  3472040, 32
+  3472040, 46
+  3472040, 35
+  3472040, 16
+  3513350, 63
+  3513350, 64
+  3513350, 74
+  3513350, 70
+  3513350, 43
+  3513350, 20
+  3513350, 15
+  3513350, 14
+  3513350, 14
+  3513350, 32
+  3513350, 16
+  3526710, 63
+  3526710, 71
+  3526710, 76
+  3526710, 79
+  3526710, 43
+  3526710, 45
+  3526710, 17
+  3526710, 50
+  3526710, 13
+  3526710, 3
+  3526710, 33
+  3526710, 15
+  3526710, 15
+  3526710, 14
+  3526710, 14
+  3526710, 46
+  3526710, 16
+  3527290, 63
+  3527290, 64
+  3527290, 71
+  3527290, 43
+  3527290, 28
+  3527290, 9
+  3527290, 30
+  3527290, 45
+  3527290, 17
+  3527290, 50
+  3527290, 15
+  3527290, 15
+  3527290, 14
+  3527290, 14
+  3527290, 16
+  3551340, 76
+  3551340, 78
+  3551340, 79
+  3551340, 43
+  3551340, 28
+  3551340, 45
+  3551340, 17
+  3551340, 52
+  3551340, 4
+  3551340, 33
+  3551340, 15
+  3551340, 15
+  3551340, 14
+  3551340, 14
+  3551340, 39
+  3551340, 46
+  3551340, 16
+  3564740, 63
+  3564740, 64
+  3564740, 74
+  3564740, 70
+  3564740, 43
+  3564740, 28
+  3564740, 34
+  3564740, 31
+  3564740, 9
+  3564740, 30
+  3564740, 12
+  3564740, 45
+  3564740, 17
+  3564740, 20
+  3564740, 15
+  3564740, 15
+  3564740, 14
+  3564740, 14
+  3564740, 16
+  3670260, 63
+  3670260, 43
+  3670260, 45
+  3670260, 32
+  3670260, 46
+  3670260, 16
+  3764200, 63
+  3764200, 64
+  3764200, 43
+  3764200, 45
+  3764200, 17
+  3764200, 50
+  3764200, 6
+  3764200, 15
+  3764200, 15
+  3764200, 14
+  3764200, 14
+  3764200, 46
+  3764200, 19
+  3764200, 16
+  3853250, 71
+  3853250, 76
+  3853250, 43
+  3853250, 45
+  3853250, 4
+  3853250, 23
+  3853250, 27
+  3853250, 33
+  3853250, 39
+  3853250, 57
+  3853250, 16
+  3892270, 64
+  3892270, 71
+  3892270, 76
+  3892270, 43
+  3892270, 28
+  3892270, 9
+  3892270, 30
+  3892270, 45
+  3892270, 5
+  3892270, 13
+  3892270, 33
+  3892270, 54
+  3892270, 46
+  3892270, 16
+  4025700, 67
+  4025700, 76
+  4025700, 70
+  4025700, 43
+  4025700, 28
+  4025700, 12
+  4025700, 20
+  4025700, 16
+  4108000, 63
+  4108000, 71
+  4108000, 28
+  4108000, 9
+  4108000, 30
+  4108000, 45
+  4108000, 17
+  4108000, 15
+  4108000, 16
+  4128580, 67
+  4128580, 71
+  4128580, 72
+  4128580, 76
+  4128580, 78
+  4128580, 79
+  4128580, 28
+  4128580, 26
+  4128580, 34
+  4128580, 31
+  4128580, 20
+  4128580, 13
+  4128580, 27
+  4128580, 33
+  4128580, 39
+  4128580, 57
+  4128580, 16
+  4166740, 63
+  4166740, 67
+  4166740, 71
+  4166740, 79
+  4166740, 43
+  4166740, 45
+  4166740, 13
+  4166740, 27
+  4166740, 39
+  4166740, 46
+  4166740, 16
+  4179360, 67
+  4179360, 70
+  4179360, 43
+  4179360, 59
+  4179360, 54
+  4179360, 57
+  4179360, 16
+  4314050, 74
+  4314050, 76
+  4314050, 79
+  4314050, 70
+  4314050, 43
+  4314050, 28
+  4314050, 9
+  4314050, 30
+  4314050, 54
+  4314050, 16
+  4440080, 63
+  4440080, 64
+  4440080, 43
+  4440080, 10
+  4440080, 2
+  4440080, 33
+  4440080, 54
+  4440080, 16
+  4443810, 63
+  4443810, 67
+  4443810, 71
+  4443810, 43
+  4443810, 45
+  4443810, 13
+  4443810, 54
+  4443810, 56
+  4443810, 46
+  4443810, 16
+  4483260, 63
+  4483260, 64
+  4483260, 74
+  4483260, 70
+  4483260, 28
+  4483260, 34
+  4483260, 31
+  4483260, 12
+  4483260, 20
+  4483260, 16
+  4575750, 64
+  4575750, 71
+  4575750, 74
+  4575750, 43
+  4575750, 45
+  4575750, 4
+  4575750, 13
+  4575750, 27
+  4575750, 2
+  4575750, 33
+  4575750, 39
+  4575750, 55
+  4575750, 57
+  4575750, 46
+  4575750, 16
+  4621410, 67
+  4621410, 71
+  4621410, 79
+  4621410, 43
+  4621410, 46
+  4621410, 16
+  4694660, 71
+  4694660, 43
+  4694660, 16
+  4733330, 74
+  4733330, 43
+  4733330, 46
+  4733330, 16
+  4784930, 67
+  4784930, 71
+  4784930, 76
+  4784930, 43
+  4784930, 45
+  4784930, 16
+  4790300, 67
+  4790300, 71
+  4790300, 79
+  4790300, 43
+  4790300, 28
+  4790300, 34
+  4790300, 42
+  4790300, 40
+  4790300, 35
+  4790300, 16
+  4816200, 71
+  4816200, 79
+  4816200, 43
+  4816200, 45
+  4816200, 2
+  4816200, 33
+  4816200, 46
+  4816200, 48
+  4816200, 16
+  4818650, 63
+  4818650, 43
+  4818650, 45
+  4818650, 18
+  4818650, 15
+  4818650, 14
+  4818650, 32
+  4818650, 16
+  4828620, 71
+  4828620, 75
+  4828620, 43
+  4828620, 16
+  4828740, 64
+  4828740, 76
+  4828740, 43
+  4828740, 45
+  4828740, 17
+  4828740, 16
+  4833240, 67
+  4833240, 71
+  4833240, 79
+  4833240, 43
+  4833240, 28
+  4833240, 34
+  4833240, 31
+  4833240, 42
+  4833240, 40
+  4833240, 12
+  4833240, 17
+  4833240, 15
+  4833240, 15
+  4833240, 14
+  4833240, 14
+  4833240, 35
+  4833240, 16
+  4886540, 67
+  4886540, 71
+  4886540, 79
+  4886540, 43
+  4886540, 28
+  4886540, 34
+  4886540, 31
+  4886540, 42
+  4886540, 9
+  4886540, 41
+  4886540, 40
+  4886540, 45
+  4886540, 17
+  4886540, 52
+  4886540, 3
+  4886540, 27
+  4886540, 15
+  4886540, 15
+  4886540, 14
+  4886540, 14
+  4886540, 47
+  4886540, 57
+  4886540, 46
+  4886540, 35
+  4886540, 16
+  4915370, 71
+  4915370, 76
+  4915370, 78
+  4915370, 79
+  4915370, 43
+  4915370, 45
+  4915370, 3
+  4915370, 2
+  4915370, 33
+  4915370, 39
+  4915370, 16
+  4916300, 71
+  4916300, 76
+  4916300, 43
+  4916300, 16
+  4927750, 71
+  4927750, 79
+  4927750, 43
+  4927750, 45
+  4927750, 13
+  4927750, 3
+  4927750, 27
+  4927750, 2
+  4927750, 33
+  4927750, 39
+  4927750, 57
+  4927750, 46
+  4927750, 48
+  4927750, 16
+  4946490, 71
+  4946490, 76
+  4946490, 43
+  4946490, 45
+  4946490, 17
+  4946490, 4
+  4946490, 5
+  4946490, 27
+  4946490, 2
+  4946490, 33
+  4946490, 39
+  4946490, 46
+  4946490, 44
+  4946490, 48
+  4946490, 16
+  4946580, 76
+  4946580, 43
+  4946580, 13
+  4946580, 23
+  4946580, 27
+  4946580, 33
+  4946580, 39
+  4946580, 54
+  4946580, 16
+  4953010, 71
+  4953010, 76
+  4953010, 79
+  4953010, 69
+  4953010, 43
+  4953010, 46
+  4953010, 16
+  4954070, 64
+  4954070, 67
+  4954070, 71
+  4954070, 74
+  4954070, 76
+  4954070, 43
+  4954070, 45
+  4954070, 3
+  4954070, 16
+  4959500, 74
+  4959500, 43
+  4959500, 16
+  4967270, 67
+  4967270, 71
+  4967270, 43
+  4967270, 45
+  4967270, 2
+  4967270, 33
+  4967270, 39
+  4967270, 16
+  4967530, 67
+  4967530, 71
+  4967530, 74
+  4967530, 43
+  4967530, 45
+  4967530, 16
+  4968440, 67
+  4968440, 71
+  4968440, 43
+  4968440, 45
+  4968440, 27
+  4968440, 33
+  4968440, 54
+  4968440, 46
+  4968440, 16
+}
+
+Library = {
+  user_id, app_id, added_date, hours_played
+  1, 730, 2021-04-06, 18
+  1, 242760, 2022-05-09, 61
+  1, 289070, 2023-06-12, 104
+  1, 374320, 2024-07-15, 147
+  1, 553850, 2025-08-18, 190
+  1, 892970, 2020-09-21, 233
+  1, 1158310, 2021-10-24, 276
+  2, 227300, 2022-07-11, 35
+  2, 264710, 2023-08-14, 78
+  2, 322330, 2024-09-17, 121
+  2, 438100, 2025-10-20, 164
+  2, 714010, 2020-11-23, 207
+  2, 1142710, 2021-12-26, 250
+  2, 1238810, 2022-01-02, 293
+  3, 251570, 2023-10-16, 52
+  3, 294100, 2024-11-19, 95
+  3, 394360, 2025-12-22, 138
+  3, 594650, 2020-01-25, 181
+  3, 1085660, 2021-02-01, 224
+  3, 1172620, 2022-03-04, 267
+  3, 1368140, 2023-04-07, 310
+  4, 284160, 2024-01-21, 69
+  4, 367520, 2025-02-24, 112
+  4, 548430, 2020-03-27, 155
+  4, 814380, 2021-04-03, 198
+  4, 1149460, 2022-05-06, 241
+  4, 1245620, 2023-06-09, 284
+  4, 1665460, 2024-07-12, 327
+  5, 322170, 2025-04-26, 86
+  5, 435150, 2020-05-02, 129
+  5, 646570, 2021-06-05, 172
+  5, 1097150, 2022-07-08, 215
+  5, 1222670, 2023-08-11, 258
+  5, 1517290, 2024-09-14, 301
+  5, 1938090, 2025-10-17, 344
+  6, 381210, 2020-07-04, 103
+  6, 582010, 2021-08-07, 146
+  6, 960090, 2022-09-10, 189
+  6, 1172470, 2023-10-13, 232
+  6, 1366800, 2024-11-16, 275
+  6, 1811260, 2025-12-19, 318
+  6, 2344520, 2020-01-22, 361
+  7, 489830, 2021-10-09, 120
+  7, 813780, 2022-11-12, 163
+  7, 1145360, 2023-12-15, 206
+  7, 1238860, 2024-01-18, 249
+  7, 1623730, 2025-02-21, 292
+  7, 2073620, 2020-03-24, 335
+  7, 2669320, 2021-04-27, 378
+  8, 632360, 2022-01-14, 137
+  8, 1091500, 2023-02-17, 180
+  8, 1203220, 2024-03-20, 223
+  8, 1449850, 2025-04-23, 266
+  8, 1905180, 2020-05-26, 309
+  8, 2399830, 2021-06-02, 352
+  8, 3041230, 2022-07-05, 15
+  9, 945360, 2023-04-19, 154
+  9, 1172380, 2024-05-22, 197
+  9, 1364780, 2025-06-25, 240
+  9, 1808500, 2020-07-01, 283
+  9, 2300320, 2021-08-04, 326
+  9, 2807960, 2022-09-07, 369
+  9, 3282300, 2023-10-10, 32
+  10, 1144200, 2024-07-24, 171
+  10, 1238840, 2025-08-27, 214
+  10, 1604030, 2020-09-03, 257
+  10, 1973530, 2021-10-06, 300
+  10, 2651280, 2022-11-09, 343
+  10, 3164500, 2023-12-12, 6
+  10, 3526710, 2024-01-15, 49
+  11, 1174180, 2025-10-02, 188
+  11, 1422450, 2020-11-05, 231
+  11, 1817190, 2021-12-08, 274
+  11, 2379780, 2022-01-11, 317
+  11, 3039180, 2023-02-14, 360
+  11, 3405690, 2024-03-17, 23
+  11, 3892270, 2025-04-20, 66
+  12, 1326470, 2020-01-07, 205
+  12, 1774580, 2021-02-10, 248
+  12, 2195250, 2022-03-13, 291
+  12, 2767030, 2023-04-16, 334
+  12, 3241660, 2024-05-19, 377
+  12, 3564740, 2025-06-22, 40
+  12, 4440080, 2020-07-25, 83
+  13, 1551360, 2021-04-12, 222
+  13, 1948540, 2022-05-15, 265
+  13, 2622380, 2023-06-18, 308
+  13, 3124540, 2024-07-21, 351
+  13, 3513350, 2025-08-24, 14
+  13, 4128580, 2020-09-27, 57
+  13, 4784930, 2021-10-03, 100
+  14, 1817070, 2022-07-17, 239
+  14, 2357570, 2023-08-20, 282
+  14, 2957350, 2024-09-23, 325
+  14, 3321460, 2025-10-26, 368
+  14, 3853250, 2020-11-02, 31
+  14, 4575750, 2021-12-05, 74
+  14, 4886540, 2022-01-08, 117
+  15, 2073850, 2023-10-22, 256
+  15, 2694490, 2024-11-25, 299
+  15, 3240220, 2025-12-01, 342
+  15, 3551340, 2020-01-04, 5
+  15, 4314050, 2021-02-07, 48
+  15, 4818650, 2022-03-10, 91
+  15, 4954070, 2023-04-13, 134
+  16, 2507950, 2024-01-27, 273
+  16, 3105440, 2025-02-03, 316
+  16, 3472040, 2020-03-06, 359
+  16, 4108000, 2021-04-09, 22
+  16, 4733330, 2022-05-12, 65
+  16, 4927750, 2023-06-15, 108
+  16, 400, 2024-07-18, 151
+  17, 2868840, 2025-04-05, 290
+  17, 3293260, 2020-05-08, 333
+  17, 3764200, 2021-06-11, 376
+  17, 4483260, 2022-07-14, 39
+  17, 4833240, 2023-08-17, 82
+  17, 4967530, 2024-09-20, 125
+  17, 39210, 2025-10-23, 168
+  18, 3224770, 2020-07-10, 307
+  18, 3527290, 2021-08-13, 350
+  18, 4179360, 2022-09-16, 13
+  18, 4816200, 2023-10-19, 56
+  18, 4953010, 2024-11-22, 99
+  18, 570, 2025-12-25, 142
+  18, 236390, 2020-01-01, 185
+  19, 3419430, 2021-10-15, 324
+  19, 4025700, 2022-11-18, 367
+  19, 4694660, 2023-12-21, 30
+  19, 4916300, 2024-01-24, 73
+  19, 220, 2025-02-27, 116
+  19, 221100, 2020-03-03, 159
+  19, 252950, 2021-04-06, 202
+  20, 3670260, 2022-01-20, 341
+  20, 4443810, 2023-02-23, 4
+  20, 4828740, 2024-03-26, 47
+  20, 4967270, 2025-04-02, 90
+  20, 4000, 2020-05-05, 133
+  20, 244210, 2021-06-08, 176
+  20, 291550, 2022-07-11, 219
+  21, 4166740, 2023-04-25, 358
+  21, 4790300, 2024-05-01, 21
+  21, 4946580, 2025-06-04, 64
+  21, 550, 2020-07-07, 107
+  21, 230410, 2021-08-10, 150
+  21, 271590, 2022-09-13, 193
+  21, 346110, 2023-10-16, 236
+  22, 4621410, 2024-07-03, 375
+  22, 4915370, 2025-08-06, 38
+  22, 10, 2020-09-09, 81
+  22, 108600, 2021-10-12, 124
+  22, 252490, 2022-11-15, 167
+  22, 304430, 2023-12-18, 210
+  22, 413150, 2024-01-21, 253
+  23, 4828620, 2025-10-08, 12
+  23, 4959500, 2020-11-11, 55
+  23, 730, 2021-12-14, 98
+  23, 242760, 2022-01-17, 141
+  23, 289070, 2023-02-20, 184
+  23, 374320, 2024-03-23, 227
+  23, 553850, 2025-04-26, 270
+  24, 4946490, 2020-01-13, 29
+  24, 440, 2021-02-16, 72
+  24, 227300, 2022-03-19, 115
+  24, 264710, 2023-04-22, 158
+  24, 322330, 2024-05-25, 201
+  24, 438100, 2025-06-01, 244
+  24, 714010, 2020-07-04, 287
+  25, 4968440, 2021-04-18, 46
+  25, 105600, 2022-05-21, 89
+  25, 251570, 2023-06-24, 132
+  25, 294100, 2024-07-27, 175
+  25, 394360, 2025-08-03, 218
+  25, 594650, 2020-09-06, 261
+  25, 1085660, 2021-10-09, 304
+  26, 620, 2022-07-23, 63
+  26, 236850, 2023-08-26, 106
+  26, 284160, 2024-09-02, 149
+  26, 367520, 2025-10-05, 192
+  26, 548430, 2020-11-08, 235
+  26, 814380, 2021-12-11, 278
+  26, 1149460, 2022-01-14, 321
+  27, 221380, 2023-10-01, 80
+  27, 261550, 2024-11-04, 123
+  27, 322170, 2025-12-07, 166
+  27, 435150, 2020-01-10, 209
+  27, 646570, 2021-02-13, 252
+  27, 1097150, 2022-03-16, 295
+  27, 1222670, 2023-04-19, 338
+  28, 250900, 2024-01-06, 97
+  28, 292030, 2025-02-09, 140
+  28, 381210, 2020-03-12, 183
+  28, 582010, 2021-04-15, 226
+  28, 960090, 2022-05-18, 269
+  28, 1172470, 2023-06-21, 312
+  28, 1366800, 2024-07-24, 355
+  29, 275850, 2025-04-11, 114
+  29, 359550, 2020-05-14, 157
+  29, 489830, 2021-06-17, 200
+  29, 813780, 2022-07-20, 243
+  29, 1145360, 2023-08-23, 286
+  29, 1238860, 2024-09-26, 329
+  29, 1623730, 2025-10-02, 372
+  30, 304930, 2020-07-16, 131
+  30, 431960, 2021-08-19, 174
+  30, 632360, 2022-09-22, 217
+  30, 1091500, 2023-10-25, 260
+  30, 1203220, 2024-11-01, 303
+  30, 1449850, 2025-12-04, 346
+  30, 1905180, 2020-01-07, 9
+  31, 377160, 2021-10-21, 148
+  31, 578080, 2022-11-24, 191
+  31, 945360, 2023-12-27, 234
+  31, 1172380, 2024-01-03, 277
+  31, 1364780, 2025-02-06, 320
+  31, 1808500, 2020-03-09, 363
+  31, 2300320, 2021-04-12, 26
+  32, 440900, 2022-01-26, 165
+  32, 739630, 2023-02-02, 208
+  32, 1144200, 2024-03-05, 251
+  32, 1238840, 2025-04-08, 294
+  32, 1604030, 2020-05-11, 337
+  32, 1973530, 2021-06-14, 380
+  32, 2651280, 2022-07-17, 43
+  33, 629520, 2023-04-04, 182
+  33, 1086940, 2024-05-07, 225
+  33, 1174180, 2025-06-10, 268
+  33, 1422450, 2020-07-13, 311
+  33, 1817190, 2021-08-16, 354
+  33, 2379780, 2022-09-19, 17
+  33, 3039180, 2023-10-22, 60
+  34, 892970, 2024-07-09, 199
+  34, 1158310, 2025-08-12, 242
+  34, 1326470, 2020-09-15, 285
+  34, 1774580, 2021-10-18, 328
+  34, 2195250, 2022-11-21, 371
+  34, 2767030, 2023-12-24, 34
+  34, 3241660, 2024-01-27, 77
+  35, 1142710, 2025-10-14, 216
+  35, 1238810, 2020-11-17, 259
+  35, 1551360, 2021-12-20, 302
+  35, 1948540, 2022-01-23, 345
+  35, 2622380, 2023-02-26, 8
+  35, 3124540, 2024-03-02, 51
+  35, 3513350, 2025-04-05, 94
+  36, 1172620, 2020-01-19, 233
+  36, 1368140, 2021-02-22, 276
+  36, 1817070, 2022-03-25, 319
+  36, 2357570, 2023-04-01, 362
+  36, 2957350, 2024-05-04, 25
+  36, 3321460, 2025-06-07, 68
+  36, 3853250, 2020-07-10, 111
+  37, 1245620, 2021-04-24, 250
+  37, 1665460, 2022-05-27, 293
+  37, 2073850, 2023-06-03, 336
+  37, 2694490, 2024-07-06, 379
+  37, 3240220, 2025-08-09, 42
+  37, 3551340, 2020-09-12, 85
+  37, 4314050, 2021-10-15, 128
+  38, 1517290, 2022-07-02, 267
+  38, 1938090, 2023-08-05, 310
+  38, 2507950, 2024-09-08, 353
+  38, 3105440, 2025-10-11, 16
+  38, 3472040, 2020-11-14, 59
+  38, 4108000, 2021-12-17, 102
+  38, 4733330, 2022-01-20, 145
+  39, 1811260, 2023-10-07, 284
+  39, 2344520, 2024-11-10, 327
+  39, 2868840, 2025-12-13, 370
+  39, 3293260, 2020-01-16, 33
+  39, 3764200, 2021-02-19, 76
+  39, 4483260, 2022-03-22, 119
+  39, 4833240, 2023-04-25, 162
+  40, 2073620, 2024-01-12, 301
+  40, 2669320, 2025-02-15, 344
+  40, 3224770, 2020-03-18, 7
+  40, 3527290, 2021-04-21, 50
+  40, 4179360, 2022-05-24, 93
+  40, 4816200, 2023-06-27, 136
+  40, 4953010, 2024-07-03, 179
+  41, 2399830, 2025-04-17, 318
+  41, 3041230, 2020-05-20, 361
+  41, 3419430, 2021-06-23, 24
+  41, 4025700, 2022-07-26, 67
+  41, 4694660, 2023-08-02, 110
+  41, 4916300, 2024-09-05, 153
+  41, 220, 2025-10-08, 196
+  42, 2807960, 2020-07-22, 335
+  42, 3282300, 2021-08-25, 378
+  42, 3670260, 2022-09-01, 41
+  42, 4443810, 2023-10-04, 84
+  42, 4828740, 2024-11-07, 127
+  42, 4967270, 2025-12-10, 170
+  42, 4000, 2020-01-13, 213
+  43, 3164500, 2021-10-27, 352
+  43, 3526710, 2022-11-03, 15
+  43, 4166740, 2023-12-06, 58
+  43, 4790300, 2024-01-09, 101
+  43, 4946580, 2025-02-12, 144
+  43, 550, 2020-03-15, 187
+  43, 230410, 2021-04-18, 230
+  44, 3405690, 2022-01-05, 369
+  44, 3892270, 2023-02-08, 32
+  44, 4621410, 2024-03-11, 75
+  44, 4915370, 2025-04-14, 118
+  44, 10, 2020-05-17, 161
+  44, 108600, 2021-06-20, 204
+  44, 252490, 2022-07-23, 247
+  45, 3564740, 2023-04-10, 6
+  45, 4440080, 2024-05-13, 49
+  45, 4828620, 2025-06-16, 92
+  45, 4959500, 2020-07-19, 135
+  45, 730, 2021-08-22, 178
+  45, 242760, 2022-09-25, 221
+  45, 289070, 2023-10-01, 264
+  46, 4128580, 2024-07-15, 23
+  46, 4784930, 2025-08-18, 66
+  46, 4946490, 2020-09-21, 109
+  46, 440, 2021-10-24, 152
+  46, 227300, 2022-11-27, 195
+  46, 264710, 2023-12-03, 238
+  46, 322330, 2024-01-06, 281
+  47, 4575750, 2025-10-20, 40
+  47, 4886540, 2020-11-23, 83
+  47, 4968440, 2021-12-26, 126
+  47, 105600, 2022-01-02, 169
+  47, 251570, 2023-02-05, 212
+  47, 294100, 2024-03-08, 255
+  47, 394360, 2025-04-11, 298
+  48, 4818650, 2020-01-25, 57
+  48, 4954070, 2021-02-01, 100
+  48, 620, 2022-03-04, 143
+  48, 236850, 2023-04-07, 186
+  48, 284160, 2024-05-10, 229
+  48, 367520, 2025-06-13, 272
+  48, 548430, 2020-07-16, 315
+  49, 4927750, 2021-04-03, 74
+  49, 400, 2022-05-06, 117
+  49, 221380, 2023-06-09, 160
+  49, 261550, 2024-07-12, 203
+  49, 322170, 2025-08-15, 246
+  49, 435150, 2020-09-18, 289
+  49, 646570, 2021-10-21, 332
+  50, 4967530, 2022-07-08, 91
+  50, 39210, 2023-08-11, 134
+  50, 250900, 2024-09-14, 177
+  50, 292030, 2025-10-17, 220
+  50, 381210, 2020-11-20, 263
+  50, 582010, 2021-12-23, 306
+  50, 960090, 2022-01-26, 349
+  51, 570, 2023-10-13, 108
+  51, 236390, 2024-11-16, 151
+  51, 275850, 2025-12-19, 194
+  51, 359550, 2020-01-22, 237
+  51, 489830, 2021-02-25, 280
+  51, 813780, 2022-03-01, 323
+  51, 1145360, 2023-04-04, 366
+  52, 221100, 2024-01-18, 125
+  52, 252950, 2025-02-21, 168
+  52, 304930, 2020-03-24, 211
+  52, 431960, 2021-04-27, 254
+  52, 632360, 2022-05-03, 297
+  52, 1091500, 2023-06-06, 340
+  52, 1203220, 2024-07-09, 3
+  53, 244210, 2025-04-23, 142
+  53, 291550, 2020-05-26, 185
+  53, 377160, 2021-06-02, 228
+  53, 578080, 2022-07-05, 271
+  53, 945360, 2023-08-08, 314
+  53, 1172380, 2024-09-11, 357
+  53, 1364780, 2025-10-14, 20
+  54, 271590, 2020-07-01, 159
+  54, 346110, 2021-08-04, 202
+  54, 440900, 2022-09-07, 245
+  54, 739630, 2023-10-10, 288
+  54, 1144200, 2024-11-13, 331
+  54, 1238840, 2025-12-16, 374
+  54, 1604030, 2020-01-19, 37
+  55, 304430, 2021-10-06, 176
+  55, 413150, 2022-11-09, 219
+  55, 629520, 2023-12-12, 262
+  55, 1086940, 2024-01-15, 305
+  55, 1174180, 2025-02-18, 348
+  55, 1422450, 2020-03-21, 11
+  55, 1817190, 2021-04-24, 54
+  56, 374320, 2022-01-11, 193
+  56, 553850, 2023-02-14, 236
+  56, 892970, 2024-03-17, 279
+  56, 1158310, 2025-04-20, 322
+  56, 1326470, 2020-05-23, 365
+  56, 1774580, 2021-06-26, 28
+  56, 2195250, 2022-07-02, 71
+  57, 438100, 2023-04-16, 210
+  57, 714010, 2024-05-19, 253
+  57, 1142710, 2025-06-22, 296
+  57, 1238810, 2020-07-25, 339
+  57, 1551360, 2021-08-01, 2
+  57, 1948540, 2022-09-04, 45
+  57, 2622380, 2023-10-07, 88
+  58, 594650, 2024-07-21, 227
+  58, 1085660, 2025-08-24, 270
+  58, 1172620, 2020-09-27, 313
+  58, 1368140, 2021-10-03, 356
+  58, 1817070, 2022-11-06, 19
+  58, 2357570, 2023-12-09, 62
+  58, 2957350, 2024-01-12, 105
+  59, 814380, 2025-10-26, 244
+  59, 1149460, 2020-11-02, 287
+  59, 1245620, 2021-12-05, 330
+  59, 1665460, 2022-01-08, 373
+  59, 2073850, 2023-02-11, 36
+  59, 2694490, 2024-03-14, 79
+  59, 3240220, 2025-04-17, 122
+  60, 1097150, 2020-01-04, 261
+  60, 1222670, 2021-02-07, 304
+  60, 1517290, 2022-03-10, 347
+  60, 1938090, 2023-04-13, 10
+  60, 2507950, 2024-05-16, 53
+  60, 3105440, 2025-06-19, 96
+  60, 3472040, 2020-07-22, 139
+  61, 1172470, 2021-04-09, 278
+  61, 1366800, 2022-05-12, 321
+  61, 1811260, 2023-06-15, 364
+  61, 2344520, 2024-07-18, 27
+  61, 2868840, 2025-08-21, 70
+  61, 3293260, 2020-09-24, 113
+  61, 3764200, 2021-10-27, 156
+  62, 1238860, 2022-07-14, 295
+  62, 1623730, 2023-08-17, 338
+  62, 2073620, 2024-09-20, 1
+  62, 2669320, 2025-10-23, 44
+  62, 3224770, 2020-11-26, 87
+  62, 3527290, 2021-12-02, 130
+  62, 4179360, 2022-01-05, 173
+  63, 1449850, 2023-10-19, 312
+  63, 1905180, 2024-11-22, 355
+  63, 2399830, 2025-12-25, 18
+  63, 3041230, 2020-01-01, 61
+  63, 3419430, 2021-02-04, 104
+  63, 4025700, 2022-03-07, 147
+  63, 4694660, 2023-04-10, 190
+  64, 1808500, 2024-01-24, 329
+  64, 2300320, 2025-02-27, 372
+  64, 2807960, 2020-03-03, 35
+  64, 3282300, 2021-04-06, 78
+  64, 3670260, 2022-05-09, 121
+  64, 4443810, 2023-06-12, 164
+  64, 4828740, 2024-07-15, 207
+  65, 1973530, 2025-04-02, 346
+  65, 2651280, 2020-05-05, 9
+  65, 3164500, 2021-06-08, 52
+  65, 3526710, 2022-07-11, 95
+  65, 4166740, 2023-08-14, 138
+  65, 4790300, 2024-09-17, 181
+  65, 4946580, 2025-10-20, 224
+  66, 2379780, 2020-07-07, 363
+  66, 3039180, 2021-08-10, 26
+  66, 3405690, 2022-09-13, 69
+  66, 3892270, 2023-10-16, 112
+  66, 4621410, 2024-11-19, 155
+  66, 4915370, 2025-12-22, 198
+  66, 10, 2020-01-25, 241
+  67, 2767030, 2021-10-12, 380
+  67, 3241660, 2022-11-15, 43
+  67, 3564740, 2023-12-18, 86
+  67, 4440080, 2024-01-21, 129
+  67, 4828620, 2025-02-24, 172
+  67, 4959500, 2020-03-27, 215
+  67, 730, 2021-04-03, 258
+  68, 3124540, 2022-01-17, 17
+  68, 3513350, 2023-02-20, 60
+  68, 4128580, 2024-03-23, 103
+  68, 4784930, 2025-04-26, 146
+  68, 4946490, 2020-05-02, 189
+  68, 440, 2021-06-05, 232
+  68, 227300, 2022-07-08, 275
+  69, 3321460, 2023-04-22, 34
+  69, 3853250, 2024-05-25, 77
+  69, 4575750, 2025-06-01, 120
+  69, 4886540, 2020-07-04, 163
+  69, 4968440, 2021-08-07, 206
+  69, 105600, 2022-09-10, 249
+  69, 251570, 2023-10-13, 292
+  70, 3551340, 2024-07-27, 51
+  70, 4314050, 2025-08-03, 94
+  70, 4818650, 2020-09-06, 137
+  70, 4954070, 2021-10-09, 180
+  70, 620, 2022-11-12, 223
+  70, 236850, 2023-12-15, 266
+  70, 284160, 2024-01-18, 309
+  71, 4108000, 2025-10-05, 68
+  71, 4733330, 2020-11-08, 111
+  71, 4927750, 2021-12-11, 154
+  71, 400, 2022-01-14, 197
+  71, 221380, 2023-02-17, 240
+  71, 261550, 2024-03-20, 283
+  71, 322170, 2025-04-23, 326
+  72, 4483260, 2020-01-10, 85
+  72, 4833240, 2021-02-13, 128
+  72, 4967530, 2022-03-16, 171
+  72, 39210, 2023-04-19, 214
+  72, 250900, 2024-05-22, 257
+  72, 292030, 2025-06-25, 300
+  72, 381210, 2020-07-01, 343
+  73, 4816200, 2021-04-15, 102
+  73, 4953010, 2022-05-18, 145
+  73, 570, 2023-06-21, 188
+  73, 236390, 2024-07-24, 231
+  73, 275850, 2025-08-27, 274
+  73, 359550, 2020-09-03, 317
+  73, 489830, 2021-10-06, 360
+  74, 4916300, 2022-07-20, 119
+  74, 220, 2023-08-23, 162
+  74, 221100, 2024-09-26, 205
+  74, 252950, 2025-10-02, 248
+  74, 304930, 2020-11-05, 291
+  74, 431960, 2021-12-08, 334
+  74, 632360, 2022-01-11, 377
+  75, 4967270, 2023-10-25, 136
+  75, 4000, 2024-11-01, 179
+  75, 244210, 2025-12-04, 222
+  75, 291550, 2020-01-07, 265
+  75, 377160, 2021-02-10, 308
+  75, 578080, 2022-03-13, 351
+  75, 945360, 2023-04-16, 14
+  76, 550, 2024-01-03, 153
+  76, 230410, 2025-02-06, 196
+  76, 271590, 2020-03-09, 239
+  76, 346110, 2021-04-12, 282
+  76, 440900, 2022-05-15, 325
+  76, 739630, 2023-06-18, 368
+  76, 1144200, 2024-07-21, 31
+  77, 108600, 2025-04-08, 170
+  77, 252490, 2020-05-11, 213
+  77, 304430, 2021-06-14, 256
+  77, 413150, 2022-07-17, 299
+  77, 629520, 2023-08-20, 342
+  77, 1086940, 2024-09-23, 5
+  77, 1174180, 2025-10-26, 48
+  78, 242760, 2020-07-13, 187
+  78, 289070, 2021-08-16, 230
+  78, 374320, 2022-09-19, 273
+  78, 553850, 2023-10-22, 316
+  78, 892970, 2024-11-25, 359
+  78, 1158310, 2025-12-01, 22
+  78, 1326470, 2020-01-04, 65
+  79, 264710, 2021-10-18, 204
+  79, 322330, 2022-11-21, 247
+  79, 438100, 2023-12-24, 290
+  79, 714010, 2024-01-27, 333
+  79, 1142710, 2025-02-03, 376
+  79, 1238810, 2020-03-06, 39
+  79, 1551360, 2021-04-09, 82
+  80, 294100, 2022-01-23, 221
+  80, 394360, 2023-02-26, 264
+  80, 594650, 2024-03-02, 307
+  80, 1085660, 2025-04-05, 350
+  80, 1172620, 2020-05-08, 13
+  80, 1368140, 2021-06-11, 56
+  80, 1817070, 2022-07-14, 99
+  81, 367520, 2023-04-01, 238
+  81, 548430, 2024-05-04, 281
+  81, 814380, 2025-06-07, 324
+  81, 1149460, 2020-07-10, 367
+  81, 1245620, 2021-08-13, 30
+  81, 1665460, 2022-09-16, 73
+  81, 2073850, 2023-10-19, 116
+  82, 435150, 2024-07-06, 255
+  82, 646570, 2025-08-09, 298
+  82, 1097150, 2020-09-12, 341
+  82, 1222670, 2021-10-15, 4
+  82, 1517290, 2022-11-18, 47
+  82, 1938090, 2023-12-21, 90
+  82, 2507950, 2024-01-24, 133
+  83, 582010, 2025-10-11, 272
+  83, 960090, 2020-11-14, 315
+  83, 1172470, 2021-12-17, 358
+  83, 1366800, 2022-01-20, 21
+  83, 1811260, 2023-02-23, 64
+  83, 2344520, 2024-03-26, 107
+  83, 2868840, 2025-04-02, 150
+  84, 813780, 2020-01-16, 289
+  84, 1145360, 2021-02-19, 332
+  84, 1238860, 2022-03-22, 375
+  84, 1623730, 2023-04-25, 38
+  84, 2073620, 2024-05-01, 81
+  84, 2669320, 2025-06-04, 124
+  84, 3224770, 2020-07-07, 167
+  85, 1091500, 2021-04-21, 306
+  85, 1203220, 2022-05-24, 349
+  85, 1449850, 2023-06-27, 12
+  85, 1905180, 2024-07-03, 55
+  85, 2399830, 2025-08-06, 98
+  85, 3041230, 2020-09-09, 141
+  85, 3419430, 2021-10-12, 184
+  86, 1172380, 2022-07-26, 323
+  86, 1364780, 2023-08-02, 366
+  86, 1808500, 2024-09-05, 29
+  86, 2300320, 2025-10-08, 72
+  86, 2807960, 2020-11-11, 115
+  86, 3282300, 2021-12-14, 158
+  86, 3670260, 2022-01-17, 201
+  87, 1238840, 2023-10-04, 340
+  87, 1604030, 2024-11-07, 3
+  87, 1973530, 2025-12-10, 46
+  87, 2651280, 2020-01-13, 89
+  87, 3164500, 2021-02-16, 132
+  87, 3526710, 2022-03-19, 175
+  87, 4166740, 2023-04-22, 218
+  88, 1422450, 2024-01-09, 357
+  88, 1817190, 2025-02-12, 20
+  88, 2379780, 2020-03-15, 63
+  88, 3039180, 2021-04-18, 106
+  88, 3405690, 2022-05-21, 149
+  88, 3892270, 2023-06-24, 192
+  88, 4621410, 2024-07-27, 235
+  89, 1774580, 2025-04-14, 374
+  89, 2195250, 2020-05-17, 37
+  89, 2767030, 2021-06-20, 80
+  89, 3241660, 2022-07-23, 123
+  89, 3564740, 2023-08-26, 166
+  89, 4440080, 2024-09-02, 209
+  89, 4828620, 2025-10-05, 252
+  90, 1948540, 2020-07-19, 11
+  90, 2622380, 2021-08-22, 54
+  90, 3124540, 2022-09-25, 97
+  90, 3513350, 2023-10-01, 140
+  90, 4128580, 2024-11-04, 183
+  90, 4784930, 2025-12-07, 226
+  90, 4946490, 2020-01-10, 269
+  91, 2357570, 2021-10-24, 28
+  91, 2957350, 2022-11-27, 71
+  91, 3321460, 2023-12-03, 114
+  91, 3853250, 2024-01-06, 157
+  91, 4575750, 2025-02-09, 200
+  91, 4886540, 2020-03-12, 243
+  91, 4968440, 2021-04-15, 286
+  92, 2694490, 2022-01-02, 45
+  92, 3240220, 2023-02-05, 88
+  92, 3551340, 2024-03-08, 131
+  92, 4314050, 2025-04-11, 174
+  92, 4818650, 2020-05-14, 217
+  92, 4954070, 2021-06-17, 260
+  92, 620, 2022-07-20, 303
+  93, 3105440, 2023-04-07, 62
+  93, 3472040, 2024-05-10, 105
+  93, 4108000, 2025-06-13, 148
+  93, 4733330, 2020-07-16, 191
+  93, 4927750, 2021-08-19, 234
+  93, 400, 2022-09-22, 277
+  93, 221380, 2023-10-25, 320
+  94, 3293260, 2024-07-12, 79
+  94, 3764200, 2025-08-15, 122
+  94, 4483260, 2020-09-18, 165
+  94, 4833240, 2021-10-21, 208
+  94, 4967530, 2022-11-24, 251
+  94, 39210, 2023-12-27, 294
+  94, 250900, 2024-01-03, 337
+  95, 3527290, 2025-10-17, 96
+  95, 4179360, 2020-11-20, 139
+  95, 4816200, 2021-12-23, 182
+  95, 4953010, 2022-01-26, 225
+  95, 570, 2023-02-02, 268
+  95, 236390, 2024-03-05, 311
+  95, 275850, 2025-04-08, 354
+  96, 4025700, 2020-01-22, 113
+  96, 4694660, 2021-02-25, 156
+  96, 4916300, 2022-03-01, 199
+  96, 220, 2023-04-04, 242
+  96, 221100, 2024-05-07, 285
+  96, 252950, 2025-06-10, 328
+  96, 304930, 2020-07-13, 371
+  97, 4443810, 2021-04-27, 130
+  97, 4828740, 2022-05-03, 173
+  97, 4967270, 2023-06-06, 216
+  97, 4000, 2024-07-09, 259
+  97, 244210, 2025-08-12, 302
+  97, 291550, 2020-09-15, 345
+  97, 377160, 2021-10-18, 8
+  98, 4790300, 2022-07-05, 147
+  98, 4946580, 2023-08-08, 190
+  98, 550, 2024-09-11, 233
+  98, 230410, 2025-10-14, 276
+  98, 271590, 2020-11-17, 319
+  98, 346110, 2021-12-20, 362
+  98, 440900, 2022-01-23, 25
+  99, 4915370, 2023-10-10, 164
+  99, 10, 2024-11-13, 207
+  99, 108600, 2025-12-16, 250
+  99, 252490, 2020-01-19, 293
+  99, 304430, 2021-02-22, 336
+  99, 413150, 2022-03-25, 379
+  99, 629520, 2023-04-01, 42
+  100, 4959500, 2024-01-15, 181
+  100, 730, 2025-02-18, 224
+  100, 242760, 2020-03-21, 267
+  100, 289070, 2021-04-24, 310
+  100, 374320, 2022-05-27, 353
+  100, 553850, 2023-06-03, 16
+  100, 892970, 2024-07-06, 59
+  101, 440, 2025-04-20, 198
+  101, 227300, 2020-05-23, 241
+  101, 264710, 2021-06-26, 284
+  101, 322330, 2022-07-02, 327
+  101, 438100, 2023-08-05, 370
+  101, 714010, 2024-09-08, 33
+  101, 1142710, 2025-10-11, 76
+  102, 105600, 2020-07-25, 215
+  102, 251570, 2021-08-01, 258
+  102, 294100, 2022-09-04, 301
+  102, 394360, 2023-10-07, 344
+  102, 594650, 2024-11-10, 7
+  102, 1085660, 2025-12-13, 50
+  102, 1172620, 2020-01-16, 93
+  103, 236850, 2021-10-03, 232
+  103, 284160, 2022-11-06, 275
+  103, 367520, 2023-12-09, 318
+  103, 548430, 2024-01-12, 361
+  103, 814380, 2025-02-15, 24
+  103, 1149460, 2020-03-18, 67
+  103, 1245620, 2021-04-21, 110
+  104, 261550, 2022-01-08, 249
+  104, 322170, 2023-02-11, 292
+  104, 435150, 2024-03-14, 335
+  104, 646570, 2025-04-17, 378
+  104, 1097150, 2020-05-20, 41
+  104, 1222670, 2021-06-23, 84
+  104, 1517290, 2022-07-26, 127
+  105, 292030, 2023-04-13, 266
+  105, 381210, 2024-05-16, 309
+  105, 582010, 2025-06-19, 352
+  105, 960090, 2020-07-22, 15
+  105, 1172470, 2021-08-25, 58
+  105, 1366800, 2022-09-01, 101
+  105, 1811260, 2023-10-04, 144
+  106, 359550, 2024-07-18, 283
+  106, 489830, 2025-08-21, 326
+  106, 813780, 2020-09-24, 369
+  106, 1145360, 2021-10-27, 32
+  106, 1238860, 2022-11-03, 75
+  106, 1623730, 2023-12-06, 118
+  106, 2073620, 2024-01-09, 161
+  107, 431960, 2025-10-23, 300
+  107, 632360, 2020-11-26, 343
+  107, 1091500, 2021-12-02, 6
+  107, 1203220, 2022-01-05, 49
+  107, 1449850, 2023-02-08, 92
+  107, 1905180, 2024-03-11, 135
+  107, 2399830, 2025-04-14, 178
+  108, 578080, 2020-01-01, 317
+  108, 945360, 2021-02-04, 360
+  108, 1172380, 2022-03-07, 23
+  108, 1364780, 2023-04-10, 66
+  108, 1808500, 2024-05-13, 109
+  108, 2300320, 2025-06-16, 152
+  108, 2807960, 2020-07-19, 195
+  109, 739630, 2021-04-06, 334
+  109, 1144200, 2022-05-09, 377
+  109, 1238840, 2023-06-12, 40
+  109, 1604030, 2024-07-15, 83
+  109, 1973530, 2025-08-18, 126
+  109, 2651280, 2020-09-21, 169
+  109, 3164500, 2021-10-24, 212
+  110, 1086940, 2022-07-11, 351
+  110, 1174180, 2023-08-14, 14
+  110, 1422450, 2024-09-17, 57
+  110, 1817190, 2025-10-20, 100
+  110, 2379780, 2020-11-23, 143
+  110, 3039180, 2021-12-26, 186
+  110, 3405690, 2022-01-02, 229
+  111, 1158310, 2023-10-16, 368
+  111, 1326470, 2024-11-19, 31
+  111, 1774580, 2025-12-22, 74
+  111, 2195250, 2020-01-25, 117
+  111, 2767030, 2021-02-01, 160
+  111, 3241660, 2022-03-04, 203
+  111, 3564740, 2023-04-07, 246
+  112, 1238810, 2024-01-21, 5
+  112, 1551360, 2025-02-24, 48
+  112, 1948540, 2020-03-27, 91
+  112, 2622380, 2021-04-03, 134
+  112, 3124540, 2022-05-06, 177
+  112, 3513350, 2023-06-09, 220
+  112, 4128580, 2024-07-12, 263
+  113, 1368140, 2025-04-26, 22
+  113, 1817070, 2020-05-02, 65
+  113, 2357570, 2021-06-05, 108
+  113, 2957350, 2022-07-08, 151
+  113, 3321460, 2023-08-11, 194
+  113, 3853250, 2024-09-14, 237
+  113, 4575750, 2025-10-17, 280
+  114, 1665460, 2020-07-04, 39
+  114, 2073850, 2021-08-07, 82
+  114, 2694490, 2022-09-10, 125
+  114, 3240220, 2023-10-13, 168
+  114, 3551340, 2024-11-16, 211
+  114, 4314050, 2025-12-19, 254
+  114, 4818650, 2020-01-22, 297
+  115, 1938090, 2021-10-09, 56
+  115, 2507950, 2022-11-12, 99
+  115, 3105440, 2023-12-15, 142
+  115, 3472040, 2024-01-18, 185
+  115, 4108000, 2025-02-21, 228
+  115, 4733330, 2020-03-24, 271
+  115, 4927750, 2021-04-27, 314
+  116, 2344520, 2022-01-14, 73
+  116, 2868840, 2023-02-17, 116
+  116, 3293260, 2024-03-20, 159
+  116, 3764200, 2025-04-23, 202
+  116, 4483260, 2020-05-26, 245
+  116, 4833240, 2021-06-02, 288
+  116, 4967530, 2022-07-05, 331
+  117, 2669320, 2023-04-19, 90
+  117, 3224770, 2024-05-22, 133
+  117, 3527290, 2025-06-25, 176
+  117, 4179360, 2020-07-01, 219
+  117, 4816200, 2021-08-04, 262
+  117, 4953010, 2022-09-07, 305
+  117, 570, 2023-10-10, 348
+  118, 3041230, 2024-07-24, 107
+  118, 3419430, 2025-08-27, 150
+  118, 4025700, 2020-09-03, 193
+  118, 4694660, 2021-10-06, 236
+  118, 4916300, 2022-11-09, 279
+  118, 220, 2023-12-12, 322
+  118, 221100, 2024-01-15, 365
+  119, 3282300, 2025-10-02, 124
+  119, 3670260, 2020-11-05, 167
+  119, 4443810, 2021-12-08, 210
+  119, 4828740, 2022-01-11, 253
+  119, 4967270, 2023-02-14, 296
+  119, 4000, 2024-03-17, 339
+  119, 244210, 2025-04-20, 2
+  120, 3526710, 2020-01-07, 141
+  120, 4166740, 2021-02-10, 184
+  120, 4790300, 2022-03-13, 227
+  120, 4946580, 2023-04-16, 270
+  120, 550, 2024-05-19, 313
+  120, 230410, 2025-06-22, 356
+  120, 271590, 2020-07-25, 19
+}
+
+Purchase = {
+  purchase_id, user_id, app_id, purchase_date, paid_usd
+  10001, 1, 242760, 2022-05-09, 19.99
+  10002, 1, 289070, 2023-06-12, 4.49
+  10003, 1, 374320, 2024-07-15, 30.00
+  10004, 1, 553850, 2025-08-18, 10.00
+  10005, 1, 892970, 2020-09-21, 29.99
+  10006, 1, 1158310, 2021-10-24, 37.49
+  10007, 2, 264710, 2023-08-14, 14.99
+  10008, 2, 322330, 2024-09-17, 3.75
+  10009, 2, 438100, 2025-10-20, 0.00
+  10010, 2, 714010, 2020-11-23, 0.00
+  10011, 2, 1142710, 2021-12-26, 30.00
+  10012, 2, 1238810, 2022-01-02, 1.25
+  10013, 3, 294100, 2024-11-19, 34.99
+  10014, 3, 394360, 2025-12-22, 37.49
+  10015, 3, 594650, 2020-01-25, 6.00
+  10016, 3, 1085660, 2021-02-01, 0.00
+  10017, 3, 1172620, 2022-03-04, 39.99
+  10018, 3, 1368140, 2023-04-07, 22.49
+  10019, 4, 367520, 2025-02-24, 7.50
+  10020, 4, 548430, 2020-03-27, 2.25
+  10021, 4, 814380, 2021-04-03, 59.99
+  10022, 4, 1149460, 2022-05-06, 26.24
+  10023, 4, 1245620, 2023-06-09, 30.00
+  10024, 4, 1665460, 2024-07-12, 0.00
+  10025, 5, 435150, 2020-05-02, 44.99
+  10026, 5, 646570, 2021-06-05, 4.68
+  10027, 5, 1097150, 2022-07-08, 0.00
+  10028, 5, 1222670, 2023-08-11, 0.00
+  10029, 5, 1517290, 2024-09-14, 5.99
+  10030, 5, 1938090, 2025-10-17, 0.00
+  10031, 6, 582010, 2021-08-07, 3.90
+  10032, 6, 960090, 2022-09-10, 3.50
+  10033, 6, 1172470, 2023-10-13, 0.00
+  10034, 6, 1366800, 2024-11-16, 7.49
+  10035, 6, 1811260, 2025-12-19, 0.00
+  10036, 6, 2344520, 2020-01-22, 12.50
+  10037, 7, 813780, 2022-11-12, 34.99
+  10038, 7, 1145360, 2023-12-15, 18.74
+  10039, 7, 1238860, 2024-01-18, 2.00
+  10040, 7, 1623730, 2025-02-21, 7.50
+  10041, 7, 2073620, 2020-03-24, 0.00
+  10042, 7, 2669320, 2021-04-27, 0.00
+  10043, 8, 1091500, 2023-02-17, 8.99
+  10044, 8, 1203220, 2024-03-20, 0.00
+  10045, 8, 1449850, 2025-04-23, 0.00
+  10046, 8, 1905180, 2020-05-26, 0.00
+  10047, 8, 2399830, 2021-06-02, 22.50
+  10048, 8, 3041230, 2022-07-05, 7.50
+  10049, 9, 1172380, 2024-05-22, 7.99
+  10050, 9, 1364780, 2025-06-25, 14.99
+  10051, 9, 1808500, 2020-07-01, 20.00
+  10052, 9, 2300320, 2021-08-04, 7.50
+  10053, 9, 2807960, 2022-09-07, 34.99
+  10054, 9, 3282300, 2023-10-10, 16.87
+  10055, 10, 1238840, 2025-08-27, 2.00
+  10056, 10, 1604030, 2020-09-03, 8.75
+  10057, 10, 1973530, 2021-10-06, 0.00
+  10058, 10, 2651280, 2022-11-09, 30.14
+  10059, 10, 3164500, 2023-12-12, 7.00
+  10060, 10, 3526710, 2024-01-15, 2.00
+  10061, 11, 1422450, 2020-11-05, 0.00
+  10062, 11, 1817190, 2021-12-08, 14.99
+  10063, 11, 2379780, 2022-01-11, 6.00
+  10064, 11, 3039180, 2023-02-14, 1.25
+  10065, 11, 3405690, 2024-03-17, 69.99
+  10066, 11, 3892270, 2025-04-20, 5.99
+  10067, 12, 1774580, 2021-02-10, 5.25
+  10068, 12, 2195250, 2022-03-13, 0.00
+  10069, 12, 2767030, 2023-04-16, 0.00
+  10070, 12, 3241660, 2024-05-19, 4.87
+  10071, 12, 3564740, 2025-06-22, 0.00
+  10072, 12, 4440080, 2020-07-25, 1.22
+  10073, 13, 1948540, 2022-05-15, 24.99
+  10074, 13, 2622380, 2023-06-18, 29.99
+  10075, 13, 3124540, 2024-07-21, 9.99
+  10076, 13, 3513350, 2025-08-24, 0.00
+  10077, 13, 4128580, 2020-09-27, 2.99
+  10078, 13, 4784930, 2021-10-03, 1.54
+  10079, 14, 2357570, 2023-08-20, 0.00
+  10080, 14, 2957350, 2024-09-23, 0.00
+  10081, 14, 3321460, 2025-10-26, 69.99
+  10082, 14, 3853250, 2020-11-02, 3.74
+  10083, 14, 4575750, 2021-12-05, 3.15
+  10084, 14, 4886540, 2022-01-08, 1.70
+  10085, 15, 2694490, 2024-11-25, 29.99
+  10086, 15, 3240220, 2025-12-01, 22.49
+  10087, 15, 3551340, 2020-01-04, 30.00
+  10088, 15, 4314050, 2021-02-07, 0.00
+  10089, 15, 4818650, 2022-03-10, 3.34
+  10090, 15, 4954070, 2023-04-13, 2.99
+  10091, 16, 3105440, 2025-02-03, 14.99
+  10092, 16, 3472040, 2020-03-06, 5.00
+  10093, 16, 4108000, 2021-04-09, 6.79
+  10094, 16, 4733330, 2022-05-12, 2.99
+  10095, 16, 4927750, 2023-06-15, 1.20
+  10096, 16, 400, 2024-07-18, 2.50
+  10097, 17, 3293260, 2020-05-08, 10.39
+  10098, 17, 3764200, 2021-06-11, 41.99
+  10099, 17, 4483260, 2022-07-14, 0.00
+  10100, 17, 4833240, 2023-08-17, 0.70
+  10101, 17, 4967530, 2024-09-20, 0.00
+  10102, 17, 39210, 2025-10-23, 14.99
+  10103, 18, 3527290, 2021-08-13, 4.00
+  10104, 18, 4179360, 2022-09-16, 0.00
+  10105, 18, 4816200, 2023-10-19, 5.19
+  10106, 18, 4953010, 2024-11-22, 0.00
+  10107, 18, 570, 2025-12-25, 0.00
+  10108, 18, 236390, 2020-01-01, 0.00
+  10109, 19, 4025700, 2022-11-18, 0.00
+  10110, 19, 4694660, 2023-12-21, 4.49
+  10111, 19, 4916300, 2024-01-24, 7.50
+  10112, 19, 220, 2025-02-27, 2.50
+  10113, 19, 221100, 2020-03-03, 49.99
+  10114, 19, 252950, 2021-04-06, 0.00
+  10115, 20, 4443810, 2023-02-23, 0.59
+  10116, 20, 4828740, 2024-03-26, 1.05
+  10117, 20, 4967270, 2025-04-02, 0.00
+  10118, 20, 4000, 2020-05-05, 3.74
+  10119, 20, 244210, 2021-06-08, 9.99
+  10120, 20, 291550, 2022-07-11, 0.00
+  10121, 21, 4790300, 2024-05-01, 0.69
+  10122, 21, 4946580, 2025-06-04, 6.37
+  10123, 21, 550, 2020-07-07, 5.00
+  10124, 21, 230410, 2021-08-10, 0.00
+  10125, 21, 271590, 2022-09-13, 0.00
+  10126, 21, 346110, 2023-10-16, 11.24
+  10127, 22, 4915370, 2025-08-06, 3.15
+  10128, 22, 10, 2020-09-09, 2.50
+  10129, 22, 108600, 2021-10-12, 24.99
+  10130, 22, 252490, 2022-11-15, 14.99
+  10131, 22, 304430, 2023-12-18, 1.25
+  10132, 22, 413150, 2024-01-21, 3.75
+  10133, 23, 4959500, 2020-11-11, 7.99
+  10134, 23, 730, 2021-12-14, 0.00
+  10135, 23, 242760, 2022-01-17, 9.99
+  10136, 23, 289070, 2023-02-20, 1.50
+  10137, 23, 374320, 2024-03-23, 59.99
+  10138, 23, 553850, 2025-04-26, 29.99
+  10139, 24, 440, 2021-02-16, 0.00
+  10140, 24, 227300, 2022-03-19, 5.00
+  10141, 24, 264710, 2023-04-22, 29.99
+  10142, 24, 322330, 2024-05-25, 11.24
+  10143, 24, 438100, 2025-06-01, 0.00
+  10144, 24, 714010, 2020-07-04, 0.00
+  10145, 25, 105600, 2022-05-21, 9.99
+  10146, 25, 251570, 2023-06-24, 33.74
+  10147, 25, 294100, 2024-07-27, 17.50
+  10148, 25, 394360, 2025-08-03, 12.50
+  10149, 25, 594650, 2020-09-06, 11.99
+  10150, 25, 1085660, 2021-10-09, 0.00
+  10151, 26, 236850, 2023-08-26, 25.00
+  10152, 26, 284160, 2024-09-02, 6.25
+  10153, 26, 367520, 2025-10-05, 14.99
+  10154, 26, 548430, 2020-11-08, 6.74
+  10155, 26, 814380, 2021-12-11, 30.00
+  10156, 26, 1149460, 2022-01-14, 8.75
+  10157, 27, 261550, 2024-11-04, 49.99
+  10158, 27, 322170, 2025-12-07, 3.74
+  10159, 27, 435150, 2020-01-10, 22.50
+  10160, 27, 646570, 2021-02-13, 1.56
+  10161, 27, 1097150, 2022-03-16, 0.00
+  10162, 27, 1222670, 2023-04-19, 0.00
+  10163, 28, 292030, 2025-02-09, 4.00
+  10164, 28, 381210, 2020-03-12, 5.00
+  10165, 28, 582010, 2021-04-15, 7.79
+  10166, 28, 960090, 2022-05-18, 10.49
+  10167, 28, 1172470, 2023-06-21, 0.00
+  10168, 28, 1366800, 2024-07-24, 2.50
+  10169, 29, 359550, 2020-05-14, 0.00
+  10170, 29, 489830, 2021-06-17, 7.49
+  10171, 29, 813780, 2022-07-20, 17.50
+  10172, 29, 1145360, 2023-08-23, 6.25
+  10173, 29, 1238860, 2024-09-26, 3.99
+  10174, 29, 1623730, 2025-10-02, 22.49
+  10175, 30, 431960, 2021-08-19, 2.50
+  10176, 30, 632360, 2022-09-22, 6.25
+  10177, 30, 1091500, 2023-10-25, 17.99
+  10178, 30, 1203220, 2024-11-01, 0.00
+  10179, 30, 1449850, 2025-12-04, 0.00
+  10180, 30, 1905180, 2020-01-07, 0.00
+  10181, 31, 578080, 2022-11-24, 0.00
+  10182, 31, 945360, 2023-12-27, 3.74
+  10183, 31, 1172380, 2024-01-03, 4.00
+  10184, 31, 1364780, 2025-02-06, 5.00
+  10185, 31, 1808500, 2020-03-09, 39.99
+  10186, 31, 2300320, 2021-04-12, 22.49
+  10187, 32, 739630, 2023-02-02, 9.99
+  10188, 32, 1144200, 2024-03-05, 12.50
+  10189, 32, 1238840, 2025-04-08, 3.99
+  10190, 32, 1604030, 2020-05-11, 26.24
+  10191, 32, 1973530, 2021-06-14, 0.00
+  10192, 32, 2651280, 2022-07-17, 10.05
+  10193, 33, 1086940, 2024-05-07, 41.99
+  10194, 33, 1174180, 2025-06-10, 44.99
+  10195, 33, 1422450, 2020-07-13, 0.00
+  10196, 33, 1817190, 2021-08-16, 5.00
+  10197, 33, 2379780, 2022-09-19, 11.99
+  10198, 33, 3039180, 2023-10-22, 3.74
+  10199, 34, 1158310, 2025-08-12, 25.00
+  10200, 34, 1326470, 2020-09-15, 7.50
+  10201, 34, 1774580, 2021-10-18, 10.49
+  10202, 34, 2195250, 2022-11-21, 0.00
+  10203, 34, 2767030, 2023-12-24, 0.00
+  10204, 34, 3241660, 2024-01-27, 1.62
+  10205, 35, 1238810, 2020-11-17, 4.99
+  10206, 35, 1551360, 2021-12-20, 44.99
+  10207, 35, 1948540, 2022-01-23, 12.49
+  10208, 35, 2622380, 2023-02-26, 10.00
+  10209, 35, 3124540, 2024-03-02, 19.99
+  10210, 35, 3513350, 2025-04-05, 0.00
+  10211, 36, 1368140, 2021-02-22, 14.99
+  10212, 36, 1817070, 2022-03-25, 6.00
+  10213, 36, 2357570, 2023-04-01, 0.00
+  10214, 36, 2957350, 2024-05-04, 0.00
+  10215, 36, 3321460, 2025-06-07, 34.99
+  10216, 36, 3853250, 2020-07-10, 1.25
+  10217, 37, 1665460, 2022-05-27, 0.00
+  10218, 37, 2073850, 2023-06-03, 0.00
+  10219, 37, 2694490, 2024-07-06, 14.99
+  10220, 37, 3240220, 2025-08-09, 7.50
+  10221, 37, 3551340, 2020-09-12, 59.99
+  10222, 37, 4314050, 2021-10-15, 0.00
+  10223, 38, 1938090, 2023-08-05, 0.00
+  10224, 38, 2507950, 2024-09-08, 0.00
+  10225, 38, 3105440, 2025-10-11, 29.99
+  10226, 38, 3472040, 2020-11-14, 14.99
+  10227, 38, 4108000, 2021-12-17, 3.40
+  10228, 38, 4733330, 2022-01-20, 1.00
+  10229, 39, 2344520, 2024-11-10, 49.99
+  10230, 39, 2868840, 2025-12-13, 18.74
+  10231, 39, 3293260, 2020-01-16, 5.20
+  10232, 39, 3764200, 2021-02-19, 14.00
+  10233, 39, 4483260, 2022-03-22, 0.00
+  10234, 39, 4833240, 2023-04-25, 2.09
+  10235, 40, 2669320, 2025-02-15, 0.00
+  10236, 40, 3224770, 2020-03-18, 0.00
+  10237, 40, 3527290, 2021-04-21, 7.99
+  10238, 40, 4179360, 2022-05-24, 0.00
+  10239, 40, 4816200, 2023-06-27, 2.60
+  10240, 40, 4953010, 2024-07-03, 0.00
+  10241, 41, 3041230, 2020-05-20, 29.99
+  10242, 41, 3419430, 2021-06-23, 0.00
+  10243, 41, 4025700, 2022-07-26, 0.00
+  10244, 41, 4694660, 2023-08-02, 1.50
+  10245, 41, 4916300, 2024-09-05, 14.99
+  10246, 41, 220, 2025-10-08, 7.49
+  10247, 42, 3282300, 2021-08-25, 11.24
+  10248, 42, 3670260, 2022-09-01, 3.50
+  10249, 42, 4443810, 2023-10-04, 1.19
+  10250, 42, 4828740, 2024-11-07, 3.14
+  10251, 42, 4967270, 2025-12-10, 0.00
+  10252, 42, 4000, 2020-01-13, 1.25
+  10253, 43, 3526710, 2022-11-03, 7.99
+  10254, 43, 4166740, 2023-12-06, 3.59
+  10255, 43, 4790300, 2024-01-09, 0.34
+  10256, 43, 4946580, 2025-02-12, 2.12
+  10257, 43, 550, 2020-03-15, 9.99
+  10258, 43, 230410, 2021-04-18, 0.00
+  10259, 44, 3892270, 2023-02-08, 4.00
+  10260, 44, 4621410, 2024-03-11, 0.79
+  10261, 44, 4915370, 2025-04-14, 6.29
+  10262, 44, 10, 2020-05-17, 7.49
+  10263, 44, 108600, 2021-06-20, 12.49
+  10264, 44, 252490, 2022-07-23, 5.00
+  10265, 45, 4440080, 2024-05-13, 4.89
+  10266, 45, 4828620, 2025-06-16, 0.44
+  10267, 45, 4959500, 2020-07-19, 4.00
+  10268, 45, 730, 2021-08-22, 0.00
+  10269, 45, 242760, 2022-09-25, 19.99
+  10270, 45, 289070, 2023-10-01, 4.49
+  10271, 46, 4784930, 2025-08-18, 1.03
+  10272, 46, 4946490, 2020-09-21, 1.12
+  10273, 46, 440, 2021-10-24, 0.00
+  10274, 46, 227300, 2022-11-27, 14.99
+  10275, 46, 264710, 2023-12-03, 14.99
+  10276, 46, 322330, 2024-01-06, 3.75
+  10277, 47, 4886540, 2020-11-23, 6.79
+  10278, 47, 4968440, 2021-12-26, 0.89
+  10279, 47, 105600, 2022-01-02, 5.00
+  10280, 47, 251570, 2023-02-05, 11.25
+  10281, 47, 294100, 2024-03-08, 34.99
+  10282, 47, 394360, 2025-04-11, 37.49
+  10283, 48, 4954070, 2021-02-01, 2.00
+  10284, 48, 620, 2022-03-04, 2.50
+  10285, 48, 236850, 2023-04-07, 49.99
+  10286, 48, 284160, 2024-05-10, 18.74
+  10287, 48, 367520, 2025-06-13, 7.50
+  10288, 48, 548430, 2020-07-16, 2.25
+  10289, 49, 400, 2022-05-06, 9.99
+  10290, 49, 221380, 2023-06-09, 14.99
+  10291, 49, 261550, 2024-07-12, 25.00
+  10292, 49, 322170, 2025-08-15, 1.25
+  10293, 49, 435150, 2020-09-18, 44.99
+  10294, 49, 646570, 2021-10-21, 4.68
+  10295, 50, 39210, 2023-08-11, 9.99
+  10296, 50, 250900, 2024-09-14, 3.75
+  10297, 50, 292030, 2025-10-17, 7.99
+  10298, 50, 381210, 2020-11-20, 14.99
+  10299, 50, 582010, 2021-12-23, 3.90
+  10300, 50, 960090, 2022-01-26, 3.50
+  10301, 51, 236390, 2024-11-16, 0.00
+  10302, 51, 275850, 2025-12-19, 44.99
+  10303, 51, 359550, 2020-01-22, 0.00
+  10304, 51, 489830, 2021-02-25, 2.50
+  10305, 51, 813780, 2022-03-01, 34.99
+  10306, 51, 1145360, 2023-04-04, 18.74
+  10307, 52, 252950, 2025-02-21, 0.00
+  10308, 52, 304930, 2020-03-24, 0.00
+  10309, 52, 431960, 2021-04-27, 4.99
+  10310, 52, 632360, 2022-05-03, 18.74
+  10311, 52, 1091500, 2023-06-06, 8.99
+  10312, 52, 1203220, 2024-07-09, 0.00
+  10313, 53, 291550, 2020-05-26, 0.00
+  10314, 53, 377160, 2021-06-02, 5.99
+  10315, 53, 578080, 2022-07-05, 0.00
+  10316, 53, 945360, 2023-08-08, 1.25
+  10317, 53, 1172380, 2024-09-11, 7.99
+  10318, 53, 1364780, 2025-10-14, 14.99
+  10319, 54, 346110, 2021-08-04, 7.50
+  10320, 54, 440900, 2022-09-07, 10.00
+  10321, 54, 739630, 2023-10-10, 19.99
+  10322, 54, 1144200, 2024-11-13, 37.49
+  10323, 54, 1238840, 2025-12-16, 2.00
+  10324, 54, 1604030, 2020-01-19, 8.75
+  10325, 55, 413150, 2022-11-09, 14.99
+  10326, 55, 629520, 2023-12-12, 3.74
+  10327, 55, 1086940, 2024-01-15, 21.00
+  10328, 55, 1174180, 2025-02-18, 15.00
+  10329, 55, 1422450, 2020-03-21, 0.00
+  10330, 55, 1817190, 2021-04-24, 14.99
+  10331, 56, 553850, 2023-02-14, 20.00
+  10332, 56, 892970, 2024-03-17, 7.50
+  10333, 56, 1158310, 2025-04-20, 49.99
+  10334, 56, 1326470, 2020-05-23, 22.49
+  10335, 56, 1774580, 2021-06-26, 5.25
+  10336, 56, 2195250, 2022-07-02, 0.00
+  10337, 57, 714010, 2024-05-19, 0.00
+  10338, 57, 1142710, 2025-06-22, 44.99
+  10339, 57, 1238810, 2020-07-25, 2.50
+  10340, 57, 1551360, 2021-08-01, 15.00
+  10341, 57, 1948540, 2022-09-04, 24.99
+  10342, 57, 2622380, 2023-10-07, 29.99
+  10343, 58, 1085660, 2025-08-24, 0.00
+  10344, 58, 1172620, 2020-09-27, 10.00
+  10345, 58, 1368140, 2021-10-03, 29.99
+  10346, 58, 1817070, 2022-11-06, 17.99
+  10347, 58, 2357570, 2023-12-09, 0.00
+  10348, 58, 2957350, 2024-01-12, 0.00
+  10349, 59, 1149460, 2020-11-02, 34.99
+  10350, 59, 1245620, 2021-12-05, 44.99
+  10351, 59, 1665460, 2022-01-08, 0.00
+  10352, 59, 2073850, 2023-02-11, 0.00
+  10353, 59, 2694490, 2024-03-14, 29.99
+  10354, 59, 3240220, 2025-04-17, 22.49
+  10355, 60, 1222670, 2021-02-07, 0.00
+  10356, 60, 1517290, 2022-03-10, 1.50
+  10357, 60, 1938090, 2023-04-13, 0.00
+  10358, 60, 2507950, 2024-05-16, 0.00
+  10359, 60, 3105440, 2025-06-19, 14.99
+  10360, 60, 3472040, 2020-07-22, 5.00
+  10361, 61, 1366800, 2022-05-12, 9.99
+  10362, 61, 1811260, 2023-06-15, 0.00
+  10363, 61, 2344520, 2024-07-18, 25.00
+  10364, 61, 2868840, 2025-08-21, 6.25
+  10365, 61, 3293260, 2020-09-24, 10.39
+  10366, 61, 3764200, 2021-10-27, 41.99
+  10367, 62, 1623730, 2023-08-17, 14.99
+  10368, 62, 2073620, 2024-09-20, 0.00
+  10369, 62, 2669320, 2025-10-23, 0.00
+  10370, 62, 3224770, 2020-11-26, 0.00
+  10371, 62, 3527290, 2021-12-02, 4.00
+  10372, 62, 4179360, 2022-01-05, 0.00
+  10373, 63, 1905180, 2024-11-22, 0.00
+  10374, 63, 2399830, 2025-12-25, 33.74
+  10375, 63, 3041230, 2020-01-01, 14.99
+  10376, 63, 3419430, 2021-02-04, 0.00
+  10377, 63, 4025700, 2022-03-07, 0.00
+  10378, 63, 4694660, 2023-04-10, 4.49
+  10379, 64, 2300320, 2025-02-27, 14.99
+  10380, 64, 2807960, 2020-03-03, 8.75
+  10381, 64, 3282300, 2021-04-06, 22.49
+  10382, 64, 3670260, 2022-05-09, 10.49
+  10383, 64, 4443810, 2023-06-12, 0.59
+  10384, 64, 4828740, 2024-07-15, 1.05
+  10385, 65, 2651280, 2020-05-05, 40.19
+  10386, 65, 3164500, 2021-06-08, 10.49
+  10387, 65, 3526710, 2022-07-11, 4.00
+  10388, 65, 4166740, 2023-08-14, 1.20
+  10389, 65, 4790300, 2024-09-17, 0.69
+  10390, 65, 4946580, 2025-10-20, 6.37
+  10391, 66, 3039180, 2021-08-10, 2.50
+  10392, 66, 3405690, 2022-09-13, 17.50
+  10393, 66, 3892270, 2023-10-16, 7.99
+  10394, 66, 4621410, 2024-11-19, 2.35
+  10395, 66, 4915370, 2025-12-22, 3.15
+  10396, 66, 10, 2020-01-25, 2.50
+  10397, 67, 3241660, 2022-11-15, 6.49
+  10398, 67, 3564740, 2023-12-18, 0.00
+  10399, 67, 4440080, 2024-01-21, 2.44
+  10400, 67, 4828620, 2025-02-24, 0.15
+  10401, 67, 4959500, 2020-03-27, 7.99
+  10402, 67, 730, 2021-04-03, 0.00
+  10403, 68, 3513350, 2023-02-20, 0.00
+  10404, 68, 4128580, 2024-03-23, 0.75
+  10405, 68, 4784930, 2025-04-26, 2.06
+  10406, 68, 4946490, 2020-05-02, 3.37
+  10407, 68, 440, 2021-06-05, 0.00
+  10408, 68, 227300, 2022-07-08, 5.00
+  10409, 69, 3853250, 2024-05-25, 4.99
+  10410, 69, 4575750, 2025-06-01, 4.72
+  10411, 69, 4886540, 2020-07-04, 3.40
+  10412, 69, 4968440, 2021-08-07, 0.30
+  10413, 69, 105600, 2022-09-10, 9.99
+  10414, 69, 251570, 2023-10-13, 33.74
+  10415, 70, 4314050, 2025-08-03, 0.00
+  10416, 70, 4818650, 2020-09-06, 0.83
+  10417, 70, 4954070, 2021-10-09, 3.99
+  10418, 70, 620, 2022-11-12, 7.49
+  10419, 70, 236850, 2023-12-15, 25.00
+  10420, 70, 284160, 2024-01-18, 6.25
+  10421, 71, 4733330, 2020-11-08, 3.99
+  10422, 71, 4927750, 2021-12-11, 1.79
+  10423, 71, 400, 2022-01-14, 5.00
+  10424, 71, 221380, 2023-02-17, 5.00
+  10425, 71, 261550, 2024-03-20, 49.99
+  10426, 71, 322170, 2025-04-23, 3.74
+  10427, 72, 4833240, 2021-02-13, 1.40
+  10428, 72, 4967530, 2022-03-16, 0.00
+  10429, 72, 39210, 2023-04-19, 19.99
+  10430, 72, 250900, 2024-05-22, 11.24
+  10431, 72, 292030, 2025-06-25, 4.00
+  10432, 72, 381210, 2020-07-01, 5.00
+  10433, 73, 4953010, 2022-05-18, 0.00
+  10434, 73, 570, 2023-06-21, 0.00
+  10435, 73, 236390, 2024-07-24, 0.00
+  10436, 73, 275850, 2025-08-27, 15.00
+  10437, 73, 359550, 2020-09-03, 0.00
+  10438, 73, 489830, 2021-10-06, 7.49
+  10439, 74, 220, 2023-08-23, 5.00
+  10440, 74, 221100, 2024-09-26, 12.50
+  10441, 74, 252950, 2025-10-02, 0.00
+  10442, 74, 304930, 2020-11-05, 0.00
+  10443, 74, 431960, 2021-12-08, 2.50
+  10444, 74, 632360, 2022-01-11, 6.25
+  10445, 75, 4000, 2024-11-01, 4.99
+  10446, 75, 244210, 2025-12-04, 14.99
+  10447, 75, 291550, 2020-01-07, 0.00
+  10448, 75, 377160, 2021-02-10, 2.00
+  10449, 75, 578080, 2022-03-13, 0.00
+  10450, 75, 945360, 2023-04-16, 3.74
+  10451, 76, 230410, 2025-02-06, 0.00
+  10452, 76, 271590, 2020-03-09, 0.00
+  10453, 76, 346110, 2021-04-12, 14.99
+  10454, 76, 440900, 2022-05-15, 29.99
+  10455, 76, 739630, 2023-06-18, 9.99
+  10456, 76, 1144200, 2024-07-21, 12.50
+  10457, 77, 252490, 2020-05-11, 19.99
+  10458, 77, 304430, 2021-06-14, 1.87
+  10459, 77, 413150, 2022-07-17, 7.50
+  10460, 77, 629520, 2023-08-20, 1.25
+  10461, 77, 1086940, 2024-09-23, 41.99
+  10462, 77, 1174180, 2025-10-26, 44.99
+  10463, 78, 289070, 2021-08-16, 3.00
+  10464, 78, 374320, 2022-09-19, 15.00
+  10465, 78, 553850, 2023-10-22, 39.99
+  10466, 78, 892970, 2024-11-25, 22.49
+  10467, 78, 1158310, 2025-12-01, 25.00
+  10468, 78, 1326470, 2020-01-04, 7.50
+  10469, 79, 322330, 2022-11-21, 14.99
+  10470, 79, 438100, 2023-12-24, 0.00
+  10471, 79, 714010, 2024-01-27, 0.00
+  10472, 79, 1142710, 2025-02-03, 15.00
+  10473, 79, 1238810, 2020-03-06, 4.99
+  10474, 79, 1551360, 2021-04-09, 44.99
+  10475, 80, 394360, 2023-02-26, 25.00
+  10476, 80, 594650, 2024-03-02, 3.00
+  10477, 80, 1085660, 2025-04-05, 0.00
+  10478, 80, 1172620, 2020-05-08, 29.99
+  10479, 80, 1368140, 2021-06-11, 14.99
+  10480, 80, 1817070, 2022-07-14, 6.00
+  10481, 81, 548430, 2024-05-04, 8.99
+  10482, 81, 814380, 2025-06-07, 44.99
+  10483, 81, 1149460, 2020-07-10, 17.50
+  10484, 81, 1245620, 2021-08-13, 15.00
+  10485, 81, 1665460, 2022-09-16, 0.00
+  10486, 81, 2073850, 2023-10-19, 0.00
+  10487, 82, 646570, 2025-08-09, 3.12
+  10488, 82, 1097150, 2020-09-12, 0.00
+  10489, 82, 1222670, 2021-10-15, 0.00
+  10490, 82, 1517290, 2022-11-18, 4.49
+  10491, 82, 1938090, 2023-12-21, 0.00
+  10492, 82, 2507950, 2024-01-24, 0.00
+  10493, 83, 960090, 2020-11-14, 13.99
+  10494, 83, 1172470, 2021-12-17, 0.00
+  10495, 83, 1366800, 2022-01-20, 5.00
+  10496, 83, 1811260, 2023-02-23, 0.00
+  10497, 83, 2344520, 2024-03-26, 49.99
+  10498, 83, 2868840, 2025-04-02, 18.74
+  10499, 84, 1145360, 2021-02-19, 12.49
+  10500, 84, 1238860, 2022-03-22, 1.00
+  10501, 84, 1623730, 2023-04-25, 29.99
+  10502, 84, 2073620, 2024-05-01, 0.00
+  10503, 84, 2669320, 2025-06-04, 0.00
+  10504, 84, 3224770, 2020-07-07, 0.00
+  10505, 85, 1203220, 2022-05-24, 0.00
+  10506, 85, 1449850, 2023-06-27, 0.00
+  10507, 85, 1905180, 2024-07-03, 0.00
+  10508, 85, 2399830, 2025-08-06, 11.25
+  10509, 85, 3041230, 2020-09-09, 29.99
+  10510, 85, 3419430, 2021-10-12, 0.00
+  10511, 86, 1364780, 2023-08-02, 9.99
+  10512, 86, 1808500, 2024-09-05, 10.00
+  10513, 86, 2300320, 2025-10-08, 29.99
+  10514, 86, 2807960, 2020-11-11, 26.24
+  10515, 86, 3282300, 2021-12-14, 11.24
+  10516, 86, 3670260, 2022-01-17, 3.50
+  10517, 87, 1604030, 2024-11-07, 34.99
+  10518, 87, 1973530, 2025-12-10, 0.00
+  10519, 87, 2651280, 2020-01-13, 20.09
+  10520, 87, 3164500, 2021-02-16, 3.50
+  10521, 87, 3526710, 2022-03-19, 7.99
+  10522, 87, 4166740, 2023-04-22, 3.59
+  10523, 88, 1817190, 2025-02-12, 9.99
+  10524, 88, 2379780, 2020-03-15, 3.00
+  10525, 88, 3039180, 2021-04-18, 4.99
+  10526, 88, 3405690, 2022-05-21, 52.49
+  10527, 88, 3892270, 2023-06-24, 4.00
+  10528, 88, 4621410, 2024-07-27, 0.79
+  10529, 89, 2195250, 2020-05-17, 0.00
+  10530, 89, 2767030, 2021-06-20, 0.00
+  10531, 89, 3241660, 2022-07-23, 3.25
+  10532, 89, 3564740, 2023-08-26, 0.00
+  10533, 89, 4440080, 2024-09-02, 4.89
+  10534, 89, 4828620, 2025-10-05, 0.44
+  10535, 90, 2622380, 2021-08-22, 20.00
+  10536, 90, 3124540, 2022-09-25, 5.00
+  10537, 90, 3513350, 2023-10-01, 0.00
+  10538, 90, 4128580, 2024-11-04, 2.24
+  10539, 90, 4784930, 2025-12-07, 1.03
+  10540, 90, 4946490, 2020-01-10, 1.12
+  10541, 91, 2957350, 2022-11-27, 0.00
+  10542, 91, 3321460, 2023-12-03, 52.49
+  10543, 91, 3853250, 2024-01-06, 2.50
+  10544, 91, 4575750, 2025-02-09, 1.57
+  10545, 91, 4886540, 2020-03-12, 6.79
+  10546, 91, 4968440, 2021-04-15, 0.89
+  10547, 92, 3240220, 2023-02-05, 14.99
+  10548, 92, 3551340, 2024-03-08, 15.00
+  10549, 92, 4314050, 2025-04-11, 0.00
+  10550, 92, 4818650, 2020-05-14, 2.50
+  10551, 92, 4954070, 2021-06-17, 2.00
+  10552, 92, 620, 2022-07-20, 2.50
+  10553, 93, 3472040, 2024-05-10, 19.99
+  10554, 93, 4108000, 2025-06-13, 5.09
+  10555, 93, 4733330, 2020-07-16, 2.00
+  10556, 93, 4927750, 2021-08-19, 0.60
+  10557, 93, 400, 2022-09-22, 9.99
+  10558, 93, 221380, 2023-10-25, 14.99
+  10559, 94, 3764200, 2025-08-15, 28.00
+  10560, 94, 4483260, 2020-09-18, 0.00
+  10561, 94, 4833240, 2021-10-21, 2.79
+  10562, 94, 4967530, 2022-11-24, 0.00
+  10563, 94, 39210, 2023-12-27, 9.99
+  10564, 94, 250900, 2024-01-03, 3.75
+  10565, 95, 4179360, 2020-11-20, 0.00
+  10566, 95, 4816200, 2021-12-23, 3.89
+  10567, 95, 4953010, 2022-01-26, 0.00
+  10568, 95, 570, 2023-02-02, 0.00
+  10569, 95, 236390, 2024-03-05, 0.00
+  10570, 95, 275850, 2025-04-08, 44.99
+  10571, 96, 4694660, 2021-02-25, 3.00
+  10572, 96, 4916300, 2022-03-01, 3.75
+  10573, 96, 220, 2023-04-04, 9.99
+  10574, 96, 221100, 2024-05-07, 37.49
+  10575, 96, 252950, 2025-06-10, 0.00
+  10576, 96, 304930, 2020-07-13, 0.00
+  10577, 97, 4828740, 2022-05-03, 4.19
+  10578, 97, 4967270, 2023-06-06, 0.00
+  10579, 97, 4000, 2024-07-09, 2.50
+  10580, 97, 244210, 2025-08-12, 5.00
+  10581, 97, 291550, 2020-09-15, 0.00
+  10582, 97, 377160, 2021-10-18, 5.99
+  10583, 98, 4946580, 2023-08-08, 4.25
+  10584, 98, 550, 2024-09-11, 2.50
+  10585, 98, 230410, 2025-10-14, 0.00
+  10586, 98, 271590, 2020-11-17, 0.00
+  10587, 98, 346110, 2021-12-20, 7.50
+  10588, 98, 440900, 2022-01-23, 10.00
+  10589, 99, 10, 2024-11-13, 9.99
+  10590, 99, 108600, 2025-12-16, 18.74
+  10591, 99, 252490, 2020-01-19, 9.99
+  10592, 99, 304430, 2021-02-22, 0.62
+  10593, 99, 413150, 2022-03-25, 14.99
+  10594, 99, 629520, 2023-04-01, 3.74
+  10595, 100, 730, 2025-02-18, 0.00
+  10596, 100, 242760, 2020-03-21, 5.00
+  10597, 100, 289070, 2021-04-24, 5.99
+  10598, 100, 374320, 2022-05-27, 44.99
+  10599, 100, 553850, 2023-06-03, 20.00
+  10600, 100, 892970, 2024-07-06, 7.50
+  10601, 101, 227300, 2020-05-23, 19.99
+  10602, 101, 264710, 2021-06-26, 22.49
+  10603, 101, 322330, 2022-07-02, 7.50
+  10604, 101, 438100, 2023-08-05, 0.00
+  10605, 101, 714010, 2024-09-08, 0.00
+  10606, 101, 1142710, 2025-10-11, 44.99
+  10607, 102, 251570, 2021-08-01, 22.50
+  10608, 102, 294100, 2022-09-04, 8.75
+  10609, 102, 394360, 2023-10-07, 49.99
+  10610, 102, 594650, 2024-11-10, 8.99
+  10611, 102, 1085660, 2025-12-13, 0.00
+  10612, 102, 1172620, 2020-01-16, 10.00
+  10613, 103, 284160, 2022-11-06, 24.99
+  10614, 103, 367520, 2023-12-09, 11.24
+  10615, 103, 548430, 2024-01-12, 4.50
+  10616, 103, 814380, 2025-02-15, 15.00
+  10617, 103, 1149460, 2020-03-18, 34.99
+  10618, 103, 1245620, 2021-04-21, 44.99
+  10619, 104, 322170, 2023-02-11, 2.50
+  10620, 104, 435150, 2024-03-14, 11.25
+  10621, 104, 646570, 2025-04-17, 6.24
+  10622, 104, 1097150, 2020-05-20, 0.00
+  10623, 104, 1222670, 2021-06-23, 0.00
+  10624, 104, 1517290, 2022-07-26, 1.50
+  10625, 105, 381210, 2024-05-16, 19.99
+  10626, 105, 582010, 2025-06-19, 5.84
+  10627, 105, 960090, 2020-07-22, 7.00
+  10628, 105, 1172470, 2021-08-25, 0.00
+  10629, 105, 1366800, 2022-09-01, 9.99
+  10630, 105, 1811260, 2023-10-04, 0.00
+  10631, 106, 489830, 2025-08-21, 5.00
+  10632, 106, 813780, 2020-09-24, 8.75
+  10633, 106, 1145360, 2021-10-27, 24.99
+  10634, 106, 1238860, 2022-11-03, 2.99
+  10635, 106, 1623730, 2023-12-06, 14.99
+  10636, 106, 2073620, 2024-01-09, 0.00
+  10637, 107, 632360, 2020-11-26, 24.99
+  10638, 107, 1091500, 2021-12-02, 13.49
+  10639, 107, 1203220, 2022-01-05, 0.00
+  10640, 107, 1449850, 2023-02-08, 0.00
+  10641, 107, 1905180, 2024-03-11, 0.00
+  10642, 107, 2399830, 2025-04-14, 33.74
+  10643, 108, 945360, 2021-02-04, 2.50
+  10644, 108, 1172380, 2022-03-07, 2.00
+  10645, 108, 1364780, 2023-04-10, 19.99
+  10646, 108, 1808500, 2024-05-13, 29.99
+  10647, 108, 2300320, 2025-06-16, 14.99
+  10648, 108, 2807960, 2020-07-19, 8.75
+  10649, 109, 1144200, 2022-05-09, 49.99
+  10650, 109, 1238840, 2023-06-12, 2.99
+  10651, 109, 1604030, 2024-07-15, 17.50
+  10652, 109, 1973530, 2025-08-18, 0.00
+  10653, 109, 2651280, 2020-09-21, 40.19
+  10654, 109, 3164500, 2021-10-24, 10.49
+  10655, 110, 1174180, 2023-08-14, 30.00
+  10656, 110, 1422450, 2024-09-17, 0.00
+  10657, 110, 1817190, 2025-10-20, 19.99
+  10658, 110, 2379780, 2020-11-23, 8.99
+  10659, 110, 3039180, 2021-12-26, 2.50
+  10660, 110, 3405690, 2022-01-02, 17.50
+  10661, 111, 1326470, 2024-11-19, 29.99
+  10662, 111, 1774580, 2025-12-22, 7.87
+  10663, 111, 2195250, 2020-01-25, 0.00
+  10664, 111, 2767030, 2021-02-01, 0.00
+  10665, 111, 3241660, 2022-03-04, 6.49
+  10666, 111, 3564740, 2023-04-07, 0.00
+  10667, 112, 1551360, 2025-02-24, 30.00
+  10668, 112, 1948540, 2020-03-27, 6.25
+  10669, 112, 2622380, 2021-04-03, 39.99
+  10670, 112, 3124540, 2022-05-06, 14.99
+  10671, 112, 3513350, 2023-06-09, 0.00
+  10672, 112, 4128580, 2024-07-12, 0.75
+  10673, 113, 1817070, 2020-05-02, 23.99
+  10674, 113, 2357570, 2021-06-05, 0.00
+  10675, 113, 2957350, 2022-07-08, 0.00
+  10676, 113, 3321460, 2023-08-11, 17.50
+  10677, 113, 3853250, 2024-09-14, 4.99
+  10678, 113, 4575750, 2025-10-17, 4.72
+  10679, 114, 2073850, 2021-08-07, 0.00
+  10680, 114, 2694490, 2022-09-10, 7.50
+  10681, 114, 3240220, 2023-10-13, 29.99
+  10682, 114, 3551340, 2024-11-16, 44.99
+  10683, 114, 4314050, 2025-12-19, 0.00
+  10684, 114, 4818650, 2020-01-22, 0.83
+  10685, 115, 2507950, 2022-11-12, 0.00
+  10686, 115, 3105440, 2023-12-15, 22.49
+  10687, 115, 3472040, 2024-01-18, 9.99
+  10688, 115, 4108000, 2025-02-21, 1.70
+  10689, 115, 4733330, 2020-03-24, 3.99
+  10690, 115, 4927750, 2021-04-27, 1.79
+  10691, 116, 2868840, 2023-02-17, 12.49
+  10692, 116, 3293260, 2024-03-20, 2.60
+  10693, 116, 3764200, 2025-04-23, 55.99
+  10694, 116, 4483260, 2020-05-26, 0.00
+  10695, 116, 4833240, 2021-06-02, 1.40
+  10696, 116, 4967530, 2022-07-05, 0.00
+  10697, 117, 3224770, 2024-05-22, 0.00
+  10698, 117, 3527290, 2025-06-25, 5.99
+  10699, 117, 4179360, 2020-07-01, 0.00
+  10700, 117, 4816200, 2021-08-04, 1.30
+  10701, 117, 4953010, 2022-09-07, 0.00
+  10702, 117, 570, 2023-10-10, 0.00
+  10703, 118, 3419430, 2025-08-27, 0.00
+  10704, 118, 4025700, 2020-09-03, 0.00
+  10705, 118, 4694660, 2021-10-06, 5.99
+  10706, 118, 4916300, 2022-11-09, 11.24
+  10707, 118, 220, 2023-12-12, 5.00
+  10708, 118, 221100, 2024-01-15, 12.50
+  10709, 119, 3670260, 2020-11-05, 13.99
+  10710, 119, 4443810, 2021-12-08, 0.89
+  10711, 119, 4828740, 2022-01-11, 2.10
+  10712, 119, 4967270, 2023-02-14, 0.00
+  10713, 119, 4000, 2024-03-17, 4.99
+  10714, 119, 244210, 2025-04-20, 14.99
+  10715, 120, 4166740, 2021-02-10, 2.40
+  10716, 120, 4790300, 2022-03-13, 0.17
+  10717, 120, 4946580, 2023-04-16, 8.49
+  10718, 120, 550, 2024-05-19, 7.49
+  10719, 120, 230410, 2025-06-22, 0.00
+  10720, 120, 271590, 2020-07-25, 0.00
+}
+
+Review = {
+  review_id, user_id, app_id, recommended, score, helpful_votes
+  50001, 1, 730, 'No', 2, 10
+  50002, 1, 289070, 'Yes', 9, 29
+  50003, 1, 553850, 'Yes', 6, 48
+  50004, 1, 1158310, 'Yes', 3, 67
+  50005, 2, 264710, 'Yes', 1, 86
+  50006, 2, 438100, 'Yes', 8, 105
+  50007, 2, 1142710, 'No', 5, 124
+  50008, 3, 251570, 'Yes', 3, 143
+  50009, 3, 394360, 'Yes', 10, 162
+  50010, 3, 1085660, 'Yes', 7, 181
+  50011, 3, 1368140, 'Yes', 4, 200
+  50012, 4, 367520, 'Yes', 2, 219
+  50013, 4, 814380, 'No', 9, 238
+  50014, 4, 1245620, 'Yes', 6, 257
+  50015, 5, 322170, 'Yes', 4, 276
+  50016, 5, 646570, 'Yes', 1, 295
+  50017, 5, 1222670, 'Yes', 8, 314
+  50018, 5, 1938090, 'Yes', 5, 333
+  50019, 6, 582010, 'No', 3, 352
+  50020, 6, 1172470, 'Yes', 10, 371
+  50021, 6, 1811260, 'Yes', 7, 390
+  50022, 7, 489830, 'Yes', 5, 409
+  50023, 7, 1145360, 'Yes', 2, 428
+  50024, 7, 1623730, 'Yes', 9, 447
+  50025, 7, 2669320, 'No', 6, 466
+  50026, 8, 1091500, 'Yes', 4, 485
+  50027, 8, 1449850, 'Yes', 1, 504
+  50028, 8, 2399830, 'Yes', 8, 523
+  50029, 9, 945360, 'Yes', 6, 542
+  50030, 9, 1364780, 'Yes', 3, 561
+  50031, 9, 2300320, 'No', 10, 580
+  50032, 9, 3282300, 'Yes', 7, 599
+  50033, 10, 1238840, 'Yes', 5, 618
+  50034, 10, 1973530, 'Yes', 2, 637
+  50035, 10, 3164500, 'Yes', 9, 656
+  50036, 11, 1174180, 'Yes', 7, 675
+  50037, 11, 1817190, 'No', 4, 694
+  50038, 11, 3039180, 'Yes', 1, 713
+  50039, 11, 3892270, 'Yes', 8, 732
+  50040, 12, 1774580, 'Yes', 6, 751
+  50041, 12, 2767030, 'Yes', 3, 770
+  50042, 12, 3564740, 'Yes', 10, 789
+  50043, 13, 1551360, 'No', 8, 808
+  50044, 13, 2622380, 'Yes', 5, 827
+  50045, 13, 3513350, 'Yes', 2, 846
+  50046, 13, 4784930, 'Yes', 9, 865
+  50047, 14, 2357570, 'Yes', 7, 884
+  50048, 14, 3321460, 'Yes', 4, 903
+  50049, 14, 4575750, 'No', 1, 22
+  50050, 15, 2073850, 'Yes', 9, 41
+  50051, 15, 3240220, 'Yes', 6, 60
+  50052, 15, 4314050, 'Yes', 3, 79
+  50053, 15, 4954070, 'Yes', 10, 98
+  50054, 16, 3105440, 'Yes', 8, 117
+  50055, 16, 4108000, 'No', 5, 136
+  50056, 16, 4927750, 'Yes', 2, 155
+  50057, 17, 2868840, 'Yes', 10, 174
+  50058, 17, 3764200, 'Yes', 7, 193
+  50059, 17, 4833240, 'Yes', 4, 212
+  50060, 17, 39210, 'Yes', 1, 231
+  50061, 18, 3527290, 'No', 9, 250
+  50062, 18, 4816200, 'Yes', 6, 269
+  50063, 18, 570, 'Yes', 3, 288
+  50064, 19, 3419430, 'Yes', 1, 307
+  50065, 19, 4694660, 'Yes', 8, 326
+  50066, 19, 220, 'Yes', 5, 345
+  50067, 19, 252950, 'No', 2, 364
+  50068, 20, 4443810, 'Yes', 10, 383
+  50069, 20, 4967270, 'Yes', 7, 402
+  50070, 20, 244210, 'Yes', 4, 421
+  50071, 21, 4166740, 'Yes', 2, 440
+  50072, 21, 4946580, 'Yes', 9, 459
+  50073, 21, 230410, 'No', 6, 478
+  50074, 21, 346110, 'Yes', 3, 497
+  50075, 22, 4915370, 'Yes', 1, 516
+  50076, 22, 108600, 'Yes', 8, 535
+  50077, 22, 304430, 'Yes', 5, 554
+  50078, 23, 4828620, 'Yes', 3, 573
+  50079, 23, 730, 'No', 10, 592
+  50080, 23, 289070, 'Yes', 7, 611
+  50081, 23, 553850, 'Yes', 4, 630
+  50082, 24, 440, 'Yes', 2, 649
+  50083, 24, 264710, 'Yes', 9, 668
+  50084, 24, 438100, 'Yes', 6, 687
+  50085, 25, 4968440, 'No', 4, 706
+  50086, 25, 251570, 'Yes', 1, 725
+  50087, 25, 394360, 'Yes', 8, 744
+  50088, 25, 1085660, 'Yes', 5, 763
+  50089, 26, 236850, 'Yes', 3, 782
+  50090, 26, 367520, 'Yes', 10, 801
+  50091, 26, 814380, 'No', 7, 820
+  50092, 27, 221380, 'Yes', 5, 839
+  50093, 27, 322170, 'Yes', 2, 858
+  50094, 27, 646570, 'Yes', 9, 877
+  50095, 27, 1222670, 'Yes', 6, 896
+  50096, 28, 292030, 'Yes', 4, 15
+  50097, 28, 582010, 'No', 1, 34
+  50098, 28, 1172470, 'Yes', 8, 53
+  50099, 29, 275850, 'Yes', 6, 72
+  50100, 29, 489830, 'Yes', 3, 91
+  50101, 29, 1145360, 'Yes', 10, 110
+  50102, 29, 1623730, 'Yes', 7, 129
+  50103, 30, 431960, 'No', 5, 148
+  50104, 30, 1091500, 'Yes', 2, 167
+  50105, 30, 1449850, 'Yes', 9, 186
+  50106, 31, 377160, 'Yes', 7, 205
+  50107, 31, 945360, 'Yes', 4, 224
+  50108, 31, 1364780, 'Yes', 1, 243
+  50109, 31, 2300320, 'No', 8, 262
+  50110, 32, 739630, 'Yes', 6, 281
+  50111, 32, 1238840, 'Yes', 3, 300
+  50112, 32, 1973530, 'Yes', 10, 319
+  50113, 33, 629520, 'Yes', 8, 338
+  50114, 33, 1174180, 'Yes', 5, 357
+  50115, 33, 1817190, 'No', 2, 376
+  50116, 33, 3039180, 'Yes', 9, 395
+  50117, 34, 1158310, 'Yes', 7, 414
+  50118, 34, 1774580, 'Yes', 4, 433
+  50119, 34, 2767030, 'Yes', 1, 452
+  50120, 35, 1142710, 'Yes', 9, 471
+  50121, 35, 1551360, 'No', 6, 490
+  50122, 35, 2622380, 'Yes', 3, 509
+  50123, 35, 3513350, 'Yes', 10, 528
+  50124, 36, 1368140, 'Yes', 8, 547
+  50125, 36, 2357570, 'Yes', 5, 566
+  50126, 36, 3321460, 'Yes', 2, 585
+  50127, 37, 1245620, 'No', 10, 604
+  50128, 37, 2073850, 'Yes', 7, 623
+  50129, 37, 3240220, 'Yes', 4, 642
+  50130, 37, 4314050, 'Yes', 1, 661
+  50131, 38, 1938090, 'Yes', 9, 680
+  50132, 38, 3105440, 'Yes', 6, 699
+  50133, 38, 4108000, 'No', 3, 718
+  50134, 39, 1811260, 'Yes', 1, 737
+  50135, 39, 2868840, 'Yes', 8, 756
+  50136, 39, 3764200, 'Yes', 5, 775
+  50137, 39, 4833240, 'Yes', 2, 794
+  50138, 40, 2669320, 'Yes', 10, 813
+  50139, 40, 3527290, 'No', 7, 832
+  50140, 40, 4816200, 'Yes', 4, 851
+  50141, 41, 2399830, 'Yes', 2, 870
+  50142, 41, 3419430, 'Yes', 9, 889
+  50143, 41, 4694660, 'Yes', 6, 908
+  50144, 41, 220, 'Yes', 3, 27
+  50145, 42, 3282300, 'No', 1, 46
+  50146, 42, 4443810, 'Yes', 8, 65
+  50147, 42, 4967270, 'Yes', 5, 84
+  50148, 43, 3164500, 'Yes', 3, 103
+  50149, 43, 4166740, 'Yes', 10, 122
+  50150, 43, 4946580, 'Yes', 7, 141
+  50151, 43, 230410, 'No', 4, 160
+  50152, 44, 3892270, 'Yes', 2, 179
+  50153, 44, 4915370, 'Yes', 9, 198
+  50154, 44, 108600, 'Yes', 6, 217
+  50155, 45, 3564740, 'Yes', 4, 236
+  50156, 45, 4828620, 'Yes', 1, 255
+  50157, 45, 730, 'No', 8, 274
+  50158, 45, 289070, 'Yes', 5, 293
+  50159, 46, 4784930, 'Yes', 3, 312
+  50160, 46, 440, 'Yes', 10, 331
+  50161, 46, 264710, 'Yes', 7, 350
+  50162, 47, 4575750, 'Yes', 5, 369
+  50163, 47, 4968440, 'No', 2, 388
+  50164, 47, 251570, 'Yes', 9, 407
+  50165, 47, 394360, 'Yes', 6, 426
+  50166, 48, 4954070, 'Yes', 4, 445
+  50167, 48, 236850, 'Yes', 1, 464
+  50168, 48, 367520, 'Yes', 8, 483
+  50169, 49, 4927750, 'No', 6, 502
+  50170, 49, 221380, 'Yes', 3, 521
+  50171, 49, 322170, 'Yes', 10, 540
+  50172, 49, 646570, 'Yes', 7, 559
+  50173, 50, 39210, 'Yes', 5, 578
+  50174, 50, 292030, 'Yes', 2, 597
+  50175, 50, 582010, 'No', 9, 616
+  50176, 51, 570, 'Yes', 7, 635
+  50177, 51, 275850, 'Yes', 4, 654
+  50178, 51, 489830, 'Yes', 1, 673
+  50179, 51, 1145360, 'Yes', 8, 692
+  50180, 52, 252950, 'Yes', 6, 711
+  50181, 52, 431960, 'No', 3, 730
+  50182, 52, 1091500, 'Yes', 10, 749
+  50183, 53, 244210, 'Yes', 8, 768
+  50184, 53, 377160, 'Yes', 5, 787
+  50185, 53, 945360, 'Yes', 2, 806
+  50186, 53, 1364780, 'Yes', 9, 825
+  50187, 54, 346110, 'No', 7, 844
+  50188, 54, 739630, 'Yes', 4, 863
+  50189, 54, 1238840, 'Yes', 1, 882
+  50190, 55, 304430, 'Yes', 9, 901
+  50191, 55, 629520, 'Yes', 6, 20
+  50192, 55, 1174180, 'Yes', 3, 39
+  50193, 55, 1817190, 'No', 10, 58
+  50194, 56, 553850, 'Yes', 8, 77
+  50195, 56, 1158310, 'Yes', 5, 96
+  50196, 56, 1774580, 'Yes', 2, 115
+  50197, 57, 438100, 'Yes', 10, 134
+  50198, 57, 1142710, 'Yes', 7, 153
+  50199, 57, 1551360, 'No', 4, 172
+  50200, 57, 2622380, 'Yes', 1, 191
+  50201, 58, 1085660, 'Yes', 9, 210
+  50202, 58, 1368140, 'Yes', 6, 229
+  50203, 58, 2357570, 'Yes', 3, 248
+  50204, 59, 814380, 'Yes', 1, 267
+  50205, 59, 1245620, 'No', 8, 286
+  50206, 59, 2073850, 'Yes', 5, 305
+  50207, 59, 3240220, 'Yes', 2, 324
+  50208, 60, 1222670, 'Yes', 10, 343
+  50209, 60, 1938090, 'Yes', 7, 362
+  50210, 60, 3105440, 'Yes', 4, 381
+  50211, 61, 1172470, 'No', 2, 400
+  50212, 61, 1811260, 'Yes', 9, 419
+  50213, 61, 2868840, 'Yes', 6, 438
+  50214, 61, 3764200, 'Yes', 3, 457
+  50215, 62, 1623730, 'Yes', 1, 476
+  50216, 62, 2669320, 'Yes', 8, 495
+  50217, 62, 3527290, 'No', 5, 514
+  50218, 63, 1449850, 'Yes', 3, 533
+  50219, 63, 2399830, 'Yes', 10, 552
+  50220, 63, 3419430, 'Yes', 7, 571
+  50221, 63, 4694660, 'Yes', 4, 590
+  50222, 64, 2300320, 'Yes', 2, 609
+  50223, 64, 3282300, 'No', 9, 628
+  50224, 64, 4443810, 'Yes', 6, 647
+  50225, 65, 1973530, 'Yes', 4, 666
+  50226, 65, 3164500, 'Yes', 1, 685
+  50227, 65, 4166740, 'Yes', 8, 704
+  50228, 65, 4946580, 'Yes', 5, 723
+  50229, 66, 3039180, 'No', 3, 742
+  50230, 66, 3892270, 'Yes', 10, 761
+  50231, 66, 4915370, 'Yes', 7, 780
+  50232, 67, 2767030, 'Yes', 5, 799
+  50233, 67, 3564740, 'Yes', 2, 818
+  50234, 67, 4828620, 'Yes', 9, 837
+  50235, 67, 730, 'No', 6, 856
+  50236, 68, 3513350, 'Yes', 4, 875
+  50237, 68, 4784930, 'Yes', 1, 894
+  50238, 68, 440, 'Yes', 8, 13
+  50239, 69, 3321460, 'Yes', 6, 32
+  50240, 69, 4575750, 'Yes', 3, 51
+  50241, 69, 4968440, 'No', 10, 70
+  50242, 69, 251570, 'Yes', 7, 89
+  50243, 70, 4314050, 'Yes', 5, 108
+  50244, 70, 4954070, 'Yes', 2, 127
+  50245, 70, 236850, 'Yes', 9, 146
+  50246, 71, 4108000, 'Yes', 7, 165
+  50247, 71, 4927750, 'No', 4, 184
+  50248, 71, 221380, 'Yes', 1, 203
+  50249, 71, 322170, 'Yes', 8, 222
+  50250, 72, 4833240, 'Yes', 6, 241
+  50251, 72, 39210, 'Yes', 3, 260
+  50252, 72, 292030, 'Yes', 10, 279
+  50253, 73, 4816200, 'No', 8, 298
+  50254, 73, 570, 'Yes', 5, 317
+  50255, 73, 275850, 'Yes', 2, 336
+  50256, 73, 489830, 'Yes', 9, 355
+  50257, 74, 220, 'Yes', 7, 374
+  50258, 74, 252950, 'Yes', 4, 393
+  50259, 74, 431960, 'No', 1, 412
+  50260, 75, 4967270, 'Yes', 9, 431
+  50261, 75, 244210, 'Yes', 6, 450
+  50262, 75, 377160, 'Yes', 3, 469
+  50263, 75, 945360, 'Yes', 10, 488
+  50264, 76, 230410, 'Yes', 8, 507
+  50265, 76, 346110, 'No', 5, 526
+  50266, 76, 739630, 'Yes', 2, 545
+  50267, 77, 108600, 'Yes', 10, 564
+  50268, 77, 304430, 'Yes', 7, 583
+  50269, 77, 629520, 'Yes', 4, 602
+  50270, 77, 1174180, 'Yes', 1, 621
+  50271, 78, 289070, 'No', 9, 640
+  50272, 78, 553850, 'Yes', 6, 659
+  50273, 78, 1158310, 'Yes', 3, 678
+  50274, 79, 264710, 'Yes', 1, 697
+  50275, 79, 438100, 'Yes', 8, 716
+  50276, 79, 1142710, 'Yes', 5, 735
+  50277, 79, 1551360, 'No', 2, 754
+  50278, 80, 394360, 'Yes', 10, 773
+  50279, 80, 1085660, 'Yes', 7, 792
+  50280, 80, 1368140, 'Yes', 4, 811
+  50281, 81, 367520, 'Yes', 2, 830
+  50282, 81, 814380, 'Yes', 9, 849
+  50283, 81, 1245620, 'No', 6, 868
+  50284, 81, 2073850, 'Yes', 3, 887
+  50285, 82, 646570, 'Yes', 1, 906
+  50286, 82, 1222670, 'Yes', 8, 25
+  50287, 82, 1938090, 'Yes', 5, 44
+  50288, 83, 582010, 'Yes', 3, 63
+  50289, 83, 1172470, 'No', 10, 82
+  50290, 83, 1811260, 'Yes', 7, 101
+  50291, 83, 2868840, 'Yes', 4, 120
+  50292, 84, 1145360, 'Yes', 2, 139
+  50293, 84, 1623730, 'Yes', 9, 158
+  50294, 84, 2669320, 'Yes', 6, 177
+  50295, 85, 1091500, 'No', 4, 196
+  50296, 85, 1449850, 'Yes', 1, 215
+  50297, 85, 2399830, 'Yes', 8, 234
+  50298, 85, 3419430, 'Yes', 5, 253
+  50299, 86, 1364780, 'Yes', 3, 272
+  50300, 86, 2300320, 'Yes', 10, 291
+  50301, 86, 3282300, 'No', 7, 310
+  50302, 87, 1238840, 'Yes', 5, 329
+  50303, 87, 1973530, 'Yes', 2, 348
+  50304, 87, 3164500, 'Yes', 9, 367
+  50305, 87, 4166740, 'Yes', 6, 386
+  50306, 88, 1817190, 'Yes', 4, 405
+  50307, 88, 3039180, 'No', 1, 424
+  50308, 88, 3892270, 'Yes', 8, 443
+  50309, 89, 1774580, 'Yes', 6, 462
+  50310, 89, 2767030, 'Yes', 3, 481
+  50311, 89, 3564740, 'Yes', 10, 500
+  50312, 89, 4828620, 'Yes', 7, 519
+  50313, 90, 2622380, 'No', 5, 538
+  50314, 90, 3513350, 'Yes', 2, 557
+  50315, 90, 4784930, 'Yes', 9, 576
+  50316, 91, 2357570, 'Yes', 7, 595
+  50317, 91, 3321460, 'Yes', 4, 614
+  50318, 91, 4575750, 'Yes', 1, 633
+  50319, 91, 4968440, 'No', 8, 652
+  50320, 92, 3240220, 'Yes', 6, 671
+  50321, 92, 4314050, 'Yes', 3, 690
+  50322, 92, 4954070, 'Yes', 10, 709
+  50323, 93, 3105440, 'Yes', 8, 728
+  50324, 93, 4108000, 'Yes', 5, 747
+  50325, 93, 4927750, 'No', 2, 766
+  50326, 93, 221380, 'Yes', 9, 785
+  50327, 94, 3764200, 'Yes', 7, 804
+  50328, 94, 4833240, 'Yes', 4, 823
+  50329, 94, 39210, 'Yes', 1, 842
+  50330, 95, 3527290, 'Yes', 9, 861
+  50331, 95, 4816200, 'No', 6, 880
+  50332, 95, 570, 'Yes', 3, 899
+  50333, 95, 275850, 'Yes', 10, 18
+  50334, 96, 4694660, 'Yes', 8, 37
+  50335, 96, 220, 'Yes', 5, 56
+  50336, 96, 252950, 'Yes', 2, 75
+  50337, 97, 4443810, 'No', 10, 94
+  50338, 97, 4967270, 'Yes', 7, 113
+  50339, 97, 244210, 'Yes', 4, 132
+  50340, 97, 377160, 'Yes', 1, 151
+  50341, 98, 4946580, 'Yes', 9, 170
+  50342, 98, 230410, 'Yes', 6, 189
+  50343, 98, 346110, 'No', 3, 208
+  50344, 99, 4915370, 'Yes', 1, 227
+  50345, 99, 108600, 'Yes', 8, 246
+  50346, 99, 304430, 'Yes', 5, 265
+  50347, 99, 629520, 'Yes', 2, 284
+  50348, 100, 730, 'Yes', 10, 303
+  50349, 100, 289070, 'No', 7, 322
+  50350, 100, 553850, 'Yes', 4, 341
+  50351, 101, 440, 'Yes', 2, 360
+  50352, 101, 264710, 'Yes', 9, 379
+  50353, 101, 438100, 'Yes', 6, 398
+  50354, 101, 1142710, 'Yes', 3, 417
+  50355, 102, 251570, 'No', 1, 436
+  50356, 102, 394360, 'Yes', 8, 455
+  50357, 102, 1085660, 'Yes', 5, 474
+  50358, 103, 236850, 'Yes', 3, 493
+  50359, 103, 367520, 'Yes', 10, 512
+  50360, 103, 814380, 'Yes', 7, 531
+  50361, 103, 1245620, 'No', 4, 550
+  50362, 104, 322170, 'Yes', 2, 569
+  50363, 104, 646570, 'Yes', 9, 588
+  50364, 104, 1222670, 'Yes', 6, 607
+  50365, 105, 292030, 'Yes', 4, 626
+  50366, 105, 582010, 'Yes', 1, 645
+  50367, 105, 1172470, 'No', 8, 664
+  50368, 105, 1811260, 'Yes', 5, 683
+  50369, 106, 489830, 'Yes', 3, 702
+  50370, 106, 1145360, 'Yes', 10, 721
+  50371, 106, 1623730, 'Yes', 7, 740
+  50372, 107, 431960, 'Yes', 5, 759
+  50373, 107, 1091500, 'No', 2, 778
+  50374, 107, 1449850, 'Yes', 9, 797
+  50375, 107, 2399830, 'Yes', 6, 816
+  50376, 108, 945360, 'Yes', 4, 835
+  50377, 108, 1364780, 'Yes', 1, 854
+  50378, 108, 2300320, 'Yes', 8, 873
+  50379, 109, 739630, 'No', 6, 892
+  50380, 109, 1238840, 'Yes', 3, 11
+  50381, 109, 1973530, 'Yes', 10, 30
+  50382, 109, 3164500, 'Yes', 7, 49
+  50383, 110, 1174180, 'Yes', 5, 68
+  50384, 110, 1817190, 'Yes', 2, 87
+  50385, 110, 3039180, 'No', 9, 106
+  50386, 111, 1158310, 'Yes', 7, 125
+  50387, 111, 1774580, 'Yes', 4, 144
+  50388, 111, 2767030, 'Yes', 1, 163
+  50389, 111, 3564740, 'Yes', 8, 182
+  50390, 112, 1551360, 'Yes', 6, 201
+  50391, 112, 2622380, 'No', 3, 220
+  50392, 112, 3513350, 'Yes', 10, 239
+  50393, 113, 1368140, 'Yes', 8, 258
+  50394, 113, 2357570, 'Yes', 5, 277
+  50395, 113, 3321460, 'Yes', 2, 296
+  50396, 113, 4575750, 'Yes', 9, 315
+  50397, 114, 2073850, 'No', 7, 334
+  50398, 114, 3240220, 'Yes', 4, 353
+  50399, 114, 4314050, 'Yes', 1, 372
+  50400, 115, 1938090, 'Yes', 9, 391
+  50401, 115, 3105440, 'Yes', 6, 410
+  50402, 115, 4108000, 'Yes', 3, 429
+  50403, 115, 4927750, 'No', 10, 448
+  50404, 116, 2868840, 'Yes', 8, 467
+  50405, 116, 3764200, 'Yes', 5, 486
+  50406, 116, 4833240, 'Yes', 2, 505
+  50407, 117, 2669320, 'Yes', 10, 524
+  50408, 117, 3527290, 'Yes', 7, 543
+  50409, 117, 4816200, 'No', 4, 562
+  50410, 117, 570, 'Yes', 1, 581
+  50411, 118, 3419430, 'Yes', 9, 600
+  50412, 118, 4694660, 'Yes', 6, 619
+  50413, 118, 220, 'Yes', 3, 638
+  50414, 119, 3282300, 'Yes', 1, 657
+  50415, 119, 4443810, 'No', 8, 676
+  50416, 119, 4967270, 'Yes', 5, 695
+  50417, 119, 244210, 'Yes', 2, 714
+  50418, 120, 4166740, 'Yes', 10, 733
+  50419, 120, 4946580, 'Yes', 7, 752
+  50420, 120, 230410, 'Yes', 4, 771
+}
