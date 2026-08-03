@@ -1,6 +1,6 @@
 # Dataset Steam para ReLaX
 
-Dataset educativo en inglés para practicar álgebra relacional con
+Dataset para practicar álgebra relacional con
 [ReLaX](https://github.com/dbis-uibk/relax). Incluye juegos, desarrolladores,
 publishers, géneros, usuarios, bibliotecas, compras y reseñas.
 
