@@ -1,0 +1,9 @@
+services:
+  relax:
+    image: ${RELAX_IMAGE:-ghcr.io/base-de-datos-fiuba/relax-image:latest}
+    container_name: relax-pokemon
+    ports:
+      - "8089:80"
+    volumes:
+      - ./datasets/local_groups:/usr/share/nginx/html/dataset/local_groups:ro
+    restart: unless-stopped
