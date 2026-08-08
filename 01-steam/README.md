@@ -94,7 +94,17 @@ principales pueden existir sin registros asociados.
 Desde este directorio, ejecutar:
 
 ```bash
-docker compose up --build -d
+docker compose pull
+docker compose up -d
+```
+
+La imagen de ReLaX es independiente del dataset. Docker Compose monta
+`datasets/local_groups` en modo de solo lectura al iniciar el contenedor.
+
+Para probar una imagen publicada en otra ubicación:
+
+```bash
+RELAX_IMAGE=ghcr.io/<owner>/<repository>:latest docker compose up -d
 ```
 
 Abrir en el navegador:
