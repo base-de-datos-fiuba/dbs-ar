@@ -1,216 +1,1001 @@
 group:Pokemon
-description[[Dataset de Pokemon para practicar algebra relacional en ReLaX.
-El esquema reproduce el diagrama provisto; category se desnormalizo en moves.
-Los datos provienen del SQL academico original.]]
+description[[Dataset de Pokemon para practicar algebra relacional en ReLaX.]]
 
 moves = {
   idmove, movename, idtype, category, power, accuracy, pp, effect
-  1, 'Tackle', 1, 'Physical', 40, 100, 35, 'Basic physical strike'
-  2, 'Growl', 1, 'Status', 0, 100, 40, 'Lowers target Attack by 1 stage'
-  3, 'Vine Whip', 12, 'Physical', 45, 100, 25, 'Whips target with vines'
-  4, 'Ember', 10, 'Special', 40, 100, 25, '10% chance to burn'
-  5, 'Water Gun', 11, 'Special', 40, 100, 25, 'Sprays water at target'
-  6, 'Thunderbolt', 13, 'Special', 90, 100, 15, '10% chance to paralyze'
-  7, 'Ice Beam', 15, 'Special', 90, 100, 10, '10% chance to freeze'
-  8, 'Quick Attack', 1, 'Physical', 40, 100, 30, 'Priority +1'
-  9, 'Gust', 3, 'Special', 40, 100, 35, 'Ranged wind attack'
-  10, 'Peck', 3, 'Physical', 35, 100, 35, 'Jabs with a beak'
-  11, 'Confusion', 14, 'Special', 50, 100, 25, '10% chance to confuse'
-  12, 'Psychic', 14, 'Special', 90, 100, 10, '10% chance to lower Sp. Def'
-  13, 'Earthquake', 5, 'Physical', 100, 100, 10, 'Hits all adjacent grounded targets'
-  14, 'Rock Slide', 6, 'Physical', 75, 90, 10, '30% chance to flinch'
-  15, 'Hyper Beam', 1, 'Special', 150, 90, 5, 'User must recharge next turn'
-  16, 'Slash', 1, 'Physical', 70, 100, 20, 'High critical-hit ratio'
-  17, 'Poison Sting', 4, 'Physical', 15, 100, 35, '30% chance to poison'
-  18, 'String Shot', 7, 'Status', 0, 95, 40, 'Lowers target Speed by 1 stage'
-  19, 'Harden', 1, 'Status', 0, 0, 30, 'Raises user Defense by 1 stage'
-  20, 'Sleep Powder', 12, 'Status', 0, 75, 15, 'Puts target to sleep'
-  21, 'Hypnosis', 14, 'Status', 0, 60, 20, 'Puts target to sleep'
-  22, 'Lick', 8, 'Physical', 30, 100, 30, '30% chance to paralyze'
-  23, 'Night Shade', 8, 'Special', 0, 100, 15, 'Deals damage equal to user level'
-  24, 'Dragon Rage', 16, 'Special', 0, 100, 10, 'Always deals 40 HP damage'
-  25, 'Surf', 11, 'Special', 90, 100, 15, 'Powerful water wave'
-  26, 'Flamethrower', 10, 'Special', 90, 100, 15, '10% chance to burn'
-  27, 'Razor Leaf', 12, 'Physical', 55, 95, 25, 'High critical-hit ratio'
-  28, 'ThunderShock', 13, 'Special', 40, 100, 30, '10% chance to paralyze'
-  29, 'Double Kick', 2, 'Physical', 30, 100, 30, 'Hits twice'
-  30, 'Karate Chop', 2, 'Physical', 50, 100, 25, 'Solid chop'
-  31, 'Wing Attack', 3, 'Physical', 60, 100, 35, 'Strikes with wings'
-  32, 'Bubble', 11, 'Special', 40, 100, 30, '10% chance to lower Speed'
-  33, 'Scratch', 1, 'Physical', 40, 100, 35, 'Basic claw attack'
-  34, 'Teleport', 14, 'Status', 0, 0, 20, 'Escapes/wild battle utility'
-  35, 'Splash', 1, 'Status', 0, 0, 40, 'No effect'
-  36, 'Blizzard', 15, 'Special', 110, 70, 5, '10% chance to freeze'
+  1, 'Absorb', 12, 'Special', 20, 100, 25, 'User recovers half the HP inflicted on opponent.'
+  2, 'Acid', 4, 'Special', 40, 100, 30, 'May lower opponent s Special Defense.'
+  3, 'Acid Armor', 4, 'Status', 0, 100, 20, 'Sharply raises user s Defense.'
+  4, 'Aerial Ace', 3, 'Physical', 60, 100, 20, 'Ignores Accuracy and Evasiveness.'
+  5, 'Aeroblast', 3, 'Special', 100, 95, 5, 'High critical hit ratio.'
+  6, 'Agility', 14, 'Status', 0, 100, 30, 'Sharply raises user s Speed.'
+  7, 'Air Cutter', 3, 'Special', 60, 95, 25, 'High critical hit ratio.'
+  8, 'Amnesia', 14, 'Status', 0, 100, 20, 'Sharply raises user s Special Defense.'
+  9, 'Ancient Power', 6, 'Special', 60, 100, 5, 'May raise all user s stats at once.'
+  10, 'Arm Thrust', 2, 'Physical', 15, 100, 20, 'Hits 2-5 times in one turn.'
+  11, 'Aromatherapy', 12, 'Status', 0, 100, 5, 'Cures all status problems in your party.'
+  12, 'Assist', 1, 'Status', 0, 100, 20, 'User performs a move known by its allies at random.'
+  13, 'Astonish', 8, 'Physical', 30, 100, 15, 'May cause flinching.'
+  14, 'Attract', 1, 'Status', 0, 100, 15, 'If opponent is the opposite gender, it s less likely to attack.'
+  15, 'Aurora Beam', 15, 'Special', 65, 100, 20, 'May lower opponent s Attack.'
+  16, 'Barrage', 1, 'Physical', 15, 85, 20, 'Hits 2-5 times in one turn.'
+  17, 'Barrier', 14, 'Status', 0, 100, 20, 'Sharply raises user s Defense.'
+  18, 'Baton Pass', 1, 'Status', 0, 100, 40, 'User switches out and gives stat changes to the incoming Pokémon.'
+  19, 'Beat Up', 17, 'Physical', 0, 100, 10, 'Each Pokémon in user s party attacks.'
+  20, 'Belly Drum', 1, 'Status', 0, 100, 10, 'User loses 50% of its max HP, but Attack raises to maximum.'
+  21, 'Bide', 1, 'Physical', 0, 100, 10, 'User takes damage for two turns then strikes back double.'
+  22, 'Bind', 1, 'Physical', 15, 85, 20, 'Traps opponent, damaging them for 4-5 turns.'
+  23, 'Bite', 17, 'Physical', 60, 100, 25, 'May cause flinching.'
+  24, 'Blast Burn', 10, 'Special', 150, 90, 5, 'User must recharge next turn.'
+  25, 'Blaze Kick', 10, 'Physical', 85, 90, 10, 'High critical hit ratio. May burn opponent.'
+  26, 'Blizzard', 15, 'Special', 110, 70, 5, 'May freeze opponent.'
+  27, 'Block', 1, 'Status', 0, 100, 5, 'Opponent cannot flee or switch.'
+  28, 'Body Slam', 1, 'Physical', 85, 100, 15, 'May paralyze opponent.'
+  29, 'Bone Club', 5, 'Physical', 65, 85, 20, 'May cause flinching.'
+  30, 'Bone Rush', 5, 'Physical', 25, 90, 10, 'Hits 2-5 times in one turn.'
+  31, 'Bonemerang', 5, 'Physical', 50, 90, 10, 'Hits twice in one turn.'
+  32, 'Bounce', 3, 'Physical', 85, 85, 5, 'Springs up on first turn, attacks on second. May paralyze opponent.'
+  33, 'Brick Break', 2, 'Physical', 75, 100, 15, 'Breaks through Reflect and Light Screen barriers.'
+  34, 'Bubble', 11, 'Special', 40, 100, 30, 'May lower opponent s Speed.'
+  35, 'Bubble Beam', 11, 'Special', 65, 100, 20, 'May lower opponent s Speed.'
+  36, 'Bulk Up', 2, 'Status', 0, 100, 20, 'Raises user s Attack and Defense.'
+  37, 'Bullet Seed', 12, 'Physical', 25, 100, 30, 'Hits 2-5 times in one turn.'
+  38, 'Calm Mind', 14, 'Status', 0, 100, 20, 'Raises user s Special Attack and Special Defense.'
+  39, 'Camouflage', 1, 'Status', 0, 100, 20, 'Changes user s type according to the location.'
+  40, 'Charge', 13, 'Status', 0, 100, 20, 'Raises user s Special Defense and next Electric move s power increases.'
+  41, 'Charm', 18, 'Status', 0, 100, 20, 'Sharply lowers opponent s Attack.'
+  42, 'Clamp', 11, 'Physical', 35, 85, 15, 'Traps opponent, damaging them for 4-5 turns.'
+  43, 'Comet Punch', 1, 'Physical', 18, 85, 15, 'Hits 2-5 times in one turn.'
+  44, 'Confuse Ray', 8, 'Status', 0, 100, 10, 'Confuses opponent.'
+  45, 'Confusion', 14, 'Special', 50, 100, 25, 'May confuse opponent.'
+  46, 'Constrict', 1, 'Physical', 10, 100, 35, 'May lower opponent s Speed by one stage.'
+  47, 'Conversion', 1, 'Status', 0, 100, 30, 'Changes user s type to that of its first move.'
+  48, 'Conversion 2', 1, 'Status', 0, 100, 30, 'User changes type to become resistant to opponent s last move.'
+  49, 'Cosmic Power', 14, 'Status', 0, 100, 20, 'Raises user s Defense and Special Defense.'
+  50, 'Cotton Spore', 12, 'Status', 0, 100, 40, 'Sharply lowers opponent s Speed.'
+  51, 'Counter', 2, 'Physical', 0, 100, 20, 'When hit by a Physical Attack, user strikes back with 2x power.'
+  52, 'Covet', 1, 'Physical', 60, 100, 25, 'Opponent s item is stolen by the user.'
+  53, 'Crabhammer', 11, 'Physical', 100, 90, 10, 'High critical hit ratio.'
+  54, 'Cross Chop', 2, 'Physical', 100, 80, 5, 'High critical hit ratio.'
+  55, 'Crunch', 17, 'Physical', 80, 100, 15, 'May lower opponent s Defense.'
+  56, 'Crush Claw', 1, 'Physical', 75, 95, 10, 'May lower opponent s Defense.'
+  57, 'Curse', 8, 'Status', 0, 100, 10, 'Ghosts lose 50% of max HP and curse the opponent; Non-Ghosts raise Attack, Defense and lower Speed.'
+  58, 'Cut', 1, 'Physical', 50, 95, 30, ''
+  59, 'Defense Curl', 1, 'Status', 0, 100, 40, 'Raises user s Defense.'
+  60, 'Destiny Bond', 8, 'Status', 0, 100, 5, 'If the user faints, the opponent also faints.'
+  61, 'Detect', 2, 'Status', 0, 100, 5, 'Protects the user, but may fail if used consecutively.'
+  62, 'Dig', 5, 'Physical', 80, 100, 10, 'Digs underground on first turn, attacks on second. Can also escape from caves.'
+  63, 'Disable', 1, 'Status', 0, 100, 20, 'Opponent can t use its last attack for a few turns.'
+  64, 'Dive', 11, 'Physical', 80, 100, 10, 'Dives underwater on first turn, attacks on second turn.'
+  65, 'Dizzy Punch', 1, 'Physical', 70, 100, 10, 'May confuse opponent.'
+  66, 'Doom Desire', 9, 'Special', 140, 100, 5, 'Damage occurs 2 turns later.'
+  67, 'Double Kick', 2, 'Physical', 30, 100, 30, 'Hits twice in one turn.'
+  68, 'Double Slap', 1, 'Physical', 15, 85, 10, 'Hits 2-5 times in one turn.'
+  69, 'Double Team', 1, 'Status', 0, 100, 15, 'Raises user s Evasiveness.'
+  70, 'Double-Edge', 1, 'Physical', 120, 100, 15, 'User receives recoil damage.'
+  71, 'Dragon Breath', 16, 'Special', 60, 100, 20, 'May paralyze opponent.'
+  72, 'Dragon Claw', 16, 'Physical', 80, 100, 15, ''
+  73, 'Dragon Dance', 16, 'Status', 0, 100, 20, 'Raises user s Attack and Speed.'
+  74, 'Dragon Rage', 16, 'Special', 0, 100, 10, 'Always inflicts 40 HP.'
+  75, 'Dream Eater', 14, 'Special', 100, 100, 15, 'User recovers half the HP inflicted on a sleeping opponent.'
+  76, 'Drill Peck', 3, 'Physical', 80, 100, 20, ''
+  77, 'Dynamic Punch', 2, 'Physical', 100, 50, 5, 'Confuses opponent.'
+  78, 'Earthquake', 5, 'Physical', 100, 100, 10, 'Power is doubled if opponent is underground from using Dig.'
+  79, 'Egg Bomb', 1, 'Physical', 100, 75, 10, ''
+  80, 'Ember', 10, 'Special', 40, 100, 25, 'May burn opponent.'
+  81, 'Encore', 1, 'Status', 0, 100, 5, 'Forces opponent to keep using its last move for 3 turns.'
+  82, 'Endeavor', 1, 'Physical', 0, 100, 5, 'Reduces opponent s HP to same as user s.'
+  83, 'Endure', 1, 'Status', 0, 100, 10, 'Always left with at least 1 HP, but may fail if used consecutively.'
+  84, 'Eruption', 10, 'Special', 150, 100, 5, 'Stronger when the user s HP is higher.'
+  85, 'Explosion', 1, 'Physical', 250, 100, 5, 'User faints.'
+  86, 'Extrasensory', 14, 'Special', 80, 100, 20, 'May cause flinching.'
+  87, 'Extreme Speed', 1, 'Physical', 80, 100, 5, 'User attacks first.'
+  88, 'Facade', 1, 'Physical', 70, 100, 20, 'Power doubles if user is burned, poisoned, or paralyzed.'
+  89, 'Fake Out', 1, 'Physical', 40, 100, 10, 'User attacks first, foe flinches. Only usable on first turn.'
+  90, 'Fake Tears', 17, 'Status', 0, 100, 20, 'Sharply lowers opponent s Special Defense.'
+  91, 'False Swipe', 1, 'Physical', 40, 100, 40, 'Always leaves opponent with at least 1 HP.'
+  92, 'Feather Dance', 3, 'Status', 0, 100, 15, 'Sharply lowers opponent s Attack.'
+  93, 'Feint Attack', 17, 'Physical', 60, 100, 20, 'Ignores Accuracy and Evasiveness.'
+  94, 'Fire Blast', 10, 'Special', 110, 85, 5, 'May burn opponent.'
+  95, 'Fire Punch', 10, 'Physical', 75, 100, 15, 'May burn opponent.'
+  96, 'Fire Spin', 10, 'Special', 35, 85, 15, 'Traps opponent, damaging them for 4-5 turns.'
+  97, 'Fissure', 5, 'Physical', 0, 30, 5, 'One-Hit-KO, if it hits.'
+  98, 'Flail', 1, 'Physical', 0, 100, 15, 'The lower the user s HP, the higher the power.'
+  99, 'Flame Wheel', 10, 'Physical', 60, 100, 25, 'May burn opponent.'
+  100, 'Flamethrower', 10, 'Special', 90, 100, 15, 'May burn opponent.'
+  101, 'Flash', 1, 'Status', 0, 100, 20, 'Lowers opponent s Accuracy.'
+  102, 'Flatter', 17, 'Status', 0, 100, 15, 'Confuses opponent, but raises its Special Attack.'
+  103, 'Fly', 3, 'Physical', 90, 95, 15, 'Flies up on first turn, attacks on second turn.'
+  104, 'Focus Energy', 1, 'Status', 0, 100, 30, 'Increases critical hit ratio.'
+  105, 'Focus Punch', 2, 'Physical', 150, 100, 20, 'If the user is hit before attacking, it flinches instead.'
+  106, 'Follow Me', 1, 'Status', 0, 100, 20, 'In Double Battle, the user takes all the attacks.'
+  107, 'Foresight', 1, 'Status', 0, 100, 40, 'Resets opponent s Evasiveness, and allows Normal- and Fighting-type attacks to hit Ghosts.'
+  108, 'Frenzy Plant', 12, 'Special', 150, 90, 5, 'User must recharge next turn.'
+  109, 'Frustration', 1, 'Physical', 0, 100, 20, 'Power decreases with higher Friendship.'
+  110, 'Fury Attack', 1, 'Physical', 15, 85, 20, 'Hits 2-5 times in one turn.'
+  111, 'Fury Cutter', 7, 'Physical', 40, 95, 20, 'Power increases each turn.'
+  112, 'Fury Swipes', 1, 'Physical', 18, 80, 15, 'Hits 2-5 times in one turn.'
+  113, 'Future Sight', 14, 'Special', 120, 100, 10, 'Damage occurs 2 turns later.'
+  114, 'Giga Drain', 12, 'Special', 75, 100, 10, 'User recovers half the HP inflicted on opponent.'
+  115, 'Glare', 1, 'Status', 0, 100, 30, 'Paralyzes opponent.'
+  116, 'Grass Whistle', 12, 'Status', 0, 55, 15, 'Puts opponent to sleep.'
+  117, 'Growl', 1, 'Status', 0, 100, 40, 'Lowers opponent s Attack.'
+  118, 'Growth', 1, 'Status', 0, 100, 20, 'Raises user s Attack and Special Attack.'
+  119, 'Grudge', 8, 'Status', 0, 100, 5, 'If the users faints after using this move, the PP for the opponent s last move is depleted.'
+  120, 'Guillotine', 1, 'Physical', 0, 30, 5, 'One-Hit-KO, if it hits.'
+  121, 'Gust', 3, 'Special', 40, 100, 35, 'Hits Pokémon using Fly/Bounce/Sky Drop with double power.'
+  122, 'Hail', 15, 'Status', 0, 100, 10, 'Non-Ice types are damaged for 5 turns.'
+  123, 'Harden', 1, 'Status', 0, 100, 30, 'Raises user s Defense.'
+  124, 'Haze', 15, 'Status', 0, 100, 30, 'Resets all stat changes.'
+  125, 'Headbutt', 1, 'Physical', 70, 100, 15, 'May cause flinching.'
+  126, 'Heal Bell', 1, 'Status', 0, 100, 5, 'Heals the user s party s status conditions.'
+  127, 'Heat Wave', 10, 'Special', 95, 90, 10, 'May burn opponent.'
+  128, 'Helping Hand', 1, 'Status', 0, 100, 20, 'In Double Battles, boosts the power of the partner s move.'
+  129, 'Hidden Power', 1, 'Special', 60, 100, 15, 'Type and power depends on user s IVs.'
+  130, 'High Jump Kick', 2, 'Physical', 130, 90, 10, 'If it misses, the user loses half their HP.'
+  131, 'Horn Attack', 1, 'Physical', 65, 100, 25, ''
+  132, 'Horn Drill', 1, 'Physical', 0, 30, 5, 'One-Hit-KO, if it hits.'
+  133, 'Howl', 1, 'Status', 0, 100, 40, 'Raises Attack of allies.'
+  134, 'Hydro Cannon', 11, 'Special', 150, 90, 5, 'User must recharge next turn.'
+  135, 'Hydro Pump', 11, 'Special', 110, 80, 5, ''
+  136, 'Hyper Beam', 1, 'Special', 150, 90, 5, 'User must recharge next turn.'
+  137, 'Hyper Fang', 1, 'Physical', 80, 90, 15, 'May cause flinching.'
+  138, 'Hyper Voice', 1, 'Special', 90, 100, 10, ''
+  139, 'Hypnosis', 14, 'Status', 0, 60, 20, 'Puts opponent to sleep.'
+  140, 'Ice Ball', 15, 'Physical', 30, 90, 20, 'Doubles in power each turn for 5 turns.'
+  141, 'Ice Beam', 15, 'Special', 90, 100, 10, 'May freeze opponent.'
+  142, 'Ice Punch', 15, 'Physical', 75, 100, 15, 'May freeze opponent.'
+  143, 'Icicle Spear', 15, 'Physical', 25, 100, 30, 'Hits 2-5 times in one turn.'
+  144, 'Icy Wind', 15, 'Special', 55, 95, 15, 'Lowers opponent s Speed.'
+  145, 'Imprison', 14, 'Status', 0, 100, 10, 'Opponent is unable to use moves that the user also knows.'
+  146, 'Ingrain', 12, 'Status', 0, 100, 20, 'User restores HP each turn. User cannot escape/switch.'
+  147, 'Iron Defense', 9, 'Status', 0, 100, 15, 'Sharply raises user s Defense.'
+  148, 'Iron Tail', 9, 'Physical', 100, 75, 15, 'May lower opponent s Defense.'
+  149, 'Jump Kick', 2, 'Physical', 100, 95, 10, 'If it misses, the user loses half their HP.'
+  150, 'Karate Chop', 2, 'Physical', 50, 100, 25, 'High critical hit ratio.'
+  151, 'Kinesis', 14, 'Status', 0, 80, 15, 'Lowers opponent s Accuracy.'
+  152, 'Knock Off', 17, 'Physical', 65, 100, 20, 'Removes opponent s held item for the rest of the battle.'
+  153, 'Leaf Blade', 12, 'Physical', 90, 100, 15, 'High critical hit ratio.'
+  154, 'Leech Life', 7, 'Physical', 80, 100, 10, 'User recovers half the HP inflicted on opponent.'
+  155, 'Leech Seed', 12, 'Status', 0, 90, 10, 'Drains HP from opponent each turn.'
+  156, 'Leer', 1, 'Status', 0, 100, 30, 'Lowers opponent s Defense.'
+  157, 'Lick', 8, 'Physical', 30, 100, 30, 'May paralyze opponent.'
+  158, 'Light Screen', 14, 'Status', 0, 100, 30, 'Halves damage from Special attacks for 5 turns.'
+  159, 'Lock-On', 1, 'Status', 0, 100, 5, 'User s next attack is guaranteed to hit.'
+  160, 'Lovely Kiss', 1, 'Status', 0, 75, 10, 'Puts opponent to sleep.'
+  161, 'Low Kick', 2, 'Physical', 0, 100, 20, 'The heavier the opponent, the stronger the attack.'
+  162, 'Luster Purge', 14, 'Special', 95, 100, 5, 'May lower opponent s Special Defense.'
+  163, 'Mach Punch', 2, 'Physical', 40, 100, 30, 'User attacks first.'
+  164, 'Magic Coat', 14, 'Status', 0, 100, 15, 'Reflects moves that cause status conditions back to the attacker.'
+  165, 'Magical Leaf', 12, 'Special', 60, 100, 20, 'Ignores Accuracy and Evasiveness.'
+  166, 'Magnitude', 5, 'Physical', 0, 100, 30, 'Hits with random power.'
+  167, 'Mean Look', 1, 'Status', 0, 100, 5, 'Opponent cannot flee or switch.'
+  168, 'Meditate', 14, 'Status', 0, 100, 40, 'Raises user s Attack.'
+  169, 'Mega Drain', 12, 'Special', 40, 100, 15, 'User recovers half the HP inflicted on opponent.'
+  170, 'Mega Kick', 1, 'Physical', 120, 75, 5, ''
+  171, 'Mega Punch', 1, 'Physical', 80, 85, 20, ''
+  172, 'Megahorn', 7, 'Physical', 120, 85, 10, ''
+  173, 'Memento', 17, 'Status', 0, 100, 10, 'User faints, sharply lowers opponent s Attack and Special Attack.'
+  174, 'Metal Claw', 9, 'Physical', 50, 95, 35, 'May raise user s Attack.'
+  175, 'Metal Sound', 9, 'Status', 0, 85, 40, 'Sharply lowers opponent s Special Defense.'
+  176, 'Meteor Mash', 9, 'Physical', 90, 90, 10, 'May raise user s Attack.'
+  177, 'Metronome', 1, 'Status', 0, 100, 10, 'User performs almost any move in the game at random.'
+  178, 'Milk Drink', 1, 'Status', 0, 100, 5, 'User recovers half its max HP.'
+  179, 'Mimic', 1, 'Status', 0, 100, 10, 'Copies the opponent s last move.'
+  180, 'Mind Reader', 1, 'Status', 0, 100, 5, 'User s next attack is guaranteed to hit.'
+  181, 'Minimize', 1, 'Status', 0, 100, 10, 'Sharply raises user s Evasiveness.'
+  182, 'Mirror Coat', 14, 'Special', 0, 100, 20, 'When hit by a Special Attack, user strikes back with 2x power.'
+  183, 'Mirror Move', 3, 'Status', 0, 100, 20, 'User performs the opponent s last move.'
+  184, 'Mist', 15, 'Status', 0, 100, 30, 'User s stats cannot be changed for a period of time.'
+  185, 'Mist Ball', 14, 'Special', 95, 100, 5, 'May lower opponent s Special Attack.'
+  186, 'Moonlight', 18, 'Status', 0, 100, 5, 'User recovers HP. Amount varies with the weather.'
+  187, 'Morning Sun', 1, 'Status', 0, 100, 5, 'User recovers HP. Amount varies with the weather.'
+  188, 'Mud Shot', 5, 'Special', 55, 95, 15, 'Lowers opponent s Speed.'
+  189, 'Mud Sport', 5, 'Status', 0, 100, 15, 'Weakens the power of Electric-type moves.'
+  190, 'Mud-Slap', 5, 'Special', 20, 100, 10, 'Lowers opponent s Accuracy.'
+  191, 'Muddy Water', 11, 'Special', 90, 85, 10, 'May lower opponent s Accuracy.'
+  192, 'Nature Power', 1, 'Status', 0, 100, 20, 'Uses a certain move based on the current terrain.'
+  193, 'Needle Arm', 12, 'Physical', 60, 100, 15, 'May cause flinching.'
+  194, 'Night Shade', 8, 'Special', 0, 100, 15, 'Inflicts damage equal to user s level.'
+  195, 'Nightmare', 8, 'Status', 0, 100, 15, 'The sleeping opponent loses 25% of its max HP each turn.'
+  196, 'Octazooka', 11, 'Special', 65, 85, 10, 'May lower opponent s Accuracy.'
+  197, 'Odor Sleuth', 1, 'Status', 0, 100, 40, 'Resets opponent s Evasiveness, and allows Normal- and Fighting-type attacks to hit Ghosts.'
+  198, 'Outrage', 16, 'Physical', 120, 100, 10, 'User attacks for 2-3 turns but then becomes confused.'
+  199, 'Overheat', 10, 'Special', 130, 90, 5, 'Sharply lowers user s Special Attack.'
+  200, 'Pain Split', 1, 'Status', 0, 100, 20, 'The user s and opponent s HP becomes the average of both.'
+  201, 'Pay Day', 1, 'Physical', 40, 100, 20, 'Money is earned after the battle.'
+  202, 'Peck', 3, 'Physical', 35, 100, 35, ''
+  203, 'Perish Song', 1, 'Status', 0, 100, 5, 'Any Pokémon in play when this attack is used faints in 3 turns.'
+  204, 'Petal Dance', 12, 'Special', 120, 100, 10, 'User attacks for 2-3 turns but then becomes confused.'
+  205, 'Pin Missile', 7, 'Physical', 25, 95, 20, 'Hits 2-5 times in one turn.'
+  206, 'Poison Fang', 4, 'Physical', 50, 100, 15, 'May badly poison opponent.'
+  207, 'Poison Gas', 4, 'Status', 0, 90, 40, 'Poisons opponent.'
+  208, 'Poison Powder', 4, 'Status', 0, 75, 35, 'Poisons opponent.'
+  209, 'Poison Sting', 4, 'Physical', 15, 100, 35, 'May poison the opponent.'
+  210, 'Poison Tail', 4, 'Physical', 50, 100, 25, 'High critical hit ratio. May poison opponent.'
+  211, 'Pound', 1, 'Physical', 40, 100, 35, ''
+  212, 'Powder Snow', 15, 'Special', 40, 100, 25, 'May freeze opponent.'
+  213, 'Present', 1, 'Physical', 0, 90, 15, 'Either deals damage or heals.'
+  214, 'Protect', 1, 'Status', 0, 100, 10, 'Protects the user, but may fail if used consecutively.'
+  215, 'Psybeam', 14, 'Special', 65, 100, 20, 'May confuse opponent.'
+  216, 'Psych Up', 1, 'Status', 0, 100, 10, 'Copies the opponent s stat changes.'
+  217, 'Psychic', 14, 'Special', 90, 100, 10, 'May lower opponent s Special Defense.'
+  218, 'Psycho Boost', 14, 'Special', 140, 90, 5, 'Sharply lowers user s Special Attack.'
+  219, 'Psywave', 14, 'Special', 0, 100, 15, 'Inflicts damage 50-150% of user s level.'
+  220, 'Pursuit', 17, 'Physical', 40, 100, 20, 'Double power if the opponent is switching out.'
+  221, 'Quick Attack', 1, 'Physical', 40, 100, 30, 'User attacks first.'
+  222, 'Rage', 1, 'Physical', 20, 100, 20, 'Raises user s Attack when hit.'
+  223, 'Rain Dance', 11, 'Status', 0, 100, 5, 'Makes it rain for 5 turns.'
+  224, 'Rapid Spin', 1, 'Physical', 50, 100, 40, 'Raises user s Speed and removes entry hazards and trap move effects.'
+  225, 'Razor Leaf', 12, 'Physical', 55, 95, 25, 'High critical hit ratio.'
+  226, 'Razor Wind', 1, 'Special', 80, 100, 10, 'Charges on first turn, attacks on second. High critical hit ratio.'
+  227, 'Recover', 1, 'Status', 0, 100, 5, 'User recovers half its max HP.'
+  228, 'Recycle', 1, 'Status', 0, 100, 10, 'User s used hold item is restored.'
+  229, 'Reflect', 14, 'Status', 0, 100, 20, 'Halves damage from Physical attacks for 5 turns.'
+  230, 'Refresh', 1, 'Status', 0, 100, 20, 'Cures paralysis, poison, and burns.'
+  231, 'Rest', 14, 'Status', 0, 100, 5, 'User sleeps for 2 turns, but user is fully healed.'
+  232, 'Return', 1, 'Physical', 0, 100, 20, 'Power increases with higher Friendship.'
+  233, 'Revenge', 2, 'Physical', 60, 100, 10, 'Power increases if user was hit first.'
+  234, 'Reversal', 2, 'Physical', 0, 100, 15, 'The lower the user s HP, the higher the power.'
+  235, 'Roar', 1, 'Status', 0, 100, 20, 'In battles, the opponent switches. In the wild, the Pokémon runs.'
+  236, 'Rock Blast', 6, 'Physical', 25, 90, 10, 'Hits 2-5 times in one turn.'
+  237, 'Rock Slide', 6, 'Physical', 75, 90, 10, 'May cause flinching.'
+  238, 'Rock Smash', 2, 'Physical', 40, 100, 15, 'May lower opponent s Defense.'
+  239, 'Rock Throw', 6, 'Physical', 50, 90, 15, ''
+  240, 'Rock Tomb', 6, 'Physical', 60, 95, 15, 'Lowers opponent s Speed.'
+  241, 'Role Play', 14, 'Status', 0, 100, 10, 'User copies the opponent s Ability.'
+  242, 'Rolling Kick', 2, 'Physical', 60, 85, 15, 'May cause flinching.'
+  243, 'Rollout', 6, 'Physical', 30, 90, 20, 'Doubles in power each turn for 5 turns.'
+  244, 'Sacred Fire', 10, 'Physical', 100, 95, 5, 'May burn opponent.'
+  245, 'Safeguard', 1, 'Status', 0, 100, 25, 'The user s party is protected from status conditions.'
+  246, 'Sand Attack', 5, 'Status', 0, 100, 15, 'Lowers opponent s Accuracy.'
+  247, 'Sand Tomb', 5, 'Physical', 35, 85, 15, 'Traps opponent, damaging them for 4-5 turns.'
+  248, 'Sandstorm', 6, 'Status', 0, 100, 10, 'Creates a sandstorm for 5 turns.'
+  249, 'Scary Face', 1, 'Status', 0, 100, 10, 'Sharply lowers opponent s Speed.'
+  250, 'Scratch', 1, 'Physical', 40, 100, 35, ''
+  251, 'Screech', 1, 'Status', 0, 85, 40, 'Sharply lowers opponent s Defense.'
+  252, 'Secret Power', 1, 'Physical', 70, 100, 20, 'Effects of the attack vary with the location.'
+  253, 'Seismic Toss', 2, 'Physical', 0, 100, 20, 'Inflicts damage equal to user s level.'
+  254, 'Self-Destruct', 1, 'Physical', 200, 100, 5, 'User faints.'
+  255, 'Shadow Ball', 8, 'Special', 80, 100, 15, 'May lower opponent s Special Defense.'
+  256, 'Shadow Punch', 8, 'Physical', 60, 100, 20, 'Ignores Accuracy and Evasiveness.'
+  257, 'Sharpen', 1, 'Status', 0, 100, 30, 'Raises user s Attack.'
+  258, 'Sheer Cold', 15, 'Special', 0, 30, 5, 'One-Hit-KO, if it hits.'
+  259, 'Shock Wave', 13, 'Special', 60, 100, 20, 'Ignores Accuracy and Evasiveness.'
+  260, 'Signal Beam', 7, 'Special', 75, 100, 15, 'May confuse opponent.'
+  261, 'Silver Wind', 7, 'Special', 60, 100, 5, 'May raise all stats of user at once.'
+  262, 'Sing', 1, 'Status', 0, 55, 15, 'Puts opponent to sleep.'
+  263, 'Sketch', 1, 'Status', 0, 100, 1, 'Permanently copies the opponent s last move.'
+  264, 'Skill Swap', 14, 'Status', 0, 100, 10, 'The user swaps Abilities with the opponent.'
+  265, 'Skull Bash', 1, 'Physical', 130, 100, 10, 'Raises Defense on first turn, attacks on second.'
+  266, 'Sky Attack', 3, 'Physical', 140, 90, 5, 'Charges on first turn, attacks on second. May cause flinching. High critical hit ratio.'
+  267, 'Sky Uppercut', 2, 'Physical', 85, 90, 15, 'Hits the opponent, even during Fly.'
+  268, 'Slack Off', 1, 'Status', 0, 100, 5, 'User recovers half its max HP.'
+  269, 'Slam', 1, 'Physical', 80, 75, 20, ''
+  270, 'Slash', 1, 'Physical', 70, 100, 20, 'High critical hit ratio.'
+  271, 'Sleep Powder', 12, 'Status', 0, 75, 15, 'Puts opponent to sleep.'
+  272, 'Sleep Talk', 1, 'Status', 0, 100, 10, 'User performs one of its own moves while sleeping.'
+  273, 'Sludge', 4, 'Special', 65, 100, 20, 'May poison opponent.'
+  274, 'Sludge Bomb', 4, 'Special', 90, 100, 10, 'May poison opponent.'
+  275, 'Smelling Salts', 1, 'Physical', 70, 100, 10, 'Power doubles if opponent is paralyzed, but cures it.'
+  276, 'Smog', 4, 'Special', 30, 70, 20, 'May poison opponent.'
+  277, 'Smokescreen', 1, 'Status', 0, 100, 20, 'Lowers opponent s Accuracy.'
+  278, 'Snatch', 17, 'Status', 0, 100, 10, 'Steals the effects of the opponent s next move.'
+  279, 'Snore', 1, 'Special', 50, 100, 15, 'Can only be used if asleep. May cause flinching.'
+  280, 'Soft-Boiled', 1, 'Status', 0, 100, 5, 'User recovers half its max HP.'
+  281, 'Solar Beam', 12, 'Special', 120, 100, 10, 'Charges on first turn, attacks on second.'
+  282, 'Sonic Boom', 1, 'Special', 0, 90, 20, 'Always inflicts 20 HP.'
+  283, 'Spark', 13, 'Physical', 65, 100, 20, 'May paralyze opponent.'
+  284, 'Spider Web', 7, 'Status', 0, 100, 10, 'Opponent cannot escape/switch.'
+  285, 'Spike Cannon', 1, 'Physical', 20, 100, 15, 'Hits 2-5 times in one turn.'
+  286, 'Spikes', 5, 'Status', 0, 100, 20, 'Damages opponents switching into battle.'
+  287, 'Spit Up', 1, 'Special', 0, 100, 10, 'Power depends on how many times the user performed Stockpile.'
+  288, 'Spite', 8, 'Status', 0, 100, 10, 'The opponent s last move loses 2-5 PP.'
+  289, 'Splash', 1, 'Status', 0, 100, 40, 'Doesn t do ANYTHING.'
+  290, 'Spore', 12, 'Status', 0, 100, 15, 'Puts opponent to sleep.'
+  291, 'Steel Wing', 9, 'Physical', 70, 90, 25, 'May raise user s Defense.'
+  292, 'Stockpile', 1, 'Status', 0, 100, 20, 'Stores energy for use with Spit Up and Swallow.'
+  293, 'Stomp', 1, 'Physical', 65, 100, 20, 'May cause flinching.'
+  294, 'Strength', 1, 'Physical', 80, 100, 15, ''
+  295, 'String Shot', 7, 'Status', 0, 95, 40, 'Sharply lowers opponent s Speed.'
+  296, 'Struggle', 1, 'Physical', 50, 100, 1, 'Only usable when all PP are gone. Hurts the user.'
+  297, 'Stun Spore', 12, 'Status', 0, 75, 30, 'Paralyzes opponent.'
+  298, 'Submission', 2, 'Physical', 80, 80, 20, 'User receives recoil damage.'
+  299, 'Substitute', 1, 'Status', 0, 100, 10, 'Uses HP to creates a decoy that takes hits.'
+  300, 'Sunny Day', 10, 'Status', 0, 100, 5, 'Makes it sunny for 5 turns.'
+  301, 'Super Fang', 1, 'Physical', 0, 90, 10, 'Always takes off half of the opponent s HP.'
+  302, 'Superpower', 2, 'Physical', 120, 100, 5, 'Lowers user s Attack and Defense.'
+  303, 'Supersonic', 1, 'Status', 0, 55, 20, 'Confuses opponent.'
+  304, 'Surf', 11, 'Special', 90, 100, 15, 'Hits all adjacent Pokémon.'
+  305, 'Swagger', 1, 'Status', 0, 85, 15, 'Confuses opponent, but sharply raises its Attack.'
+  306, 'Swallow', 1, 'Status', 0, 100, 10, 'The more times the user has performed Stockpile, the more HP is recovered.'
+  307, 'Sweet Kiss', 18, 'Status', 0, 75, 10, 'Confuses opponent.'
+  308, 'Sweet Scent', 1, 'Status', 0, 100, 20, 'Lowers opponent s Evasiveness.'
+  309, 'Swift', 1, 'Special', 60, 100, 20, 'Ignores Accuracy and Evasiveness.'
+  310, 'Swords Dance', 1, 'Status', 0, 100, 20, 'Sharply raises user s Attack.'
+  311, 'Synthesis', 12, 'Status', 0, 100, 5, 'User recovers HP. Amount varies with the weather.'
+  312, 'Tackle', 1, 'Physical', 40, 100, 35, ''
+  313, 'Tail Glow', 7, 'Status', 0, 100, 20, 'Drastically raises user s Special Attack.'
+  314, 'Tail Whip', 1, 'Status', 0, 100, 30, 'Lowers opponent s Defense.'
+  315, 'Take Down', 1, 'Physical', 90, 85, 20, 'User receives recoil damage.'
+  316, 'Taunt', 17, 'Status', 0, 100, 20, 'Opponent can only use moves that attack.'
+  317, 'Teeter Dance', 1, 'Status', 0, 100, 20, 'Confuses all Pokémon.'
+  318, 'Teleport', 14, 'Status', 0, 100, 20, 'Allows user to flee wild battles; also warps player to last PokéCenter.'
+  319, 'Thief', 17, 'Physical', 60, 100, 25, 'Also steals opponent s held item.'
+  320, 'Thrash', 1, 'Physical', 120, 100, 10, 'User attacks for 2-3 turns but then becomes confused.'
+  321, 'Thunder', 13, 'Special', 110, 70, 10, 'May paralyze opponent.'
+  322, 'Thunder Punch', 13, 'Physical', 75, 100, 15, 'May paralyze opponent.'
+  323, 'Thunder Shock', 13, 'Special', 40, 100, 30, 'May paralyze opponent.'
+  324, 'Thunder Wave', 13, 'Status', 0, 90, 20, 'Paralyzes opponent.'
+  325, 'Thunderbolt', 13, 'Special', 90, 100, 15, 'May paralyze opponent.'
+  326, 'Tickle', 1, 'Status', 0, 100, 20, 'Lowers opponent s Attack and Defense.'
+  327, 'Torment', 17, 'Status', 0, 100, 15, 'Opponent cannot use the same move in a row.'
+  328, 'Toxic', 4, 'Status', 0, 90, 10, 'Badly poisons opponent.'
+  329, 'Transform', 1, 'Status', 0, 100, 10, 'User takes on the form and attacks of the opponent.'
+  330, 'Tri Attack', 1, 'Special', 80, 100, 10, 'May paralyze, burn or freeze opponent.'
+  331, 'Trick', 14, 'Status', 0, 100, 10, 'Swaps held items with the opponent.'
+  332, 'Triple Kick', 2, 'Physical', 10, 90, 10, 'Hits thrice in one turn at increasing power.'
+  333, 'Twineedle', 7, 'Physical', 25, 100, 20, 'Hits twice in one turn. May poison opponent.'
+  334, 'Twister', 16, 'Special', 40, 100, 20, 'May cause flinching. Hits Pokémon using Fly/Bounce with double power.'
+  335, 'Uproar', 1, 'Special', 90, 100, 10, 'User attacks for 3 turns and prevents sleep.'
+  336, 'Vine Whip', 12, 'Physical', 45, 100, 25, ''
+  337, 'Vise Grip', 1, 'Physical', 55, 100, 30, ''
+  338, 'Vital Throw', 2, 'Physical', 70, 100, 10, 'User attacks last, but ignores Accuracy and Evasiveness.'
+  339, 'Volt Tackle', 13, 'Physical', 120, 100, 15, 'User receives recoil damage. May paralyze opponent.'
+  340, 'Water Gun', 11, 'Special', 40, 100, 25, ''
+  341, 'Water Pulse', 11, 'Special', 60, 100, 20, 'May confuse opponent.'
+  342, 'Water Sport', 11, 'Status', 0, 100, 15, 'Weakens the power of Fire-type moves.'
+  343, 'Water Spout', 11, 'Special', 150, 100, 5, 'The higher the user s HP, the higher the damage caused.'
+  344, 'Waterfall', 11, 'Physical', 80, 100, 15, 'May cause flinching.'
+  345, 'Weather Ball', 1, 'Special', 50, 100, 10, 'Move s power and type changes with the weather.'
+  346, 'Whirlpool', 11, 'Special', 35, 85, 15, 'Traps opponent, damaging them for 4-5 turns.'
+  347, 'Whirlwind', 1, 'Status', 0, 100, 20, 'In battles, the opponent switches. In the wild, the Pokémon runs.'
+  348, 'Will-O-Wisp', 10, 'Status', 0, 85, 15, 'Burns opponent.'
+  349, 'Wing Attack', 3, 'Physical', 60, 100, 35, ''
+  350, 'Wish', 1, 'Status', 0, 100, 10, 'The user recovers HP in the following turn.'
+  351, 'Withdraw', 11, 'Status', 0, 100, 40, 'Raises user s Defense.'
+  352, 'Wrap', 1, 'Physical', 15, 90, 20, 'Traps opponent, damaging them for 4-5 turns.'
+  353, 'Yawn', 1, 'Status', 0, 100, 10, 'Puts opponent to sleep in the next turn.'
+  354, 'Zap Cannon', 13, 'Special', 120, 50, 5, 'Paralyzes opponent.'
 }
 
 pokemon = {
   idpoke, pokename, hp, attack, defense, spattack, spdefense, speed, dualtype
-  1, 'Bulbasaur', 45, 49, 49, 65, 65, 45, true
-  2, 'Ivysaur', 60, 62, 63, 80, 80, 60, true
-  3, 'Venusaur', 80, 82, 83, 100, 100, 80, true
-  4, 'Charmander', 39, 52, 43, 60, 50, 65, false
-  5, 'Charmeleon', 58, 64, 58, 80, 65, 80, false
-  6, 'Charizard', 78, 84, 78, 109, 85, 100, true
-  7, 'Squirtle', 44, 48, 65, 50, 64, 43, false
-  8, 'Wartortle', 59, 63, 80, 65, 80, 58, false
-  9, 'Blastoise', 79, 83, 100, 85, 105, 78, false
-  10, 'Caterpie', 45, 30, 35, 20, 20, 45, false
-  11, 'Metapod', 50, 20, 55, 25, 25, 30, false
-  12, 'Butterfree', 60, 45, 50, 90, 80, 70, true
-  13, 'Weedle', 40, 35, 30, 20, 20, 50, true
-  14, 'Kakuna', 45, 25, 50, 25, 25, 35, true
-  15, 'Beedrill', 65, 90, 40, 45, 80, 75, true
-  16, 'Pidgey', 40, 45, 40, 35, 35, 56, true
-  17, 'Pidgeotto', 63, 60, 55, 50, 50, 71, true
-  18, 'Pidgeot', 83, 80, 75, 70, 70, 101, true
-  19, 'Rattata', 30, 56, 35, 25, 35, 72, false
-  20, 'Raticate', 55, 81, 60, 50, 70, 97, false
-  21, 'Spearow', 40, 60, 30, 31, 31, 70, true
-  22, 'Fearow', 65, 90, 65, 61, 61, 100, true
-  23, 'Ekans', 35, 60, 44, 40, 54, 55, false
-  24, 'Arbok', 60, 95, 69, 65, 79, 80, false
-  25, 'Pikachu', 35, 55, 40, 50, 50, 90, false
-  26, 'Raichu', 60, 90, 55, 90, 80, 110, false
-  27, 'Sandshrew', 50, 75, 85, 20, 30, 40, false
-  28, 'Sandslash', 75, 100, 110, 45, 55, 65, false
-  29, 'Nidoran♀', 55, 47, 52, 40, 40, 41, true
-  30, 'Nidorina', 70, 62, 67, 55, 55, 56, true
-  31, 'Nidoqueen', 90, 92, 87, 75, 85, 76, true
-  32, 'Nidoran♂', 46, 57, 40, 40, 40, 50, true
-  33, 'Nidorino', 61, 72, 57, 55, 55, 65, true
-  34, 'Nidoking', 81, 102, 77, 85, 75, 85, true
-  35, 'Clefairy', 70, 45, 48, 60, 65, 35, false
-  36, 'Clefable', 95, 70, 73, 95, 90, 60, false
-  37, 'Vulpix', 38, 41, 40, 50, 65, 65, false
-  38, 'Ninetales', 73, 76, 75, 81, 100, 100, false
-  39, 'Jigglypuff', 115, 45, 20, 45, 25, 20, true
-  40, 'Wigglytuff', 140, 70, 45, 85, 50, 45, true
-  41, 'Zubat', 40, 45, 35, 30, 40, 55, true
-  42, 'Golbat', 75, 80, 70, 65, 75, 90, true
-  43, 'Oddish', 45, 50, 55, 75, 65, 30, true
-  44, 'Gloom', 60, 65, 70, 85, 75, 40, true
-  45, 'Vileplume', 75, 80, 85, 110, 90, 50, true
-  46, 'Paras', 35, 70, 55, 45, 55, 25, true
-  47, 'Parasect', 60, 95, 80, 60, 80, 30, true
-  48, 'Venonat', 60, 55, 50, 40, 55, 45, true
-  49, 'Venomoth', 70, 65, 60, 90, 75, 90, true
-  50, 'Diglett', 10, 55, 25, 35, 45, 95, false
-  51, 'Dugtrio', 35, 100, 50, 50, 70, 120, false
-  52, 'Meowth', 40, 45, 35, 40, 40, 90, false
-  53, 'Persian', 65, 70, 60, 65, 65, 115, false
-  54, 'Psyduck', 50, 52, 48, 65, 50, 55, false
-  55, 'Golduck', 80, 82, 78, 95, 80, 85, false
-  56, 'Mankey', 40, 80, 35, 35, 45, 70, false
-  57, 'Primeape', 65, 105, 60, 60, 70, 95, false
-  58, 'Growlithe', 55, 70, 45, 70, 50, 60, false
-  59, 'Arcanine', 90, 110, 80, 100, 80, 95, false
-  60, 'Poliwag', 40, 50, 40, 40, 40, 90, false
-  61, 'Poliwhirl', 65, 65, 65, 50, 50, 90, false
-  62, 'Poliwrath', 90, 95, 95, 70, 90, 70, true
-  63, 'Abra', 25, 20, 15, 105, 55, 90, false
-  64, 'Kadabra', 40, 35, 30, 120, 70, 105, false
-  65, 'Alakazam', 55, 50, 45, 135, 85, 120, false
-  66, 'Machop', 70, 80, 50, 35, 35, 35, false
-  67, 'Machoke', 80, 100, 70, 50, 60, 45, false
-  68, 'Machamp', 90, 130, 80, 65, 85, 55, false
-  69, 'Bellsprout', 50, 75, 35, 70, 30, 40, true
-  70, 'Weepinbell', 65, 90, 50, 85, 45, 55, true
-  71, 'Victreebel', 80, 105, 65, 100, 70, 70, true
-  72, 'Tentacool', 40, 40, 35, 50, 100, 70, true
-  73, 'Tentacruel', 80, 70, 65, 80, 120, 100, true
-  74, 'Geodude', 40, 80, 100, 30, 30, 20, true
-  75, 'Graveler', 55, 95, 115, 45, 45, 35, true
-  76, 'Golem', 80, 120, 130, 55, 65, 45, true
-  77, 'Ponyta', 50, 85, 55, 65, 65, 90, false
-  78, 'Rapidash', 65, 100, 70, 80, 80, 105, false
-  79, 'Slowpoke', 90, 65, 65, 40, 40, 15, true
-  80, 'Slowbro', 95, 75, 110, 100, 80, 30, true
-  81, 'Magnemite', 25, 35, 70, 95, 55, 45, true
-  82, 'Magneton', 50, 60, 95, 120, 70, 70, true
-  83, 'Farfetch’d', 52, 90, 55, 58, 62, 60, true
-  84, 'Doduo', 35, 85, 45, 35, 35, 75, true
-  85, 'Dodrio', 60, 110, 70, 60, 60, 110, true
-  86, 'Seel', 65, 45, 55, 45, 70, 45, false
-  87, 'Dewgong', 90, 70, 80, 70, 95, 70, true
-  88, 'Grimer', 80, 80, 50, 40, 50, 25, false
-  89, 'Muk', 105, 105, 75, 65, 100, 50, false
-  90, 'Shellder', 30, 65, 100, 45, 25, 40, false
-  91, 'Cloyster', 50, 95, 180, 85, 45, 70, true
-  92, 'Gastly', 30, 35, 30, 100, 35, 80, true
-  93, 'Haunter', 45, 50, 45, 115, 55, 95, true
-  94, 'Gengar', 60, 65, 60, 130, 75, 110, true
-  95, 'Onix', 35, 45, 160, 30, 45, 70, true
-  96, 'Drowzee', 60, 48, 45, 43, 90, 42, false
-  124, 'Jynx', 65, 50, 35, 115, 95, 95, true
-  139, 'Omastar', 70, 60, 125, 115, 70, 55, true
-  144, 'Articuno', 90, 85, 100, 95, 125, 85, true
-  145, 'Zapdos', 90, 90, 85, 125, 90, 100, true
-  146, 'Moltres', 90, 100, 90, 125, 85, 90, true
-  376, 'Metagross', 80, 135, 130, 95, 90, 70, true
-  635, 'Hydreigon', 92, 105, 90, 125, 90, 98, true
+  1, 'Bulbasaur', 47, 64, 53, 81, 82, 49, true
+  2, 'Bulbasaur', 49, 53, 61, 71, 72, 58, true
+  3, 'Bulbasaur', 52, 62, 53, 78, 65, 50, true
+  4, 'Bulbasaur', 48, 52, 57, 85, 66, 56, true
+  5, 'Ivysaur', 61, 81, 73, 84, 101, 68, true
+  6, 'Ivysaur', 70, 63, 63, 85, 92, 70, true
+  7, 'Ivysaur', 78, 73, 73, 101, 91, 68, true
+  8, 'Ivysaur', 63, 63, 80, 104, 83, 67, true
+  9, 'Ivysaur', 76, 62, 77, 85, 92, 73, true
+  10, 'Ivysaur', 75, 66, 63, 100, 83, 61, true
+  11, 'Charmander', 41, 59, 51, 71, 58, 75, false
+  12, 'Charmander', 51, 56, 46, 60, 61, 76, false
+  13, 'Charmander', 50, 64, 43, 71, 64, 67, false
+  14, 'Charmander', 51, 68, 53, 64, 53, 83, false
+  15, 'Charmander', 46, 53, 48, 76, 58, 72, false
+  16, 'Charmeleon', 66, 75, 59, 97, 72, 84, false
+  17, 'Charizard', 97, 110, 86, 116, 98, 129, true
+  18, 'Charizard', 89, 107, 100, 125, 103, 110, true
+  19, 'Squirtle', 55, 56, 68, 58, 67, 49, false
+  20, 'Squirtle', 55, 56, 78, 65, 65, 46, false
+  21, 'Squirtle', 51, 50, 66, 53, 72, 47, false
+  22, 'Squirtle', 57, 48, 75, 61, 78, 49, false
+  23, 'Squirtle', 51, 50, 66, 56, 64, 43, false
+  24, 'Squirtle', 56, 57, 67, 55, 65, 55, false
+  25, 'Wartortle', 71, 66, 95, 74, 90, 61, false
+  26, 'Blastoise', 97, 88, 131, 96, 123, 95, false
+  27, 'Caterpie', 53, 33, 43, 22, 25, 54, false
+  28, 'Caterpie', 57, 30, 43, 22, 24, 47, false
+  29, 'Caterpie', 47, 30, 35, 25, 24, 48, false
+  30, 'Caterpie', 54, 35, 38, 20, 24, 52, false
+  31, 'Caterpie', 51, 34, 45, 23, 24, 54, false
+  32, 'Caterpie', 56, 33, 39, 25, 25, 57, false
+  33, 'Caterpie', 55, 33, 40, 26, 20, 49, false
+  34, 'Metapod', 56, 24, 63, 29, 26, 35, false
+  35, 'Metapod', 59, 22, 62, 26, 28, 36, false
+  36, 'Metapod', 51, 23, 61, 31, 31, 31, false
+  37, 'Metapod', 52, 26, 63, 25, 30, 38, false
+  38, 'Metapod', 64, 20, 58, 30, 25, 32, false
+  39, 'Metapod', 54, 22, 68, 27, 28, 39, false
+  40, 'Metapod', 52, 23, 68, 25, 25, 37, false
+  41, 'Metapod', 53, 20, 59, 27, 30, 34, false
+  42, 'Metapod', 59, 25, 56, 25, 28, 35, false
+  43, 'Metapod', 52, 20, 70, 25, 26, 32, false
+  44, 'Metapod', 53, 23, 62, 28, 25, 37, false
+  45, 'Metapod', 51, 25, 66, 31, 28, 32, false
+  46, 'Butterfree', 63, 52, 61, 109, 84, 72, true
+  47, 'Butterfree', 73, 54, 63, 98, 89, 82, true
+  48, 'Butterfree', 72, 45, 55, 102, 103, 87, true
+  49, 'Weedle', 41, 45, 32, 21, 26, 54, true
+  50, 'Weedle', 43, 41, 36, 24, 25, 61, true
+  51, 'Weedle', 51, 36, 35, 23, 22, 65, true
+  52, 'Weedle', 44, 39, 33, 22, 23, 50, true
+  53, 'Weedle', 40, 35, 33, 22, 21, 55, true
+  54, 'Weedle', 49, 37, 37, 20, 25, 55, true
+  55, 'Kakuna', 58, 25, 57, 28, 27, 36, true
+  56, 'Kakuna', 57, 25, 51, 25, 27, 37, true
+  57, 'Kakuna', 54, 25, 59, 30, 28, 44, true
+  58, 'Kakuna', 54, 27, 60, 29, 28, 45, true
+  59, 'Kakuna', 47, 26, 54, 26, 26, 39, true
+  60, 'Kakuna', 46, 25, 53, 29, 29, 36, true
+  61, 'Beedrill', 83, 95, 51, 57, 81, 83, true
+  62, 'Beedrill', 79, 108, 46, 45, 99, 85, true
+  63, 'Beedrill', 72, 99, 47, 53, 102, 89, true
+  64, 'Beedrill', 79, 108, 46, 52, 98, 98, true
+  65, 'Pidgey', 42, 51, 46, 45, 38, 60, true
+  66, 'Pidgey', 50, 49, 44, 35, 41, 57, true
+  67, 'Pidgey', 40, 51, 46, 36, 36, 61, true
+  68, 'Pidgey', 48, 57, 46, 45, 35, 60, true
+  69, 'Pidgey', 46, 48, 40, 43, 39, 72, true
+  70, 'Pidgey', 40, 49, 41, 40, 40, 57, true
+  71, 'Pidgey', 46, 52, 40, 44, 43, 71, true
+  72, 'Pidgey', 47, 58, 47, 44, 44, 61, true
+  73, 'Pidgey', 46, 47, 47, 42, 41, 72, true
+  74, 'Pidgey', 42, 55, 42, 39, 45, 72, true
+  75, 'Pidgey', 50, 49, 40, 42, 44, 56, true
+  76, 'Pidgeotto', 75, 64, 68, 62, 54, 79, true
+  77, 'Pidgeotto', 72, 73, 59, 50, 56, 92, true
+  78, 'Pidgeotto', 66, 72, 69, 50, 59, 85, true
+  79, 'Pidgeotto', 69, 75, 71, 62, 65, 86, true
+  80, 'Pidgeotto', 71, 68, 57, 62, 56, 85, true
+  81, 'Pidgeotto', 80, 67, 59, 52, 56, 89, true
+  82, 'Pidgeotto', 74, 61, 58, 51, 55, 71, true
+  83, 'Pidgeotto', 73, 72, 55, 58, 56, 86, true
+  84, 'Pidgeot', 86, 91, 87, 86, 71, 117, true
+  85, 'Pidgeot', 83, 102, 81, 84, 81, 127, true
+  86, 'Pidgeot', 85, 104, 91, 72, 91, 111, true
+  87, 'Pidgeot', 91, 100, 85, 91, 87, 106, true
+  88, 'Rattata', 32, 57, 42, 27, 37, 77, false
+  89, 'Rattata', 35, 71, 42, 29, 39, 81, false
+  90, 'Rattata', 30, 58, 39, 32, 42, 84, false
+  91, 'Rattata', 30, 72, 38, 26, 42, 84, false
+  92, 'Rattata', 34, 65, 39, 26, 39, 94, false
+  93, 'Rattata', 32, 70, 39, 26, 40, 91, false
+  94, 'Raticate', 72, 102, 65, 59, 84, 122, false
+  95, 'Raticate', 71, 102, 76, 59, 81, 97, false
+  96, 'Raticate', 64, 93, 65, 57, 85, 117, false
+  97, 'Spearow', 50, 71, 31, 34, 36, 70, true
+  98, 'Spearow', 50, 64, 36, 34, 38, 70, true
+  99, 'Spearow', 52, 64, 30, 38, 37, 88, true
+  100, 'Spearow', 44, 76, 32, 33, 31, 87, true
+  101, 'Spearow', 45, 64, 38, 35, 31, 72, true
+  102, 'Spearow', 51, 69, 32, 40, 33, 90, true
+  103, 'Fearow', 72, 90, 77, 73, 79, 122, true
+  104, 'Fearow', 65, 111, 72, 74, 79, 115, true
+  105, 'Fearow', 72, 116, 82, 71, 65, 102, true
+  106, 'Ekans', 36, 60, 50, 49, 69, 64, false
+  107, 'Ekans', 40, 71, 47, 49, 70, 61, false
+  108, 'Ekans', 43, 78, 51, 46, 56, 62, false
+  109, 'Ekans', 40, 68, 46, 44, 58, 67, false
+  110, 'Ekans', 41, 66, 56, 42, 62, 59, false
+  111, 'Ekans', 41, 74, 51, 49, 63, 69, false
+  112, 'Ekans', 35, 63, 55, 47, 58, 63, false
+  113, 'Ekans', 42, 60, 54, 42, 62, 57, false
+  114, 'Ekans', 43, 72, 52, 47, 63, 70, false
+  115, 'Arbok', 67, 123, 86, 83, 80, 101, false
+  116, 'Arbok', 76, 113, 82, 70, 95, 96, false
+  117, 'Arbok', 66, 99, 87, 84, 97, 84, false
+  118, 'Pikachu', 37, 58, 41, 58, 58, 95, false
+  119, 'Pikachu', 45, 64, 52, 62, 64, 91, false
+  120, 'Pikachu', 44, 63, 42, 51, 62, 108, false
+  121, 'Pikachu', 45, 64, 51, 58, 54, 95, false
+  122, 'Pikachu', 36, 72, 44, 53, 65, 110, false
+  123, 'Pikachu', 37, 56, 42, 65, 65, 115, false
+  124, 'Pikachu', 35, 68, 42, 52, 56, 116, false
+  125, 'Pikachu', 45, 55, 51, 65, 57, 99, false
+  126, 'Raichu', 70, 90, 71, 105, 93, 139, false
+  127, 'Raichu', 74, 114, 56, 91, 86, 133, false
+  128, 'Raichu', 66, 117, 70, 101, 86, 135, false
+  129, 'Raichu', 61, 96, 57, 91, 96, 144, false
+  130, 'Sandshrew', 53, 75, 85, 24, 32, 42, false
+  131, 'Sandshrew', 58, 81, 108, 22, 38, 50, false
+  132, 'Sandshrew', 52, 97, 86, 24, 33, 43, false
+  133, 'Sandslash', 80, 122, 134, 49, 55, 77, false
+  134, 'Sandslash', 85, 130, 126, 54, 64, 83, false
+  135, 'Sandslash', 95, 117, 123, 53, 66, 70, false
+  136, 'Nidoran-f', 70, 50, 65, 40, 49, 49, false
+  137, 'Nidoran-f', 71, 48, 68, 47, 42, 48, false
+  138, 'Nidoran-f', 62, 47, 53, 48, 52, 48, false
+  139, 'Nidoran-f', 67, 50, 58, 42, 48, 41, false
+  140, 'Nidoran-f', 58, 58, 60, 46, 40, 50, false
+  141, 'Nidoran-f', 56, 58, 52, 42, 44, 42, false
+  142, 'Nidoran-f', 67, 55, 57, 43, 44, 52, false
+  143, 'Nidoran-f', 56, 56, 66, 45, 51, 41, false
+  144, 'Nidoran-f', 61, 58, 58, 41, 47, 47, false
+  145, 'Nidoran-f', 69, 54, 58, 49, 46, 51, false
+  146, 'Nidoran-f', 60, 48, 57, 47, 44, 49, false
+  147, 'Nidorina', 86, 69, 68, 67, 59, 58, false
+  148, 'Nidorina', 81, 66, 70, 71, 64, 70, false
+  149, 'Nidorina', 75, 73, 85, 63, 67, 64, false
+  150, 'Nidorina', 79, 77, 77, 58, 67, 71, false
+  151, 'Nidoran-m', 47, 72, 43, 44, 42, 54, false
+  152, 'Nidoran-m', 55, 73, 48, 40, 47, 63, false
+  153, 'Nidoran-m', 58, 66, 50, 45, 41, 58, false
+  154, 'Nidoran-m', 51, 65, 42, 43, 45, 60, false
+  155, 'Nidoran-m', 47, 67, 44, 47, 44, 56, false
+  156, 'Nidoran-m', 52, 65, 46, 48, 50, 55, false
+  157, 'Nidorino', 67, 79, 70, 60, 71, 83, false
+  158, 'Nidorino', 76, 82, 71, 67, 58, 78, false
+  159, 'Nidorino', 76, 88, 65, 69, 70, 67, false
+  160, 'Nidoking', 98, 117, 96, 104, 84, 107, true
+  161, 'Nidoking', 89, 131, 81, 105, 76, 100, true
+  162, 'Clefairy', 90, 50, 62, 75, 71, 36, false
+  163, 'Clefairy', 73, 52, 60, 60, 71, 39, false
+  164, 'Clefable', 120, 84, 74, 116, 108, 75, false
+  165, 'Clefable', 108, 80, 86, 112, 90, 76, false
+  166, 'Clefable', 122, 80, 93, 99, 105, 73, false
+  167, 'Vulpix', 40, 48, 50, 64, 81, 85, false
+  168, 'Vulpix', 39, 45, 44, 60, 74, 85, false
+  169, 'Vulpix', 48, 50, 48, 53, 70, 76, false
+  170, 'Vulpix', 40, 51, 47, 55, 72, 78, false
+  171, 'Vulpix', 43, 41, 45, 55, 73, 66, false
+  172, 'Vulpix', 48, 49, 42, 65, 72, 69, false
+  173, 'Vulpix', 47, 45, 46, 58, 68, 72, false
+  174, 'Ninetales', 75, 90, 84, 103, 102, 120, false
+  175, 'Ninetales', 81, 79, 81, 105, 107, 114, false
+  176, 'Ninetales', 91, 80, 78, 95, 128, 120, false
+  177, 'Ninetales', 85, 81, 75, 95, 113, 105, false
+  178, 'Jigglypuff', 132, 58, 22, 58, 30, 21, false
+  179, 'Jigglypuff', 149, 54, 24, 46, 29, 26, false
+  180, 'Jigglypuff', 128, 57, 20, 49, 29, 25, false
+  181, 'Jigglypuff', 141, 52, 25, 58, 31, 21, false
+  182, 'Jigglypuff', 150, 56, 21, 47, 29, 25, false
+  183, 'Jigglypuff', 134, 48, 21, 49, 29, 24, false
+  184, 'Jigglypuff', 140, 55, 26, 54, 25, 24, false
+  185, 'Jigglypuff', 125, 51, 23, 58, 32, 21, false
+  186, 'Jigglypuff', 126, 58, 24, 52, 31, 25, false
+  187, 'Wigglytuff', 149, 72, 57, 97, 54, 57, false
+  188, 'Wigglytuff', 154, 71, 49, 93, 59, 54, false
+  189, 'Wigglytuff', 141, 75, 45, 103, 62, 46, false
+  190, 'Wigglytuff', 173, 74, 58, 96, 63, 58, false
+  191, 'Wigglytuff', 152, 74, 50, 92, 64, 46, false
+  192, 'Zubat', 43, 48, 45, 30, 50, 70, true
+  193, 'Zubat', 52, 58, 39, 30, 45, 59, true
+  194, 'Zubat', 43, 56, 41, 32, 52, 70, true
+  195, 'Zubat', 44, 45, 39, 32, 46, 56, true
+  196, 'Zubat', 44, 47, 35, 37, 51, 63, true
+  197, 'Zubat', 49, 45, 37, 36, 49, 55, true
+  198, 'Zubat', 50, 57, 44, 36, 43, 70, true
+  199, 'Zubat', 42, 56, 42, 37, 40, 67, true
+  200, 'Golbat', 78, 96, 84, 67, 86, 105, true
+  201, 'Golbat', 85, 101, 87, 66, 97, 90, true
+  202, 'Golbat', 75, 101, 75, 78, 81, 93, true
+  203, 'Golbat', 93, 83, 72, 83, 90, 105, true
+  204, 'Golbat', 82, 87, 71, 79, 94, 110, true
+  205, 'Oddish', 53, 52, 63, 96, 75, 30, true
+  206, 'Oddish', 49, 63, 63, 93, 72, 32, true
+  207, 'Oddish', 54, 52, 63, 94, 83, 35, true
+  208, 'Oddish', 57, 57, 68, 87, 76, 36, true
+  209, 'Oddish', 56, 62, 55, 81, 72, 39, true
+  210, 'Oddish', 54, 59, 72, 94, 79, 34, true
+  211, 'Gloom', 75, 70, 88, 107, 96, 44, true
+  212, 'Gloom', 76, 81, 76, 85, 75, 44, true
+  213, 'Gloom', 63, 74, 76, 87, 79, 48, true
+  214, 'Gloom', 63, 79, 78, 85, 97, 48, true
+  215, 'Gloom', 67, 83, 77, 105, 76, 48, true
+  216, 'Gloom', 72, 78, 79, 110, 89, 44, true
+  217, 'Gloom', 78, 74, 70, 90, 85, 42, true
+  218, 'Vileplume', 80, 84, 98, 121, 99, 54, true
+  219, 'Vileplume', 78, 91, 90, 113, 95, 62, true
+  220, 'Paras', 44, 86, 71, 48, 72, 28, true
+  221, 'Paras', 39, 83, 64, 47, 67, 30, true
+  222, 'Paras', 43, 70, 61, 55, 57, 28, true
+  223, 'Paras', 37, 77, 61, 47, 55, 26, true
+  224, 'Paras', 38, 90, 65, 45, 57, 26, true
+  225, 'Venonat', 78, 68, 52, 46, 65, 45, true
+  226, 'Venonat', 76, 59, 58, 40, 58, 58, true
+  227, 'Venonat', 63, 68, 61, 41, 58, 56, true
+  228, 'Venonat', 75, 64, 65, 41, 63, 47, true
+  229, 'Venomoth', 91, 68, 73, 116, 93, 94, true
+  230, 'Diglett', 13, 64, 32, 37, 48, 117, false
+  231, 'Diglett', 11, 62, 26, 43, 51, 119, false
+  232, 'Diglett', 11, 60, 32, 35, 47, 101, false
+  233, 'Diglett', 12, 64, 28, 37, 47, 106, false
+  234, 'Diglett', 10, 70, 27, 39, 51, 97, false
+  235, 'Dugtrio', 38, 117, 60, 62, 83, 154, false
+  236, 'Dugtrio', 45, 105, 57, 56, 84, 128, false
+  237, 'Dugtrio', 45, 129, 57, 52, 86, 120, false
+  238, 'Meowth', 42, 52, 42, 41, 51, 99, false
+  239, 'Meowth', 51, 45, 39, 43, 46, 99, false
+  240, 'Meowth', 50, 45, 43, 50, 51, 96, false
+  241, 'Meowth', 49, 47, 43, 42, 51, 116, false
+  242, 'Meowth', 50, 45, 36, 48, 42, 108, false
+  243, 'Meowth', 50, 58, 43, 49, 48, 108, false
+  244, 'Meowth', 44, 47, 45, 50, 47, 93, false
+  245, 'Persian', 69, 81, 74, 67, 66, 138, false
+  246, 'Persian', 79, 83, 70, 68, 66, 123, false
+  247, 'Persian', 65, 89, 69, 73, 71, 135, false
+  248, 'Persian', 83, 74, 71, 73, 83, 134, false
+  249, 'Psyduck', 58, 63, 60, 81, 52, 58, false
+  250, 'Psyduck', 60, 61, 49, 81, 52, 72, false
+  251, 'Psyduck', 56, 58, 52, 70, 50, 64, false
+  252, 'Psyduck', 52, 67, 49, 67, 65, 61, false
+  253, 'Psyduck', 53, 62, 57, 71, 61, 69, false
+  254, 'Golduck', 81, 93, 97, 104, 96, 91, false
+  255, 'Mankey', 41, 104, 37, 44, 46, 72, false
+  256, 'Mankey', 50, 104, 45, 36, 52, 81, false
+  257, 'Mankey', 49, 100, 41, 43, 58, 77, false
+  258, 'Mankey', 51, 86, 40, 45, 46, 83, false
+  259, 'Primeape', 73, 111, 72, 72, 88, 97, false
+  260, 'Growlithe', 68, 81, 57, 76, 61, 77, false
+  261, 'Growlithe', 72, 79, 56, 74, 57, 71, false
+  262, 'Growlithe', 63, 72, 45, 87, 51, 75, false
+  263, 'Growlithe', 67, 72, 50, 91, 56, 60, false
+  264, 'Growlithe', 61, 74, 56, 87, 59, 78, false
+  265, 'Growlithe', 69, 89, 54, 75, 53, 73, false
+  266, 'Growlithe', 64, 82, 54, 80, 53, 61, false
+  267, 'Growlithe', 63, 81, 47, 72, 50, 64, false
+  268, 'Growlithe', 70, 91, 53, 81, 57, 67, false
+  269, 'Arcanine', 98, 141, 89, 129, 92, 105, false
+  270, 'Arcanine', 93, 117, 92, 110, 81, 117, false
+  271, 'Arcanine', 103, 110, 84, 104, 99, 108, false
+  272, 'Poliwag', 44, 59, 49, 48, 47, 105, false
+  273, 'Poliwag', 45, 52, 52, 45, 46, 102, false
+  274, 'Poliwag', 44, 61, 48, 44, 44, 96, false
+  275, 'Poliwag', 50, 65, 46, 52, 43, 99, false
+  276, 'Poliwag', 42, 57, 47, 42, 50, 112, false
+  277, 'Poliwag', 47, 59, 52, 47, 52, 108, false
+  278, 'Poliwag', 46, 57, 48, 51, 44, 101, false
+  279, 'Poliwag', 40, 63, 50, 51, 52, 96, false
+  280, 'Poliwag', 42, 56, 48, 45, 43, 101, false
+  281, 'Poliwag', 41, 56, 44, 43, 44, 108, false
+  282, 'Poliwag', 46, 63, 46, 46, 48, 117, false
+  283, 'Poliwhirl', 77, 65, 68, 52, 64, 102, false
+  284, 'Poliwhirl', 83, 74, 83, 56, 57, 116, false
+  285, 'Poliwrath', 116, 95, 124, 76, 105, 79, true
+  286, 'Poliwrath', 114, 106, 101, 86, 112, 81, true
+  287, 'Abra', 32, 25, 15, 132, 69, 97, false
+  288, 'Abra', 25, 24, 18, 121, 62, 101, false
+  289, 'Abra', 28, 24, 17, 121, 59, 109, false
+  290, 'Abra', 27, 20, 15, 106, 58, 114, false
+  291, 'Kadabra', 52, 41, 38, 148, 77, 127, false
+  292, 'Kadabra', 46, 39, 38, 128, 79, 116, false
+  293, 'Kadabra', 43, 42, 32, 130, 89, 118, false
+  294, 'Machop', 72, 103, 61, 35, 45, 44, false
+  295, 'Machop', 71, 88, 56, 38, 43, 44, false
+  296, 'Machoke', 86, 125, 89, 64, 67, 49, false
+  297, 'Machamp', 103, 130, 94, 65, 96, 68, false
+  298, 'Machamp', 100, 132, 99, 71, 110, 66, false
+  299, 'Bellsprout', 58, 96, 39, 91, 31, 41, true
+  300, 'Bellsprout', 54, 84, 42, 72, 33, 47, true
+  301, 'Bellsprout', 62, 86, 38, 89, 33, 46, true
+  302, 'Bellsprout', 51, 91, 44, 88, 32, 43, true
+  303, 'Weepinbell', 66, 104, 63, 105, 54, 60, true
+  304, 'Weepinbell', 82, 97, 53, 85, 57, 67, true
+  305, 'Victreebel', 80, 107, 70, 114, 78, 78, true
+  306, 'Victreebel', 94, 107, 70, 123, 86, 88, true
+  307, 'Tentacool', 48, 50, 35, 52, 125, 88, true
+  308, 'Tentacool', 52, 49, 37, 64, 124, 78, true
+  309, 'Tentacool', 49, 45, 45, 56, 124, 72, true
+  310, 'Tentacool', 50, 48, 40, 62, 104, 86, true
+  311, 'Tentacool', 46, 42, 42, 52, 116, 82, true
+  312, 'Tentacool', 51, 45, 35, 54, 101, 74, true
+  313, 'Tentacool', 41, 50, 36, 51, 124, 70, true
+  314, 'Tentacruel', 100, 88, 83, 83, 146, 110, true
+  315, 'Tentacruel', 83, 86, 72, 101, 139, 114, true
+  316, 'Tentacruel', 90, 89, 80, 92, 141, 111, true
+  317, 'Geodude', 44, 95, 112, 31, 38, 20, true
+  318, 'Geodude', 50, 97, 110, 32, 31, 21, true
+  319, 'Geodude', 48, 84, 131, 35, 32, 21, true
+  320, 'Geodude', 49, 96, 119, 34, 31, 25, true
+  321, 'Graveler', 60, 114, 121, 58, 47, 45, true
+  322, 'Golem', 92, 130, 133, 56, 83, 52, true
+  323, 'Ponyta', 58, 100, 68, 76, 72, 91, false
+  324, 'Ponyta', 58, 105, 60, 78, 72, 107, false
+  325, 'Ponyta', 54, 89, 70, 80, 74, 93, false
+  326, 'Ponyta', 53, 85, 57, 76, 67, 117, false
+  327, 'Ponyta', 64, 107, 55, 85, 77, 97, false
+  328, 'Ponyta', 60, 111, 59, 83, 72, 111, false
+  329, 'Ponyta', 60, 111, 62, 70, 80, 107, false
+  330, 'Ponyta', 60, 91, 68, 76, 70, 107, false
+  331, 'Rapidash', 79, 120, 80, 91, 100, 133, false
+  332, 'Rapidash', 69, 122, 82, 85, 85, 107, false
+  333, 'Slowpoke', 113, 78, 75, 42, 47, 15, true
+  334, 'Slowpoke', 107, 73, 74, 49, 43, 16, true
+  335, 'Slowbro', 97, 93, 135, 110, 82, 35, true
+  336, 'Slowbro', 95, 75, 118, 123, 96, 38, true
+  337, 'Slowbro', 104, 93, 141, 109, 104, 35, true
+  338, 'Magnemite', 27, 36, 72, 124, 70, 49, true
+  339, 'Magnemite', 26, 45, 71, 114, 62, 58, true
+  340, 'Magnemite', 30, 38, 82, 109, 55, 55, true
+  341, 'Magnemite', 27, 38, 91, 112, 60, 58, true
+  342, 'Magnemite', 28, 43, 90, 123, 61, 58, true
+  343, 'Magnemite', 27, 42, 88, 114, 60, 58, true
+  344, 'Magneton', 59, 63, 100, 121, 74, 88, true
+  345, 'Magneton', 59, 78, 109, 148, 84, 88, true
+  346, 'Farfetchd', 54, 101, 55, 67, 62, 66, true
+  347, 'Farfetchd', 64, 92, 70, 60, 80, 73, true
+  348, 'Doduo', 40, 95, 56, 41, 42, 92, true
+  349, 'Doduo', 36, 86, 58, 45, 36, 98, true
+  350, 'Doduo', 45, 97, 47, 39, 39, 82, true
+  351, 'Doduo', 35, 87, 57, 41, 41, 84, true
+  352, 'Dodrio', 66, 121, 75, 76, 78, 130, true
+  353, 'Dodrio', 67, 116, 91, 76, 63, 119, true
+  354, 'Seel', 78, 56, 58, 49, 72, 46, false
+  355, 'Seel', 82, 49, 69, 54, 81, 55, false
+  356, 'Dewgong', 98, 89, 88, 86, 115, 70, true
+  357, 'Grimer', 100, 92, 61, 50, 50, 28, false
+  358, 'Grimer', 92, 81, 65, 50, 62, 31, false
+  359, 'Shellder', 35, 85, 103, 47, 28, 51, false
+  360, 'Shellder', 35, 69, 127, 52, 29, 48, false
+  361, 'Shellder', 30, 79, 127, 45, 27, 44, false
+  362, 'Cloyster', 60, 96, 196, 102, 54, 88, true
+  363, 'Cloyster', 57, 106, 190, 92, 51, 80, true
+  364, 'Cloyster', 50, 104, 185, 94, 54, 91, true
+  365, 'Cloyster', 56, 109, 207, 111, 56, 84, true
+  366, 'Gastly', 37, 45, 31, 111, 45, 91, true
+  367, 'Gastly', 32, 43, 35, 116, 38, 96, true
+  368, 'Haunter', 56, 58, 49, 131, 66, 121, true
+  369, 'Haunter', 46, 57, 58, 126, 56, 123, true
+  370, 'Haunter', 55, 59, 46, 147, 59, 114, true
+  371, 'Gengar', 62, 68, 78, 166, 76, 116, true
+  372, 'Onix', 42, 45, 171, 35, 48, 79, true
+  373, 'Drowzee', 69, 59, 52, 51, 117, 47, false
+  374, 'Drowzee', 60, 58, 55, 45, 113, 42, false
+  375, 'Drowzee', 67, 49, 58, 54, 99, 45, false
+  376, 'Drowzee', 71, 58, 56, 52, 99, 43, false
+  377, 'Hypno', 99, 78, 86, 81, 142, 74, false
+  378, 'Krabby', 38, 106, 117, 32, 32, 56, false
+  379, 'Krabby', 33, 130, 99, 25, 28, 55, false
+  380, 'Krabby', 32, 119, 100, 29, 25, 52, false
+  381, 'Krabby', 31, 126, 114, 32, 27, 65, false
+  382, 'Krabby', 38, 131, 112, 27, 29, 58, false
+  383, 'Krabby', 30, 127, 90, 29, 30, 62, false
+  384, 'Krabby', 30, 113, 117, 29, 26, 59, false
+  385, 'Krabby', 35, 119, 106, 29, 26, 51, false
+  386, 'Krabby', 30, 134, 90, 29, 28, 51, false
+  387, 'Krabby', 34, 127, 116, 30, 28, 51, false
+  388, 'Krabby', 31, 117, 93, 28, 26, 56, false
+  389, 'Krabby', 31, 131, 93, 29, 25, 64, false
+  390, 'Krabby', 36, 130, 103, 29, 25, 58, false
+  391, 'Kingler', 56, 169, 144, 59, 50, 90, false
+  392, 'Kingler', 57, 136, 146, 61, 58, 77, false
+  393, 'Voltorb', 51, 36, 55, 63, 66, 125, false
+  394, 'Voltorb', 47, 38, 50, 61, 60, 122, false
+  395, 'Electrode', 76, 64, 74, 88, 81, 193, false
+  396, 'Electrode', 61, 56, 88, 96, 92, 196, false
+  397, 'Exeggcute', 72, 48, 83, 71, 52, 46, true
+  398, 'Cubone', 62, 60, 106, 46, 61, 45, false
+  399, 'Cubone', 64, 65, 96, 46, 60, 36, false
+  400, 'Cubone', 59, 52, 124, 40, 62, 40, false
+  401, 'Cubone', 65, 65, 97, 43, 53, 37, false
+  402, 'Marowak', 78, 104, 116, 51, 100, 54, false
+  403, 'Marowak', 74, 92, 114, 61, 104, 53, false
+  404, 'Marowak', 76, 103, 144, 65, 92, 58, false
+  405, 'Marowak', 72, 94, 134, 62, 99, 46, false
+  406, 'Lickitung', 107, 55, 94, 64, 81, 35, false
+  407, 'Lickitung', 97, 58, 88, 74, 89, 31, false
+  408, 'Koffing', 45, 83, 107, 67, 49, 36, false
+  409, 'Koffing', 47, 70, 121, 66, 50, 41, false
+  410, 'Weezing', 67, 90, 139, 91, 79, 72, false
+  411, 'Weezing', 70, 106, 141, 103, 84, 76, false
+  412, 'Rhyhorn', 97, 102, 100, 37, 35, 28, true
+  413, 'Rhydon', 133, 132, 150, 49, 51, 49, true
+  414, 'Chansey', 277, 5, 6, 44, 110, 63, false
+  415, 'Chansey', 255, 6, 5, 41, 128, 55, false
+  416, 'Chansey', 285, 6, 5, 38, 112, 60, false
+  417, 'Tangela', 81, 59, 143, 117, 50, 73, false
+  418, 'Tangela', 76, 59, 138, 103, 50, 69, false
+  419, 'Tangela', 83, 55, 132, 114, 40, 76, false
+  420, 'Tangela', 70, 58, 134, 124, 52, 66, false
+  421, 'Tangela', 66, 69, 116, 108, 47, 60, false
+  422, 'Tangela', 72, 56, 146, 116, 42, 76, false
+  423, 'Tangela', 76, 67, 125, 122, 45, 66, false
+  424, 'Tangela', 70, 60, 142, 123, 50, 70, false
+  425, 'Kangaskhan', 135, 97, 80, 44, 80, 106, false
+  426, 'Horsea', 37, 44, 79, 77, 27, 78, false
+  427, 'Seadra', 70, 72, 95, 123, 55, 96, false
+  428, 'Seadra', 67, 75, 100, 107, 58, 90, false
+  429, 'Goldeen', 53, 71, 68, 44, 60, 65, false
+  430, 'Goldeen', 57, 84, 71, 45, 61, 73, false
+  431, 'Goldeen', 45, 71, 63, 39, 65, 69, false
+  432, 'Goldeen', 55, 82, 63, 42, 63, 79, false
+  433, 'Goldeen', 58, 77, 77, 45, 52, 66, false
+  434, 'Goldeen', 47, 76, 65, 40, 55, 63, false
+  435, 'Goldeen', 45, 83, 66, 39, 53, 68, false
+  436, 'Goldeen', 45, 67, 66, 38, 63, 73, false
+  437, 'Goldeen', 53, 71, 70, 35, 52, 64, false
+  438, 'Seaking', 94, 93, 70, 78, 92, 72, false
+  439, 'Staryu', 38, 46, 71, 82, 67, 103, false
+  440, 'Staryu', 38, 47, 71, 79, 67, 96, false
+  441, 'Staryu', 35, 53, 67, 73, 68, 87, false
+  442, 'Staryu', 30, 52, 61, 80, 67, 92, false
+  443, 'Staryu', 37, 54, 69, 87, 70, 85, false
+  444, 'Staryu', 38, 57, 58, 81, 66, 85, false
+  445, 'Starmie', 70, 89, 103, 105, 92, 127, true
+  446, 'Starmie', 76, 96, 107, 128, 96, 142, true
+  447, 'Mr. Mime', 49, 57, 71, 122, 146, 99, false
+  448, 'Mr. Mime', 44, 56, 68, 127, 140, 99, false
+  449, 'Scyther', 80, 118, 83, 59, 104, 113, true
+  450, 'Scyther', 70, 111, 89, 69, 92, 122, true
+  451, 'Scyther', 78, 127, 104, 64, 91, 106, true
+  452, 'Jynx', 66, 52, 35, 138, 99, 110, true
+  453, 'Electabuzz', 74, 107, 60, 98, 102, 130, false
+  454, 'Electabuzz', 82, 90, 58, 117, 95, 134, false
+  455, 'Electabuzz', 70, 101, 68, 101, 102, 120, false
+  456, 'Magmar', 65, 113, 60, 101, 108, 97, false
+  457, 'Tauros', 75, 120, 97, 48, 70, 143, false
+  458, 'Magikarp', 24, 11, 69, 16, 20, 96, false
+  459, 'Magikarp', 22, 10, 65, 16, 21, 83, false
+  460, 'Magikarp', 23, 12, 55, 17, 25, 96, false
+  461, 'Magikarp', 25, 12, 70, 18, 26, 96, false
+  462, 'Magikarp', 23, 10, 55, 18, 20, 97, false
+  463, 'Magikarp', 21, 10, 64, 17, 23, 80, false
+  464, 'Gyarados', 100, 133, 92, 77, 128, 106, true
+  465, 'Lapras', 157, 108, 101, 96, 124, 74, true
+  466, 'Ditto', 61, 57, 48, 50, 59, 57, false
+  467, 'Ditto', 59, 50, 49, 51, 50, 58, false
+  468, 'Ditto', 49, 50, 56, 48, 62, 48, false
+  469, 'Eevee', 61, 59, 56, 57, 66, 55, false
+  470, 'Eevee', 59, 61, 62, 58, 73, 66, false
+  471, 'Eevee', 64, 57, 56, 50, 78, 68, false
+  472, 'Eevee', 67, 69, 54, 58, 81, 63, false
+  473, 'Eevee', 61, 69, 50, 46, 67, 65, false
+  474, 'Eevee', 63, 65, 58, 55, 78, 60, false
+  475, 'Eevee', 57, 67, 53, 58, 66, 60, false
+  476, 'Vaporeon', 137, 75, 76, 113, 124, 84, false
+  477, 'Jolteon', 81, 71, 76, 132, 115, 161, false
+  478, 'Jolteon', 72, 81, 76, 121, 124, 143, false
+  479, 'Jolteon', 75, 71, 75, 111, 119, 153, false
+  480, 'Jolteon', 85, 83, 73, 118, 104, 148, false
+  481, 'Jolteon', 80, 70, 64, 126, 100, 163, false
+  482, 'Flareon', 83, 148, 72, 122, 129, 76, false
+  483, 'Flareon', 66, 169, 66, 101, 125, 80, false
+  484, 'Porygon', 72, 64, 88, 101, 78, 51, false
+  485, 'Omanyte', 43, 50, 108, 111, 57, 45, true
+  486, 'Omastar', 72, 76, 150, 144, 83, 67, true
+  487, 'Omastar', 79, 70, 132, 123, 76, 70, true
+  488, 'Kabuto', 31, 102, 110, 59, 46, 57, true
+  489, 'Kabuto', 33, 102, 91, 59, 57, 58, true
+  490, 'Kabutops', 78, 131, 134, 73, 90, 90, true
+  491, 'Kabutops', 76, 118, 107, 72, 85, 82, true
+  492, 'Kabutops', 78, 140, 132, 74, 88, 95, true
+  493, 'Moltres', 96, 110, 107, 128, 108, 117, true
+  494, 'Dragonair', 76, 85, 66, 82, 88, 85, false
+  495, 'Dragonair', 75, 110, 65, 73, 80, 90, false
+  496, 'Dragonair', 78, 96, 66, 86, 75, 70, false
+  497, 'Dragonair', 71, 97, 79, 79, 75, 81, false
+  498, 'Dragonair', 76, 94, 83, 87, 91, 86, false
+  499, 'Dragonite', 107, 170, 103, 102, 114, 88, true
+  500, 'Dragonite', 111, 174, 114, 110, 110, 97, true
 }
 
 abilities = {
   idability, abilityname, abilitydescrip
-  65, 'Overgrow', 'Amplifies Grass-type attacks when HP is low'
-  66, 'Blaze', 'Amplifies Fire-type attacks when HP is low'
-  67, 'Torrent', 'Amplifies Water-type attacks when HP is low'
-  14, 'Compound Eyes', 'Boosts Accuracy'
-  68, 'Swarm', 'Amplifies Bug-type attacks when HP is low'
-  51, 'Keen Eye', 'Accuracy cannot be reduced by an opponent'
-  77, 'Tangled Feet', 'Raises Speed when confused'
-  9, 'Static', 'May paralyze an opponent that makes contact'
-  8, 'Sand Veil', 'Increases Evasion in a sandstorm'
-  56, 'Cute Charm', 'May cause infatuation on contact'
-  98, 'Magic Guard', 'Grants total protection from indirect damage'
-  11, 'Water Absorb', 'Water-type attacks heal the Pokémon'
-  6, 'Damp', 'Prevents use of self-destruction attacks by any Pokémon on the field'
-  26, 'Levitate', 'Grants immunity to Ground-type moves'
-  12, 'Oblivious', 'Prevents infatuation'
-  108, 'Forewarn', 'Shows the opponents most powerful move'
-  33, 'Swift Swim', 'Doubles speed under rain conditions'
-  75, 'Shell Armor', 'Grants protection from critical hits'
-  29, 'Clear Body', 'Stats cannot be lowered by an opponent'
-  34, 'Chlorophyll', 'Doubles speed under intense sunlight'
-  94, 'Solar Power', 'Under intense sunlight, Sp. Attack increased, 1/8 HP lost every turn'
-  44, 'Rain Dish', 'Gradually recovers HP in rain'
-  110, 'Tinted Lens', 'Raises power of uneffective moves'
-  97, 'Sniper', 'Increases power of critical hits'
-  145, 'Big Pecks', 'Defense cannot be lowered by an opponent'
-  31, 'Lightning Rod', 'Redirects Electric-type attacks towards this Pokémon, nullifies them and increases Sp. Attack'
-  146, 'Sand Rush', 'Doubles speed in a sandstorm'
-  132, 'Friend Guard', 'Decreases damage inflicted against ally Pokémon'
-  87, 'Dry Skin', 'Recovers HP in rain, loses HP under intense sunlight'
-  133, 'Weak Armor', 'Raises Speed and lowers Defense upon being hit'
-  135, 'Light Metal', 'Halves weight'
-  201, 'Intimidate', 'Lowers opposing Pokémon Attack on entry'
-  202, 'Flash Fire', 'Powers up Fire moves if it is hit by one; immunity to Fire'
-  203, 'Run Away', 'Ensures escape from wild battles'
-  204, 'Pickup', 'May pick up items after battle'
-  205, 'Technician', 'Boosts moves with base power 60 or lower'
-  206, 'Guts', 'Boosts Attack if statused'
-  207, 'No Guard', 'All moves used by/against this Pokémon never miss'
-  208, 'Vital Spirit', 'Prevents sleep'
-  209, 'Insomnia', 'Prevents sleep'
-  210, 'Synchronize', 'Passes burn/paralyze/poison to the inflictor'
-  211, 'Own Tempo', 'Prevents confusion'
-  212, 'Sturdy', 'Survives one-hit KO moves; endures from full HP'
-  213, 'Rock Head', 'Prevents recoil damage'
-  214, 'Magnet Pull', 'Prevents Steel-type foes from fleeing; boosts Steel encounters'
-  215, 'Stench', 'Odor may cause flinching; repels wild encounters'
-  216, 'Sticky Hold', 'Prevents item theft; sticky grip'
-  217, 'Liquid Ooze', 'Draining moves damage the user instead of healing'
-  218, 'Skill Link', 'Multi-hit moves always strike the maximum number of times'
-  219, 'Thick Fat', 'Halves damage from Fire and Ice moves'
-  220, 'Hydration', 'Heals status in rain at end of turn'
-  221, 'Arena Trap', 'Prevents grounded foes from escaping/switching'
-  222, 'Poison Point', 'Contact may poison the attacker'
-  223, 'Rivalry', 'Boosts damage vs. same gender; lowers vs. opposite'
-  224, 'Gluttony', 'Eats pinch berries at higher HP threshold'
-  225, 'Effect Spore', 'Contact may inflict sleep/poison/paralysis'
-  226, 'Cloud Nine', 'Negates effects of weather'
-  227, 'Early Bird', 'Wakes up quickly'
-  46, 'Pressure', 'The foe uses 2 PP instead of 1 for moves'
+  104, 'Adaptability', 'Adaptability increases the effectiveness of STAB moves from the usual 1.5× to 2×. For example, a Water-type Pokémon using Surf (base power 90) would normally get an effective power of 135. With Adaptability it would be 180 instead.'
+  94, 'Aftermath', 'If an attacker faints a Pokémon with Aftermath using a contact move, the attacker will lose 1⁄4 of their maximum HP.'
+  1, 'Air Lock', 'Eliminates the effects of weather.'
+  125, 'Analytic', 'Boosts move power when the Pokémon moves last. Game descriptions Black​/​WhiteBlack 2​/​White 2 Boosts move power when the Pokémon moves last. X​/​YO.Ruby​/​A.Sapphire Boosts move power when the Pokémon moves after the target. Sun​/​MoonUltra Sun​/​Ultra Moon Boosts move power when the Pokémon moves last. Sword​/​ShieldB.Diamond​/​S.Pearl Boosts move power when the Pokémon moves last. Scarlet​/​Violet Boosts the power of the Pokémon’s move if it is the last to act that turn. Other languages English Analytic Japanese アナライズ (Analyze) German Analyse French Analyste Italian Ponderazione Spanish Cálculo Final Korean 애널라이즈 Chinese (Simplified) 分析 Chinese (Traditional) 分析 Pokémon with Analytic No Pokémon have the ability Analytic as a regular ability.'
+  113, 'Anger Point', 'Anger Point raises the ability-bearer s Attack to its maximum level - +6 stages or 4× usual power - when a move targeting it receives a critical hit.'
+  118, 'Anticipation', 'A Pokémon with Anticipation will shudder upon entering battle, if an opponent has a move that is super-effective against it, or a One-Hit-KO move (Fissure, Horn Drill, Guillotine or Sheer Cold). It only activates when the ability-bearer switches in, not when an opponent switches in. Anticipation does not activate if the opponent has a move that varies in type, such as Hidden Power, Judgment or Weather Ball, even if those moves would be super-effective.'
+  2, 'Arena Trap', 'Arena Trap prevents opponents from fleeing or switching out. Raised Pokémon are not affected. Raised Pokémon are any Flying types or those under the effects of Levitate, Magnet Rise or Telekinesis. Full details in glossary. If a Pokémon with Arena Trap is the leading party Pokémon, wild Pokémon are twice as likely to appear.'
+  3, 'Battle Armor', 'Battle Armor prevents the Pokémon from receiving a critical hit.'
+  122, 'Big Pecks', 'Big Pecks prevents the ability-bearer s Defense stat from being lowered, for example via Tail Whip.'
+  4, 'Blaze', 'Blaze increases the power of Fire-type moves by 50% (1.5×) when the ability-bearer s HP falls below a third of its maximum (known in-game as in a pinch).'
+  5, 'Chlorophyll', 'Chlorophyll doubles the ability-bearer s Speed during bright sunshine.'
+  6, 'Clear Body', ''
+  7, 'Cloud Nine', 'Cloud Nine suppresses all effects brought on by weather, including move power increases, end-of-turn damage, accuracy changes, relevant abilities and so on.'
+  8, 'Color Change', 'Changes the Pokemon s type to the foe s move.'
+  96, 'Competitive', 'Competitive raises the ability-bearer s Special Attack by two stages when hit by a stat-lowering move. Stats can be raised to a maximum of +6 stages each.'
+  9, 'Compound Eyes', 'Compound Eyes raises the ability-bearer s accuracy by 30%. In Generations 3-5, this ability s name was formatted as Compoundeyes. If a Pokémon with Compound Eyes is first in the party, Pokémon that can be holding items have that chance increase from 50% to 60% (for common items), 5% to 20% (for uncommon items) or 1% to 5% (for rare items).'
+  86, 'Cursed Body', ''
+  10, 'Cute Charm', 'If a Pokémon with Cute Charm is hit by a move that makes contact, there is a 30% chance the attacker will become infatuated. It will not infatuate Pokémon of the same gender, genderless Pokémon, nor those with the ability Oblivious. Infatuated Pokémon have a 50% chance of being immobilized by love each turn and unable to attack. If a Pokémon with Cute Charm is the leading party Pokémon, the chance of encountering a Pokémon of the opposite gender is 2⁄3.'
+  11, 'Damp', 'Damp prevents all Pokémon on the field from using the moves Selfdestruct and Explosion. It also prevents damage (to the Damp Pokémon only) from the ability Aftermath.'
+  98, 'Defiant', 'Defiant raises the ability-bearer s Attack by two stages when hit by a stat-lowering move. Stats can be raised to a maximum of +6 stages each.'
+  80, 'Download', 'Download raises either the bearer s Attack or Special Attack by one stage when switching into battle, base on the opponent s defenses. It raises Attack if the opponent s Defense is lower than its Special Defense, or raises Special Attack if opponent s Special Defense is lower than or equal to its Defense. In double and triple battles, Download compares the sum of all opponents Defense stats and the sum of all opponents Special Defense stats and uses the lowest total.'
+  12, 'Drizzle', 'The Pokemon makes it rain when it enters a battle.'
+  13, 'Drought', 'Drought creates harsh sunlight when the ability-bearer enters battle. The effect lasts 5 turns, unless it is cleared via Air Lock or Cloud Nine or replaced by another weather condition. If multiple Pokémon with weather-generating abilities (Drought, Drizzle, Sand Stream or Snow Warning) enter the field on the same turn, each weather condition will activate consecutively, fastest Pokémon first. In other words, the resultant weather condition will be that of the slowest Pokémon. Prior to Generation 6, Drought lasts indefinitely upon activation.'
+  108, 'Dry Skin', 'Dry Skin causes several effects:'
+  14, 'Early Bird', ''
+  15, 'Effect Spore', ''
+  130, 'Filter', 'Filter reduces the damage taken from super-effective attacks by 25%. For example, a Dark-type move used against a Psychic-type Pokémon with Filter would deal 1.5× the usual damage instead of 2×. A double weakness would be reduced from 4× to 3×.'
+  16, 'Flame Body', 'If a Pokémon with Flame Body is hit by a move that makes contact, there is a 30% chance the attacker will become burned. If a Pokémon with Flame Body (or Magma Armor or Steam Engine) and a Pokémon Egg are both in the party Pokémon, the number of steps required to hatch the egg are halved.'
+  17, 'Flash Fire', 'When a Pokémon with Flash Fire is hit by a Fire-type move, it does not deal damage but instead raises the power of the bearer s Fire-type moves by 50%. Subsequent hits do not raise the power even more, but the effect remains while the ability-bearer is in battle.'
+  18, 'Forecast', 'Castform transforms with the weather.'
+  119, 'Forewarn', 'Determines what moves a foe has. Game descriptions Diamond​/​PearlPlatinumHeartGold​/​SoulSilver Determines what moves the foe has. Black​/​WhiteBlack 2​/​White 2 Determines what moves a foe has. X​/​YO.Ruby​/​A.Sapphire Determines what moves an opposing Pokémon has. Sun​/​MoonUltra Sun​/​Ultra Moon When it enters a battle, the Pokémon can tell one of the moves an opposing Pokémon has. Sword​/​ShieldB.Diamond​/​S.Pearl When it enters a battle, the Pokémon can tell one of the moves an opposing Pokémon has. Scarlet​/​Violet When it enters a battle, the Pokémon can tell one of the moves an opposing Pokémon has. Other languages English Forewarn Japanese よちむ (Yochimu) German Vorwarnung French Prédiction Italian Premonizione Spanish Alerta Korean 예지몽 Chinese (Simplified) 预知梦 Chinese (Traditional) 預知夢 Pokémon with Forewarn # Name 2nd ability Hidden ability 0096 Drowzee Insomnia Inner Focus 0097 Hypno Insomnia Inner Focus 0124 Jynx Oblivious Dry Skin 0238 Smoochum Oblivious Hydration 0517 Munna Synchronize Telepathy 0518 Musharna Synchronize Telepathy Forewarn as a hidden ability No Pokémon have Forewarn as a hidden ability.'
+  112, 'Friend Guard', ''
+  101, 'Frisk', ''
+  131, 'Gluttony', 'A Pokémon with Gluttony will use a pinch berry when its HP drops to 50%, rather than the usual 25%. Pinch berries are: Figy, Wiki, Mago, Aguav, Iapapa, Liechi, Ganlon, Salac, Petaya, Apicot, Lansat, Starf, Micle and Custap. (Their descriptions state that they work in a pinch.)'
+  19, 'Guts', 'Guts raises the ability-bearer s Attack by 50% when inflicted by a major status ailment (poison, burn, paralysis, freeze or sleep). If burnt, the Pokémon does not suffer the usual drop in Attack. All other effects of the status condition remain, e.g. losing HP each turn (poison, burn), speed drop (paralysis) or being unable to attack (paralysis, freeze, sleep).'
+  102, 'Harvest', 'May create another Berry after one is used. Game descriptions Black​/​WhiteBlack 2​/​White 2 May create another Berry after one is used. X​/​YO.Ruby​/​A.Sapphire May create another Berry after one is used. Sun​/​MoonUltra Sun​/​Ultra Moon May create another Berry after one is used. Sword​/​ShieldB.Diamond​/​S.Pearl May create another Berry after one is used. Scarlet​/​Violet May create another Berry after one is used. Other languages English Harvest Japanese しゅうかく (Shūkaku) German Reiche Ernte French Récolte Italian Coglibacche Spanish Cosecha Korean 수확 Chinese (Simplified) 收获 Chinese (Traditional) 收穫 Pokémon with Harvest No Pokémon have the ability Harvest as a regular ability.'
+  129, 'Healer', ''
+  20, 'Huge Power', 'Raises the Pokemon s Attack stat.'
+  21, 'Hustle', 'Hustle increases the ability-bearer s Attack by 50%, however, it also reduces the Accuracy of all Physical moves by 20%. If a Pokémon with Hustle is the leading party Pokémon, wild Pokémon are 50% more likely to be higher level.'
+  84, 'Hydration', 'A Pokémon with Hydration will cure itself of any status conditions during rain, at the end of each turn. This includes self-inflicted conditions such as from using Rest.'
+  22, 'Hyper Cutter', 'Hyper Cutter prevents the bearer s Attack stat from being lowered by other Pokémon, through moves such as Growl or abilities such as Intimidate. It does not prevent self-inflicted decreases, for example from Superpower.'
+  90, 'Ice Body', 'A Pokémon with Ice Body will recover 1⁄16 of its maximum HP during hail, after each turn. It also grants immunity to the hailstorm damage, if not already immune.'
+  23, 'Illuminate', 'Illuminate has no effect in battle. If a Pokémon with Illuminate is the leading party Pokémon, wild Pokémon are twice as likely to appear.'
+  24, 'Immunity', ''
+  100, 'Imposter', 'It transforms itself into the Pokémon it is facing. Game descriptions Black​/​WhiteBlack 2​/​White 2 It transforms itself into the Pokémon it is facing. X​/​YO.Ruby​/​A.Sapphire The Pokémon transforms itself into the Pokémon it’s facing. Sun​/​MoonUltra Sun​/​Ultra Moon The Pokémon transforms itself into the Pokémon it’s facing. Sword​/​ShieldB.Diamond​/​S.Pearl The Pokémon transforms itself into the Pokémon it’s facing. Scarlet​/​Violet The Pokémon transforms itself into the Pokémon it’s facing. Other languages English Imposter Japanese かわりもの (Kawari Mono) German Doppelgänger French Imposteur Italian Sosia Spanish Impostor Korean 괴짜 Chinese (Simplified) 变身者 Chinese (Traditional) 變身者 Pokémon with Imposter No Pokémon have the ability Imposter as a regular ability.'
+  105, 'Infiltrator', 'Infiltrator ignores the effects of Reflect, Light Screen and Safeguard. In other words, if the opponent has used Safeguard, Toxic would still badly poison them.'
+  25, 'Inner Focus', 'Inner Focus prevents the Pokémon from flinching, for example when attacked by a move like Headbutt.'
+  26, 'Insomnia', 'Insomnia prevents the ability-bearer from falling asleep, both from moves by other Pokémon like Sing, and self-inflicted sleep like Rest. If a sleeping Pokémon aquires Insomnia (e.g. from Worry Seed, it will wake up on its next turn.'
+  27, 'Intimidate', 'Intimidate lower s the Attack of all opponents by one stage when the ability-bearer switches in (including the start of a battle). Stats can be lowered to a minimum of -6 stages each. If a Pokémon with Intimidate is the leading party Pokémon, wild Pokémon are 50% less likely to be lower level.'
+  121, 'Iron Fist', 'Iron Fist increases the power of all punching moves by 20%. The attacks classed as punching moves are shown below with their normal and boosted power: *No Pokémon with Iron Fist can learn these moves, however they can be called via Copycat, Metronome, Mimic, Mirror Move, or from a Pokémon that gained the ability (for example by Skill Swap).'
+  109, 'Justified', 'Justified raises the ability-bearer s Attack by one stage when hit by a damaging Dark-type move. The Attack rises for every hit of the move Beat Up. Stats can be raised to a maximum of +6 stages each.'
+  28, 'Keen Eye', 'Keen Eye prevents the Pokémon from losing accuracy, for example from moves like Sand-Attack. If a Pokémon with Keen Eye is the leading party Pokémon, wild Pokémon are 50% less likely to be lower level.'
+  97, 'Leaf Guard', 'Leaf Guard prevents the bearer from succumbing to major status ailments (sleep, burns, poisoning, paralysis or freezing) during sunny weather. It does not prevent minor status ailments such as Confusion or Infatuation, nor does it prevent self-inflicted status conditions such as from using Rest.'
+  29, 'Levitate', 'Levitate causes the Pokémon to be raised (like Flying-type Pokémon). Raised Pokémon are not affected by Ground-type moves, Spikes, Toxic Spikes nor Arena Trap. Full details in glossary.'
+  30, 'Lightning Rod', 'Lightning Rod forces all single-target Electric-type moves - used by any other Pokémon on the field - to target this Pokémon, and with 100% accuracy. This includes the status move Thunder Wave. The ability is most useful in double/triple battles. When hit by the move, it deals no damage to the ability-bearer but raises its Special Attack by one stage. Stats can be raised to a maximum of +6 stages each. Lightning Rod will activate for an Electric-type Hidden Power, but not Electric-type Judgment. The ability is overridden by other Pokémon becoming the center of attention from the moves Follow Me or Rage Powder. In Generations 3-4, Lightning Rod did not increase Special Attack nor give immunity to Electric-type attacks. It also did not activate for Hidden Power. In Generations 3-5, this ability s name was formatted as Lightningrod.'
+  31, 'Limber', ''
+  32, 'Liquid Ooze', 'Damages attackers using any draining move. Game descriptions Ruby​/​SapphireFireRed​/​LeafGreenEmerald Draining causes injury. Diamond​/​PearlPlatinumHeartGold​/​SoulSilver Inflicts damage on foes using any draining move. Black​/​WhiteBlack 2​/​White 2 Damages attackers using any draining move. X​/​YO.Ruby​/​A.Sapphire Damages attackers using any draining move. Sun​/​MoonUltra Sun​/​Ultra Moon Oozed liquid has strong stench, which damages attackers using any draining move. Sword​/​ShieldB.Diamond​/​S.Pearl The oozed liquid has a strong stench, which damages attackers using any draining move. Scarlet​/​Violet The strong stench of the Pokémon’s oozed liquid damages attackers that use HP-draining moves. Other languages English Liquid Ooze Japanese ヘドロえき (Hedoro Eki) German Kloakensoße French Suintement Italian Melma Spanish Lodo Líquido Korean 해감액 Chinese (Simplified) 污泥浆 Chinese (Traditional) 污泥漿 Pokémon with Liquid Ooze # Name 2nd ability Hidden ability 0072 Tentacool Clear Body Rain Dish 0073 Tentacruel Clear Body Rain Dish 0316 Gulpin Sticky Hold Gluttony 0317 Swalot Sticky Hold Gluttony Liquid Ooze as a hidden ability No Pokémon have Liquid Ooze as a hidden ability.'
+  120, 'Magic Guard', 'Magic Guard protects the Pokémon from indirect damage, including: It does not prevent damage from confusion, trapping moves (e.g. Bind) or Struggle. In Generation 4 a Pokémon with Magic Guard cannot be poisoned from Toxic Spikes, nor become fully immobile through paralysis (though the Speed drop still occurs).'
+  33, 'Magma Armor', 'Prevents the Pokemon from becoming frozen.'
+  34, 'Magnet Pull', 'Magnet Pull prevents Steel type Pokémon from switching out of battle or fleeing. If a Pokémon with Magnet Pull is the leading party Pokémon, it is 50% more likely that a wild Pokémon encountered will be Steel type.'
+  35, 'Marvel Scale', 'Marvel Scale raises the ability-bearer s Defense by 50% when inflicted by a major status ailment (poison, burn, paralysis, freeze or sleep). All effects of the status condition remain, e.g. losing HP each turn (poison, burn), speed drop (paralysis) or being unable to attack (paralysis, freeze, sleep).'
+  36, 'Minus', 'Ups Sp. Atk if another Pokemon has Plus or Minus.'
+  111, 'Mold Breaker', 'Mold Breaker prevents a target s ability from affecting moves that the Mold Breaker Pokémon uses. It only affects abilities that change the power, accuracy or other effects of moves. For example, a Haxorus with Mold Breaker would be able to hit a Bronzong (having Levitate) using a Ground type move like Earthquake. Ground type moves would still not affect Flying types. However, if Dragon Claw KOs a Pokémon with Aftermath, a Mold Breaker Pokémon would still lose HP as Aftermath did not affect the Dragon Claw attack itself.'
+  126, 'Moxie', 'Moxie increases the user s Attack one stage upon fainting an opponent. Stats can be raised to a maximum of +6 stages each.'
+  103, 'Multiscale', 'Reduces damage when HP is full. Game descriptions Black​/​WhiteBlack 2​/​White 2 Reduces damage when HP is full. X​/​Y Reduces damage the Pokémon takes when its HP is full. O.Ruby​/​A.Sapphire Reduces the damage taken by the Pokémon when its HP is full. Sun​/​MoonUltra Sun​/​Ultra Moon Reduces the amount of damage the Pokémon takes when its HP is full. Sword​/​ShieldB.Diamond​/​S.Pearl Reduces the amount of damage the Pokémon takes while its HP is full. Scarlet​/​Violet Reduces the amount of damage the Pokémon takes while its HP is full. Other languages English Multiscale Japanese マルチスケイル (Multiscale) German Multischuppe French Multiécaille Italian Multisquame Spanish Compensación Korean 멀티스케일 Chinese (Simplified) 多重鳞片 Chinese (Traditional) 多重鱗片 Pokémon with Multiscale No Pokémon have the ability Multiscale as a regular ability.'
+  37, 'Natural Cure', ''
+  116, 'Neutralizing Gas', 'Neutralizes abilities of all Pokémon in battle. Game descriptions Sword​/​ShieldB.Diamond​/​S.Pearl If the Pokémon with Neutralizing Gas is in the battle, the effects of all Pokémon’s Abilities will be nullified or will not be triggered. Scarlet​/​Violet While the Pokémon is in the battle, the effects of all other Pokémon’s Abilities will be nullified or will not be triggered. Other languages English Neutralizing Gas Japanese かがくへんかガス German Reaktionsgas French Gaz Inhibiteur Italian Gas Reagente Spanish Gas Reactivo Korean 화학변화가스 Chinese (Simplified) 化学变化气体 Chinese (Traditional) 化學變化氣體 Pokémon with Neutralizing Gas # Name 2nd ability Hidden ability 0109 Koffing Levitate Stench 0110 Weezing Levitate Stench 0110 Weezing Galarian Weezing Levitate Misty Surge Neutralizing Gas as a hidden ability No Pokémon have Neutralizing Gas as a hidden ability.'
+  95, 'No Guard', 'No Guard ensures that all attacks used by, and targeted at, the ability-bearer hit without fail. This includes moves used on a Pokémon in the hidden stages of the moves Fly, Dive, Dig and Shadow Force. If a Pokémon with No Guard is the leading party Pokémon, wild Pokémon are twice as likely to appear.'
+  38, 'Oblivious', 'Oblivious makes the Pokémon immune to gender-based moves and abilities, specifically Attract, Captivate and Cute Charm.'
+  124, 'Overcoat', 'Overcoat makes the Pokémon immune to residual damage from weather conditions (specifically Hail and Sandstorm).'
+  39, 'Overgrow', 'Overgrow increases the power of Grass-type moves by 50% (1.5×) when the ability-bearer s HP falls below a third of its maximum (known in-game as in a pinch).'
+  40, 'Own Tempo', ''
+  41, 'Pickup', 'When another Pokémon on the field uses a single-use held item, a Pokémon with Pickup will obtain the used item (if they are not already holding anything) and it can be used again. Pokémon with Pickup will also obtain an item thrown at them with Fling (if they are not already holding anything). In Generations 3-4, Pickup has no effect in battle. When a battle ends, any party Pokémon with Pickup has a 10% chance of picking up an item (if they are not already holding an item). Items picked up range from Potions, Great Balls, Ultra Balls and Rare Candies up to Leftovers and some TMs. Better items have a lower chance of being found; furthermore, higher-level Pokémon will obtain better items.'
+  42, 'Plus', 'Ups Sp. Atk if another Pokemon has Plus or Minus.'
+  43, 'Poison Point', 'Contact with the Pokémon may poison the attacker. Game descriptions Ruby​/​SapphireFireRed​/​LeafGreenEmerald Poisons foe on contact. Diamond​/​PearlPlatinumHeartGold​/​SoulSilver Contact with the Pokémon may poison the foe. Black​/​WhiteBlack 2​/​White 2 Contact with the Pokémon may poison the attacker. X​/​YO.Ruby​/​A.Sapphire Contact with the Pokémon may poison the attacker. Sun​/​MoonUltra Sun​/​Ultra Moon Contact with the Pokémon may poison the attacker. Sword​/​ShieldB.Diamond​/​S.Pearl Contact with the Pokémon may poison the attacker. Scarlet​/​Violet Contact with the Pokémon may poison the attacker. Other languages English Poison Point Japanese どくのトゲ (Doku no Toge) German Giftdorn French Point Poison Italian Velenopunto Spanish Punto Tóxico Korean 독가시 Chinese (Simplified) 毒刺 Chinese (Traditional) 毒刺 Pokémon with Poison Point # Name 2nd ability Hidden ability 0029 Nidoran♀ Rivalry Hustle 0030 Nidorina Rivalry Hustle 0031 Nidoqueen Rivalry Sheer Force 0032 Nidoran♂ Rivalry Hustle 0033 Nidorino Rivalry Hustle 0034 Nidoking Rivalry Sheer Force 0117 Seadra Sniper Damp 0194 Wooper Paldean Wooper Water Absorb Unaware 0211 Qwilfish Swift Swim Intimidate 0211 Qwilfish Hisuian Qwilfish Swift Swim Intimidate 0315 Roselia Natural Cure Leaf Guard 0406 Budew Natural Cure Leaf Guard 0407 Roserade Natural Cure Technician 0543 Venipede Swarm Speed Boost 0544 Whirlipede Swarm Speed Boost 0545 Scolipede Swarm Speed Boost 0690 Skrelp Poison Touch Adaptability 0691 Dragalge Poison Touch Adaptability 0904 Overqwil Swift Swim Intimidate 0980 Clodsire Water Absorb Unaware Poison Point as a hidden ability No Pokémon have Poison Point as a hidden ability.'
+  78, 'Poison Touch', ''
+  44, 'Pressure', 'Pressure makes any attack targeted at the ability-bearer - regardless of whether it hits - use 2 PP instead of 1. If a Pokémon with Pressure is the leading party Pokémon, wild Pokémon are 50% more likely to be higher level.'
+  45, 'Pure Power', 'Raises the Pokemon s Attack stat.'
+  128, 'Quick Feet', 'Quick Feet raises the ability-bearer s Speed by 50% when inflicted by a major status ailment (poison, burn, paralysis, freeze or sleep). If paralyzed, the Pokémon does not suffer the usual drop in Speed. All other effects of the status condition remain, e.g. losing HP each turn (poison, burn), or being unable to attack (paralysis, freeze, sleep). If a Pokémon with Quick Feet is the leading party Pokémon, wild Pokémon are only half as likely to appear.'
+  46, 'Rain Dish', 'A Pokémon with Rain Dish will recover 1⁄16 of its maximum HP during rain, after each turn.'
+  81, 'Rattled', 'When a Pokémon with Rattled is hit by a Bug, Ghost or Dark type move, its Speed is raised one stage (up to the usual maximum of +6 stages).'
+  114, 'Reckless', 'Reckless increases the power of recoil moves by 20%. By extension, this means the amount of recoil damage taken will increase as more damage is dealt (except for High Jump Kick and Jump Kick which are based on the user s HP). The attacks classed as punching moves are shown below with their normal and boosted power: * No Pokémon with Reckless can learn these moves.'
+  107, 'Regenerator', 'A Pokémon with Regenerator restores 1⁄3 of its maximum HP when switching out.'
+  99, 'Rivalry', ''
+  47, 'Rock Head', ''
+  48, 'Rough Skin', 'Inflicts damage to the attacker on contact.'
+  49, 'Run Away', 'Run Away allows the bearer to flee a battle with a wild Pokémon without fail, even if the opposing Pokémon has used a move like Mean Look or Bind, or has an ability such as Arena Trap. Pokémon with Run Away cannot switch out for another Pokémon, only flee. It does not allow the Pokémon to flee from Trainer battles.'
+  82, 'Sand Force', 'Sand Force raises the power of Ground, Rock and Steel type moves by 30% during a sandstorm. It also grants immunity to the sandstorm damage, if not already immune (currently this only applies to Shellos since all other Pokémon with the ability are already immune).'
+  79, 'Sand Rush', 'Sand Rush doubles the ability-bearer s Speed during a sandstorm.'
+  50, 'Sand Stream', 'The Pokemon summons a sandstorm in battle.'
+  51, 'Sand Veil', 'Sand Veil raises the ability-bearer s evasion by 20% in a sandstorm. It also gives immunity to sandstorm damage (if they are not already protected by being Ground/Rock/Steel type). If a Pokémon with Sand Veil is the leading party Pokémon while travelling in a sandstorm, wild Pokémon are only half as likely to appear.'
+  77, 'Scrappy', ''
+  52, 'Serene Grace', 'Serene Grace doubles the chance of moves secondary effects occurring - specifically stat changes, status ailments, or flinching. It also increases the chance of flinching due to the held items King s Rock and Razor Fang from 10% to 20% (however, note that those items do not affect moves that already have a flinch chance). Serene Grace does not affect status moves or the Pokémon s critical hit ratio. Shadow Ball normally has a 20% chance of lowering Special Defense; with Serene Grace it is boosted to a 40% chance. Air Slash has a 30% of causing the target to flinch; with Serene Grace it is boosted to a 60% chance. If the item King s Rock is held it does not increase that percentage, but rather if the move does not cause flinching (40% chance), then there is now a further 20% chance the target will flinch from King s Rock. This means Serene Grace with Air Slash and King s Rock gives a total probability of 68% (1 - 0.4*0.8) that the opponent will flinch. In Generations 3-4 Serene Grace does not increase the flinch chance of King s Rock or Razor Fang. In Generations 3-5 Serene Grace does not affect the move Secret Power.'
+  53, 'Shadow Tag', 'Prevents the foe from escaping.'
+  54, 'Shed Skin', ''
+  92, 'Sheer Force', 'Sheer Force increases the power of moves that have beneficial secondary effects by 30%, but removes those additional effects. Beneficial effects are defined as those that are positive for the user, such as: Non-beneficial effects, that Sheer Force will not activate for, include: If the user is holding a Life Orb and uses an attack that activates Sheer Force, it will not receive the 10% damage from Life Orb, but it gets boosts from both Life Orb and Sheer Force (total of 69% base power increase). Flamethrower normally has a 10% chance to burn the opponent. With Sheer Force, Flamethrower s base power is boosted from 95 to 124, but it will never cause a burn. Note that if a move has an advantageous and disadvantageous side-effect, Sheer Force still boosts the move but only the advantageous effect is removed. For example, Flare Blitz may cause a burn but also has recoil damage. A Pokémon with Sheer Force using the move would gain the power increase and still receive recoil damage, but it would never cause a burn. Here are the moves that increase in power under Sheer Force, listed alphabetically:'
+  55, 'Shell Armor', 'Shell Armor prevents the Pokémon from receiving a critical hit.'
+  56, 'Shield Dust', 'Blocks the added effects of attacks taken. Game descriptions Ruby​/​SapphireFireRed​/​LeafGreenEmerald Prevents added effects. Diamond​/​PearlPlatinumHeartGold​/​SoulSilver Blocks the added effects of attacks taken. Black​/​WhiteBlack 2​/​White 2 Blocks the added effects of attacks taken. X​/​YO.Ruby​/​A.Sapphire Blocks the additional effects of attacks taken. Sun​/​MoonUltra Sun​/​Ultra Moon This Pokémon’s dust blocks the additional effects of attacks taken. Sword​/​ShieldB.Diamond​/​S.Pearl This Pokémon’s dust blocks the additional effects of attacks taken. Scarlet​/​Violet Protective dust shields the Pokémon from the additional effects of moves. Other languages English Shield Dust Japanese りんぷん (Rinpun) German Puderabwehr French Écran Poudre Italian Polvoscudo Spanish Polvo Escudo Korean 인분 Chinese (Simplified) 鳞粉 Chinese (Traditional) 鱗粉 Pokémon with Shield Dust # Name 2nd ability Hidden ability 0010 Caterpie — Run Away 0013 Weedle — Run Away 0049 Venomoth Tinted Lens Wonder Skin 0265 Wurmple — Run Away 0269 Dustox — Compound Eyes 0664 Scatterbug Compound Eyes Friend Guard 0666 Vivillon Compound Eyes Friend Guard 0742 Cutiefly Honey Gather Sweet Veil 0743 Ribombee Honey Gather Sweet Veil 0872 Snom — Ice Scales 0873 Frosmoth — Ice Scales Shield Dust as a hidden ability No Pokémon have Shield Dust as a hidden ability.'
+  87, 'Skill Link', 'Skill Link causes multi-strike moves to always hit their maximum number of times. The moves affected are listed below; note that moves such as Double Kick that always strike the same number of times are not affected. In Generation 4, Triple Kick is not affected by Skill Link.'
+  127, 'Sniper', 'Sniper increases the power of critical hits by 1.5×. This means a critical hit will deal 2.25× normal damage instead of 1.5×. In Generations 1-5 critical hits deal 2× normal damage, so Sniper inflicts 3× normal damage.'
+  123, 'Snow Cloak', 'Snow Cloak raises ability-bearer s evasion by 20% in a hail storm. It also gives immunity to damage by hail (if they are not already protected by being Ice type). If a Pokémon with Snow Cloak is the leading party Pokémon while travelling in a hail storm/blizzard, wild Pokémon are only half as likely to appear.'
+  93, 'Solar Power', 'During harsh sunlight, Solar Power raises the ability-bearer s Special Attack by 50%, but it also loses 1⁄8 of its maximum HP after each turn.'
+  57, 'Soundproof', 'Soundproof grants the Pokémon immunity to all sound-based moves, preventing all damage and effects. In Generation 5 only, Pokémon with Soundproof could be cured of status conditions by Heal Bell.'
+  58, 'Speed Boost', 'Its Speed stat is gradually boosted.'
+  59, 'Static', 'If a Pokémon with Static is hit by a move making contact, there is a 30% chance the foe will become paralyzed. If a Pokémon with Static is the leading party Pokémon, it is 50% more likely that a wild Pokémon encountered will be Electric type.'
+  110, 'Steadfast', ''
+  60, 'Stench', 'A Pokémon with Stench has a 10% chance of causing the opponent to flinch when hit by a damaging move (provided the ability-bearer strikes first as usual). Stench does not stack with the items King s Rock or Razor Fang, so an ability-bearer holding either item will keep the flinch chance at 10%. In Generations 3-4, Stench has no effect in battle. If a Pokémon with Stench is the leading party Pokémon, wild Pokémon are only half as likely to appear.'
+  61, 'Sticky Hold', 'Sticky Hold prevents held items from being taken or switched. If a Pokémon with Sticky Hold is the leading party Pokémon, the chance of hooking a Pokémon during fishing increases.'
+  62, 'Sturdy', 'Sturdy allows the Pokémon to survive with 1 HP if attacked at full HP with an attack that would otherwise knock it out. It also prevents One-Hit-KO moves (Fissure, Horn Drill, Guillotine or Sheer Cold). If Sturdy activates before the final hit of a multi-hit move (such as Fury Swipes), the subsequent hit will still deal damage and therefore cause the Pokémon to faint. Sturdy does not prevent self-inflicted KO moves such as Selfdestruct, Explosion and Final Gambit.'
+  63, 'Suction Cups', 'Negates all moves that force switching out.'
+  64, 'Swarm', 'Swarm increases the power of Bug-type moves by 50% (1.5×) when the ability-bearer s HP falls below a third of its maximum (known in-game as in a pinch). If a Pokémon with Swarm is the leading party Pokémon, wild Pokémon are twice as likely to appear.'
+  65, 'Swift Swim', 'Swift Swim doubles the ability-bearer s Speed during rain.'
+  66, 'Synchronize', 'If the opponent causes a burn, paralysis, or poisoning of a Pokémon with Synchronize, the opponent receives the status condition too. Self-inflicted status conditions (for example through the use of an item) are not passed on. In Generations 3-4, bad poison is only passed on as regular poison. If a Pokémon with Synchronize is the leading party Pokémon, there is a 50% chance of each wild Pokémon encountered having the same nature.'
+  91, 'Tangled Feet', ''
+  106, 'Technician', 'Technician increases the power of moves - that are usually base power 60 or below - by 50%. Moves with variable base power are boosted only when it is 60 or below. For example, if Magnitude hits at level 6 it will be boosted from 50 to 75, but level 7 will stay at 70 base power. Moves like Sonic Boom that deal fixed HP damage are not affected by Technician.'
+  67, 'Thick Fat', 'Thick Fat reduces the damage taken from Fire-type and Ice-type moves by 50%. Interestingly, many Pokémon possessing this ability already take reduced damage from those types. A Dewgong or Walrein with Thick Fat would take 1⁄8 normal damage when hit by an Ice-type move.'
+  88, 'Tinted Lens', ''
+  68, 'Torrent', 'Torrent increases the power of Water-type moves by 50% (1.5×) when the ability-bearer s HP falls below a third of its maximum (known in-game as in a pinch).'
+  69, 'Trace', 'The Pokémon copies a foe s Ability. Game descriptions Ruby​/​SapphireFireRed​/​LeafGreenEmerald Copies special ability. Diamond​/​PearlPlatinumHeartGold​/​SoulSilver The Pokémon copies the foe’s ability. Black​/​WhiteBlack 2​/​White 2 The Pokémon copies a foe’s Ability. X​/​YO.Ruby​/​A.Sapphire The Pokémon copies an opposing Pokémon’s Ability. Sun​/​MoonUltra Sun​/​Ultra Moon When it enters a battle, the Pokémon copies an opposing Pokémon’s Ability. Sword​/​ShieldB.Diamond​/​S.Pearl When it enters a battle, the Pokémon copies an opposing Pokémon’s Ability. Scarlet​/​Violet When it enters a battle, the Pokémon copies an opposing Pokémon’s Ability. Other languages English Trace Japanese トレース (Torēsu) German Fährte French Calque Italian Traccia Spanish Rastro Korean 트레이스 Chinese (Simplified) 复制 Chinese (Traditional) 複製 Pokémon with Trace # Name 2nd ability Hidden ability 0065 Alakazam Mega Alakazam — — 0137 Porygon Download Analytic 0233 Porygon2 Download Analytic 0280 Ralts Synchronize Telepathy 0281 Kirlia Synchronize Telepathy 0282 Gardevoir Synchronize Telepathy Trace as a hidden ability No Pokémon have Trace as a hidden ability.'
+  70, 'Truant', 'Pokemon can t attack on consecutive turns.'
+  83, 'Unaware', ''
+  89, 'Unburden', ''
+  115, 'Unnerve', ''
+  71, 'Vital Spirit', 'Vital Spirit prevents the ability-bearer from falling asleep. This means that it also prevents the use of the move Rest. If a Pokémon with Vital Spirit is the leading party Pokémon, wild Pokémon are 50% more likely to be higher level.'
+  72, 'Volt Absorb', 'A Pokémon with Volt Absorb heals 1⁄4 of its maximum HP when hit by an Electric-type attack, including Thunder Wave. In Generation 3, Volt Absorb does not activate for Thunder Wave.'
+  73, 'Water Absorb', 'A Pokémon with Water Absorb heals 1⁄4 of its maximum HP when hit by a Water-type attack.'
+  74, 'Water Veil', ''
+  85, 'Weak Armor', 'When a Pokémon with Weak Armor is hit by a physical move, its Defense drops one stage, but its Speed increases by one stage. Stats can be raised to a maximum of +6 stages each, or lowered to a minimum of -6 stages each.'
+  75, 'White Smoke', 'Prevents other Pokemon from lowering its stats.'
+  76, 'Wonder Guard', 'Only supereffective moves will hit.'
+  117, 'Wonder Skin', 'Wonder Skin halves the accuracy of all status moves targeted at the ability-bearer. It does not affect self-inflicted status moves like Reflect or Swords Dance, nor does it affect the secondary conditions of attacking moves like Flamethrower.'
 }
 
 type = {
@@ -236,205 +1021,507 @@ type = {
 }
 
 pokeability = {
-  idpoke, idability, slot
-  1, 34, 1
-  1, 65, 2
-  2, 34, 1
-  2, 65, 2
-  3, 34, 1
-  3, 65, 2
-  4, 66, 1
-  4, 94, 3
-  5, 66, 1
-  5, 94, 3
-  6, 66, 1
-  6, 94, 3
-  7, 67, 1
-  7, 33, 2
-  8, 67, 1
-  8, 33, 2
-  9, 67, 1
-  9, 44, 3
-  10, 68, 1
-  10, 110, 2
-  11, 68, 1
-  12, 14, 1
-  12, 110, 3
-  13, 68, 1
-  13, 222, 2
-  14, 68, 1
-  15, 68, 1
-  15, 97, 3
-  16, 51, 1
-  17, 51, 1
-  17, 77, 2
-  18, 51, 1
-  18, 77, 2
-  18, 145, 3
-  19, 51, 1
-  19, 203, 2
-  19, 206, 3
-  20, 51, 1
-  20, 206, 2
-  21, 51, 1
-  21, 209, 2
-  22, 51, 1
-  22, 209, 2
-  23, 8, 1
-  24, 8, 1
-  24, 201, 2
-  25, 9, 1
-  25, 31, 2
-  26, 9, 1
-  26, 31, 3
-  27, 8, 1
-  27, 146, 2
-  28, 8, 1
-  28, 146, 3
-  29, 12, 1
-  29, 222, 2
-  30, 12, 1
-  30, 222, 2
-  31, 8, 1
-  31, 222, 2
-  32, 12, 1
-  32, 222, 2
-  32, 223, 3
-  33, 12, 1
-  33, 222, 2
-  34, 8, 1
-  34, 222, 2
-  35, 56, 1
-  35, 219, 2
-  36, 56, 1
-  36, 98, 2
-  36, 132, 3
-  37, 66, 1
-  38, 66, 1
-  38, 202, 2
-  39, 56, 1
-  40, 56, 1
-  40, 219, 2
-  41, 51, 1
-  41, 208, 2
-  42, 51, 1
-  42, 208, 2
-  43, 34, 1
-  44, 34, 1
-  44, 224, 2
-  45, 34, 1
-  45, 224, 2
-  46, 68, 1
-  47, 68, 1
-  48, 68, 1
-  49, 68, 1
-  49, 110, 2
-  50, 8, 1
-  50, 221, 2
-  51, 8, 1
-  51, 221, 2
-  52, 51, 1
-  52, 204, 2
-  52, 205, 3
-  53, 51, 1
-  53, 205, 2
-  54, 11, 1
-  55, 11, 1
-  55, 226, 2
-  56, 51, 1
-  57, 51, 1
-  57, 208, 2
-  58, 66, 1
-  58, 201, 2
-  58, 202, 3
-  59, 66, 1
-  59, 201, 2
-  59, 202, 3
-  60, 33, 1
-  61, 33, 1
-  61, 11, 2
-  62, 11, 1
-  62, 6, 2
-  62, 33, 3
-  63, 26, 1
-  64, 26, 1
-  65, 26, 1
-  65, 210, 2
-  66, 51, 1
-  66, 206, 2
-  67, 51, 1
-  67, 206, 2
-  68, 51, 1
-  68, 206, 2
-  68, 207, 3
-  69, 34, 1
-  70, 34, 1
-  71, 34, 1
-  71, 224, 2
-  72, 44, 1
-  73, 44, 1
-  73, 217, 2
-  74, 75, 1
-  74, 212, 2
-  74, 213, 3
-  75, 75, 1
-  75, 212, 2
-  75, 213, 3
-  76, 75, 1
-  76, 212, 2
-  76, 213, 3
-  77, 66, 1
-  78, 66, 1
-  78, 202, 2
-  79, 12, 1
-  80, 12, 1
-  80, 211, 2
-  81, 26, 1
-  81, 212, 2
-  82, 26, 1
-  82, 212, 2
-  82, 214, 3
-  83, 51, 1
-  83, 208, 2
-  84, 145, 1
-  85, 145, 1
-  85, 227, 2
-  86, 11, 1
-  86, 219, 2
-  87, 11, 1
-  87, 219, 2
-  87, 220, 3
-  88, 87, 1
-  88, 215, 2
-  89, 87, 1
-  89, 215, 2
-  89, 216, 3
-  90, 75, 1
-  90, 218, 2
-  91, 75, 1
-  91, 218, 2
-  92, 26, 1
-  92, 209, 2
-  93, 26, 1
-  93, 209, 2
-  94, 26, 1
-  95, 75, 1
-  95, 212, 2
-  95, 213, 3
-  96, 12, 1
-  96, 209, 2
-  124, 12, 1
-  124, 108, 2
-  124, 87, 3
-  139, 33, 1
-  139, 75, 2
-  139, 133, 3
-  144, 46, 1
-  145, 46, 1
-  146, 46, 1
-  376, 29, 1
-  376, 135, 3
-  635, 26, 1
+  idpoke, idability
+  1, 5
+  2, 5
+  3, 5
+  4, 5
+  5, 5
+  6, 39
+  7, 39
+  8, 5
+  9, 5
+  10, 5
+  11, 93
+  12, 4
+  13, 93
+  14, 4
+  15, 93
+  16, 93
+  17, 93
+  18, 4
+  19, 46
+  20, 46
+  21, 46
+  22, 68
+  23, 46
+  24, 46
+  25, 68
+  26, 46
+  27, 56
+  28, 49
+  29, 56
+  30, 56
+  31, 56
+  32, 56
+  33, 49
+  34, 54
+  35, 54
+  36, 54
+  37, 54
+  38, 54
+  39, 54
+  40, 54
+  41, 54
+  42, 54
+  43, 54
+  44, 54
+  45, 54
+  46, 9
+  47, 9
+  48, 88
+  49, 56
+  50, 49
+  51, 56
+  52, 49
+  53, 49
+  54, 49
+  55, 54
+  56, 54
+  57, 54
+  58, 54
+  59, 54
+  60, 54
+  61, 127
+  62, 64
+  63, 127
+  64, 127
+  65, 28
+  66, 91
+  67, 91
+  68, 28
+  69, 122
+  70, 28
+  71, 28
+  72, 28
+  73, 122
+  74, 122
+  75, 91
+  76, 122
+  77, 122
+  78, 91
+  79, 28
+  80, 122
+  81, 28
+  82, 122
+  83, 91
+  84, 28
+  85, 91
+  86, 91
+  87, 28
+  88, 19
+  89, 21
+  90, 49
+  91, 19
+  92, 19
+  93, 19
+  94, 19
+  95, 21
+  96, 19
+  97, 127
+  98, 28
+  99, 28
+  100, 28
+  101, 127
+  102, 127
+  103, 127
+  104, 127
+  105, 127
+  106, 115
+  107, 54
+  108, 115
+  109, 115
+  110, 115
+  111, 54
+  112, 54
+  113, 115
+  114, 27
+  115, 27
+  116, 54
+  117, 27
+  118, 59
+  119, 59
+  120, 30
+  121, 59
+  122, 59
+  123, 59
+  124, 30
+  125, 30
+  126, 59
+  127, 30
+  128, 30
+  129, 30
+  130, 51
+  131, 51
+  132, 51
+  133, 51
+  134, 79
+  135, 79
+  136, 99
+  137, 99
+  138, 43
+  139, 43
+  140, 43
+  141, 43
+  142, 99
+  143, 99
+  144, 21
+  145, 43
+  146, 21
+  147, 21
+  148, 99
+  149, 21
+  150, 43
+  151, 99
+  152, 99
+  153, 21
+  154, 21
+  155, 21
+  156, 99
+  157, 99
+  158, 21
+  159, 99
+  160, 92
+  161, 43
+  162, 112
+  163, 10
+  164, 120
+  165, 83
+  166, 120
+  167, 13
+  168, 13
+  169, 17
+  170, 17
+  171, 17
+  172, 17
+  173, 13
+  174, 13
+  175, 17
+  176, 13
+  177, 13
+  178, 10
+  179, 10
+  180, 10
+  181, 112
+  182, 10
+  183, 112
+  184, 10
+  185, 10
+  186, 112
+  187, 10
+  188, 101
+  189, 96
+  190, 96
+  191, 101
+  192, 105
+  193, 105
+  194, 25
+  195, 25
+  196, 25
+  197, 105
+  198, 25
+  199, 25
+  200, 25
+  201, 105
+  202, 105
+  203, 25
+  204, 105
+  205, 5
+  206, 49
+  207, 5
+  208, 49
+  209, 49
+  210, 5
+  211, 5
+  212, 5
+  213, 60
+  214, 60
+  215, 5
+  216, 5
+  217, 5
+  218, 15
+  219, 5
+  220, 108
+  221, 15
+  222, 108
+  223, 108
+  224, 108
+  225, 49
+  226, 9
+  227, 9
+  228, 49
+  229, 117
+  230, 2
+  231, 2
+  232, 51
+  233, 2
+  234, 82
+  235, 82
+  236, 82
+  237, 82
+  238, 41
+  239, 41
+  240, 41
+  241, 115
+  242, 41
+  243, 106
+  244, 41
+  245, 115
+  246, 115
+  247, 115
+  248, 31
+  249, 7
+  250, 65
+  251, 11
+  252, 7
+  253, 7
+  254, 65
+  255, 71
+  256, 71
+  257, 71
+  258, 71
+  259, 71
+  260, 27
+  261, 17
+  262, 27
+  263, 109
+  264, 17
+  265, 27
+  266, 109
+  267, 17
+  268, 109
+  269, 109
+  270, 109
+  271, 27
+  272, 11
+  273, 65
+  274, 73
+  275, 73
+  276, 73
+  277, 73
+  278, 65
+  279, 73
+  280, 73
+  281, 11
+  282, 73
+  283, 73
+  284, 11
+  285, 73
+  286, 11
+  287, 25
+  288, 25
+  289, 120
+  290, 66
+  291, 25
+  292, 66
+  293, 66
+  294, 19
+  295, 95
+  296, 19
+  297, 19
+  298, 110
+  299, 131
+  300, 5
+  301, 5
+  302, 5
+  303, 131
+  304, 131
+  305, 131
+  306, 5
+  307, 32
+  308, 32
+  309, 32
+  310, 46
+  311, 32
+  312, 32
+  313, 32
+  314, 6
+  315, 6
+  316, 6
+  317, 62
+  318, 47
+  319, 62
+  320, 62
+  321, 47
+  322, 47
+  323, 49
+  324, 49
+  325, 17
+  326, 49
+  327, 49
+  328, 17
+  329, 16
+  330, 16
+  331, 16
+  332, 49
+  333, 107
+  334, 40
+  335, 38
+  336, 38
+  337, 107
+  338, 125
+  339, 125
+  340, 125
+  341, 34
+  342, 34
+  343, 125
+  344, 34
+  345, 62
+  346, 28
+  347, 28
+  348, 91
+  349, 14
+  350, 91
+  351, 49
+  352, 91
+  353, 49
+  354, 84
+  355, 84
+  356, 67
+  357, 78
+  358, 60
+  359, 87
+  360, 55
+  361, 87
+  362, 124
+  363, 55
+  364, 124
+  365, 87
+  366, 29
+  367, 29
+  368, 29
+  369, 29
+  370, 29
+  371, 86
+  372, 47
+  373, 119
+  374, 26
+  375, 119
+  376, 25
+  377, 26
+  378, 22
+  379, 92
+  380, 55
+  381, 92
+  382, 22
+  383, 55
+  384, 92
+  385, 92
+  386, 22
+  387, 92
+  388, 92
+  389, 55
+  390, 55
+  391, 92
+  392, 22
+  393, 94
+  394, 94
+  395, 57
+  396, 59
+  397, 5
+  398, 30
+  399, 47
+  400, 3
+  401, 3
+  402, 3
+  403, 47
+  404, 30
+  405, 47
+  406, 7
+  407, 7
+  408, 116
+  409, 29
+  410, 60
+  411, 29
+  412, 114
+  413, 30
+  414, 52
+  415, 52
+  416, 129
+  417, 5
+  418, 107
+  419, 107
+  420, 5
+  421, 107
+  422, 5
+  423, 107
+  424, 107
+  425, 14
+  426, 65
+  427, 43
+  428, 11
+  429, 30
+  430, 74
+  431, 74
+  432, 74
+  433, 65
+  434, 74
+  435, 30
+  436, 65
+  437, 74
+  438, 74
+  439, 125
+  440, 37
+  441, 23
+  442, 37
+  443, 23
+  444, 23
+  445, 23
+  446, 37
+  447, 57
+  448, 130
+  449, 64
+  450, 106
+  451, 110
+  452, 38
+  453, 59
+  454, 71
+  455, 59
+  456, 71
+  457, 92
+  458, 65
+  459, 81
+  460, 65
+  461, 65
+  462, 65
+  463, 65
+  464, 126
+  465, 73
+  466, 100
+  467, 31
+  468, 31
+  469, 49
+  470, 49
+  471, 49
+  472, 118
+  473, 118
+  474, 118
+  475, 104
+  476, 84
+  477, 72
+  478, 128
+  479, 128
+  480, 128
+  481, 72
+  482, 17
+  483, 19
+  484, 80
+  485, 65
+  486, 85
+  487, 65
+  488, 3
+  489, 85
+  490, 3
+  491, 65
+  492, 85
+  493, 16
+  494, 54
+  495, 54
+  496, 54
+  497, 35
+  498, 54
+  499, 25
+  500, 25
 }
 
 poketype = {
@@ -445,333 +1532,2673 @@ poketype = {
   2, 4
   3, 12
   3, 4
-  4, 10
-  5, 10
-  6, 10
-  6, 3
-  7, 11
-  8, 11
-  9, 11
-  10, 7
-  11, 7
-  12, 7
-  12, 3
-  13, 7
+  4, 12
+  4, 4
+  5, 12
+  5, 4
+  6, 12
+  6, 4
+  7, 12
+  7, 4
+  8, 12
+  8, 4
+  9, 12
+  9, 4
+  10, 12
+  10, 4
+  11, 12
+  11, 4
+  12, 12
+  12, 4
+  13, 12
   13, 4
-  14, 7
+  14, 12
   14, 4
-  15, 7
+  15, 12
   15, 4
-  16, 1
-  16, 3
-  17, 1
-  17, 3
-  18, 1
-  18, 3
-  19, 1
-  20, 1
-  21, 1
-  21, 3
-  22, 1
-  22, 3
+  16, 12
+  16, 4
+  17, 12
+  17, 4
+  18, 12
+  18, 4
+  19, 12
+  19, 4
+  20, 12
+  20, 4
+  21, 12
+  21, 4
+  22, 12
+  22, 4
+  23, 12
   23, 4
+  24, 12
   24, 4
-  25, 13
-  26, 13
-  27, 5
-  28, 5
+  25, 12
+  25, 4
+  26, 12
+  26, 4
+  27, 12
+  27, 4
+  28, 12
+  28, 4
+  29, 12
   29, 4
-  29, 1
+  30, 12
   30, 4
-  30, 1
+  31, 12
   31, 4
-  31, 5
+  32, 12
   32, 4
-  32, 1
+  33, 12
   33, 4
-  33, 1
-  34, 4
-  34, 5
-  35, 18
-  36, 18
+  34, 10
+  35, 10
+  36, 10
   37, 10
   38, 10
-  39, 1
-  39, 18
-  40, 1
-  40, 18
-  41, 4
-  41, 3
-  42, 4
-  42, 3
-  43, 12
-  43, 4
-  44, 12
-  44, 4
-  45, 12
-  45, 4
-  46, 7
-  46, 12
-  47, 7
-  47, 12
-  48, 7
-  48, 4
-  49, 7
-  49, 3
-  50, 5
-  51, 5
-  52, 1
-  53, 1
-  54, 11
-  55, 11
-  56, 2
-  57, 2
+  39, 10
+  40, 10
+  41, 10
+  42, 10
+  43, 10
+  44, 10
+  45, 10
+  46, 10
+  47, 10
+  48, 10
+  49, 10
+  50, 10
+  51, 10
+  52, 10
+  53, 10
+  54, 10
+  55, 10
+  56, 10
+  57, 10
   58, 10
   59, 10
-  60, 11
-  61, 11
-  62, 11
-  62, 2
-  63, 14
-  64, 14
-  65, 14
-  66, 2
-  67, 2
-  68, 2
-  69, 12
-  69, 4
-  70, 12
-  70, 4
-  71, 12
-  71, 4
-  72, 11
-  72, 4
-  73, 11
-  73, 4
-  74, 6
-  74, 5
-  75, 6
-  75, 5
-  76, 6
-  76, 5
+  60, 10
+  61, 10
+  62, 10
+  63, 10
+  64, 10
+  65, 10
+  66, 10
+  67, 10
+  68, 10
+  69, 10
+  70, 10
+  71, 10
+  72, 10
+  73, 10
+  74, 10
+  75, 10
+  76, 10
+  76, 3
   77, 10
+  77, 3
   78, 10
-  79, 11
-  79, 14
-  80, 11
-  80, 14
-  81, 13
-  81, 9
-  82, 13
-  82, 9
-  83, 1
+  78, 3
+  79, 10
+  79, 3
+  80, 10
+  80, 3
+  81, 10
+  81, 3
+  82, 10
+  82, 3
+  83, 10
   83, 3
-  84, 1
+  84, 10
   84, 3
-  85, 1
+  85, 10
   85, 3
-  86, 15
-  87, 15
-  87, 11
-  88, 4
-  89, 4
+  86, 10
+  86, 3
+  87, 10
+  87, 3
+  88, 11
+  89, 11
   90, 11
   91, 11
-  91, 15
-  92, 8
-  92, 4
-  93, 8
-  93, 4
-  94, 8
-  94, 4
-  95, 6
-  95, 5
-  96, 14
-  124, 15
-  124, 14
-  139, 6
-  139, 11
-  144, 15
-  144, 3
-  145, 13
-  145, 3
-  146, 10
-  146, 3
-  376, 9
-  376, 14
-  635, 16
-  635, 17
+  92, 11
+  93, 11
+  94, 11
+  95, 11
+  96, 11
+  97, 11
+  98, 11
+  99, 11
+  100, 11
+  101, 11
+  102, 11
+  103, 11
+  104, 11
+  105, 11
+  106, 11
+  107, 11
+  108, 11
+  109, 11
+  110, 11
+  111, 11
+  112, 11
+  113, 11
+  114, 11
+  115, 11
+  116, 11
+  117, 11
+  118, 11
+  119, 11
+  120, 11
+  121, 11
+  122, 11
+  123, 11
+  124, 11
+  125, 11
+  126, 11
+  127, 11
+  128, 11
+  129, 11
+  130, 7
+  131, 7
+  132, 7
+  133, 7
+  134, 7
+  135, 7
+  136, 7
+  137, 7
+  138, 7
+  139, 7
+  140, 7
+  141, 7
+  142, 7
+  143, 7
+  144, 7
+  145, 7
+  146, 7
+  147, 7
+  148, 7
+  149, 7
+  150, 7
+  151, 7
+  152, 7
+  153, 7
+  154, 7
+  155, 7
+  156, 7
+  157, 7
+  158, 7
+  159, 7
+  160, 7
+  161, 7
+  162, 7
+  163, 7
+  164, 7
+  165, 7
+  166, 7
+  167, 7
+  168, 7
+  169, 7
+  170, 7
+  171, 7
+  172, 7
+  173, 7
+  174, 7
+  175, 7
+  176, 7
+  177, 7
+  178, 7
+  179, 7
+  180, 7
+  181, 7
+  182, 7
+  183, 7
+  184, 7
+  185, 7
+  186, 7
+  187, 7
+  188, 7
+  189, 7
+  190, 7
+  191, 7
+  192, 7
+  193, 7
+  194, 7
+  195, 7
+  196, 7
+  197, 7
+  198, 7
+  199, 7
+  200, 7
+  201, 7
+  202, 7
+  203, 7
+  204, 7
+  205, 7
+  206, 7
+  207, 7
+  208, 7
+  209, 7
+  210, 7
+  211, 7
+  212, 7
+  213, 7
+  214, 7
+  215, 7
+  216, 7
+  217, 7
+  218, 7
+  219, 7
+  220, 7
+  220, 3
+  221, 7
+  221, 3
+  222, 7
+  222, 3
+  223, 7
+  223, 3
+  224, 7
+  224, 3
+  225, 7
+  225, 3
+  226, 7
+  226, 3
+  227, 7
+  227, 3
+  228, 7
+  228, 3
+  229, 7
+  229, 4
+  230, 7
+  230, 4
+  231, 7
+  231, 4
+  232, 7
+  232, 4
+  233, 7
+  233, 4
+  234, 7
+  234, 4
+  235, 7
+  235, 4
+  236, 7
+  236, 4
+  237, 7
+  237, 4
+  238, 7
+  238, 4
+  239, 7
+  239, 4
+  240, 7
+  240, 4
+  241, 7
+  241, 4
+  242, 7
+  242, 4
+  243, 7
+  243, 4
+  244, 7
+  244, 4
+  245, 7
+  245, 4
+  246, 7
+  246, 4
+  247, 7
+  247, 4
+  248, 7
+  248, 4
+  249, 7
+  249, 4
+  250, 7
+  250, 4
+  251, 7
+  251, 4
+  252, 7
+  252, 4
+  253, 7
+  253, 4
+  254, 7
+  254, 4
+  255, 7
+  255, 4
+  256, 7
+  256, 4
+  257, 7
+  257, 4
+  258, 7
+  258, 4
+  259, 7
+  259, 4
+  260, 7
+  260, 4
+  261, 7
+  261, 4
+  262, 7
+  262, 4
+  263, 7
+  263, 4
+  264, 7
+  264, 4
+  265, 7
+  265, 4
+  266, 7
+  266, 4
+  267, 7
+  267, 4
+  268, 7
+  268, 4
+  269, 7
+  269, 4
+  270, 7
+  270, 4
+  271, 7
+  271, 4
+  272, 7
+  272, 4
+  273, 7
+  273, 4
+  274, 7
+  274, 4
+  275, 7
+  275, 4
+  276, 7
+  276, 4
+  277, 7
+  277, 4
+  278, 7
+  278, 4
+  279, 7
+  279, 4
+  280, 7
+  280, 4
+  281, 7
+  281, 4
+  282, 7
+  282, 4
+  283, 7
+  283, 4
+  284, 7
+  284, 4
+  285, 7
+  285, 4
+  286, 7
+  286, 4
+  287, 7
+  287, 4
+  288, 7
+  288, 4
+  289, 7
+  289, 4
+  290, 7
+  290, 4
+  291, 7
+  291, 4
+  292, 7
+  292, 4
+  293, 7
+  293, 4
+  294, 1
+  294, 3
+  295, 1
+  295, 3
+  296, 1
+  296, 3
+  297, 1
+  297, 3
+  298, 1
+  298, 3
+  299, 1
+  299, 3
+  300, 1
+  300, 3
+  301, 1
+  301, 3
+  302, 1
+  302, 3
+  303, 1
+  303, 3
+  304, 1
+  304, 3
+  305, 1
+  305, 3
+  306, 1
+  306, 3
+  307, 1
+  307, 3
+  308, 1
+  308, 3
+  309, 1
+  309, 3
+  310, 1
+  310, 3
+  311, 1
+  311, 3
+  312, 1
+  312, 3
+  313, 1
+  313, 3
+  314, 1
+  314, 3
+  315, 1
+  315, 3
+  316, 1
+  316, 3
+  317, 1
+  317, 3
+  318, 1
+  318, 3
+  319, 1
+  319, 3
+  320, 1
+  320, 3
+  321, 1
+  321, 3
+  322, 1
+  322, 3
+  323, 1
+  323, 3
+  324, 1
+  324, 3
+  325, 1
+  325, 3
+  326, 1
+  326, 3
+  327, 1
+  327, 3
+  328, 1
+  328, 3
+  329, 1
+  329, 3
+  330, 1
+  330, 3
+  331, 1
+  331, 3
+  332, 1
+  332, 3
+  333, 1
+  333, 3
+  334, 1
+  334, 3
+  335, 1
+  335, 3
+  336, 1
+  336, 3
+  337, 1
+  337, 3
+  338, 1
+  338, 3
+  339, 1
+  339, 3
+  340, 1
+  340, 3
+  341, 1
+  341, 3
+  342, 1
+  342, 3
+  343, 1
+  343, 3
+  344, 1
+  344, 3
+  345, 1
+  345, 3
+  346, 1
+  346, 3
+  347, 1
+  347, 3
+  348, 1
+  348, 3
+  349, 1
+  349, 3
+  350, 1
+  350, 3
+  351, 1
+  351, 3
+  352, 1
+  352, 3
+  353, 1
+  353, 3
+  354, 1
+  354, 3
+  355, 1
+  355, 3
+  356, 1
+  356, 3
+  357, 1
+  358, 1
+  359, 1
+  360, 1
+  361, 1
+  362, 1
+  363, 1
+  364, 1
+  365, 1
+  366, 1
+  367, 1
+  368, 1
+  369, 1
+  370, 1
+  371, 1
+  372, 1
+  373, 1
+  374, 1
+  375, 1
+  376, 1
+  377, 1
+  377, 3
+  378, 1
+  378, 3
+  379, 1
+  379, 3
+  380, 1
+  380, 3
+  381, 1
+  381, 3
+  382, 1
+  382, 3
+  383, 1
+  383, 3
+  384, 1
+  384, 3
+  385, 1
+  385, 3
+  386, 1
+  386, 3
+  387, 1
+  387, 3
+  388, 1
+  388, 3
+  389, 1
+  389, 3
+  390, 1
+  390, 3
+  391, 1
+  391, 3
+  392, 1
+  392, 3
+  393, 1
+  393, 3
+  394, 1
+  394, 3
+  395, 1
+  395, 3
+  396, 1
+  396, 3
+  397, 1
+  397, 3
+  398, 1
+  398, 3
+  399, 1
+  399, 3
+  400, 1
+  400, 3
+  401, 1
+  401, 3
+  402, 1
+  402, 3
+  403, 1
+  403, 3
+  404, 1
+  404, 3
+  405, 1
+  405, 3
+  406, 4
+  407, 4
+  408, 4
+  409, 4
+  410, 4
+  411, 4
+  412, 4
+  413, 4
+  414, 4
+  415, 4
+  416, 4
+  417, 4
+  418, 4
+  419, 4
+  420, 4
+  421, 4
+  422, 4
+  423, 4
+  424, 4
+  425, 4
+  426, 4
+  427, 4
+  428, 4
+  429, 13
+  430, 13
+  431, 13
+  432, 13
+  433, 13
+  434, 13
+  435, 13
+  436, 13
+  437, 13
+  438, 13
+  439, 13
+  440, 13
+  441, 13
+  442, 13
+  443, 13
+  444, 13
+  445, 13
+  446, 13
+  447, 13
+  448, 13
+  449, 13
+  450, 13
+  451, 13
+  452, 13
+  453, 13
+  454, 13
+  455, 13
+  456, 13
+  457, 13
+  458, 13
+  459, 13
+  460, 13
+  461, 13
+  462, 13
+  463, 13
+  464, 5
+  465, 5
+  466, 5
+  467, 5
+  468, 5
+  469, 5
+  470, 5
+  471, 5
+  472, 5
+  473, 5
+  474, 5
+  475, 5
+  476, 5
+  477, 5
+  478, 5
+  479, 5
+  480, 5
+  481, 5
+  482, 4
+  482, 1
+  483, 4
+  483, 1
+  484, 4
+  484, 1
+  485, 4
+  485, 1
+  486, 4
+  486, 1
+  487, 4
+  487, 1
+  488, 4
+  488, 1
+  489, 4
+  489, 1
+  490, 4
+  490, 1
+  491, 4
+  491, 1
+  492, 4
+  492, 1
+  493, 4
+  493, 1
+  494, 4
+  494, 1
+  495, 4
+  495, 1
+  496, 4
+  496, 1
+  497, 4
+  497, 1
+  498, 4
+  498, 1
+  499, 4
+  499, 1
+  500, 4
+  500, 1
 }
 
 pokemove = {
   idpoke, idmove, slot
-  1, 1, 1
-  1, 2, 2
-  1, 3, 3
-  1, 27, 4
-  2, 1, 1
-  2, 3, 2
-  2, 27, 3
-  2, 12, 4
-  3, 1, 1
-  3, 27, 2
-  3, 20, 3
-  3, 15, 4
-  4, 33, 1
-  4, 2, 2
-  4, 4, 3
-  4, 16, 4
-  5, 33, 1
-  5, 4, 2
-  5, 26, 3
-  5, 16, 4
-  6, 33, 1
-  6, 26, 2
-  6, 31, 3
-  6, 15, 4
-  7, 1, 1
-  7, 5, 2
-  7, 32, 3
-  7, 25, 4
-  8, 1, 1
-  8, 5, 2
-  8, 25, 3
-  8, 15, 4
-  9, 1, 1
-  9, 25, 2
-  9, 13, 3
-  9, 15, 4
-  10, 1, 1
-  10, 18, 2
-  10, 19, 3
-  10, 2, 4
-  11, 19, 1
-  11, 18, 2
-  11, 1, 3
-  11, 2, 4
-  12, 11, 1
-  12, 20, 2
-  12, 7, 3
-  12, 15, 4
-  13, 17, 1
-  14, 19, 1
-  15, 17, 1
-  16, 1, 1
-  16, 9, 2
-  16, 8, 3
-  16, 31, 4
-  17, 1, 1
-  17, 9, 2
-  17, 31, 3
-  17, 15, 4
-  18, 1, 1
-  18, 31, 2
-  18, 15, 3
-  18, 9, 4
-  19, 1, 1
-  20, 16, 1
-  21, 10, 1
-  22, 31, 1
-  23, 17, 1
-  24, 16, 1
-  25, 28, 1
-  25, 8, 2
-  25, 6, 3
-  25, 15, 4
-  26, 6, 1
-  27, 13, 1
-  28, 13, 1
-  29, 17, 1
-  30, 17, 1
-  31, 13, 1
-  32, 17, 1
-  33, 16, 1
-  34, 13, 1
-  35, 12, 1
-  36, 12, 1
-  37, 4, 1
-  38, 26, 1
-  39, 2, 1
-  40, 15, 1
-  41, 10, 1
-  42, 31, 1
-  43, 3, 1
-  44, 27, 1
-  45, 27, 1
-  46, 3, 1
-  47, 27, 1
-  48, 18, 1
-  49, 11, 1
-  50, 13, 1
-  51, 13, 1
-  52, 1, 1
-  53, 16, 1
-  54, 5, 1
-  55, 25, 1
-  56, 30, 1
-  57, 29, 1
-  58, 4, 1
-  59, 26, 1
-  60, 32, 1
-  61, 5, 1
-  62, 25, 1
-  63, 34, 1
-  64, 11, 1
-  65, 12, 1
-  66, 30, 1
-  67, 29, 1
-  68, 13, 1
-  69, 3, 1
-  70, 27, 1
-  71, 27, 1
-  72, 5, 1
-  73, 25, 1
-  74, 14, 1
-  75, 13, 1
-  76, 14, 1
-  77, 4, 1
-  78, 26, 1
-  79, 11, 1
-  80, 12, 1
-  81, 28, 1
-  82, 6, 1
-  83, 31, 1
-  84, 31, 1
-  85, 16, 1
-  86, 7, 1
-  87, 36, 1
-  88, 17, 1
-  89, 13, 1
-  90, 5, 1
-  91, 36, 1
-  92, 22, 1
-  92, 21, 2
-  92, 23, 3
-  92, 12, 4
-  93, 22, 1
-  93, 21, 2
-  93, 23, 3
-  93, 12, 4
-  94, 22, 1
-  94, 21, 2
-  94, 12, 3
-  94, 15, 4
-  95, 14, 1
-  96, 11, 1
-  124, 7, 1
-  139, 25, 1
-  376, 12, 1
-  635, 24, 1
-  144, 7, 1
-  144, 31, 2
-  144, 36, 3
-  144, 15, 4
-  145, 6, 1
-  145, 28, 2
-  145, 31, 3
-  145, 15, 4
-  146, 26, 1
-  146, 4, 2
-  146, 31, 3
-  146, 15, 4
+  1, 204, 1
+  1, 155, 2
+  1, 279, 3
+  1, 272, 4
+  2, 271, 1
+  2, 294, 2
+  2, 190, 3
+  2, 311, 4
+  3, 265, 1
+  3, 37, 2
+  3, 294, 3
+  3, 117, 4
+  4, 252, 1
+  4, 37, 2
+  4, 300, 3
+  4, 111, 4
+  5, 310, 1
+  5, 58, 2
+  5, 70, 3
+  5, 118, 4
+  6, 238, 1
+  6, 231, 2
+  6, 245, 3
+  6, 232, 4
+  7, 14, 1
+  7, 58, 2
+  7, 312, 3
+  7, 274, 4
+  8, 83, 1
+  8, 58, 2
+  8, 274, 3
+  8, 299, 4
+  9, 58, 1
+  9, 69, 2
+  9, 155, 3
+  9, 101, 4
+  10, 165, 1
+  10, 225, 2
+  10, 252, 3
+  10, 129, 4
+  11, 70, 1
+  11, 214, 2
+  11, 73, 3
+  11, 328, 4
+  12, 95, 1
+  12, 129, 2
+  12, 222, 3
+  12, 74, 4
+  13, 148, 1
+  13, 214, 2
+  13, 95, 3
+  13, 199, 4
+  14, 51, 1
+  14, 59, 2
+  14, 33, 3
+  14, 95, 4
+  15, 309, 1
+  15, 300, 2
+  15, 14, 3
+  15, 19, 4
+  16, 19, 1
+  16, 14, 2
+  16, 214, 3
+  16, 253, 4
+  17, 96, 1
+  17, 23, 2
+  17, 171, 3
+  17, 24, 4
+  18, 179, 1
+  18, 95, 2
+  18, 299, 3
+  18, 83, 4
+  19, 294, 1
+  19, 109, 2
+  19, 105, 3
+  19, 129, 4
+  20, 253, 1
+  20, 26, 2
+  20, 252, 3
+  20, 144, 4
+  21, 33, 1
+  21, 144, 2
+  21, 253, 3
+  21, 232, 4
+  22, 182, 1
+  22, 26, 2
+  22, 170, 3
+  22, 107, 4
+  23, 124, 1
+  23, 59, 2
+  23, 238, 3
+  23, 305, 4
+  24, 179, 1
+  24, 98, 2
+  24, 122, 3
+  24, 344, 4
+  25, 34, 1
+  25, 272, 2
+  25, 64, 3
+  25, 351, 4
+  26, 122, 1
+  26, 341, 2
+  26, 88, 3
+  26, 64, 4
+  27, 312, 1
+  27, 295, 2
+  28, 312, 1
+  28, 295, 2
+  29, 312, 1
+  29, 295, 2
+  30, 312, 1
+  30, 295, 2
+  31, 295, 1
+  31, 312, 2
+  32, 295, 1
+  32, 312, 2
+  33, 312, 1
+  33, 295, 2
+  34, 312, 1
+  34, 123, 2
+  34, 295, 3
+  35, 295, 1
+  35, 123, 2
+  35, 312, 3
+  36, 295, 1
+  36, 123, 2
+  36, 312, 3
+  37, 295, 1
+  37, 123, 2
+  37, 312, 3
+  38, 312, 1
+  38, 295, 2
+  38, 123, 3
+  39, 123, 1
+  39, 312, 2
+  39, 295, 3
+  40, 295, 1
+  40, 123, 2
+  40, 312, 3
+  41, 295, 1
+  41, 123, 2
+  41, 312, 3
+  42, 123, 1
+  42, 295, 2
+  42, 312, 3
+  43, 295, 1
+  43, 123, 2
+  43, 312, 3
+  44, 312, 1
+  44, 123, 2
+  44, 295, 3
+  45, 312, 1
+  45, 123, 2
+  45, 295, 3
+  46, 305, 1
+  46, 179, 2
+  46, 232, 3
+  46, 114, 4
+  47, 69, 1
+  47, 75, 2
+  47, 255, 3
+  47, 14, 4
+  48, 109, 1
+  48, 279, 2
+  48, 83, 3
+  48, 295, 4
+  49, 209, 1
+  49, 295, 2
+  50, 209, 1
+  50, 295, 2
+  51, 209, 1
+  51, 295, 2
+  52, 295, 1
+  52, 209, 2
+  53, 295, 1
+  53, 209, 2
+  54, 295, 1
+  54, 209, 2
+  55, 123, 1
+  55, 209, 2
+  55, 295, 3
+  56, 123, 1
+  56, 295, 2
+  56, 209, 3
+  57, 209, 1
+  57, 123, 2
+  57, 295, 3
+  58, 209, 1
+  58, 295, 2
+  58, 123, 3
+  59, 123, 1
+  59, 209, 2
+  59, 295, 3
+  60, 123, 1
+  60, 209, 2
+  60, 295, 3
+  61, 272, 1
+  61, 209, 2
+  61, 300, 3
+  61, 6, 4
+  62, 58, 1
+  62, 4, 2
+  62, 129, 3
+  62, 279, 4
+  63, 179, 1
+  63, 231, 2
+  63, 109, 3
+  63, 333, 4
+  64, 129, 1
+  64, 109, 2
+  64, 238, 3
+  64, 114, 4
+  65, 349, 1
+  65, 83, 2
+  65, 69, 3
+  65, 305, 4
+  66, 6, 1
+  66, 107, 2
+  66, 231, 3
+  66, 221, 4
+  67, 299, 1
+  67, 328, 2
+  67, 305, 3
+  67, 279, 4
+  68, 305, 1
+  68, 223, 2
+  68, 300, 3
+  68, 69, 4
+  69, 223, 1
+  69, 88, 2
+  69, 129, 3
+  69, 299, 4
+  70, 291, 1
+  70, 179, 2
+  70, 328, 3
+  70, 221, 4
+  71, 319, 1
+  71, 309, 2
+  71, 214, 3
+  71, 221, 4
+  72, 83, 1
+  72, 220, 2
+  72, 179, 3
+  72, 349, 4
+  73, 190, 1
+  73, 319, 2
+  73, 214, 3
+  73, 70, 4
+  74, 272, 1
+  74, 221, 2
+  74, 83, 3
+  74, 223, 4
+  75, 223, 1
+  75, 4, 2
+  75, 83, 3
+  75, 305, 4
+  76, 221, 1
+  76, 6, 2
+  76, 305, 3
+  76, 83, 4
+  77, 70, 1
+  77, 109, 2
+  77, 221, 3
+  77, 312, 4
+  78, 349, 1
+  78, 4, 2
+  78, 328, 3
+  78, 214, 4
+  79, 220, 1
+  79, 319, 2
+  79, 309, 3
+  79, 7, 4
+  80, 183, 1
+  80, 179, 2
+  80, 300, 3
+  80, 190, 4
+  81, 328, 1
+  81, 291, 2
+  81, 232, 3
+  81, 14, 4
+  82, 103, 1
+  82, 107, 2
+  82, 7, 3
+  82, 305, 4
+  83, 300, 1
+  83, 231, 2
+  83, 305, 3
+  83, 349, 4
+  84, 69, 1
+  84, 83, 2
+  84, 190, 3
+  84, 4, 4
+  85, 7, 1
+  85, 121, 2
+  85, 129, 3
+  85, 328, 4
+  86, 103, 1
+  86, 83, 2
+  86, 232, 3
+  86, 14, 4
+  87, 70, 1
+  87, 231, 2
+  87, 279, 3
+  87, 88, 4
+  88, 328, 1
+  88, 190, 2
+  88, 316, 3
+  88, 312, 4
+  89, 300, 1
+  89, 259, 2
+  89, 316, 3
+  89, 255, 4
+  90, 272, 1
+  90, 312, 2
+  90, 99, 3
+  90, 14, 4
+  91, 59, 1
+  91, 325, 2
+  91, 220, 3
+  91, 214, 4
+  92, 272, 1
+  92, 144, 2
+  92, 58, 3
+  92, 221, 4
+  93, 314, 1
+  93, 321, 2
+  93, 70, 3
+  93, 312, 4
+  94, 255, 1
+  94, 109, 2
+  94, 141, 3
+  94, 314, 4
+  95, 299, 1
+  95, 70, 2
+  95, 112, 3
+  95, 272, 4
+  96, 179, 1
+  96, 251, 2
+  96, 235, 3
+  96, 99, 4
+  97, 110, 1
+  97, 190, 2
+  97, 272, 3
+  97, 76, 4
+  98, 231, 1
+  98, 179, 2
+  98, 305, 3
+  98, 103, 4
+  99, 109, 1
+  99, 129, 2
+  99, 232, 3
+  99, 249, 4
+  100, 179, 1
+  100, 299, 2
+  100, 223, 3
+  100, 110, 4
+  101, 272, 1
+  101, 221, 2
+  101, 249, 3
+  101, 179, 4
+  102, 249, 1
+  102, 91, 2
+  102, 190, 3
+  102, 220, 4
+  103, 6, 1
+  103, 220, 2
+  103, 232, 3
+  103, 305, 4
+  104, 88, 1
+  104, 91, 2
+  104, 214, 3
+  104, 309, 4
+  105, 231, 1
+  105, 220, 2
+  105, 117, 3
+  105, 232, 4
+  106, 129, 1
+  106, 88, 2
+  106, 70, 3
+  106, 179, 4
+  107, 299, 1
+  107, 300, 2
+  107, 28, 3
+  107, 305, 4
+  108, 62, 1
+  108, 109, 2
+  108, 237, 3
+  108, 23, 4
+  109, 299, 1
+  109, 232, 2
+  109, 209, 3
+  109, 114, 4
+  110, 278, 1
+  110, 156, 2
+  110, 223, 3
+  110, 327, 4
+  111, 327, 1
+  111, 78, 2
+  111, 292, 3
+  111, 220, 4
+  112, 23, 1
+  112, 70, 2
+  112, 220, 3
+  112, 156, 4
+  113, 287, 1
+  113, 88, 2
+  113, 83, 3
+  113, 237, 4
+  114, 220, 1
+  114, 14, 2
+  114, 109, 3
+  114, 327, 4
+  115, 209, 1
+  115, 14, 2
+  115, 327, 3
+  115, 274, 4
+  116, 19, 1
+  116, 269, 2
+  116, 352, 3
+  116, 328, 4
+  117, 23, 1
+  117, 70, 2
+  117, 78, 3
+  117, 292, 4
+  118, 328, 1
+  118, 171, 2
+  118, 304, 3
+  118, 21, 4
+  119, 170, 1
+  119, 70, 2
+  119, 21, 3
+  119, 213, 4
+  120, 59, 1
+  120, 307, 2
+  120, 299, 3
+  120, 51, 4
+  121, 62, 1
+  121, 70, 2
+  121, 238, 3
+  121, 299, 4
+  122, 109, 1
+  122, 214, 2
+  122, 62, 3
+  122, 213, 4
+  123, 33, 1
+  123, 103, 2
+  123, 109, 3
+  123, 28, 4
+  124, 325, 1
+  124, 299, 2
+  124, 321, 3
+  124, 314, 4
+  125, 14, 1
+  125, 213, 2
+  125, 41, 3
+  125, 69, 4
+  126, 325, 1
+  126, 83, 2
+  126, 88, 3
+  126, 179, 4
+  127, 62, 1
+  127, 105, 2
+  127, 70, 3
+  127, 243, 4
+  128, 21, 1
+  128, 109, 2
+  128, 88, 3
+  128, 325, 4
+  129, 350, 1
+  129, 83, 2
+  129, 321, 3
+  129, 305, 4
+  130, 272, 1
+  130, 243, 2
+  130, 69, 3
+  130, 238, 4
+  131, 245, 1
+  131, 300, 2
+  131, 224, 3
+  131, 243, 4
+  132, 253, 1
+  132, 231, 2
+  132, 272, 3
+  132, 58, 4
+  133, 209, 1
+  133, 310, 2
+  133, 240, 3
+  133, 224, 4
+  134, 319, 1
+  134, 28, 2
+  134, 238, 3
+  134, 270, 4
+  135, 300, 1
+  135, 98, 2
+  135, 78, 3
+  135, 309, 4
+  136, 51, 1
+  136, 250, 2
+  136, 63, 3
+  136, 58, 4
+  137, 303, 1
+  137, 26, 2
+  137, 252, 3
+  137, 83, 4
+  138, 128, 1
+  138, 252, 2
+  138, 28, 3
+  138, 303, 4
+  139, 274, 1
+  139, 109, 2
+  139, 102, 3
+  139, 70, 4
+  140, 41, 1
+  140, 341, 2
+  140, 259, 3
+  140, 328, 4
+  141, 59, 1
+  141, 179, 2
+  141, 328, 3
+  141, 231, 4
+  142, 325, 1
+  142, 231, 2
+  142, 179, 3
+  142, 104, 4
+  143, 325, 1
+  143, 128, 2
+  143, 321, 3
+  143, 23, 4
+  144, 55, 1
+  144, 231, 2
+  144, 252, 3
+  144, 299, 4
+  145, 69, 1
+  145, 104, 2
+  145, 209, 3
+  145, 279, 4
+  146, 341, 1
+  146, 41, 2
+  146, 325, 3
+  146, 272, 4
+  147, 148, 1
+  147, 128, 2
+  147, 51, 3
+  147, 231, 4
+  148, 129, 1
+  148, 300, 2
+  148, 190, 3
+  148, 62, 4
+  149, 51, 1
+  149, 321, 2
+  149, 341, 3
+  149, 238, 4
+  150, 14, 1
+  150, 190, 2
+  150, 70, 3
+  150, 112, 4
+  151, 28, 1
+  151, 51, 2
+  151, 104, 3
+  151, 299, 4
+  152, 132, 1
+  152, 88, 2
+  152, 179, 3
+  152, 63, 4
+  153, 58, 1
+  153, 26, 2
+  153, 305, 3
+  153, 156, 4
+  154, 179, 1
+  154, 299, 2
+  154, 148, 3
+  154, 62, 4
+  155, 272, 1
+  155, 58, 2
+  155, 131, 3
+  155, 59, 4
+  156, 272, 1
+  156, 252, 2
+  156, 231, 3
+  156, 131, 4
+  157, 272, 1
+  157, 102, 2
+  157, 128, 3
+  157, 28, 4
+  158, 102, 1
+  158, 299, 2
+  158, 274, 3
+  158, 321, 4
+  159, 300, 1
+  159, 69, 2
+  159, 128, 3
+  159, 315, 4
+  160, 142, 1
+  160, 104, 2
+  160, 235, 3
+  160, 129, 4
+  161, 110, 1
+  161, 142, 2
+  161, 202, 3
+  161, 69, 4
+  162, 171, 1
+  162, 28, 2
+  162, 41, 3
+  162, 20, 4
+  163, 101, 1
+  163, 272, 2
+  163, 324, 3
+  163, 350, 4
+  164, 41, 1
+  164, 51, 2
+  164, 190, 3
+  164, 231, 4
+  165, 75, 1
+  165, 142, 2
+  165, 299, 3
+  165, 106, 4
+  166, 101, 1
+  166, 177, 2
+  166, 278, 3
+  166, 83, 4
+  167, 305, 1
+  167, 221, 2
+  167, 14, 3
+  167, 109, 4
+  168, 231, 1
+  168, 279, 2
+  168, 348, 3
+  168, 139, 4
+  169, 119, 1
+  169, 62, 2
+  169, 94, 3
+  169, 300, 4
+  170, 235, 1
+  170, 300, 2
+  170, 139, 3
+  170, 88, 4
+  171, 94, 1
+  171, 100, 2
+  171, 288, 3
+  171, 96, 4
+  172, 305, 1
+  172, 314, 2
+  172, 109, 3
+  172, 80, 4
+  173, 245, 1
+  173, 127, 2
+  173, 98, 3
+  173, 62, 4
+  174, 148, 1
+  174, 96, 2
+  174, 69, 3
+  174, 231, 4
+  175, 69, 1
+  175, 221, 2
+  175, 300, 3
+  175, 216, 4
+  176, 28, 1
+  176, 145, 2
+  176, 199, 3
+  176, 328, 4
+  177, 129, 1
+  177, 232, 2
+  177, 231, 3
+  177, 28, 4
+  178, 217, 1
+  178, 70, 2
+  178, 216, 3
+  178, 350, 4
+  179, 278, 1
+  179, 300, 2
+  179, 105, 3
+  179, 216, 4
+  180, 305, 1
+  180, 95, 2
+  180, 299, 3
+  180, 232, 4
+  181, 223, 1
+  181, 63, 2
+  181, 214, 3
+  181, 90, 4
+  182, 95, 1
+  182, 214, 2
+  182, 105, 3
+  182, 203, 4
+  183, 95, 1
+  183, 223, 2
+  183, 213, 3
+  183, 63, 4
+  184, 101, 1
+  184, 105, 2
+  184, 129, 3
+  184, 94, 4
+  185, 324, 1
+  185, 305, 2
+  185, 278, 3
+  185, 94, 4
+  186, 272, 1
+  186, 94, 2
+  186, 299, 3
+  186, 41, 4
+  187, 262, 1
+  187, 62, 2
+  187, 138, 3
+  187, 211, 4
+  188, 214, 1
+  188, 325, 2
+  188, 259, 3
+  188, 95, 4
+  189, 138, 1
+  189, 69, 2
+  189, 211, 3
+  189, 14, 4
+  190, 350, 1
+  190, 262, 2
+  190, 223, 3
+  190, 214, 4
+  191, 88, 1
+  191, 211, 2
+  191, 63, 3
+  191, 75, 4
+  192, 316, 1
+  192, 23, 2
+  192, 278, 3
+  192, 57, 4
+  193, 129, 1
+  193, 14, 2
+  193, 114, 3
+  193, 23, 4
+  194, 232, 1
+  194, 83, 2
+  194, 154, 3
+  194, 347, 4
+  195, 231, 1
+  195, 109, 2
+  195, 221, 3
+  195, 327, 4
+  196, 69, 1
+  196, 83, 2
+  196, 279, 3
+  196, 88, 4
+  197, 349, 1
+  197, 109, 2
+  197, 179, 3
+  197, 319, 4
+  198, 255, 1
+  198, 121, 2
+  198, 299, 3
+  198, 70, 4
+  199, 291, 1
+  199, 309, 2
+  199, 279, 3
+  199, 206, 4
+  200, 300, 1
+  200, 13, 2
+  200, 272, 3
+  200, 251, 4
+  201, 121, 1
+  201, 214, 2
+  201, 69, 3
+  201, 114, 4
+  202, 303, 1
+  202, 214, 2
+  202, 23, 3
+  202, 279, 4
+  203, 272, 1
+  203, 4, 2
+  203, 319, 3
+  203, 223, 4
+  204, 121, 1
+  204, 220, 2
+  204, 109, 3
+  204, 44, 4
+  205, 83, 1
+  205, 272, 2
+  205, 58, 3
+  205, 232, 4
+  206, 2, 1
+  206, 101, 2
+  206, 204, 3
+  206, 308, 4
+  207, 69, 1
+  207, 272, 2
+  207, 300, 3
+  207, 204, 4
+  208, 308, 1
+  208, 114, 2
+  208, 310, 3
+  208, 271, 4
+  209, 328, 1
+  209, 41, 2
+  209, 37, 3
+  209, 109, 4
+  210, 88, 1
+  210, 297, 2
+  210, 179, 3
+  210, 114, 4
+  211, 98, 1
+  211, 308, 2
+  211, 37, 3
+  211, 101, 4
+  212, 69, 1
+  212, 300, 2
+  212, 299, 3
+  212, 98, 4
+  213, 1, 1
+  213, 186, 2
+  213, 214, 3
+  213, 328, 4
+  214, 88, 1
+  214, 186, 2
+  214, 1, 3
+  214, 83, 4
+  215, 114, 1
+  215, 37, 2
+  215, 305, 3
+  215, 186, 4
+  216, 328, 1
+  216, 274, 2
+  216, 214, 3
+  216, 179, 4
+  217, 37, 1
+  217, 98, 2
+  217, 274, 3
+  217, 311, 4
+  218, 146, 1
+  218, 279, 2
+  218, 2, 3
+  218, 274, 4
+  219, 308, 1
+  219, 297, 2
+  219, 310, 3
+  219, 252, 4
+  220, 305, 1
+  220, 11, 2
+  220, 232, 3
+  220, 308, 4
+  221, 98, 1
+  221, 88, 2
+  221, 28, 3
+  221, 238, 4
+  222, 118, 1
+  222, 62, 2
+  222, 51, 3
+  222, 158, 4
+  223, 310, 1
+  223, 220, 2
+  223, 101, 3
+  223, 37, 4
+  224, 98, 1
+  224, 69, 2
+  224, 58, 3
+  224, 179, 4
+  225, 45, 1
+  225, 232, 2
+  225, 69, 3
+  225, 88, 4
+  226, 312, 1
+  226, 252, 2
+  226, 107, 3
+  226, 70, 4
+  227, 214, 1
+  227, 101, 2
+  227, 215, 3
+  227, 279, 4
+  228, 297, 1
+  228, 88, 2
+  228, 271, 3
+  228, 109, 4
+  229, 274, 1
+  229, 63, 2
+  229, 279, 3
+  229, 328, 4
+  230, 252, 1
+  230, 109, 2
+  230, 117, 3
+  230, 129, 4
+  231, 279, 1
+  231, 19, 2
+  231, 129, 3
+  231, 305, 4
+  232, 129, 1
+  232, 335, 2
+  232, 272, 3
+  232, 274, 4
+  233, 117, 1
+  233, 166, 2
+  233, 300, 3
+  233, 97, 4
+  234, 129, 1
+  234, 69, 2
+  234, 231, 3
+  234, 58, 4
+  235, 109, 1
+  235, 237, 2
+  235, 117, 3
+  235, 250, 4
+  236, 247, 1
+  236, 274, 2
+  236, 179, 3
+  236, 70, 4
+  237, 112, 1
+  237, 19, 2
+  237, 78, 3
+  237, 166, 4
+  238, 327, 1
+  238, 321, 2
+  238, 112, 3
+  238, 101, 4
+  239, 305, 1
+  239, 129, 2
+  239, 201, 3
+  239, 23, 4
+  240, 223, 1
+  240, 319, 2
+  240, 148, 3
+  240, 23, 4
+  241, 300, 1
+  241, 250, 2
+  241, 272, 3
+  241, 101, 4
+  242, 88, 1
+  242, 252, 2
+  242, 231, 3
+  242, 70, 4
+  243, 341, 1
+  243, 299, 2
+  243, 129, 3
+  243, 8, 4
+  244, 270, 1
+  244, 179, 2
+  244, 305, 3
+  244, 129, 4
+  245, 232, 1
+  245, 252, 2
+  245, 321, 3
+  245, 270, 4
+  246, 250, 1
+  246, 299, 2
+  246, 255, 3
+  246, 252, 4
+  247, 309, 1
+  247, 319, 2
+  247, 148, 3
+  247, 59, 4
+  248, 279, 1
+  248, 231, 2
+  248, 83, 3
+  248, 59, 4
+  249, 251, 1
+  249, 142, 2
+  249, 129, 3
+  249, 238, 4
+  250, 105, 1
+  250, 54, 2
+  250, 170, 3
+  250, 253, 4
+  251, 144, 1
+  251, 129, 2
+  251, 170, 3
+  251, 63, 4
+  252, 112, 1
+  252, 251, 2
+  252, 63, 3
+  252, 342, 4
+  253, 344, 1
+  253, 232, 2
+  253, 279, 3
+  253, 250, 4
+  254, 135, 1
+  254, 170, 2
+  254, 129, 3
+  254, 26, 4
+  255, 252, 1
+  255, 88, 2
+  255, 325, 3
+  255, 112, 4
+  256, 129, 1
+  256, 328, 2
+  256, 214, 3
+  256, 177, 4
+  257, 316, 1
+  257, 190, 2
+  257, 109, 3
+  257, 70, 4
+  258, 231, 1
+  258, 19, 2
+  258, 253, 3
+  258, 251, 4
+  259, 161, 1
+  259, 321, 2
+  259, 199, 3
+  259, 309, 4
+  260, 129, 1
+  260, 23, 2
+  260, 294, 3
+  260, 4, 4
+  261, 14, 1
+  261, 28, 2
+  261, 148, 3
+  261, 100, 4
+  262, 4, 1
+  262, 148, 2
+  262, 83, 3
+  262, 69, 4
+  263, 99, 1
+  263, 83, 2
+  263, 133, 3
+  263, 279, 4
+  264, 148, 1
+  264, 4, 2
+  264, 133, 3
+  264, 83, 4
+  265, 309, 1
+  265, 235, 2
+  265, 28, 3
+  265, 305, 4
+  266, 62, 1
+  266, 109, 2
+  266, 319, 3
+  266, 231, 4
+  267, 28, 1
+  267, 245, 2
+  267, 279, 3
+  267, 70, 4
+  268, 245, 1
+  268, 109, 2
+  268, 294, 3
+  268, 197, 4
+  269, 232, 1
+  269, 199, 2
+  269, 62, 3
+  269, 109, 4
+  270, 6, 1
+  270, 305, 2
+  270, 156, 3
+  270, 96, 4
+  271, 70, 1
+  271, 88, 2
+  271, 315, 3
+  271, 252, 4
+  272, 135, 1
+  272, 88, 2
+  272, 304, 3
+  272, 70, 4
+  273, 180, 1
+  273, 135, 2
+  273, 289, 3
+  273, 83, 4
+  274, 64, 1
+  274, 184, 2
+  274, 20, 3
+  274, 272, 4
+  275, 129, 1
+  275, 135, 2
+  275, 319, 3
+  275, 179, 4
+  276, 124, 1
+  276, 341, 2
+  276, 26, 3
+  276, 62, 4
+  277, 59, 1
+  277, 135, 2
+  277, 180, 3
+  277, 141, 4
+  278, 279, 1
+  278, 59, 2
+  278, 214, 3
+  278, 232, 4
+  279, 64, 1
+  279, 180, 2
+  279, 279, 3
+  279, 69, 4
+  280, 232, 1
+  280, 279, 2
+  280, 83, 3
+  280, 129, 4
+  281, 59, 1
+  281, 26, 2
+  281, 141, 3
+  281, 340, 4
+  282, 14, 1
+  282, 304, 2
+  282, 179, 3
+  282, 34, 4
+  283, 231, 1
+  283, 190, 2
+  283, 139, 3
+  283, 180, 4
+  284, 305, 1
+  284, 299, 2
+  284, 105, 3
+  284, 64, 4
+  285, 109, 1
+  285, 26, 2
+  285, 231, 3
+  285, 62, 4
+  286, 62, 1
+  286, 342, 2
+  286, 177, 3
+  286, 105, 4
+  287, 255, 1
+  287, 142, 2
+  287, 327, 3
+  287, 51, 4
+  288, 171, 1
+  288, 101, 2
+  288, 14, 3
+  288, 264, 4
+  289, 305, 1
+  289, 255, 2
+  289, 83, 3
+  289, 324, 4
+  290, 300, 1
+  290, 88, 2
+  290, 51, 3
+  290, 328, 4
+  291, 318, 1
+  291, 299, 2
+  291, 177, 3
+  291, 105, 4
+  292, 179, 1
+  292, 81, 2
+  292, 83, 3
+  292, 324, 4
+  293, 300, 1
+  293, 109, 2
+  293, 279, 3
+  293, 319, 4
+  294, 253, 1
+  294, 300, 2
+  294, 104, 3
+  294, 232, 4
+  295, 70, 1
+  295, 150, 2
+  295, 142, 3
+  295, 238, 4
+  296, 179, 1
+  296, 294, 2
+  296, 171, 3
+  296, 62, 4
+  297, 142, 1
+  297, 94, 2
+  297, 253, 3
+  297, 240, 4
+  298, 170, 1
+  298, 238, 2
+  298, 150, 3
+  298, 240, 4
+  299, 81, 1
+  299, 328, 2
+  299, 58, 3
+  299, 69, 4
+  300, 214, 1
+  300, 305, 2
+  300, 232, 3
+  300, 81, 4
+  301, 58, 1
+  301, 336, 2
+  301, 69, 3
+  301, 310, 4
+  302, 37, 1
+  302, 69, 2
+  302, 271, 3
+  302, 311, 4
+  303, 274, 1
+  303, 310, 2
+  303, 154, 3
+  303, 146, 4
+  304, 328, 1
+  304, 109, 2
+  304, 129, 3
+  304, 154, 4
+  305, 88, 1
+  305, 287, 2
+  305, 297, 3
+  305, 136, 4
+  306, 352, 1
+  306, 118, 2
+  306, 69, 3
+  306, 225, 4
+  307, 352, 1
+  307, 224, 2
+  307, 214, 3
+  307, 252, 4
+  308, 69, 1
+  308, 299, 2
+  308, 144, 3
+  308, 44, 4
+  309, 341, 1
+  309, 44, 2
+  309, 231, 3
+  309, 223, 4
+  310, 299, 1
+  310, 69, 2
+  310, 58, 3
+  310, 44, 4
+  311, 26, 1
+  311, 58, 2
+  311, 122, 3
+  311, 46, 4
+  312, 58, 1
+  312, 88, 2
+  312, 135, 3
+  312, 70, 4
+  313, 46, 1
+  313, 352, 2
+  313, 304, 3
+  313, 14, 4
+  314, 272, 1
+  314, 214, 2
+  314, 44, 3
+  314, 252, 4
+  315, 179, 1
+  315, 303, 2
+  315, 279, 3
+  315, 114, 4
+  316, 274, 1
+  316, 319, 2
+  316, 299, 3
+  316, 109, 4
+  317, 166, 1
+  317, 51, 2
+  317, 78, 3
+  317, 299, 4
+  318, 94, 1
+  318, 299, 2
+  318, 328, 3
+  318, 179, 4
+  319, 100, 1
+  319, 248, 2
+  319, 239, 3
+  319, 129, 4
+  320, 14, 1
+  320, 231, 2
+  320, 279, 3
+  320, 28, 4
+  321, 177, 1
+  321, 240, 2
+  321, 27, 3
+  321, 70, 4
+  322, 70, 1
+  322, 171, 2
+  322, 300, 3
+  322, 62, 4
+  323, 199, 1
+  323, 315, 2
+  323, 129, 3
+  323, 328, 4
+  324, 117, 1
+  324, 41, 2
+  324, 232, 3
+  324, 293, 4
+  325, 252, 1
+  325, 231, 2
+  325, 315, 3
+  325, 279, 4
+  326, 94, 1
+  326, 293, 2
+  326, 221, 3
+  326, 69, 4
+  327, 100, 1
+  327, 94, 2
+  327, 80, 3
+  327, 252, 4
+  328, 6, 1
+  328, 320, 2
+  328, 314, 3
+  328, 69, 4
+  329, 28, 1
+  329, 99, 2
+  329, 305, 3
+  329, 139, 4
+  330, 309, 1
+  330, 148, 2
+  330, 314, 3
+  330, 305, 4
+  331, 14, 1
+  331, 136, 2
+  331, 110, 3
+  331, 231, 4
+  332, 272, 1
+  332, 67, 2
+  332, 315, 3
+  332, 28, 4
+  333, 293, 1
+  333, 255, 2
+  333, 141, 3
+  333, 62, 4
+  334, 125, 1
+  334, 45, 2
+  334, 83, 3
+  334, 299, 4
+  335, 45, 1
+  335, 231, 2
+  335, 171, 3
+  335, 309, 4
+  336, 70, 1
+  336, 125, 2
+  336, 189, 3
+  336, 45, 4
+  337, 63, 1
+  337, 109, 2
+  337, 341, 3
+  337, 351, 4
+  338, 223, 1
+  338, 214, 2
+  338, 259, 3
+  338, 321, 4
+  339, 272, 1
+  339, 299, 2
+  339, 309, 3
+  339, 303, 4
+  340, 129, 1
+  340, 309, 2
+  340, 88, 3
+  340, 83, 4
+  341, 312, 1
+  341, 231, 2
+  341, 223, 3
+  341, 159, 4
+  342, 223, 1
+  342, 88, 2
+  342, 299, 3
+  342, 69, 4
+  343, 324, 1
+  343, 232, 2
+  343, 312, 3
+  343, 325, 4
+  344, 300, 1
+  344, 251, 2
+  344, 159, 3
+  344, 136, 4
+  345, 299, 1
+  345, 175, 2
+  345, 109, 3
+  345, 214, 4
+  346, 300, 1
+  346, 232, 2
+  346, 319, 3
+  346, 110, 4
+  347, 121, 1
+  347, 231, 2
+  347, 69, 3
+  347, 328, 4
+  348, 82, 1
+  348, 220, 2
+  348, 4, 3
+  348, 232, 4
+  349, 83, 1
+  349, 76, 2
+  349, 252, 3
+  349, 6, 4
+  350, 299, 1
+  350, 109, 2
+  350, 117, 3
+  350, 303, 4
+  351, 309, 1
+  351, 214, 2
+  351, 221, 3
+  351, 110, 4
+  352, 232, 1
+  352, 279, 2
+  352, 316, 3
+  352, 231, 4
+  353, 70, 1
+  353, 110, 2
+  353, 319, 3
+  353, 83, 4
+  354, 141, 1
+  354, 122, 2
+  354, 305, 3
+  354, 15, 4
+  355, 157, 1
+  355, 252, 2
+  355, 28, 3
+  355, 15, 4
+  356, 83, 1
+  356, 136, 2
+  356, 232, 3
+  356, 89, 4
+  357, 272, 1
+  357, 273, 2
+  357, 321, 3
+  357, 211, 4
+  358, 214, 1
+  358, 223, 2
+  358, 321, 3
+  358, 211, 4
+  359, 303, 1
+  359, 144, 2
+  359, 26, 3
+  359, 224, 4
+  360, 141, 1
+  360, 143, 2
+  360, 214, 3
+  360, 70, 4
+  361, 141, 1
+  361, 304, 2
+  361, 17, 3
+  361, 309, 4
+  362, 252, 1
+  362, 69, 2
+  362, 179, 3
+  362, 312, 4
+  363, 14, 1
+  363, 232, 2
+  363, 231, 3
+  363, 351, 4
+  364, 122, 1
+  364, 231, 2
+  364, 26, 3
+  364, 351, 4
+  365, 251, 1
+  365, 279, 2
+  365, 14, 3
+  365, 109, 4
+  366, 217, 1
+  366, 109, 2
+  366, 325, 3
+  366, 231, 4
+  367, 13, 1
+  367, 14, 2
+  367, 299, 3
+  367, 217, 4
+  368, 288, 1
+  368, 348, 2
+  368, 255, 3
+  368, 328, 4
+  369, 316, 1
+  369, 167, 2
+  369, 216, 3
+  369, 69, 4
+  370, 328, 1
+  370, 60, 2
+  370, 119, 3
+  370, 83, 4
+  371, 33, 1
+  371, 14, 2
+  371, 216, 3
+  371, 88, 4
+  372, 269, 1
+  372, 300, 2
+  372, 123, 3
+  372, 28, 4
+  373, 69, 1
+  373, 105, 2
+  373, 231, 3
+  373, 279, 4
+  374, 95, 1
+  374, 264, 2
+  374, 316, 3
+  374, 45, 4
+  375, 278, 1
+  375, 170, 2
+  375, 252, 3
+  375, 101, 4
+  376, 264, 1
+  376, 38, 2
+  376, 207, 3
+  376, 179, 4
+  377, 171, 1
+  377, 253, 2
+  377, 300, 3
+  377, 319, 4
+  378, 53, 1
+  378, 188, 2
+  378, 14, 3
+  378, 109, 4
+  379, 232, 1
+  379, 156, 2
+  379, 152, 3
+  379, 109, 4
+  380, 141, 1
+  380, 124, 2
+  380, 269, 3
+  380, 341, 4
+  381, 341, 1
+  381, 294, 2
+  381, 232, 3
+  381, 304, 4
+  382, 123, 1
+  382, 129, 2
+  382, 83, 3
+  382, 232, 4
+  383, 28, 1
+  383, 319, 2
+  383, 214, 3
+  383, 188, 4
+  384, 120, 1
+  384, 341, 2
+  384, 69, 3
+  384, 144, 4
+  385, 272, 1
+  385, 341, 2
+  385, 141, 3
+  385, 252, 4
+  386, 141, 1
+  386, 238, 2
+  386, 53, 3
+  386, 223, 4
+  387, 152, 1
+  387, 188, 2
+  387, 144, 3
+  387, 98, 4
+  388, 120, 1
+  388, 341, 2
+  388, 272, 3
+  388, 305, 4
+  389, 129, 1
+  389, 305, 2
+  389, 69, 3
+  389, 240, 4
+  390, 34, 1
+  390, 58, 2
+  390, 156, 3
+  390, 64, 4
+  391, 310, 1
+  391, 294, 2
+  391, 14, 3
+  391, 98, 4
+  392, 293, 1
+  392, 64, 2
+  392, 269, 3
+  392, 62, 4
+  393, 232, 1
+  393, 325, 2
+  393, 324, 3
+  393, 252, 4
+  394, 40, 1
+  394, 223, 2
+  394, 299, 3
+  394, 272, 4
+  395, 259, 1
+  395, 324, 2
+  395, 325, 3
+  395, 88, 4
+  396, 214, 1
+  396, 182, 2
+  396, 272, 3
+  396, 158, 4
+  397, 229, 1
+  397, 75, 2
+  397, 129, 3
+  397, 83, 4
+  398, 30, 1
+  398, 232, 2
+  398, 179, 3
+  398, 300, 4
+  399, 105, 1
+  399, 109, 2
+  399, 222, 3
+  399, 170, 4
+  400, 237, 1
+  400, 294, 2
+  400, 272, 3
+  400, 91, 4
+  401, 300, 1
+  401, 20, 2
+  401, 109, 3
+  401, 83, 4
+  402, 105, 1
+  402, 190, 2
+  402, 141, 3
+  402, 95, 4
+  403, 26, 1
+  403, 141, 2
+  403, 190, 3
+  403, 4, 4
+  404, 83, 1
+  404, 105, 2
+  404, 252, 3
+  404, 237, 4
+  405, 328, 1
+  405, 20, 2
+  405, 95, 3
+  405, 272, 4
+  406, 232, 1
+  406, 69, 2
+  406, 179, 3
+  406, 305, 4
+  407, 216, 1
+  407, 33, 2
+  407, 105, 3
+  407, 100, 4
+  408, 316, 1
+  408, 328, 2
+  408, 94, 3
+  408, 200, 4
+  409, 328, 1
+  409, 232, 2
+  409, 223, 3
+  409, 243, 4
+  410, 136, 1
+  410, 325, 2
+  410, 219, 3
+  410, 223, 4
+  411, 273, 1
+  411, 100, 2
+  411, 85, 3
+  411, 69, 4
+  412, 109, 1
+  412, 294, 2
+  412, 26, 3
+  412, 110, 4
+  413, 69, 1
+  413, 62, 2
+  413, 78, 3
+  413, 132, 4
+  414, 79, 1
+  414, 328, 2
+  414, 279, 3
+  414, 321, 4
+  415, 70, 1
+  415, 324, 2
+  415, 144, 3
+  415, 341, 4
+  416, 70, 1
+  416, 232, 2
+  416, 117, 3
+  416, 51, 4
+  417, 179, 1
+  417, 98, 2
+  417, 252, 3
+  417, 319, 4
+  418, 22, 1
+  418, 146, 2
+  418, 326, 3
+  418, 192, 4
+  419, 229, 1
+  419, 274, 2
+  419, 28, 3
+  419, 45, 4
+  420, 319, 1
+  420, 271, 2
+  420, 216, 3
+  420, 69, 4
+  421, 8, 1
+  421, 310, 2
+  421, 216, 3
+  421, 169, 4
+  422, 146, 1
+  422, 192, 2
+  422, 1, 3
+  422, 155, 4
+  423, 279, 1
+  423, 114, 2
+  423, 37, 3
+  423, 1, 4
+  424, 252, 1
+  424, 46, 2
+  424, 146, 3
+  424, 129, 4
+  425, 28, 1
+  425, 156, 2
+  425, 148, 3
+  425, 26, 4
+  426, 34, 1
+  426, 70, 2
+  426, 334, 3
+  426, 299, 4
+  427, 272, 1
+  427, 34, 2
+  427, 305, 3
+  427, 232, 4
+  428, 305, 1
+  428, 15, 2
+  428, 70, 3
+  428, 14, 4
+  429, 252, 1
+  429, 6, 2
+  429, 179, 3
+  429, 215, 4
+  430, 144, 1
+  430, 231, 2
+  430, 344, 3
+  430, 328, 4
+  431, 232, 1
+  431, 231, 2
+  431, 131, 3
+  431, 129, 4
+  432, 6, 1
+  432, 124, 2
+  432, 64, 3
+  432, 69, 4
+  433, 223, 1
+  433, 232, 2
+  433, 124, 3
+  433, 88, 4
+  434, 328, 1
+  434, 131, 2
+  434, 309, 3
+  434, 69, 4
+  435, 69, 1
+  435, 223, 2
+  435, 172, 3
+  435, 179, 4
+  436, 189, 1
+  436, 328, 2
+  436, 70, 3
+  436, 342, 4
+  437, 144, 1
+  437, 304, 2
+  437, 122, 3
+  437, 98, 4
+  438, 83, 1
+  438, 252, 2
+  438, 341, 3
+  438, 328, 4
+  439, 26, 1
+  439, 312, 2
+  439, 214, 3
+  439, 135, 4
+  440, 181, 1
+  440, 224, 2
+  440, 129, 3
+  440, 179, 4
+  441, 123, 1
+  441, 144, 2
+  441, 217, 3
+  441, 223, 4
+  442, 305, 1
+  442, 217, 2
+  442, 340, 3
+  442, 304, 4
+  443, 144, 1
+  443, 321, 2
+  443, 70, 3
+  443, 232, 4
+  444, 88, 1
+  444, 328, 2
+  444, 223, 3
+  444, 216, 4
+  445, 88, 1
+  445, 272, 2
+  445, 136, 3
+  445, 129, 4
+  446, 214, 1
+  446, 109, 2
+  446, 328, 3
+  446, 324, 4
+  447, 232, 1
+  447, 129, 2
+  447, 105, 3
+  447, 190, 4
+  448, 255, 1
+  448, 17, 2
+  448, 89, 3
+  448, 179, 4
+  449, 83, 1
+  449, 328, 2
+  449, 4, 3
+  449, 349, 4
+  450, 91, 1
+  450, 136, 2
+  450, 279, 3
+  450, 83, 4
+  451, 231, 1
+  451, 309, 2
+  451, 6, 3
+  451, 4, 4
+  452, 33, 1
+  452, 88, 2
+  452, 216, 3
+  452, 223, 4
+  453, 17, 1
+  453, 142, 2
+  453, 214, 3
+  453, 69, 4
+  454, 156, 1
+  454, 88, 2
+  454, 150, 3
+  454, 231, 4
+  455, 305, 1
+  455, 150, 2
+  455, 142, 3
+  455, 88, 4
+  456, 51, 1
+  456, 70, 2
+  456, 129, 3
+  456, 294, 4
+  457, 341, 1
+  457, 109, 2
+  457, 141, 3
+  457, 272, 4
+  458, 98, 1
+  458, 312, 2
+  458, 289, 3
+  459, 289, 1
+  459, 98, 2
+  459, 312, 3
+  460, 98, 1
+  460, 289, 2
+  460, 312, 3
+  461, 98, 1
+  461, 289, 2
+  461, 312, 3
+  462, 312, 1
+  462, 98, 2
+  462, 289, 3
+  463, 98, 1
+  463, 312, 2
+  463, 289, 3
+  464, 248, 1
+  464, 179, 2
+  464, 294, 3
+  464, 78, 4
+  465, 294, 1
+  465, 179, 2
+  465, 44, 3
+  465, 70, 4
+  466, 329, 1
+  467, 329, 1
+  468, 329, 1
+  469, 326, 1
+  469, 70, 2
+  469, 350, 3
+  469, 328, 4
+  470, 305, 1
+  470, 350, 2
+  470, 252, 3
+  470, 255, 4
+  471, 88, 1
+  471, 214, 2
+  471, 252, 3
+  471, 223, 4
+  472, 98, 1
+  472, 326, 2
+  472, 18, 3
+  472, 70, 4
+  473, 57, 1
+  473, 190, 2
+  473, 221, 3
+  473, 129, 4
+  474, 117, 1
+  474, 300, 2
+  474, 272, 3
+  474, 312, 4
+  475, 18, 1
+  475, 232, 2
+  475, 14, 3
+  475, 148, 4
+  476, 232, 1
+  476, 179, 2
+  476, 135, 3
+  476, 305, 4
+  477, 223, 1
+  477, 18, 2
+  477, 190, 3
+  477, 235, 4
+  478, 109, 1
+  478, 98, 2
+  478, 214, 3
+  478, 315, 4
+  479, 57, 1
+  479, 252, 2
+  479, 88, 3
+  479, 299, 4
+  480, 41, 1
+  480, 232, 2
+  480, 259, 3
+  480, 350, 4
+  481, 315, 1
+  481, 205, 2
+  481, 279, 3
+  481, 57, 4
+  482, 88, 1
+  482, 23, 2
+  482, 156, 3
+  482, 14, 4
+  483, 309, 1
+  483, 199, 2
+  483, 252, 3
+  483, 223, 4
+  484, 148, 1
+  484, 88, 2
+  484, 70, 3
+  484, 6, 4
+  485, 26, 1
+  485, 179, 2
+  485, 304, 3
+  485, 14, 4
+  486, 109, 1
+  486, 129, 2
+  486, 305, 3
+  486, 248, 4
+  487, 326, 1
+  487, 286, 2
+  487, 70, 3
+  487, 340, 4
+  488, 156, 1
+  488, 232, 2
+  488, 14, 3
+  488, 4, 4
+  489, 62, 1
+  489, 341, 2
+  489, 214, 3
+  489, 224, 4
+  490, 223, 1
+  490, 144, 2
+  490, 270, 3
+  490, 253, 4
+  491, 114, 1
+  491, 179, 2
+  491, 122, 3
+  491, 252, 4
+  492, 237, 1
+  492, 122, 2
+  492, 238, 3
+  492, 111, 4
+  493, 300, 1
+  493, 235, 2
+  493, 88, 3
+  493, 100, 4
+  494, 14, 1
+  494, 344, 2
+  494, 304, 3
+  494, 70, 4
+  495, 141, 1
+  495, 231, 2
+  495, 124, 3
+  495, 324, 4
+  496, 14, 1
+  496, 100, 2
+  496, 232, 3
+  496, 158, 4
+  497, 148, 1
+  497, 179, 2
+  497, 300, 3
+  497, 269, 4
+  498, 299, 1
+  498, 300, 2
+  498, 305, 3
+  498, 136, 4
+  499, 238, 1
+  499, 304, 2
+  499, 294, 3
+  499, 291, 4
+  500, 344, 1
+  500, 190, 2
+  500, 198, 3
+  500, 309, 4
 }
