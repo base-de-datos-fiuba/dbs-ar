@@ -74,7 +74,7 @@ moves = {
   69, 'Double Team', 1, 'Status', 0, 100, 15, 'Raises user s Evasiveness.'
   70, 'Double-Edge', 1, 'Physical', 120, 100, 15, 'User receives recoil damage.'
   71, 'Dragon Breath', 16, 'Special', 60, 100, 20, 'May paralyze opponent.'
-  72, 'Dragon Claw', 16, 'Physical', 80, 100, 15, ''
+  72, 'Dragon Claw', 16, 'Physical', 80, 100, 15, 'Sharp, huge claws hook and slash the foe quickly and with great power'
   73, 'Dragon Dance', 16, 'Status', 0, 100, 20, 'Raises user s Attack and Speed.'
   74, 'Dragon Rage', 16, 'Special', 0, 100, 10, 'Always inflicts 40 HP.'
   75, 'Dream Eater', 14, 'Special', 100, 100, 15, 'User recovers half the HP inflicted on a sleeping opponent.'
@@ -3329,13 +3329,13 @@ pokemove = {
   14, 250, 2
   14, 95, 3
   14, 174, 4
-  15, 179, 1
+  15, 72, 1
   15, 74, 2
   15, 294, 3
   15, 305, 4
-  16, 179, 1
-  16, 170, 2
-  16, 310, 3
+  16, 103, 1
+  16, 100, 2
+  16, 72, 3
   16, 73, 4
   17, 59, 1
   17, 14, 2
@@ -6357,7 +6357,7 @@ pokemove = {
   795, 8, 4
   796, 231, 1
   796, 127, 2
-  796, 69, 3
+  796, 198, 3
   796, 4, 4
   797, 179, 1
   797, 141, 2
