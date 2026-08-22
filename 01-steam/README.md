@@ -111,33 +111,6 @@ erDiagram
 Las relaciones puente y `Library` tienen claves primarias compuestas. Juegos,
 desarrolladores y publishers se relacionan N:M.
 
-## Regeneración y validación
-
-`source/steam_catalog.json` es el snapshot versionado del catálogo obtenido de
-los endpoints públicos de Steam Store. `generate_dataset.py` lo combina con
-actividad sintética usando seed 42 y snapshot `2026-08-02`. No se debe editar
-`datasets/local_groups` manualmente.
-
-```bash
-cd 01-steam
-python3 generate_dataset.py
-python3 generate_dataset.py --check
-python3 validate_dataset.py
-```
-
-Para renovar deliberadamente el catálogo (requiere Internet):
-
-```bash
-python3 scrape_steam_catalog.py --games 200
-```
-
-El scraper usa el buscador y `appdetails` de Steam con región US e idioma inglés;
-excluye DLC, próximos lanzamientos, precios desconocidos y fechas posteriores al
-snapshot. La generación normal no realiza solicitudes de red.
-
-El último comando valida PK, FK, duplicados, fechas, precios y los casos docentes
-descritos en [teaching_cases.md](teaching_cases.md).
-
 ## Levantar la aplicación
 
 Desde este directorio, ejecutar:
