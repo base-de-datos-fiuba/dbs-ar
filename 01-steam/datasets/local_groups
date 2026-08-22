@@ -624,7 +624,7 @@ Game = {
   577480, 'Higurashi When They Cry Hou - Ch.5 Meakashi', 2017-04-28, 7.99, No, Yes, Yes, Yes
   578540, 'Perfect Gold - Yuri Visual Novel', 2021-04-19, 7.99, No, Yes, Yes, No
   588650, 'Dead Cells', 2018-08-06, 24.99, No, Yes, Yes, Yes
-  611760, 'Don''t Escape: 4 Days to Survive', 2019-03-11, 14.99, No, Yes, Yes, No
+  611760, 'Dont Escape: 4 Days to Survive', 2019-03-11, 14.99, No, Yes, Yes, No
   623080, 'planetarian HD', 2017-05-08, 9.99, No, Yes, No, No
   667970, 'VTOL VR', 2017-08-03, 29.99, No, Yes, No, No
   668350, 'Higurashi When They Cry Hou - Ch.6 Tsumihoroboshi', 2018-06-14, 7.99, No, Yes, Yes, Yes
@@ -649,7 +649,7 @@ Game = {
   1055540, 'A Short Hike', 2019-07-30, 7.99, No, Yes, Yes, Yes
   1059990, 'Trombone Champ', 2022-09-15, 14.99, No, Yes, Yes, No
   1067850, 'Kindergarten 2', 2019-07-29, 14.99, No, Yes, Yes, Yes
-  1070550, 'Don''t Escape Trilogy', 2019-07-29, 4.99, No, Yes, No, No
+  1070550, 'Dont Escape Trilogy', 2019-07-29, 4.99, No, Yes, No, No
   1070710, 'Kind Words (lo fi chill beats to write to)', 2019-09-12, 4.99, No, Yes, Yes, Yes
   1082430, 'Before Your Eyes', 2021-04-08, 9.99, No, Yes, Yes, No
   1089980, 'The Henry Stickmin Collection', 2020-08-07, 14.99, No, Yes, Yes, No
@@ -662,7 +662,7 @@ Game = {
   1145360, 'Hades', 2020-09-17, 24.99, No, Yes, Yes, No
   1148350, 'The Powder Toy', 2024-06-14, 0.00, Yes, Yes, Yes, Yes
   1161870, 'Epiphyllum in Love', 2020-03-16, 3.99, No, Yes, No, No
-  1170880, 'Grimm''s Hollow', 2019-10-30, 0.00, Yes, Yes, No, No
+  1170880, 'Grimms Hollow', 2019-10-30, 0.00, Yes, Yes, No, No
   1171320, 'Frog Detective 3: Corruption at Cowboy County', 2022-10-26, 4.99, No, Yes, Yes, No
   1171370, 'The Supper', 2020-01-28, 0.00, Yes, Yes, No, No
   1198320, 'DOTOKOI / 像素男友', 2019-12-23, 0.00, Yes, Yes, No, No
@@ -672,7 +672,7 @@ Game = {
   1229490, 'ULTRAKILL', 2020-09-03, 29.99, No, Yes, No, No
   1230140, 'ATRI -My Dear Moments-', 2020-06-18, 20.99, No, Yes, No, No
   1240210, 'There Is No Game: Wrong Dimension', 2020-08-06, 12.99, No, Yes, Yes, No
-  1260520, 'Patrick''s Parabox', 2022-03-29, 19.99, No, Yes, Yes, Yes
+  1260520, 'Patricks Parabox', 2022-03-29, 19.99, No, Yes, Yes, Yes
   1295320, 'Can of Wormholes', 2023-03-24, 19.99, No, Yes, Yes, No
   1307580, 'TOEM: A Photo Adventure', 2021-09-17, 19.99, No, Yes, Yes, Yes
   1328840, 'Lost in Play', 2022-08-10, 19.99, No, Yes, Yes, No
@@ -699,7 +699,7 @@ Game = {
   1567800, '星空列车与白的旅行', 2021-05-14, 19.99, No, Yes, No, No
   1568400, 'Sheepy: A Short Adventure', 2024-02-06, 0.00, Yes, Yes, No, No
   1574270, 'Sucker for Love: First Date', 2022-01-20, 9.99, No, Yes, No, No
-  1584090, 'Touhou Mystia''s Izakaya', 2021-10-01, 5.99, No, Yes, Yes, No
+  1584090, 'Touhou Mystias Izakaya', 2021-10-01, 5.99, No, Yes, Yes, No
   1586800, 'Lil Gator Game', 2022-12-14, 19.99, No, Yes, No, No
   1644940, 'Loddlenaut', 2023-11-16, 19.99, No, Yes, Yes, No
   1657740, 'Mr. Sleepy Man', 2026-03-10, 19.99, No, Yes, No, No
@@ -715,7 +715,7 @@ Game = {
   1725640, 'Sudocats', 2022-03-14, 1.99, No, Yes, No, Yes
   1740300, 'Smushi Come Home', 2023-06-10, 19.99, No, Yes, Yes, No
   1794680, 'Vampire Survivors', 2022-10-20, 4.99, No, Yes, Yes, No
-  1796580, 'Sorry We''re Closed', 2024-11-14, 24.99, No, Yes, No, No
+  1796580, 'Sorry Were Closed', 2024-11-14, 24.99, No, Yes, No, No
   1817000, 'Zodiacats', 2022-01-21, 1.99, No, Yes, No, Yes
   1817230, 'Hi-Fi RUSH', 2023-01-25, 29.99, No, Yes, No, No
   1827680, '枝江畔之梦', 2022-01-27, 0.00, Yes, Yes, No, No
@@ -754,7 +754,7 @@ Game = {
   2231450, 'Pizza Tower', 2023-01-26, 19.99, No, Yes, No, No
   2262610, 'Endless Monday: Dreams and Deadlines', 2023-05-04, 9.99, No, Yes, Yes, Yes
   2269860, '风与鸟 - Wind and Bird', 2024-01-22, 0.00, Yes, Yes, No, No
-  2291760, 'Papa''s Freezeria Deluxe', 2023-03-31, 5.99, No, Yes, No, No
+  2291760, 'Papas Freezeria Deluxe', 2023-03-31, 5.99, No, Yes, No, No
   2291850, 'Underground Blossom', 2023-09-27, 4.99, No, Yes, Yes, No
   2299900, 'Felvidek', 2024-03-29, 10.99, No, Yes, No, No
   2302540, '花火与幽灵少女 - Hanabi and Ghost girl', 2025-02-22, 0.00, Yes, Yes, No, No
@@ -774,7 +774,7 @@ Game = {
   2458530, '魔女的夜宴', 2023-07-21, 34.99, No, Yes, No, No
   2524850, 'Denshattack!', 2026-07-15, 19.99, No, Yes, No, No
   2527500, 'MiSide', 2024-12-10, 14.99, No, Yes, No, No
-  2539960, 'Orbo''s Odyssey', 2023-08-20, 4.99, No, Yes, No, No
+  2539960, 'Orbos Odyssey', 2023-08-20, 4.99, No, Yes, No, No
   2570630, '20 Small Mazes', 2024-02-16, 0.00, Yes, Yes, Yes, No
   2592160, 'Dispatch', 2025-10-22, 29.99, No, Yes, No, No
   2600140, 'Please, Touch The Artwork 2', 2024-02-19, 0.00, Yes, Yes, Yes, Yes
