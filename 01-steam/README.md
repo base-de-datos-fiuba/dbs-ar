@@ -12,6 +12,12 @@ erDiagram
     PUBLISHER ||--o{ GAME : publica
     GAME ||--o{ GAME_GENRE : clasifica
     GENRE ||--o{ GAME_GENRE : incluye
+    GAME ||--o{ GAME_FEATURE : ofrece
+    FEATURE ||--o{ GAME_FEATURE : incluye
+    GAME ||--o{ GAME_DEVELOPER : desarrolla
+    DEVELOPER ||--o{ GAME_DEVELOPER : participa
+    GAME ||--o{ GAME_PUBLISHER : publica
+    PUBLISHER ||--o{ GAME_PUBLISHER : participa
     USER_ACCOUNT ||--o{ LIBRARY : posee
     GAME ||--o{ LIBRARY : pertenece
     USER_ACCOUNT ||--o{ PURCHASE : realiza
@@ -39,7 +45,11 @@ erDiagram
     GENRE {
         int genre_id PK
         string name
-        string classification_type
+    }
+
+    FEATURE {
+        int feature_id PK
+        string name
     }
 
     GAME {
@@ -47,8 +57,6 @@ erDiagram
         string title
         date release_date
         decimal price_usd
-        int developer_id FK
-        int publisher_id FK
         boolean windows
         boolean mac
         boolean linux
@@ -58,6 +66,21 @@ erDiagram
     GAME_GENRE {
         int app_id PK, FK
         int genre_id PK, FK
+    }
+
+    GAME_FEATURE {
+        int app_id PK, FK
+        int feature_id PK, FK
+    }
+
+    GAME_DEVELOPER {
+        int app_id PK, FK
+        int developer_id PK, FK
+    }
+
+    GAME_PUBLISHER {
+        int app_id PK, FK
+        int publisher_id PK, FK
     }
 
     LIBRARY {
@@ -79,15 +102,41 @@ erDiagram
         int review_id PK
         int user_id FK
         int app_id FK
+        date review_date
         boolean recommended
-        int score
         int helpful_votes
     }
 ```
 
-Las claves primarias de `GameGenre` y `Library` son compuestas. Cada juego
-referencia exactamente un desarrollador y un publisher; las demás entidades
-principales pueden existir sin registros asociados.
+Las relaciones puente y `Library` tienen claves primarias compuestas. Juegos,
+desarrolladores y publishers se relacionan N:M.
+
+## Regeneración y validación
+
+`source/steam_catalog.json` es el snapshot versionado del catálogo obtenido de
+los endpoints públicos de Steam Store. `generate_dataset.py` lo combina con
+actividad sintética usando seed 42 y snapshot `2026-08-02`. No se debe editar
+`datasets/local_groups` manualmente.
+
+```bash
+cd 01-steam
+python3 generate_dataset.py
+python3 generate_dataset.py --check
+python3 validate_dataset.py
+```
+
+Para renovar deliberadamente el catálogo (requiere Internet):
+
+```bash
+python3 scrape_steam_catalog.py --games 200
+```
+
+El scraper usa el buscador y `appdetails` de Steam con región US e idioma inglés;
+excluye DLC, próximos lanzamientos, precios desconocidos y fechas posteriores al
+snapshot. La generación normal no realiza solicitudes de red.
+
+El último comando valida PK, FK, duplicados, fechas, precios y los casos docentes
+descritos en [teaching_cases.md](teaching_cases.md).
 
 ## Levantar la aplicación
 
