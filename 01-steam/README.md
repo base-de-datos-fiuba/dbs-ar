@@ -8,8 +8,6 @@ son datos sintéticos creados exclusivamente para uso académico.
 
 ```mermaid
 erDiagram
-    DEVELOPER ||--o{ GAME : desarrolla
-    PUBLISHER ||--o{ GAME : publica
     GAME ||--o{ GAME_GENRE : clasifica
     GENRE ||--o{ GAME_GENRE : incluye
     GAME ||--o{ GAME_FEATURE : ofrece
